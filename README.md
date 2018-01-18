@@ -1,5 +1,5 @@
 # Imam Digmi
-Computer Researcher wannabe, based in Indramayu, live in Yogyakarta.
+Independent Researcher, based in Indramayu, live in Yogyakarta.
 
 ## Contact
   * Mobile: +62 897 00088 75
