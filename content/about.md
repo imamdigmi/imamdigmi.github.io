@@ -6,6 +6,8 @@ title: "About"
 description: "Imam Digmi blog on GitHub"
 author: "Imam Digmi"
 
+menu: "main"
+weight: 50
 draft: false
 keywords: ["imamdigmi", "digmi", "about me", "about"]
 tags: []
