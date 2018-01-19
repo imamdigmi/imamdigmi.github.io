@@ -1,6 +1,6 @@
 ---
-date: 2018-01-19T23:41:43+07:00
-lastmod: 2018-01-19T23:41:43+07:00
+date: 2017-01-14T18:31:18+07:00
+lastmod: 2017-01-14T18:31:18+07:00
 
 title: "Menggunakan Vim Sebagai IDE Golang"
 description: "Menggunakan Vim Sebagai IDE Golang"
