@@ -12,7 +12,7 @@ keywords: []
 tags: []
 categories: []
 
-comment: false
+comment: true
 toc: true
 autoCollapseToc: true
 contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
