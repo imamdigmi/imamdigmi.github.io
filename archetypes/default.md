@@ -1,4 +1,4 @@
-+++
+---
 date: {{ .Date }}
 lastmod: {{ .Date }}
 
@@ -14,10 +14,10 @@ categories: []
 comment: false
 toc: true
 autoCollapseToc: true
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">BY-NC-ND-40</a>
+contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
 reward: false
 mathjax: false
 mathjaxEnableSingleDollar: false
-+++
+---
 
 <!--more-->
