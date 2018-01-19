@@ -12,65 +12,47 @@
     
     
     <item>
-      <title>Category 2</title>
-      <link>https://imamdigmi.github.io/categories/category-2/</link>
-      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
+      <title>Diary</title>
+      <link>https://imamdigmi.github.io/categories/diary/</link>
+      <pubDate>Wed, 20 Apr 2016 17:44:20 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/categories/category-2/</guid>
+      <guid>https://imamdigmi.github.io/categories/diary/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Category 3</title>
-      <link>https://imamdigmi.github.io/categories/category-3/</link>
-      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
+      <title>Docker</title>
+      <link>https://imamdigmi.github.io/categories/docker/</link>
+      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/categories/category-3/</guid>
+      <guid>https://imamdigmi.github.io/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>English</title>
-      <link>https://imamdigmi.github.io/categories/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>Golang</title>
+      <link>https://imamdigmi.github.io/categories/golang/</link>
+      <pubDate>Sat, 21 Jan 2017 18:25:27 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/categories/english/</guid>
+      <guid>https://imamdigmi.github.io/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Syntax Highlighting</title>
-      <link>https://imamdigmi.github.io/categories/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      <title>Nosql</title>
+      <link>https://imamdigmi.github.io/categories/nosql/</link>
+      <pubDate>Fri, 03 Jun 2016 14:06:22 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/categories/syntax-highlighting/</guid>
+      <guid>https://imamdigmi.github.io/categories/nosql/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Theme Preview</title>
-      <link>https://imamdigmi.github.io/categories/theme-preview/</link>
-      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
+      <title>Tips</title>
+      <link>https://imamdigmi.github.io/categories/tips/</link>
+      <pubDate>Sat, 21 Jan 2017 18:17:52 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/categories/theme-preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>中文</title>
-      <link>https://imamdigmi.github.io/categories/%E4%B8%AD%E6%96%87/</link>
-      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
-      
-      <guid>https://imamdigmi.github.io/categories/%E4%B8%AD%E6%96%87/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日本語</title>
-      <link>https://imamdigmi.github.io/categories/%E6%97%A5%E6%9C%AC%E8%AA%9E/</link>
-      <pubDate>Wed, 30 Aug 2017 01:53:34 +0800</pubDate>
-      
-      <guid>https://imamdigmi.github.io/categories/%E6%97%A5%E6%9C%AC%E8%AA%9E/</guid>
+      <guid>https://imamdigmi.github.io/categories/tips/</guid>
       <description></description>
     </item>
     

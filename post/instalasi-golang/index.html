@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Instalasi Golang - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Instalasi Bahasa Pemrograman Go" />
+<meta name="keywords" content="go, golang, install, setup" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/instalasi-golang/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Instalasi Golang" />
+<meta property="og:description" content="Instalasi Bahasa Pemrograman Go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/instalasi-golang/" />
+
+
+
+<meta property="article:published_time" content="2017-01-15T17:47:17&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-01-15T17:47:17&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Instalasi Golang">
+<meta itemprop="description" content="Instalasi Bahasa Pemrograman Go">
+
+
+<meta itemprop="datePublished" content="2017-01-15T17:47:17&#43;07:00" />
+<meta itemprop="dateModified" content="2017-01-15T17:47:17&#43;07:00" />
+<meta itemprop="wordCount" content="615">
+
+
+
+<meta itemprop="keywords" content="golang," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Instalasi Golang"/>
+<meta name="twitter:description" content="Instalasi Bahasa Pemrograman Go"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Instalasi Golang</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/golang/"> GoLang </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#download-golang">Download Golang</a></li>
+<li><a href="#ekstrak-file">Ekstrak file</a></li>
+<li><a href="#export-path-go">Export path go</a></li>
+<li><a href="#selesai">Selesai</a></li>
+<li><a href="#workspace">Workspace</a></li>
+<li><a href="#best-practice">Best Practice</a></li>
+<li><a href="#menguji-instalasi-go">Menguji Instalasi Go</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :</p>
+
+<pre><code class="language-bash">No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 16.10
+Release:        16.10
+Codename:       yakkety
+</code></pre>
+
+<h2 id="download-golang">Download Golang</h2>
+
+<p>Sebelum kita meng-install golang kita harus mendownload aplikasi golang terlebih dahulu <a href="https://golang.org/dl/">disini</a> lalu klik pada bagian Linux dan jangan lupa pilih jenis bit komputer anda.
+&gt; NOTE: Pada artikel ini ditulis versi stabil dari golang yaitu 1.7.4 dan kita akan menggunakan versi ini.</p>
+
+<p><img src="/instalasi-golang/download.png" alt="Download" /></p>
+
+<p>Walaupun sebenarnya ada banyak versi yang di sediakan oleh golang termasuk unstable version, tapi lebih baik kita download yang stable version saja agar tidak ada masalah nantinya ketika kita bermain dengan golang.</p>
+
+<pre><code class="language-bash">ls -la
+total 447412
+drwxrwxr-x  3 idiot idiot      4096 Jan 15 00:18 .
+drwxr-xr-x 63 idiot idiot      4096 Jan 15 00:31 ..
+-rw-r--r--  1 idiot idiot  84021919 Jan  7 16:26 go1.7.4.linux-amd64.tar.gz
+-rw-r--r--  1 idiot idiot  76419072 Jan 14 23:52 go1.7.4.windows-amd64.msi
+</code></pre>
+
+<h2 id="ekstrak-file">Ekstrak file</h2>
+
+<p>Buka terminal lalu extract file hasil download tadi dan pindahkan hasil extract ke direktori <code>/usr/local</code> :</p>
+
+<pre><code class="language-bash">sudo tar zxvf go1.7.4.linux-amd64.tar.gz -C /usr/local
+</code></pre>
+
+<h2 id="export-path-go">Export path go</h2>
+
+<p>untuk meng-eksport path lokasi bisa langsung dengan perintah <code>export PATH=$PATH:/usr/local/go/bin</code> di terminal atau bisa juga menaruh perintah tersebut di dalam file <code>$HOME/.profile</code> dan penulis sendiri menggunakan cara yang kedua :</p>
+
+<pre><code class="language-bash">echo &quot;export PATH=\$PATH:/usr/local/go/bin&quot; &gt;&gt; ~/.profile
+</code></pre>
+
+<h2 id="selesai">Selesai</h2>
+
+<p>Jika langkah diatas dilakukan dengan benar maka go sudah terinstall di komputer kita, selanjutnya lihat versi go yang barusan kita install :</p>
+
+<pre><code class="language-bash">go version
+
+// Output:
+go version go1.7.4 linux/amd64
+</code></pre>
+
+<h2 id="workspace">Workspace</h2>
+
+<p>Setelah Golang berhasil di-instal, ada hal yang perlu disiapkan sebelum bisa masuk ke sesi pembuatan aplikasi, yaitu setup workspace untuk proyek-proyek yang akan dibuat. Kita diharuskan mempunyai 3 folder didalam direktori workspace kita yaitu :</p>
+
+<pre><code class="language-bash">Workspace
+├── bin
+├── pkg
+└── src
+</code></pre>
+
+<p>Struktur diatas adalah struktur standar workspace Golang jadi pastikan penamaannya harus sama, lokasi folder yang dijadikan workspace boleh dimana saja dan lokasi tersebut harus di daftarkan kedalam <code>PATH Variable</code> dengan nama <code>GOPATH</code>
+- <code>src</code> lokasi dimana proyek golang disimpan
+- <code>pkg</code> berisi file hasil kompilasi
+- <code>bin</code> berisi file executable hasil build</p>
+
+<p>Daftarkan <code>GOPATH</code> kedalam <code>PATH Variable</code> :
+&gt; NOTE: Ganti &lt; <strong>workspace</strong> &gt; sesuai dengan direktori workspace golang di komputer anda.</p>
+
+<pre><code class="language-bash">echo &quot;export GOPATH=\&quot;\$HOME/&lt; workspace &gt;\&quot;&quot; &gt;&gt; ~/.profile
+</code></pre>
+
+<p>Setelah itu cek apakah GOPATH sudah terdaftar atau belum</p>
+
+<pre><code class="language-bash">
+// Output:
+/home/idiot/Workspace/golang
+</code></pre>
+
+<blockquote>
+<p>TIP: Jika $GOPATH tidak dikenali cobalah untuk menutup lalu membuka kembali terminal anda</p>
+</blockquote>
+
+<pre><code class="language-bash">tree -L 2 $GOPATH
+
+// Output:
+/home/idiot/Workspace/golang
+├── bin
+│   ├── gocode
+│   ├── godep
+│   ├── gogetdoc
+│   ├── goimports
+│   ├── golint
+│   ├── gometalinter
+│   ├── gotype
+├── pkg
+│   └── linux_amd64
+└── src
+    ├── github.com
+    ├── golang.org
+    └── gopkg.in
+
+7 directories, 28 files
+</code></pre>
+
+<h2 id="best-practice">Best Practice</h2>
+
+<p>Golang memang sudah terinstall tapi <em>envirounment</em> nya masih belum friendly, berdasarkan rekomendasi dari <a href="https://golang.org/doc/code.html">sini</a> dan best practice nya <a href="https://peter.bourgon.org/go-best-practices-2016/">disini</a> maka kita harus membuat PATH lagi untuk workspace kita :</p>
+
+<pre><code class="language-bash">echo &quot;export GOROOT=\&quot;/usr/local/go\&quot;&quot; &gt;&gt; ~/.profile
+echo &quot;export PATH=\&quot;\$GOPATH/bin:\$(go env GOROOT)/bin:\$PATH\&quot;&quot; &gt;&gt; ~/.profile
+</code></pre>
+
+<blockquote>
+<p>TIP: Langkah diatas kita lalukan agar easily accessible ketika kita hendak mengakses file binari yang kita install dengan perintah <code>go install</code> pada proyek kita.</p>
+</blockquote>
+
+<p>In the end, kumpulan <code>PATH</code> yang kita taruh pada file .profile adalah sebagai berikut :
+<img src="/instalasi-golang/profile-file.png" alt="Profile File" /></p>
+
+<p>Setelah itu mari kita lihat go envirounment yang sudah kita buat :</p>
+
+<pre><code class="language-bash">go env
+
+// Output:
+GOARCH=&quot;amd64&quot;
+GOBIN=&quot;/usr/local/go/bin&quot;
+GOEXE=&quot;&quot;
+GOHOSTARCH=&quot;amd64&quot;
+GOHOSTOS=&quot;linux&quot;
+GOOS=&quot;linux&quot;
+GOPATH=&quot;/home/idiot/Workspace/golang&quot;
+GORACE=&quot;&quot;
+GOROOT=&quot;/usr/local/go&quot;
+GOTOOLDIR=&quot;/usr/local/go/pkg/tool/linux_amd64&quot;
+CC=&quot;gcc&quot;
+GOGCCFLAGS=&quot;-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build688917244=/tmp/go-build -gno-record-gcc-switches&quot;
+CXX=&quot;g++&quot;
+CGO_ENABLED=&quot;1&quot;go env
+</code></pre>
+
+<h2 id="menguji-instalasi-go">Menguji Instalasi Go</h2>
+
+<p>Setelah semua nya selesai mari kita uji instalasi go dengan membuat program sederhana :</p>
+
+<pre><code class="language-bash">mkdir -p $GOPATH/src/github.com/imamdigmi/hello
+touch $GOPATH/src/github.com/imamdigmi/hello/main.go
+</code></pre>
+
+<p>Isikan file <code>main.go</code> dengan :</p>
+
+<pre><code class="language-go">package main
+import &quot;fmt&quot;
+func main() {
+    fmt.Println(&quot;Halo Golang &lt;3!&quot;)
+}
+</code></pre>
+
+<p>Jalankan program yang kita buat tadi :</p>
+
+<pre><code class="language-bash">go run main.go
+</code></pre>
+
+<p><img src="/instalasi-golang/test-installation.png" alt="Test Installation" /></p>
+
+<p>Oke sampai disini dulu, semoga bermanfaat {%gemoji smile%}</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-01-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/golang/">golang</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/layout-keyboard-dvorak-di-ubuntu/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Layout Keyboard di Ubuntu (Qwerty-Dvorak)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/menggunakan-vim-sebagai-ide-golang/">
+            <span class="next-text nav-default">Menggunakan Vim Sebagai IDE Golang</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

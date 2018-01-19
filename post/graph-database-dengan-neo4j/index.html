@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Graph Database Dengan Neo4j - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Berkenalan dengan Graph Database (GDBMS) menggunakanan Neo4J" />
+<meta name="keywords" content="Tutorial, NoSQL, Graph, Database, Neo4J, GDBMS" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/graph-database-dengan-neo4j/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Graph Database Dengan Neo4j" />
+<meta property="og:description" content="Berkenalan dengan Graph Database (GDBMS) menggunakanan Neo4J" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/graph-database-dengan-neo4j/" />
+
+
+
+<meta property="article:published_time" content="2016-06-03T14:06:22&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-06-03T14:06:22&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Graph Database Dengan Neo4j">
+<meta itemprop="description" content="Berkenalan dengan Graph Database (GDBMS) menggunakanan Neo4J">
+
+
+<meta itemprop="datePublished" content="2016-06-03T14:06:22&#43;07:00" />
+<meta itemprop="dateModified" content="2016-06-03T14:06:22&#43;07:00" />
+<meta itemprop="wordCount" content="626">
+
+
+
+<meta itemprop="keywords" content="database," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Graph Database Dengan Neo4j"/>
+<meta name="twitter:description" content="Berkenalan dengan Graph Database (GDBMS) menggunakanan Neo4J"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Graph Database Dengan Neo4j</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-03 </span>
+        <div class="post-category">
+            
+              <a href="/categories/nosql/"> NoSQL </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#apa-itu-graph-database">Apa itu Graph Database?</a></li>
+<li><a href="#apa-itu-neo4j">Apa itu Neo4J?</a></li>
+<li><a href="#install-neo4j">Install Neo4J</a>
+<ul>
+<li><a href="#menggunakana-reposiory-debian">Menggunakana Reposiory Debian</a></li>
+<li><a href="#install-neo4j-1">Install Neo4J</a></li>
+</ul></li>
+<li><a href="#menggunakanan-neo4j">Menggunakanan Neo4J</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Pada kesempatan kali ini kita akan membahas tentang <em>Graph Database</em> atau sering disebut dengan (GDBMS).</p>
+
+<h3 id="apa-itu-graph-database">Apa itu Graph Database?</h3>
+
+<p>Graph yang dimaksud pada graph database adalah definisi graph pada graph theory yang merupakan bagian dari ilmu matematika diskrit. Paper pertama yang membahas graph theory ditulis oleh Leonhard Eulear pada tahun 1736 yang membahas tentang permasalahan Konigsberg Bridge.
+Sebagai contoh, database relasional akan kewalahan melakukan query yang dibutuhkan untuk keperluan jejaring sosial seperti Facebook dan Twitter. Database relasional memang memiliki JOIN untuk menggabungkan tabel, tapi JOIN yang mereka miliki tidak memiliki arah dan label. Salah satu jenis database yang diciptakan untuk mengembalikan makna ‘relasional’ tersebut adalah graph database.</p>
+
+<h3 id="apa-itu-neo4j">Apa itu Neo4J?</h3>
+
+<p>Pada kesempatan ini, saya akan mencoba menggunakan sebuah graph database populer, Neo4j. Saya harus mulai dari mana? Pada database relasional, saya bisa mulai dengan merancang tabel dengan merancang skema dengan menggunakan ERD. Berbeda dari database relasional, sebuah graph database tidak memiliki skema seperti tabel dan kolom yang berbeda dengan isi (record). Segala sesuatunya adalah data! Oleh sebab itu, pada saat merancang untuk graph database, saya bisa langsung memakai contoh data.
+Neo4j adalah salah satu Graph Database populer dengan Cypher Query Language (CQL). Neo4j ditulis dalam Bahasa Java dan Neo4j adalah tool open source pertama untuk Grafik Database. Cukup itu saja dulu teorinya.</p>
+
+<h3 id="install-neo4j">Install Neo4J</h3>
+
+<p>Okay, setelah kita sedikit membahas Neo4J sekarang saatnya kita install Neo4J agar bisa merasakan sensasi Graph Databas secara nyata {%gemoji smile%}.</p>
+
+<p><strong>Karena Neo4J adalah based on Java Language</strong>
+Java 8 tidak ada dalam pakeu Ubuntu 14.04 LTS, atau Debian 8 (jessie) dan anda perlu menginstallnya secara manual jadi komputer kita harus terinstall Java Runtime yaa, saya asumsikan komputer anda sudah ada Java Runtime nya.
+Untku pengguna Debian bisa menggunakan <a href="https://packages.debian.org/jessie-backports/openjdk-8-jdk">OpenJDK 8 backports</a>.</p>
+
+<h4 id="menggunakana-reposiory-debian">Menggunakana Reposiory Debian</h4>
+
+<p>Untuk menginstall Neo4J kita gunakan Repository Debian yang juga bisa digunakan oleh Ubuntu, untuk menggunakan repository ini kita perlu melakukan langkah berikut :</p>
+
+<pre><code class="language-bash">wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
+echo 'deb http://debian.neo4j.org/repo stable/' &gt;/tmp/neo4j.list
+sudo mv /tmp/neo4j.list /etc/apt/sources.list.d
+sudo apt-get update
+</code></pre>
+
+<h4 id="install-neo4j-1">Install Neo4J</h4>
+
+<p>Setelah repository sudah kita daftarkan dalam list repo komputer kita, baru kita bisa menginstall Neo4Jnya, silahkan pilih Edition mana yang akan anda install dengan cara :
+Community Edition:</p>
+
+<pre><code class="language-bash">sudo apt-get install -y neo4j
+</code></pre>
+
+<p>Enterprise Edition:</p>
+
+<pre><code class="language-bash">sudo apt-get install -y neo4j-enterprise
+</code></pre>
+
+<h3 id="menggunakanan-neo4j">Menggunakanan Neo4J</h3>
+
+<p>Untuk menggunakan Neo4J kita harus mengaktifkannya dulu dengan cara lakukan perintah ini via Terminal anda :</p>
+
+<pre><code class="language-bash">sudo neo4j start
+</code></pre>
+
+<p>Setelah itu buka browser anda dan arahkan ke <a href="http://localhost:7474/">http://localhost:7474/</a> maka seperti inilah tamppilannya :</p>
+
+<p><img src="/graph-database-dengan-neo4j/1.png" alt="Neo4j Homepage" /></p>
+
+<p>Setelah terbuka, biasanya anda akan ada notifikasi bahwa database belum terkoneksi dan anda diminta untuk mengaktifkan server
+database nya lalu anda diminta lagi untuk memasukkan password untuk user <strong>neo4j</strong>.
+Jika sudah melalui proses tersebut maka kita siap untuk bermain-main dengan graph database.</p>
+
+<p>Di Neo4J sudah di sediakan contoh data yang dapat kita gunakan dan tentu dengan perintah-perintah CQLnya juga baik banget kan {%gemoji smile%}
+Untuk menggunakannya pilih menu dengan simbol <code>Bintang</code> lalu pilih <code>Example Graphs</code> lalu silahkan anda pilih kedua sample tersebut, saya memilih <code>Movie Graph</code> :</p>
+
+<p><img src="/graph-database-dengan-neo4j/2.png" alt="Figure 1" /></p>
+
+<p>Setelah itu klik tombol berbentuk simbol <code>play</code> disebelah kanan atas. Lalu akan muncul Contoh data Movie Graphnya seperti ini
+Untuk mulai menggunakan contoh ini klik tombol <code>&gt;</code> berwarna hitam dibagian kanan seperti ini :</p>
+
+<p><img src="/graph-database-dengan-neo4j/3.png" alt="Figure 2" /></p>
+
+<p>Lalu akan muncul contoh CQL <code>Create</code> berikut dengan datanya. Klik pada kotak yang terdapat CQL tersebut sepertin ini:</p>
+
+<p><img src="/graph-database-dengan-neo4j/4.png" alt="Figure 3" /></p>
+
+<p>Lalu perintah yang tadi di klik akan muncul di box untuk menjalankan perintah, setelah perintah nya muncul klik simbol <code>play</code> untuk menjalankannya :</p>
+
+<p><img src="/graph-database-dengan-neo4j/5.png" alt="Figure 4" /></p>
+
+<p>Setelah itu CQL akan memproses data yang dimasukkan, tunggu beberapa detik lalu akan muncul Graph Movie seperti ini :</p>
+
+<p><img src="/graph-database-dengan-neo4j/6.png" alt="Figure 6" /></p>
+
+<p>Keren kan {%gemoji smile%} hehee. Oke sampai disini dulu, jika ada pertanyaan silahkan berkomentar di kotak disqus dibawah ini.
+terimakasih semoga bermanfaat.</p>
+
+<p><strong>Note :</strong> Karena artikel ini belum sepenuhnya selesai maka tunggu updatenya, stay tune!.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-06-03</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/database/">database</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/setup-docker-on-ubuntu/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Setup Docker on Ubuntu</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/pulang-sekolah-menjelang-sore/">
+            <span class="next-text nav-default">Pulang Sekolah Menjelang Sore</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

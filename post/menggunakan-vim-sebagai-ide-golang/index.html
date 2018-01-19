@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Menggunakan Vim Sebagai IDE Golang - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Menggunakan Vim Sebagai IDE Golang" />
+<meta name="keywords" content="golang, go, vim, ide" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/menggunakan-vim-sebagai-ide-golang/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Menggunakan Vim Sebagai IDE Golang" />
+<meta property="og:description" content="Menggunakan Vim Sebagai IDE Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/menggunakan-vim-sebagai-ide-golang/" />
+
+
+
+<meta property="article:published_time" content="2017-01-14T18:31:18&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-01-14T18:31:18&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Menggunakan Vim Sebagai IDE Golang">
+<meta itemprop="description" content="Menggunakan Vim Sebagai IDE Golang">
+
+
+<meta itemprop="datePublished" content="2017-01-14T18:31:18&#43;07:00" />
+<meta itemprop="dateModified" content="2017-01-14T18:31:18&#43;07:00" />
+<meta itemprop="wordCount" content="1625">
+
+
+
+<meta itemprop="keywords" content="golang,vim," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Menggunakan Vim Sebagai IDE Golang"/>
+<meta name="twitter:description" content="Menggunakan Vim Sebagai IDE Golang"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Menggunakan Vim Sebagai IDE Golang</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-14 </span>
+        <div class="post-category">
+            
+              <a href="/categories/golang/"> GoLang </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#instalasi-dan-konfigurasi-pathogen">Instalasi dan Konfigurasi Pathogen</a></li>
+<li><a href="#instalasi-dan-kofigurasi-plugin-golang-dan-plugin-pendukung">Instalasi dan Kofigurasi Plugin Golang dan Plugin Pendukung</a></li>
+<li><a href="#powerline">Powerline</a></li>
+<li><a href="#pumbers">Pumbers</a></li>
+<li><a href="#autocompletion">Autocompletion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Untuk menggunakan Vim (<a href="http://www.vim.org">http://www.vim.org</a>), ada plugin utama serta berbagai plugin pendukung yang bisa digunakan. Sebaiknya, menggunakan pathogen untuk mempermudah pengelolaan berbagai plugin tersebut. Bagian ini akan menjelaskan berbagai konfigurasi serta instalasi yang diperlukan sehingga Vim bisa menjadi peranti untuk pengembangan aplikasi menggunakan Go. <!-- more --></p>
+
+<h2 id="instalasi-dan-konfigurasi-pathogen">Instalasi dan Konfigurasi Pathogen</h2>
+
+<p>Pathogen adalah plugin dari Tim Pope yang digunakan untuk mempermudah pengelolaan plugin. Kode sumber dari Pathogen bisa diperoleh di <a href="https://github.com/tpope/vim-pathogen">vim-pathogen</a> . Untuk instalasi, ikuti langkah berikut:</p>
+
+<pre><code class="language-bash">cd
+mkdir .vim/autoload
+mkdir .vim/bundle
+cd .vim/autoload
+wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>--2017-01-14 18:34:05--  https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+Resolving raw.github.com (raw.github.com)... 151.101.100.133
+Connecting to raw.github.com (raw.github.com)|151.101.100.133|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim [following]
+--2017-01-14 18:34:06--  https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.100.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.100.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 12474 (12K) [text/plain]
+
+Saving to: ‘pathogen.vim’
+
+pathogen.vim.1	100%[==========================================================================================================&gt;]  12,18K  --.-KB/s    in 0s
+
+2017-01-14 18:34:07 (115 MB/s) - ‘pathogen.vim.1’ saved [12474/12474]
+</code></pre>
+
+<p>Lalu kita lihat hasil download tadi</p>
+
+<pre><code class="language-bash">ls -la
+</code></pre>
+
+<p>Output</p>
+
+<pre><code class="language-bash">drwxr-xr-x 2 idiot idiot 4,0K Jan 14 18:35 .
+drwxr-xr-x 4 idiot idiot 4,0K Jan 10 00:50 ..
+-rw-r--r-- 1 idiot idiot  13K Jan 10 00:43 pathogen.vim
+</code></pre>
+
+<p>Setelah itu, untuk menggunakan Pathogen, letakkan aktivasinya di <code>$HOME/.vimrc</code> atau di <code>$HOME/.vim/vimrc</code> (saya piliah lokasi yang kedua) sebagai berikut:</p>
+
+<pre><code class="language-bash">execute pathogen#infect()
+</code></pre>
+
+<p>Setelah itu, semua plugin tinggal kita ambil dari repository (bisa dari github, bitbucket, dan lain-lain) langsung di-copy satu direktori ke direktori <code>$HOME/.vim/bundle</code>.</p>
+
+<h2 id="instalasi-dan-kofigurasi-plugin-golang-dan-plugin-pendukung">Instalasi dan Kofigurasi Plugin Golang dan Plugin Pendukung</h2>
+
+<p>Setelah selesai melakukan instalasi Pathogen, berbagai plugin yang diperlukan bisa diambil langsung dari Internet. Berikut ini adalah daftar yang digunakan penulis:</p>
+
+<ol>
+<li><strong>Colorschemes</strong>: untuk tema warna dari Vim. Bisa diperoleh di <a href="https://github.com/flazz/vim-colorschemes">vim-colorschemes</a></li>
+<li><strong>Nerdtree</strong>: untuk menampilkan file-file dalam struktur pohon di sebelah kiri sehingga memudahkan navigasi. Bisa diperoleh di <a href="https://github.com/scrooloose/nerdtree">nerdtree</a></li>
+<li><strong>Golang</strong>: plugin utama agar Vim mengenali kode sumber Go, bisa diperoleh di <a href="https://github.com/jnwhiteh/vim-golang">vim-golang</a>
+Cara instalasi:</li>
+</ol>
+
+<pre><code class="language-bash">cd $HOME/.vim/bundle
+git clone &lt;plugin-repo&gt;
+</code></pre>
+
+<p>Dan ada satu lagi yaitu color scheme walaupun ini bersifat opsional tapi ini sangat disarankan agar vim kita terlihat cantik, cara menambahkannya seperti ini :</p>
+
+<pre><code class="language-bash">mkdir ~/.vim/colors
+mkdir ~/.vim/tmp
+mkdir ~/.vim/tmp/undo
+mkdir ~/.vim/tmp/backup
+mkdir ~/.vim/tmp/swap
+</code></pre>
+
+<p>Copy code dibawah ini lalu simpan pada folder <code>~/.vim/colors</code> dan beri nama <code>molokai.vim</code> :</p>
+
+<pre><code>&quot; Vim color file
+&quot;
+&quot; Author: Tomas Restrepo &lt;tomas@winterdom.com&gt;
+&quot; https://github.com/tomasr/molokai
+&quot;
+&quot; Note: Based on the Monokai theme for TextMate
+&quot; by Wimer Hazenberg and its darker variant
+&quot; by Hamish Stuart Macpherson
+&quot;
+
+hi clear
+
+if version &gt; 580
+    &quot; no guarantees for version 5.8 and below, but this makes it stop
+    &quot; complaining
+    hi clear
+    if exists(&quot;syntax_on&quot;)
+        syntax reset
+    endif
+endif
+let g:colors_name=&quot;molokai&quot;
+
+if exists(&quot;g:molokai_original&quot;)
+    let s:molokai_original = g:molokai_original
+else
+    let s:molokai_original = 0
+endif
+
+
+hi Boolean         guifg=#AE81FF
+hi Character       guifg=#E6DB74
+hi Number          guifg=#AE81FF
+hi String          guifg=#E6DB74
+hi Conditional     guifg=#F92672               gui=bold
+hi Constant        guifg=#AE81FF               gui=bold
+hi Cursor          guifg=#000000 guibg=#F8F8F0
+hi iCursor         guifg=#000000 guibg=#F8F8F0
+hi Debug           guifg=#BCA3A3               gui=bold
+hi Define          guifg=#66D9EF
+hi Delimiter       guifg=#8F8F8F
+hi DiffAdd                       guibg=#13354A
+hi DiffChange      guifg=#89807D guibg=#4C4745
+hi DiffDelete      guifg=#960050 guibg=#1E0010
+hi DiffText                      guibg=#4C4745 gui=italic,bold
+
+hi Directory       guifg=#A6E22E               gui=bold
+hi Error           guifg=#E6DB74 guibg=#1E0010
+hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
+hi Exception       guifg=#A6E22E               gui=bold
+hi Float           guifg=#AE81FF
+hi FoldColumn      guifg=#465457 guibg=#000000
+hi Folded          guifg=#465457 guibg=#000000
+hi Function        guifg=#A6E22E
+hi Identifier      guifg=#FD971F
+hi Ignore          guifg=#808080 guibg=bg
+hi IncSearch       guifg=#C4BE89 guibg=#000000
+
+hi Keyword         guifg=#F92672               gui=bold
+hi Label           guifg=#E6DB74               gui=none
+hi Macro           guifg=#C4BE89               gui=italic
+hi SpecialKey      guifg=#66D9EF               gui=italic
+
+hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
+hi ModeMsg         guifg=#E6DB74
+hi MoreMsg         guifg=#E6DB74
+hi Operator        guifg=#F92672
+
+&quot; complete menu
+hi Pmenu           guifg=#66D9EF guibg=#000000
+hi PmenuSel                      guibg=#808080
+hi PmenuSbar                     guibg=#080808
+hi PmenuThumb      guifg=#66D9EF
+
+hi PreCondit       guifg=#A6E22E               gui=bold
+hi PreProc         guifg=#A6E22E
+hi Question        guifg=#66D9EF
+hi Repeat          guifg=#F92672               gui=bold
+hi Search          guifg=#000000 guibg=#FFE792
+&quot; marks
+hi SignColumn      guifg=#A6E22E guibg=#232526
+hi SpecialChar     guifg=#F92672               gui=bold
+hi SpecialComment  guifg=#7E8E91               gui=bold
+hi Special         guifg=#66D9EF guibg=bg      gui=italic
+if has(&quot;spell&quot;)
+    hi SpellBad    guisp=#FF0000 gui=undercurl
+    hi SpellCap    guisp=#7070F0 gui=undercurl
+    hi SpellLocal  guisp=#70F0F0 gui=undercurl
+    hi SpellRare   guisp=#FFFFFF gui=undercurl
+endif
+hi Statement       guifg=#F92672               gui=bold
+hi StatusLine      guifg=#455354 guibg=fg
+hi StatusLineNC    guifg=#808080 guibg=#080808
+hi StorageClass    guifg=#FD971F               gui=italic
+hi Structure       guifg=#66D9EF
+hi Tag             guifg=#F92672               gui=italic
+hi Title           guifg=#ef5939
+hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
+
+hi Typedef         guifg=#66D9EF
+hi Type            guifg=#66D9EF               gui=none
+hi Underlined      guifg=#808080               gui=underline
+
+hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
+hi VisualNOS                     guibg=#403D3D
+hi Visual                        guibg=#403D3D
+hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
+hi WildMenu        guifg=#66D9EF guibg=#000000
+
+hi TabLineFill     guifg=#1B1D1E guibg=#1B1D1E
+hi TabLine         guibg=#1B1D1E guifg=#808080 gui=none
+
+if s:molokai_original == 1
+   hi Normal          guifg=#F8F8F2 guibg=#272822
+   hi Comment         guifg=#75715E
+   hi CursorLine                    guibg=#3E3D32
+   hi CursorLineNr    guifg=#FD971F               gui=none
+   hi CursorColumn                  guibg=#3E3D32
+   hi ColorColumn                   guibg=#3B3A32
+   hi LineNr          guifg=#BCBCBC guibg=#3B3A32
+   hi NonText         guifg=#75715E
+   hi SpecialKey      guifg=#75715E
+else
+   hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
+   hi Comment         guifg=#7E8E91
+   hi CursorLine                    guibg=#293739
+   hi CursorLineNr    guifg=#FD971F               gui=none
+   hi CursorColumn                  guibg=#293739
+   hi ColorColumn                   guibg=#232526
+   hi LineNr          guifg=#465457 guibg=#232526
+   hi NonText         guifg=#465457
+   hi SpecialKey      guifg=#465457
+end
+
+&quot;
+&quot; Support for 256-color terminal
+&quot;
+if &amp;t_Co &gt; 255
+   if s:molokai_original == 1
+      hi Normal                   ctermbg=234
+      hi CursorLine               ctermbg=235   cterm=none
+      hi CursorLineNr ctermfg=208               cterm=none
+   else
+      hi Normal       ctermfg=252 ctermbg=233
+      hi CursorLine               ctermbg=234   cterm=none
+      hi CursorLineNr ctermfg=208               cterm=none
+   endif
+   hi Boolean         ctermfg=135
+   hi Character       ctermfg=144
+   hi Number          ctermfg=135
+   hi String          ctermfg=144
+   hi Conditional     ctermfg=161               cterm=bold
+   hi Constant        ctermfg=135               cterm=bold
+   hi Cursor          ctermfg=16  ctermbg=253
+   hi Debug           ctermfg=225               cterm=bold
+   hi Define          ctermfg=81
+   hi Delimiter       ctermfg=241
+
+   hi DiffAdd                     ctermbg=24
+   hi DiffChange      ctermfg=181 ctermbg=239
+   hi DiffDelete      ctermfg=162 ctermbg=53
+   hi DiffText                    ctermbg=102 cterm=bold
+
+   hi Directory       ctermfg=118               cterm=bold
+   hi Error           ctermfg=219 ctermbg=89
+   hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
+   hi Exception       ctermfg=118               cterm=bold
+   hi Float           ctermfg=135
+   hi FoldColumn      ctermfg=67  ctermbg=16
+   hi Folded          ctermfg=67  ctermbg=16
+   hi Function        ctermfg=118
+   hi Identifier      ctermfg=208               cterm=none
+   hi Ignore          ctermfg=244 ctermbg=232
+   hi IncSearch       ctermfg=193 ctermbg=16
+
+   hi keyword         ctermfg=161               cterm=bold
+   hi Label           ctermfg=229               cterm=none
+   hi Macro           ctermfg=193
+   hi SpecialKey      ctermfg=81
+
+   hi MatchParen      ctermfg=233  ctermbg=208 cterm=bold
+   hi ModeMsg         ctermfg=229
+   hi MoreMsg         ctermfg=229
+   hi Operator        ctermfg=161
+
+   &quot; complete menu
+   hi Pmenu           ctermfg=81  ctermbg=16
+   hi PmenuSel        ctermfg=255 ctermbg=242
+   hi PmenuSbar                   ctermbg=232
+   hi PmenuThumb      ctermfg=81
+
+   hi PreCondit       ctermfg=118               cterm=bold
+   hi PreProc         ctermfg=118
+   hi Question        ctermfg=81
+   hi Repeat          ctermfg=161               cterm=bold
+   hi Search          ctermfg=0   ctermbg=222   cterm=NONE
+
+   &quot; marks column
+   hi SignColumn      ctermfg=118 ctermbg=235
+   hi SpecialChar     ctermfg=161               cterm=bold
+   hi SpecialComment  ctermfg=245               cterm=bold
+   hi Special         ctermfg=81
+   if has(&quot;spell&quot;)
+       hi SpellBad                ctermbg=52
+       hi SpellCap                ctermbg=17
+       hi SpellLocal              ctermbg=17
+       hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
+   endif
+   hi Statement       ctermfg=161               cterm=bold
+   hi StatusLine      ctermfg=238 ctermbg=253
+   hi StatusLineNC    ctermfg=244 ctermbg=232
+   hi StorageClass    ctermfg=208
+   hi Structure       ctermfg=81
+   hi Tag             ctermfg=161
+   hi Title           ctermfg=166
+   hi Todo            ctermfg=231 ctermbg=232   cterm=bold
+
+   hi Typedef         ctermfg=81
+   hi Type            ctermfg=81                cterm=none
+   hi Underlined      ctermfg=244               cterm=underline
+
+   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+   hi VisualNOS                   ctermbg=238
+   hi Visual                      ctermbg=235
+   hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
+   hi WildMenu        ctermfg=81  ctermbg=16
+
+   hi Comment         ctermfg=59
+   hi CursorColumn                ctermbg=236
+   hi ColorColumn                 ctermbg=236
+   hi LineNr          ctermfg=250 ctermbg=236
+   hi NonText         ctermfg=59
+
+   hi SpecialKey      ctermfg=59
+
+   if exists(&quot;g:rehash256&quot;) &amp;&amp; g:rehash256 == 1
+       hi Normal       ctermfg=252 ctermbg=234
+       hi CursorLine               ctermbg=236   cterm=none
+       hi CursorLineNr ctermfg=208               cterm=none
+
+       hi Boolean         ctermfg=141
+       hi Character       ctermfg=222
+       hi Number          ctermfg=141
+       hi String          ctermfg=222
+       hi Conditional     ctermfg=197               cterm=bold
+       hi Constant        ctermfg=141               cterm=bold
+
+       hi DiffDelete      ctermfg=125 ctermbg=233
+
+       hi Directory       ctermfg=154               cterm=bold
+       hi Error           ctermfg=222 ctermbg=233
+       hi Exception       ctermfg=154               cterm=bold
+       hi Float           ctermfg=141
+       hi Function        ctermfg=154
+       hi Identifier      ctermfg=208
+
+       hi Keyword         ctermfg=197               cterm=bold
+       hi Operator        ctermfg=197
+       hi PreCondit       ctermfg=154               cterm=bold
+       hi PreProc         ctermfg=154
+       hi Repeat          ctermfg=197               cterm=bold
+
+       hi Statement       ctermfg=197               cterm=bold
+       hi Tag             ctermfg=197
+       hi Title           ctermfg=203
+       hi Visual                      ctermbg=238
+
+       hi Comment         ctermfg=244
+       hi LineNr          ctermfg=239 ctermbg=235
+       hi NonText         ctermfg=239
+       hi SpecialKey      ctermfg=239
+   endif
+end
+
+&quot; Must be at the end, because of ctermbg=234 bug.
+&quot; https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+set background=dark
+</code></pre>
+
+<h2 id="powerline">Powerline</h2>
+
+<p>install plugin vim powerline, pastikan sudah install git
+clone dulu repo powerline</p>
+
+<pre><code class="language-bash">git clone git://github.com/Lokaltog/vim-powerline.git ~/.vim/bundle/powerline
+</code></pre>
+
+<h2 id="pumbers">Pumbers</h2>
+
+<p>Untuk numbering kita membutuhkan plugins lagi, langsung saja clone numbers vim nya :</p>
+
+<pre><code class="language-bash">git clone https://github.com/myusuf3/numbers.vim.git ~/.vim/bundle/numbers
+</code></pre>
+
+<p>Hasil dari menjalankan <code>vim</code> melalui shell untuk menulis kode sumber Go bisa dilihat pada gambar berikut:</p>
+
+<p><img src="/menggunakan-vim-sebagai-ide-golang/1.png" alt="Figure 1" /></p>
+
+<h2 id="autocompletion">Autocompletion</h2>
+
+<p>Vim menyediakan fasilitas autocompletion melalui Omniautocompletion. Fasilitas ini sudah terinstall saat kita menginstall Vim. Untuk mengaktifkan fasilitas ini untuk keperluan Go, kita harus menginstall dan mengaktifkan Gocode (<a href="https://github.com/nsf/gocode">https://github.com/nsf/gocode</a>). Sebaiknya kode sumber dari Gocode diambil semua karena ada script Vim yang akan kita gunakan:</p>
+
+<pre><code class="language-bash">git clone https://github.com/nsf/gocode.git
+</code></pre>
+
+<p>Setelah itu, install Gocode menggunakan perintah <code>go get -u github.com/nsf/gocode</code>. Hasilnya adalah file executable binary $GOROOT/bin/gocode. Sebelum menggunakan Vim, aktifkan dulu gocode dengan mengeksekusi gocode melalui shell. Setelah itu, tambahkan satu baris di $HOME/.vim/vimrc: set ofu=syntaxcomplete#Complete di bawah baris filetype plugin indent on.
+Kode sumber lengkap dari <code>$HOME/.vim/vimrc</code> yang penulis gunakan bisa dilihat pada Listing berikut:</p>
+
+<pre><code>set encoding=utf-8
+set laststatus=2
+set number
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set colorcolumn=+1
+set cursorline              &quot; highligh current line
+set ignorecase
+set smartcase
+set showmatch
+set hlsearch
+set gdefault
+set virtualedit=block
+set cpoptions+=n
+set ofu=syntaxcomplete#Complete
+
+filetype plugin indent on
+
+&quot; colors
+colorscheme molokai
+syntax on
+set t_Co=256
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+let Powerline_symbols = 'fancy'
+
+inoremap &lt;c-a&gt; &lt;esc&gt;I
+inoremap &lt;c-e&gt; &lt;esc&gt;A
+
+&quot; Return to the previously selected line in the file
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line(&quot;'\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;'\&quot;&quot;) &lt;= line(&quot;$&quot;) |
+        \ execute 'normal! g`&quot;zvzz' |
+        \ endif
+augroup END
+
+&quot; remove seach-highlights when pressing ,+&lt;space&gt;
+let mapleader=&quot;,&quot;
+noremap &lt;leader&gt;&lt;space&gt; :noh&lt;cr&gt;: call clearmatches()&lt;cr&gt;
+
+&quot; Buffers, Backup &amp; Co
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backup
+set noswapfile
+set ruler
+set history=10000
+set undofile
+set undoreload=10000
+set title
+set autoindent
+set autoread
+set lazyredraw
+set mouse=a
+
+&quot; reload .vimrc on saving
+au BufWritePost .vimrc so ~/.vim/vimrc
+
+execute pathogen#infect()
+call pathogen#infect('bundle/{}')
+
+nnoremap &lt;F3&gt; :NumbersToggle&lt;CR&gt;
+nnoremap &lt;F4&gt; :NumbersOnOff&lt;CR&gt;
+
+&quot; Original monokai background color
+let g:molokai_original = 1
+
+&quot; Nerdtree Setup
+autocmd vimenter * NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTreeType&quot;) &amp;&amp; b:NERDTreeType == &quot;primary&quot;) | q | endif
+let g:NERDTreeDirArrows=0
+
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+set grepprg=grep\ -nH\ $*
+
+&quot; Fix bug 256color from tmux
+if &amp;term =~ '256color'
+  &quot; disable Background Color Erase (BCE)
+  set t_ut=
+endif
+</code></pre>
+
+<p>Untuk mengaktifkan completion, kita harus masuk ke mode Insert dari Vim, setelah itu tekan Ctrl-X, Ctrl-O secara cepat. Hasil autocompletion bisa dilihat di gambar berikut:
+<img src="/menggunakan-vim-sebagai-ide-golang/2.png" alt="Figure 2" /></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-01-14</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/golang/">golang</a>
+          
+          <a href="/tags/vim/">vim</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/instalasi-golang/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Instalasi Golang</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/setup-docker-on-ubuntu/">
+            <span class="next-text nav-default">Setup Docker on Ubuntu</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

@@ -7,107 +7,80 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Imam Digmi</copyright>
-    <lastBuildDate>Thu, 31 Aug 2017 15:43:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jun 2016 14:06:22 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>English</title>
-      <link>https://imamdigmi.github.io/tags/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>Database</title>
+      <link>https://imamdigmi.github.io/tags/database/</link>
+      <pubDate>Fri, 03 Jun 2016 14:06:22 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/english/</guid>
+      <guid>https://imamdigmi.github.io/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Preview</title>
-      <link>https://imamdigmi.github.io/tags/preview/</link>
-      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
+      <title>Diary</title>
+      <link>https://imamdigmi.github.io/tags/diary/</link>
+      <pubDate>Wed, 20 Apr 2016 17:44:20 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/preview/</guid>
+      <guid>https://imamdigmi.github.io/tags/diary/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Syntax Highlighting</title>
-      <link>https://imamdigmi.github.io/tags/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      <title>Docker</title>
+      <link>https://imamdigmi.github.io/tags/docker/</link>
+      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/syntax-highlighting/</guid>
+      <guid>https://imamdigmi.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tag 1</title>
-      <link>https://imamdigmi.github.io/tags/tag-1/</link>
-      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
+      <title>Golang</title>
+      <link>https://imamdigmi.github.io/tags/golang/</link>
+      <pubDate>Sat, 21 Jan 2017 18:25:27 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/tag-1/</guid>
+      <guid>https://imamdigmi.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tag 2</title>
-      <link>https://imamdigmi.github.io/tags/tag-2/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>Setup</title>
+      <link>https://imamdigmi.github.io/tags/setup/</link>
+      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/tag-2/</guid>
+      <guid>https://imamdigmi.github.io/tags/setup/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tag 3</title>
-      <link>https://imamdigmi.github.io/tags/tag-3/</link>
-      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
+      <title>Tips</title>
+      <link>https://imamdigmi.github.io/tags/tips/</link>
+      <pubDate>Sat, 21 Jan 2017 18:17:52 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/tag-3/</guid>
+      <guid>https://imamdigmi.github.io/tags/tips/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tag 4</title>
-      <link>https://imamdigmi.github.io/tags/tag-4/</link>
-      <pubDate>Wed, 30 Aug 2017 01:53:34 +0800</pubDate>
+      <title>Ubuntu</title>
+      <link>https://imamdigmi.github.io/tags/ubuntu/</link>
+      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/tag-4/</guid>
+      <guid>https://imamdigmi.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tag 5</title>
-      <link>https://imamdigmi.github.io/tags/tag-5/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      <title>Vim</title>
+      <link>https://imamdigmi.github.io/tags/vim/</link>
+      <pubDate>Sat, 14 Jan 2017 18:31:18 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/tag-5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Theme Preview</title>
-      <link>https://imamdigmi.github.io/tags/theme-preview/</link>
-      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/theme-preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>中文</title>
-      <link>https://imamdigmi.github.io/tags/%E4%B8%AD%E6%96%87/</link>
-      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/%E4%B8%AD%E6%96%87/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日本語</title>
-      <link>https://imamdigmi.github.io/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/</link>
-      <pubDate>Wed, 30 Aug 2017 01:53:34 +0800</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/</guid>
+      <guid>https://imamdigmi.github.io/tags/vim/</guid>
       <description></description>
     </item>
     

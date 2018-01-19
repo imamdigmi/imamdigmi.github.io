@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Websocket Dengan Golang - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Berkenalan dengan Websocket di Golang" />
+<meta name="keywords" content="go, golang, websocket" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/websocket-dengan-golang/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Websocket Dengan Golang" />
+<meta property="og:description" content="Berkenalan dengan Websocket di Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/websocket-dengan-golang/" />
+
+
+
+<meta property="article:published_time" content="2017-01-21T18:25:27&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-01-21T18:25:27&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Websocket Dengan Golang">
+<meta itemprop="description" content="Berkenalan dengan Websocket di Golang">
+
+
+<meta itemprop="datePublished" content="2017-01-21T18:25:27&#43;07:00" />
+<meta itemprop="dateModified" content="2017-01-21T18:25:27&#43;07:00" />
+<meta itemprop="wordCount" content="379">
+
+
+
+<meta itemprop="keywords" content="golang," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Websocket Dengan Golang"/>
+<meta name="twitter:description" content="Berkenalan dengan Websocket di Golang"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Websocket Dengan Golang</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/golang/"> GoLang </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#websocket-dengan-golang-aplikasi-chatting">Websocket dengan golang (Aplikasi Chatting)</a></li>
+<li><a href="#bagaimana-skenarionya">Bagaimana Skenarionya?</a></li>
+<li><a href="#persiapan">Persiapan</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>WebSocket merupakan sebuah protokol komunikasi dua arah yang dapat digunakan oleh browser. Jika pada AJAX kita hanya dapat melakukan komunikasi satu arah dengan mengirimkan request kepada server dan menunggu balasannya, maka menggunakan WebSocket kita tidak hanya dapat mengirimkan request kepada server, tetapi juga menerima data dari server tanpa harus mengirimkan request terlebih dahulu. Hal ini berarti ketika menggunakan WebSocket pengguna harus terus menerus terkoneksi dengan server, dan kita memerlukan sebuah server khusus untuk dapat menjalankan aplikasi WebSocket dengan benar.</p>
+
+<p>kita dapat melihat bagaimana dalam kasus AJAX, setiap request dari pengguna maupun respon dari server dilakukan secara terpisah. Jika ingin mengirimkan request ke server, kita perlu membuka koneksi baru yang kemudian akan dibalas oleh server seperti ia membalas permintaan halaman HTML biasa. Server juga tidak dapat langsung melakukan pengiriman data ke klien tanpa ada permintaan terlebih dahulu. Hal ini berbeda dengan pola komunikasi WebSocket, di mana koneksi berjalan tanpa terputus dan server dapat mengirimkan data atau perintah tanpa harus ada permintaan dari pengguna terlebih dahulu. Dengan begitu, WebSocket bahkan juga memungkinkan server mengirimkan data atau perintah ke semua klien yang terkoneksi, misalkan untuk memberikan notifikasi global.</p>
+
+<p>Untuk dapat melihat langsung bagaimana cara kerja WebSocket, kita akan langsung melakukan eksperimen. Objek yang diperlukan untuk menggunakan WebSocket dari browser adalah WebSocket. Tetapi sebelumnya, kita memerlukan sedikit persiapan terlebih dahulu, yaitu komponen server dari WebSocket.</p>
+
+<h3 id="websocket-dengan-golang-aplikasi-chatting">Websocket dengan golang (Aplikasi Chatting)</h3>
+
+<p>Pertama, pastikan golang sudah terinstall jika belum bisa baca <a href="http://imamdigmi.github.io/blog/2017/01/15/install-golang-di-linux/">disini</a> and make sure to go get:</p>
+
+<pre><code class="language-bash">go get github.com/gorilla/websocket
+</code></pre>
+
+<h3 id="bagaimana-skenarionya">Bagaimana Skenarionya?</h3>
+
+<ol>
+<li>Klien menghubungkan koneksi ke server dengan browser.</li>
+<li>Server memberikan respon tampilan web kepada klien.</li>
+<li>Klien terkoneksi dengan server melalui websocket dengan javascript.</li>
+<li>Server menerimanya dengan standar <code>http handler</code>.</li>
+<li>Membuat koneksi websocker dari <code>http</code>.</li>
+<li>Berkomunikasi dengan klien.</li>
+<li>Memutuskan koneksi.</li>
+</ol>
+
+<h3 id="persiapan">Persiapan</h3>
+
+<p>Sebelum membuat code go, kita akan membuat tampilannya terlebih dahulu, sebut saja index.html buat file dengan nama index.html lalu isi file tersebut dengan :</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  function myWebsocketStart() {
+      var ws = new WebSocket(&quot;ws://localhost:3000/websocket&quot;);
+      ws.onmessage = function (evt) {
+          var myTextArea = document.getElementById(&quot;msg&quot;);
+          myTextArea.value = myTextArea.value + &quot;\n&quot; + evt.data
+      };
+
+      ws.onclose = function() {
+          var myTextArea = document.getElementById(&quot;textarea1&quot;);
+          myTextArea.value = myTextArea.value + &quot;\n&quot; + &quot;Connection closed&quot;;
+      };
+  }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button onclick=&quot;javascript:myWebsocketStart()&quot;&gt;Subscribe&lt;/button&gt;
+&lt;textarea id=&quot;msg&quot;&gt;My message ...&lt;/textarea&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Terimakasih, Semoga bermanfaat {%gemoji wink%}</p>
+
+<p>Sumber : jacobmartins.com, bertzzie.com</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-01-21</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/golang/">golang</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/layout-keyboard-dvorak-di-ubuntu/">
+            <span class="next-text nav-default">Layout Keyboard di Ubuntu (Qwerty-Dvorak)</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

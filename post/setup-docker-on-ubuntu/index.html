@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Setup Docker on Ubuntu - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Setup Docker Engine one Ubuntu 16.04" />
+<meta name="keywords" content="docker, ubuntu, setup" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/setup-docker-on-ubuntu/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Setup Docker on Ubuntu" />
+<meta property="og:description" content="Setup Docker Engine one Ubuntu 16.04" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/setup-docker-on-ubuntu/" />
+
+
+
+<meta property="article:published_time" content="2017-01-14T18:02:13&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-01-14T18:02:13&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Setup Docker on Ubuntu">
+<meta itemprop="description" content="Setup Docker Engine one Ubuntu 16.04">
+
+
+<meta itemprop="datePublished" content="2017-01-14T18:02:13&#43;07:00" />
+<meta itemprop="dateModified" content="2017-01-14T18:02:13&#43;07:00" />
+<meta itemprop="wordCount" content="692">
+
+
+
+<meta itemprop="keywords" content="docker,ubuntu,setup," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Setup Docker on Ubuntu"/>
+<meta name="twitter:description" content="Setup Docker Engine one Ubuntu 16.04"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Setup Docker on Ubuntu</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-14 </span>
+        <div class="post-category">
+            
+              <a href="/categories/docker/"> Docker </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#step-1-installing-docker">Step 1 — Installing Docker</a></li>
+<li><a href="#step-2-executing-the-docker-command-without-sudo-optional">Step 2 — Executing the Docker Command Without Sudo (Optional)</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To follow this tutorial, you will need the following:
+- 64-bit Ubuntu 16.04 Droplet
+- Non-root user with sudo privileges Initial Setup Guide for Ubuntu 16.04 explains how to set this up.) <!-- more -->
+&gt; Note: Docker requires a 64-bit version of Ubuntu as well as a kernel version equal to or greater than 3.10. The default 64-bit Ubuntu 16.04 Droplet meets these requirements.</p>
+
+<p>All the commands in this tutorial should be run as a non-root user. If root access is required for the command, it will be preceded by sudo. Initial Setup Guide for Ubuntu 16.04 explains how to add users and give them <code>sudo</code> access.</p>
+
+<h2 id="step-1-installing-docker">Step 1 — Installing Docker</h2>
+
+<p>The Docker installation package available in the official Ubuntu 16.04 repository may not be the latest version. To get the latest and greatest version, install Docker from the official Docker repository. This section shows you how to do just that.</p>
+
+<p>But first, let&rsquo;s update the package database:</p>
+
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+
+<p>Now let&rsquo;s install Docker. Add the GPG key for the official Docker repository to the system:</p>
+
+<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+</code></pre>
+
+<p>Add the Docker repository to APT sources:</p>
+
+<pre><code class="language-bash">sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+</code></pre>
+
+<p>Update the package database with the Docker packages from the newly added repo:</p>
+
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+
+<p>Make sure you are about to install from the Docker repo instead of the default Ubuntu 16.04 repo:</p>
+
+<pre><code class="language-bash">apt-cache policy docker-engine
+</code></pre>
+
+<p>You should see output similar to the follow:</p>
+
+<pre><code class="language-bash">docker-engine:
+  Installed: 1.12.5-0~ubuntu-xenial
+  Candidate: 1.12.6-0~ubuntu-xenial
+  Version table:
+     1.12.6-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+	*** 1.12.5-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+        100 /var/lib/dpkg/status
+     1.12.4-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.3-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+        500 http://apt.kubernetes.io kubernetes-xenial/main amd64 Packages
+     1.11.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+</code></pre>
+
+<p>Notice that <code>docker-engine</code> is not installed, but the candidate for installation is from the Docker repository for Ubuntu 16.04. The <code>docker-engine</code> version number might be different.
+Finally, install Docker:</p>
+
+<pre><code class="language-bash">sudo apt-get install -y docker-engine
+</code></pre>
+
+<p>Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it&rsquo;s running:</p>
+
+<pre><code class="language-bash">sudo systemctl status docker
+</code></pre>
+
+<p>The output should be similar to the following, showing that the service is active and running:</p>
+
+<pre><code class="language-bash">● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; disabled; vendor preset: enabled)
+   Active: active (running) since Sab 2017-01-14 14:07:19 WIB; 4h 16min ago
+     Docs: https://docs.docker.com
+ Main PID: 5933 (dockerd)
+    Tasks: 40
+   Memory: 97.1M
+      CPU: 9.123s
+   CGroup: /system.slice/docker.service
+           ├─2254 docker-containerd-shim 9f885c49ddee1c728ce391ed96bb650fb92a606183c44446387748c1379bad6b /var/run/docker/libcontainerd/9f885c49ddee1c728ce391ed96bb650fb92a606183c44446387748c1379ba
+           ├─5933 /usr/bin/dockerd -H fd://
+           └─5953 docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --shim docker-containerd-shim --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/
+</code></pre>
+
+<p>Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We&rsquo;ll explore how to use the docker command later in this tutorial.</p>
+
+<h2 id="step-2-executing-the-docker-command-without-sudo-optional">Step 2 — Executing the Docker Command Without Sudo (Optional)</h2>
+
+<p>By default, running the docker command requires root privileges — that is, you have to prefix the command with sudo. It can also be run by a user in the docker group, which is automatically created during the installation of Docker. If you attempt to run the docker command without prefixing it with sudo or without being in the docker group, you&rsquo;ll get an output like this:</p>
+
+<pre><code class="language-bash">docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See 'docker run --help'.
+</code></pre>
+
+<p>If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:</p>
+
+<pre><code class="language-bash">sudo usermod -aG docker $(whoami)
+</code></pre>
+
+<p>You will need to log out of the Droplet and back in as the same user to enable this change.</p>
+
+<p>If you need to add a user to the docker group that you&rsquo;re not logged in as, declare that username explicitly using:</p>
+
+<pre><code class="language-bash">sudo usermod -aG docker &lt;username&gt;
+</code></pre>
+
+<p>The rest of this article assumes you are running the docker command as a user in the docker user group. If you choose not to, please prepend the commands with sudo.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-01-14</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/docker/">docker</a>
+          
+          <a href="/tags/ubuntu/">ubuntu</a>
+          
+          <a href="/tags/setup/">setup</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/menggunakan-vim-sebagai-ide-golang/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Menggunakan Vim Sebagai IDE Golang</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/graph-database-dengan-neo4j/">
+            <span class="next-text nav-default">Graph Database Dengan Neo4j</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

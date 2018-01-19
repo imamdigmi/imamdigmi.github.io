@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on JournalToday</title>
+    <link>https://imamdigmi.github.io/categories/golang/</link>
+    <description>Recent content in Golang on JournalToday</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Imam Digmi</copyright>
+    <lastBuildDate>Sat, 21 Jan 2017 18:25:27 +0700</lastBuildDate>
+    
+	<atom:link href="https://imamdigmi.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Websocket Dengan Golang</title>
+      <link>https://imamdigmi.github.io/post/websocket-dengan-golang/</link>
+      <pubDate>Sat, 21 Jan 2017 18:25:27 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/websocket-dengan-golang/</guid>
+      <description>&lt;p&gt;WebSocket merupakan sebuah protokol komunikasi dua arah yang dapat digunakan oleh browser. Jika pada AJAX kita hanya dapat melakukan komunikasi satu arah dengan mengirimkan request kepada server dan menunggu balasannya, maka menggunakan WebSocket kita tidak hanya dapat mengirimkan request kepada server, tetapi juga menerima data dari server tanpa harus mengirimkan request terlebih dahulu. Hal ini berarti ketika menggunakan WebSocket pengguna harus terus menerus terkoneksi dengan server, dan kita memerlukan sebuah server khusus untuk dapat menjalankan aplikasi WebSocket dengan benar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Instalasi Golang</title>
+      <link>https://imamdigmi.github.io/post/instalasi-golang/</link>
+      <pubDate>Sun, 15 Jan 2017 17:47:17 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/instalasi-golang/</guid>
+      <description>&lt;p&gt;Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Menggunakan Vim Sebagai IDE Golang</title>
+      <link>https://imamdigmi.github.io/post/menggunakan-vim-sebagai-ide-golang/</link>
+      <pubDate>Sat, 14 Jan 2017 18:31:18 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/menggunakan-vim-sebagai-ide-golang/</guid>
+      <description>Untuk menggunakan Vim (http://www.vim.org), ada plugin utama serta berbagai plugin pendukung yang bisa digunakan. Sebaiknya, menggunakan pathogen untuk mempermudah pengelolaan berbagai plugin tersebut. Bagian ini akan menjelaskan berbagai konfigurasi serta instalasi yang diperlukan sehingga Vim bisa menjadi peranti untuk pengembangan aplikasi menggunakan Go. Instalasi dan Konfigurasi Pathogen Pathogen adalah plugin dari Tim Pope yang digunakan untuk mempermudah pengelolaan plugin. Kode sumber dari Pathogen bisa diperoleh di vim-pathogen . Untuk instalasi, ikuti langkah berikut:</description>
+    </item>
+    
+  </channel>
+</rss>
