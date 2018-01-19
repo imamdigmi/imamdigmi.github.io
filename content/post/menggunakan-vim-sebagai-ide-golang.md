@@ -397,7 +397,7 @@ git clone https://github.com/myusuf3/numbers.vim.git ~/.vim/bundle/numbers
 
 Hasil dari menjalankan `vim` melalui shell untuk menulis kode sumber Go bisa dilihat pada gambar berikut:
 
-![Figure 1](/menggunakan-vim-sebagai-ide-golang/1.png)
+![Figure 1](/images/menggunakan-vim-sebagai-ide-golang/1.png)
 
 ## Autocompletion
 Vim menyediakan fasilitas autocompletion melalui Omniautocompletion. Fasilitas ini sudah terinstall saat kita menginstall Vim. Untuk mengaktifkan fasilitas ini untuk keperluan Go, kita harus menginstall dan mengaktifkan Gocode (https://github.com/nsf/gocode). Sebaiknya kode sumber dari Gocode diambil semua karena ada script Vim yang akan kita gunakan:
@@ -500,4 +500,4 @@ endif
 ```
 
 Untuk mengaktifkan completion, kita harus masuk ke mode Insert dari Vim, setelah itu tekan Ctrl-X, Ctrl-O secara cepat. Hasil autocompletion bisa dilihat di gambar berikut:
-![Figure 2](/menggunakan-vim-sebagai-ide-golang/2.png)
+![Figure 2](/images/menggunakan-vim-sebagai-ide-golang/2.png)

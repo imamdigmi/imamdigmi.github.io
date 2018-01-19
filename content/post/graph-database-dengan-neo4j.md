@@ -63,7 +63,7 @@ sudo neo4j start
 ```
 Setelah itu buka browser anda dan arahkan ke [http://localhost:7474/](http://localhost:7474/) maka seperti inilah tamppilannya :
 
-![Neo4j Homepage](/graph-database-dengan-neo4j/1.png)
+![Neo4j Homepage](/images/graph-database-dengan-neo4j/1.png)
 
 Setelah terbuka, biasanya anda akan ada notifikasi bahwa database belum terkoneksi dan anda diminta untuk mengaktifkan server
 database nya lalu anda diminta lagi untuk memasukkan password untuk user __neo4j__.
@@ -72,24 +72,24 @@ Jika sudah melalui proses tersebut maka kita siap untuk bermain-main dengan grap
 Di Neo4J sudah di sediakan contoh data yang dapat kita gunakan dan tentu dengan perintah-perintah CQLnya juga baik banget kan {%gemoji smile%}
 Untuk menggunakannya pilih menu dengan simbol ``Bintang`` lalu pilih ``Example Graphs`` lalu silahkan anda pilih kedua sample tersebut, saya memilih ``Movie Graph`` :
 
-![Figure 1](/graph-database-dengan-neo4j/2.png)
+![Figure 1](/images/graph-database-dengan-neo4j/2.png)
 
 Setelah itu klik tombol berbentuk simbol ``play`` disebelah kanan atas. Lalu akan muncul Contoh data Movie Graphnya seperti ini
 Untuk mulai menggunakan contoh ini klik tombol ``>`` berwarna hitam dibagian kanan seperti ini :
 
-![Figure 2](/graph-database-dengan-neo4j/3.png)
+![Figure 2](/images/graph-database-dengan-neo4j/3.png)
 
 Lalu akan muncul contoh CQL ``Create`` berikut dengan datanya. Klik pada kotak yang terdapat CQL tersebut sepertin ini:
 
-![Figure 3](/graph-database-dengan-neo4j/4.png)
+![Figure 3](/images/graph-database-dengan-neo4j/4.png)
 
 Lalu perintah yang tadi di klik akan muncul di box untuk menjalankan perintah, setelah perintah nya muncul klik simbol ``play`` untuk menjalankannya :
 
-![Figure 4](/graph-database-dengan-neo4j/5.png)
+![Figure 4](/images/graph-database-dengan-neo4j/5.png)
 
 Setelah itu CQL akan memproses data yang dimasukkan, tunggu beberapa detik lalu akan muncul Graph Movie seperti ini :
 
-![Figure 6](/graph-database-dengan-neo4j/6.png)
+![Figure 6](/images/graph-database-dengan-neo4j/6.png)
 
 Keren kan {%gemoji smile%} hehee. Oke sampai disini dulu, jika ada pertanyaan silahkan berkomentar di kotak disqus dibawah ini.
 terimakasih semoga bermanfaat.

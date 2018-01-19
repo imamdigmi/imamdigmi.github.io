@@ -34,7 +34,7 @@ Codename:       yakkety
 Sebelum kita meng-install golang kita harus mendownload aplikasi golang terlebih dahulu [disini](https://golang.org/dl/) lalu klik pada bagian Linux dan jangan lupa pilih jenis bit komputer anda.
 > NOTE: Pada artikel ini ditulis versi stabil dari golang yaitu 1.7.4 dan kita akan menggunakan versi ini.
 
-![Download](/instalasi-golang/download.png)
+![Download](/images/instalasi-golang/download.png)
 
 Walaupun sebenarnya ada banyak versi yang di sediakan oleh golang termasuk unstable version, tapi lebih baik kita download yang stable version saja agar tidak ada masalah nantinya ketika kita bermain dengan golang.
 ```bash
@@ -130,7 +130,7 @@ echo "export PATH=\"\$GOPATH/bin:\$(go env GOROOT)/bin:\$PATH\"" >> ~/.profile
 > TIP: Langkah diatas kita lalukan agar easily accessible ketika kita hendak mengakses file binari yang kita install dengan perintah `go install` pada proyek kita.
 
 In the end, kumpulan `PATH` yang kita taruh pada file .profile adalah sebagai berikut :
-![Profile File](/instalasi-golang/profile-file.png)
+![Profile File](/images/instalasi-golang/profile-file.png)
 
 Setelah itu mari kita lihat go envirounment yang sudah kita buat :
 ```bash
@@ -172,6 +172,6 @@ Jalankan program yang kita buat tadi :
 ```bash
 go run main.go
 ```
-![Test Installation](/instalasi-golang/test-installation.png)
+![Test Installation](/images/instalasi-golang/test-installation.png)
 
 Oke sampai disini dulu, semoga bermanfaat {%gemoji smile%}

@@ -29,12 +29,12 @@ Untu lebih jelasnya bisa baca [disini](http://www.dvorak-keyboard.com/) untuk le
 Untuk mengubah tata letak keyboard di ubuntu sangatlah mudah.
 
 1. Buka System Settings dengan klik `Dash` di samping kiri atas lalu ketik “System Settings” setelah itu klik menu Keyboard pada bagian Hardware
-![Figure 1](/layout-keyboard-dvorak-di-ubuntu/1.png)
+![Figure 1](/images/layout-keyboard-dvorak-di-ubuntu/1.png)
 2. Klik `Text Entry` disebelah kiri bawah.
-![Figure 2](/layout-keyboard-dvorak-di-ubuntu/2.png)
+![Figure 2](/images/layout-keyboard-dvorak-di-ubuntu/2.png)
 3. Klik icon `+` disebelah kiri bawah
-![Figure 3](/layout-keyboard-dvorak-di-ubuntu/3.png)
+![Figure 3](/images/layout-keyboard-dvorak-di-ubuntu/3.png)
 4. Ketik `Dvorak` dan pilih English (`Dvorak`) lalu klik add
-![Figure 4](/layout-keyboard-dvorak-di-ubuntu/4.png)
+![Figure 4](/images/layout-keyboard-dvorak-di-ubuntu/4.png)
 
 Sekian, semoga bermanfaat. {%gemoji wink%}
