@@ -9,8 +9,8 @@ author: "Imam Digmi"
 weight: 50
 draft: false
 keywords: ["diary", "sekolah", "perjalanan", "berlajar", "berfikir"]
-tags: []
-categories: ["diary"]
+tags: ["diary"]
+categories: ["Diary"]
 
 comment: true
 toc: true
