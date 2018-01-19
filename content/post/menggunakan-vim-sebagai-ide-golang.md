@@ -9,8 +9,8 @@ author: "Imam Digmi"
 weight: 50
 draft: false
 keywords: ["golang", "go", "vim", "ide"]
-tags: []
-categories: ["Vim", "GoLang"]
+tags: ["golang", "vim"]
+categories: ["GoLang"]
 
 comment: true
 toc: true

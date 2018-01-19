@@ -9,7 +9,7 @@ author: "Imam Digmi"
 weight: 50
 draft: true
 keywords: ["go", "golang", "install", "setup"]
-tags: ["Go"]
+tags: ["golang"]
 categories: ["GoLang"]
 
 comment: true
