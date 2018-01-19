@@ -9,7 +9,7 @@ author: "Imam Digmi"
 weight: 50
 draft: false
 keywords: ["Tutorial", "NoSQL", "Graph", "Database", "Neo4J", "GDBMS"]
-tags: []
+tags: ["database"]
 categories: ["NoSQL"]
 
 comment: true
