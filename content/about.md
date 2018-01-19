@@ -1,10 +1,11 @@
 ---
 title: "About"
-date: 2018-01-19 10:36:29 +0700
-lastmod: 2018-01-19 10:36:29 +0700
+description: "Imam Digmi blog on GitHub"
 menu: "main"
 weight: 50
 
+date: 2018-01-19 10:36:29 +0700
+lastmod: 2018-01-19 10:36:29 +0700
 comment: false
 mathjax: false
 ---
