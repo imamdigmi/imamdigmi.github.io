@@ -23,7 +23,7 @@ mathjaxEnableSingleDollar: false
 
 Pada kesempatan kali ini kita akan membahas tentang _Graph Database_ atau sering disebut dengan (GDBMS).
 ### Apa itu Graph Database?
-Graph yang dimaksud pada graph database adalah definisi graph pada graph theory yang merupakan bagian dari ilmu matematika diskrit. Paper pertama yang membahas graph theory ditulis oleh Leonhard Eulear pada tahun 1736 yang membahas tentang permasalahan Konigsberg Bridge. <!-- more -->
+Graph yang dimaksud pada graph database adalah definisi graph pada graph theory yang merupakan bagian dari ilmu matematika diskrit. Paper pertama yang membahas graph theory ditulis oleh Leonhard Eulear pada tahun 1736 yang membahas tentang permasalahan Konigsberg Bridge.
 Sebagai contoh, database relasional akan kewalahan melakukan query yang dibutuhkan untuk keperluan jejaring sosial seperti Facebook dan Twitter. Database relasional memang memiliki JOIN untuk menggabungkan tabel, tapi JOIN yang mereka miliki tidak memiliki arah dan label. Salah satu jenis database yang diciptakan untuk mengembalikan makna ‘relasional’ tersebut adalah graph database.
 
 ### Apa itu Neo4J?
