@@ -7,7 +7,7 @@ description: "Instalasi Bahasa Pemrograman Go"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["go", "golang", "install", "setup"]
 tags: ["golang"]
 categories: ["GoLang"]

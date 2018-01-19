@@ -7,7 +7,7 @@ description: "Mengubah Layout Keyboard Qwerty ke Dvorak di Ubuntu"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["keyboard layout", "dvorak", "qwerty"]
 tags: ["tips"]
 categories: ["Tips"]
