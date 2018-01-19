@@ -7,7 +7,7 @@ description: "Menggunakan Vim Sebagai IDE Golang"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["golang", "go", "vim", "ide"]
 tags: []
 categories: ["Vim", "GoLang"]
