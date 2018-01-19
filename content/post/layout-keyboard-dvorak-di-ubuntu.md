@@ -37,4 +37,4 @@ Untuk mengubah tata letak keyboard di ubuntu sangatlah mudah.
 4. Ketik `Dvorak` dan pilih English (`Dvorak`) lalu klik add
 ![Figure 4](/images/layout-keyboard-dvorak-di-ubuntu/4.png)
 
-Sekian, semoga bermanfaat. {%gemoji wink%}
+Sekian, semoga bermanfaat.

@@ -31,7 +31,7 @@ Pada kesempatan ini, saya akan mencoba menggunakan sebuah graph database populer
 Neo4j adalah salah satu Graph Database populer dengan Cypher Query Language (CQL). Neo4j ditulis dalam Bahasa Java dan Neo4j adalah tool open source pertama untuk Grafik Database. Cukup itu saja dulu teorinya.
 
 ### Install Neo4J
-Okay, setelah kita sedikit membahas Neo4J sekarang saatnya kita install Neo4J agar bisa merasakan sensasi Graph Databas secara nyata {%gemoji smile%}.
+Okay, setelah kita sedikit membahas Neo4J sekarang saatnya kita install Neo4J agar bisa merasakan sensasi Graph Databas secara nyata.
 
 __Karena Neo4J adalah based on Java Language__
 Java 8 tidak ada dalam pakeu Ubuntu 14.04 LTS, atau Debian 8 (jessie) dan anda perlu menginstallnya secara manual jadi komputer kita harus terinstall Java Runtime yaa, saya asumsikan komputer anda sudah ada Java Runtime nya.
@@ -69,7 +69,7 @@ Setelah terbuka, biasanya anda akan ada notifikasi bahwa database belum terkonek
 database nya lalu anda diminta lagi untuk memasukkan password untuk user __neo4j__.
 Jika sudah melalui proses tersebut maka kita siap untuk bermain-main dengan graph database.
 
-Di Neo4J sudah di sediakan contoh data yang dapat kita gunakan dan tentu dengan perintah-perintah CQLnya juga baik banget kan {%gemoji smile%}
+Di Neo4J sudah di sediakan contoh data yang dapat kita gunakan dan tentu dengan perintah-perintah CQLnya juga baik banget kan
 Untuk menggunakannya pilih menu dengan simbol ``Bintang`` lalu pilih ``Example Graphs`` lalu silahkan anda pilih kedua sample tersebut, saya memilih ``Movie Graph`` :
 
 ![Figure 1](/images/graph-database-dengan-neo4j/2.png)
@@ -91,7 +91,7 @@ Setelah itu CQL akan memproses data yang dimasukkan, tunggu beberapa detik lalu 
 
 ![Figure 6](/images/graph-database-dengan-neo4j/6.png)
 
-Keren kan {%gemoji smile%} hehee. Oke sampai disini dulu, jika ada pertanyaan silahkan berkomentar di kotak disqus dibawah ini.
+Keren kan hehee. Oke sampai disini dulu, jika ada pertanyaan silahkan berkomentar di kotak disqus dibawah ini.
 terimakasih semoga bermanfaat.
 
 __Note :__ Karena artikel ini belum sepenuhnya selesai maka tunggu updatenya, stay tune!.

@@ -69,6 +69,6 @@ Sebelum membuat code go, kita akan membuat tampilannya terlebih dahulu, sebut sa
 </html>
 ```
 
-Terimakasih, Semoga bermanfaat {%gemoji wink%}
+Terimakasih, Semoga bermanfaat
 
 Sumber : jacobmartins.com, bertzzie.com

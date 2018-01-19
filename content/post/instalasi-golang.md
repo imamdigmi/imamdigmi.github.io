@@ -174,4 +174,4 @@ go run main.go
 ```
 ![Test Installation](/images/instalasi-golang/test-installation.png)
 
-Oke sampai disini dulu, semoga bermanfaat {%gemoji smile%}
+Oke sampai disini dulu, semoga bermanfaat
