@@ -6,7 +6,6 @@ title: "{{ replace .TranslationBaseName "-" " " | title }}"
 description: ""
 author: "Imam Digmi"
 
-menu: "main"
 weight: 50
 draft: true
 keywords: []
