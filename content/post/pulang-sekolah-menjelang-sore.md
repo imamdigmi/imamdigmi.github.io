@@ -6,7 +6,7 @@ title: "Pulang Sekolah Menjelang Sore"
 description: "Melangkahkan kaki dalam perjalanan pulang sekolah sembari berfikir di Yogyakarta"
 author: "Imam Digmi"
 
-draft: true
+draft: false
 keywords: ["diary", "sekolah", "perjalanan", "berlajar", "berfikir"]
 tags: []
 categories: ["diary"]
