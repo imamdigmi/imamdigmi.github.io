@@ -11,6 +11,11 @@ Then checkout to `source` branch
 ```
 git checkout source
 ```
+## Usage
+Create new post
+```
+hugo new post/title.md
+```
 
 ## Deploy
 Build site
