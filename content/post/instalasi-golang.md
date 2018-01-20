@@ -11,14 +11,6 @@ draft: false
 keywords: ["go", "golang", "install", "setup"]
 tags: ["golang"]
 categories: ["GoLang"]
-
-comment: true
-toc: true
-autoCollapseToc: true
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
 Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :<!--more-->

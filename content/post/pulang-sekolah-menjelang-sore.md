@@ -11,14 +11,6 @@ draft: false
 keywords: ["diary", "sekolah", "perjalanan", "berlajar", "berfikir"]
 tags: ["diary"]
 categories: ["Diary"]
-
-comment: true
-toc: true
-autoCollapseToc: true
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
 Dalam rangka menghemat bahan bakar (halah bilang aja gapunya kendaraan) saya yang pulang sekolah dengan mengendarai sepatu butut cumpang-camping, tas merah, baju putih kotak-kotak celana jeans biru super kolot dengan menggenggam gulungan kertas hasil revisi naskah skripsi (maklum joki skripsi hehee) menikmati sore dengan berjalan kaki sambil berimajinasi dan merancang sebuah mimpi untuk membuat sesuatu yang bermanfaat bagi orang lain, sambil bergumam aku berkata “Stop, mari kita mulai lagi belajar menulis algoritma dan lupakan wanita yang berkeliaran dengan hot-pane dan rok pendek di beranda facebook, hahaa becanda” lalu menyusun rute jalan mana yang harus ditempuh untuk tahun depan setelah lulus sekolah nanti.

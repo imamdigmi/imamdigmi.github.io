@@ -11,14 +11,6 @@ draft: false
 keywords: ["Tutorial", "NoSQL", "Graph", "Database", "Neo4J", "GDBMS"]
 tags: ["database"]
 categories: ["NoSQL"]
-
-comment: true
-toc: true
-autoCollapseToc: false
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
 Pada kesempatan kali ini kita akan membahas tentang _Graph Database_ atau sering disebut dengan (GDBMS).

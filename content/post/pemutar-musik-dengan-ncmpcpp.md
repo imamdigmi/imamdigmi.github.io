@@ -11,14 +11,6 @@ draft: false
 keywords: ["mpd", "music", "ncmpcpp", "arch", "linux"]
 tags: ["tips"]
 categories: ["Tips"]
-
-comment: true
-toc: true
-autoCollapseToc: true
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
 MPD atau Music Player Daemon ini adalah sebuah server daemon yang gunanya untuk memutar music dan NCMPCPP adalah client atau sebuah aplikasi yang digunakan untuk manajemen file musik dan sebagainya, dan kelebihan dari tool ini dapat mengkonfigurasi nya sesuai dengan yang kita inginkan seperti tampilan menu, daftar lagu, visualizer dan sebagainya.<!--more-->

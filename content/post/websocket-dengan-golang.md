@@ -11,14 +11,6 @@ draft: false
 keywords: ["go", "golang", "websocket"]
 tags: ["golang"]
 categories: ["GoLang"]
-
-comment: true
-toc: true
-autoCollapseToc: true
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
 WebSocket merupakan sebuah protokol komunikasi dua arah yang dapat digunakan oleh browser. Jika pada AJAX kita hanya dapat melakukan komunikasi satu arah dengan mengirimkan request kepada server dan menunggu balasannya, maka menggunakan WebSocket kita tidak hanya dapat mengirimkan request kepada server, tetapi juga menerima data dari server tanpa harus mengirimkan request terlebih dahulu. Hal ini berarti ketika menggunakan WebSocket pengguna harus terus menerus terkoneksi dengan server, dan kita memerlukan sebuah server khusus untuk dapat menjalankan aplikasi WebSocket dengan benar.<!--more-->

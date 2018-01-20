@@ -11,14 +11,6 @@ draft: false
 keywords: ["golang", "go", "vim", "ide"]
 tags: ["golang", "vim"]
 categories: ["GoLang"]
-
-comment: true
-toc: true
-autoCollapseToc: false
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
 Untuk menggunakan Vim (http://www.vim.org), ada plugin utama serta berbagai plugin pendukung yang bisa digunakan. Sebaiknya, menggunakan pathogen untuk mempermudah pengelolaan berbagai plugin tersebut. Bagian ini akan menjelaskan berbagai konfigurasi serta instalasi yang diperlukan sehingga Vim bisa menjadi peranti untuk pengembangan aplikasi menggunakan Go. <!-- more -->

@@ -11,17 +11,9 @@ draft: false
 keywords: ["xfce", "xfce4", "fit window", "windowck", "maximus", "linux"]
 tags: ["tips"]
 categories: ["Tips"]
-
-comment: true
-toc: true
-autoCollapseToc: true
-contentCopyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-reward: false
-mathjax: false
-mathjaxEnableSingleDollar: false
 ---
 
-Pada pembahasan ini kita akan mendekorasi tampilan XFCE4 dan memaksimalkan ruang layar komputer agar lebih fit mirip seperti Unity pada Desktop Ubuntu, untuk itu kita perlu memasang 3 plugin utama yaitu :<!--more-->
+Pada pembahasan ini kita akan mendekorasi tampilan XFCE4 dan memaksimalkan ruang layar komputer agar lebih fit mirip seperti Unity pada Desktop Ubuntu, untuk itu kita perlu memasang 3 plugin utama yaitu :
 
 1. Windowck - Untuk menampilkan tombol button pada panel
 2. Maximus - Untuk menghilangkan border window
