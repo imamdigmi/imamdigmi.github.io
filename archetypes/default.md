@@ -11,8 +11,6 @@ draft: true
 keywords: []
 tags: []
 categories: []
-
-reward: false
 ---
 
 <!--more-->
