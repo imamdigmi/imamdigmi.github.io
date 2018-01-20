@@ -27,7 +27,8 @@
       <pubDate>Sat, 29 Apr 2017 18:56:51 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/xfce4-dengan-windowck-dan-maximus/</guid>
-      <description>&lt;p&gt;Pada pembahasan ini kita akan mendekorasi tampilan XFCE4 dan memaksimalkan ruang layar komputer agar lebih fit mirip seperti Unity pada Desktop Ubuntu, untuk itu kita perlu memasang 3 plugin utama yaitu :&lt;/p&gt;</description>
+      <description>Pada pembahasan ini kita akan mendekorasi tampilan XFCE4 dan memaksimalkan ruang layar komputer agar lebih fit mirip seperti Unity pada Desktop Ubuntu, untuk itu kita perlu memasang 3 plugin utama yaitu :
+ Windowck - Untuk menampilkan tombol button pada panel Maximus - Untuk menghilangkan border window AppMenu - Untuk menampilkan window menu pada panel  Setup Windowck Windowck adalah plugin untuk XFCE yang berfungsi untuk menempatkan button window (close, maximize, minimize) pada saat window di-maximize, mirip seperti default desktop envirounment ubuntu yaitu unity.</description>
     </item>
     
     <item>
