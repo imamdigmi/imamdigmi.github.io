@@ -78,24 +78,24 @@ $global-headings: (
 // Padding of the site header.
 $header-padding: 20px 20px !default;
 
-// Font family: Chancery
 @font-face {
-  font-family: 'Chancery';
-  src: url('../fonts/chancery/apple-chancery-webfont.eot');
-  src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/chancery/apple-chancery-webfont.woff2') format('woff2'),
-  url('../fonts/chancery/apple-chancery-webfont.woff') format('woff'),
-  url('../fonts/chancery/apple-chancery-webfont.ttf') format('truetype'),
-  url('../fonts/chancery/apple-chancery-webfont.svg#apple-chancery') format('svg');
-  font-weight: lighter;
+  font-family: 'Saira Condensed';
   font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/saira-condensed/saira-condensed-v3-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Saira Condensed Medium'), local('SairaCondensed-Medium'),
+       url('../fonts/saira-condensed/saira-condensed-v3-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/saira-condensed/saira-condensed-v3-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/saira-condensed/saira-condensed-v3-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/saira-condensed/saira-condensed-v3-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/saira-condensed/saira-condensed-v3-latin-500.svg#SairaCondensed') format('svg'); /* Legacy iOS */
 }
 
 // Font size of the logo.
 $logo-font-size: 48px !default;
 
 // Font family of the logo.
-$logo-font-family: 'Chancery', cursive, LiSu, sans-serif !default;
+$logo-font-family: 'Saira Condensed', !default;
 
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;
