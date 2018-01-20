@@ -7,7 +7,7 @@ description: "Memasang Arch linux dengan systemd boot"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["arch", "linux", "install"]
 tags: ["archlinux"]
 categories: ["Arch Linux"]

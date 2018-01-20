@@ -7,7 +7,7 @@ description: "Meredupkan Layar Komputer dengan Redshift (Eye Protection)"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["redshift", "eye protection"]
 tags: ["tips"]
 categories: ["Tips"]

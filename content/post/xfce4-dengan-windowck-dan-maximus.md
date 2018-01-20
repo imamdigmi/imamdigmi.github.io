@@ -7,7 +7,7 @@ description: "Membuat tampilan layar lebih fit dengan Windowck dan Maximus di XF
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["xfce", "xfce4", "fit window", "windowck", "maximus", "linux"]
 tags: ["tips"]
 categories: ["Tips"]

@@ -7,7 +7,7 @@ description: "Memutar musik dengan server MPD dan NCMPCPP sebagai interface"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["mpd", "music", "ncmpcpp", "arch", "linux"]
 tags: ["tips"]
 categories: ["Tips"]
