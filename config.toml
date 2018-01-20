@@ -4,7 +4,7 @@ languageCode = "en"
 defaultContentLanguage = "en"
 title = "JournalToday"
 enableRobotsTXT = true
-enableEmoji = true
+enableEmoji = true        # https://www.webpagefx.com/tools/emoji-cheat-sheet/
 theme = "even"
 
 hasCJKLanguage = false
@@ -62,7 +62,6 @@ copyright = "Imam Digmi"
   moreMeta = true
 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
-  #reward = true
   comment = true
   toc = true
   autoCollapseToc = false   # Auto expand and collapse toc
