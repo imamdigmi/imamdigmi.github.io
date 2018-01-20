@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Imam Digmi</copyright>
-    <lastBuildDate>Sat, 20 Jan 2018 11:19:42 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 29 Apr 2017 18:56:51 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Xfce4 dengan Windowck dan Maximus</title>
       <link>https://imamdigmi.github.io/post/xfce4-dengan-windowck-dan-maximus/</link>
-      <pubDate>Sat, 20 Jan 2018 11:19:42 +0700</pubDate>
+      <pubDate>Sat, 29 Apr 2017 18:56:51 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/xfce4-dengan-windowck-dan-maximus/</guid>
       <description>&lt;p&gt;Pada pembahasan ini kita akan mendekorasi tampilan XFCE4 dan memaksimalkan ruang layar komputer agar lebih fit mirip seperti Unity pada Desktop Ubuntu, untuk itu kita perlu memasang 3 plugin utama yaitu :&lt;/p&gt;</description>
@@ -24,7 +24,7 @@
     <item>
       <title>Pemutar musik dengan MPD dan NCMPCPP</title>
       <link>https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/</link>
-      <pubDate>Sat, 20 Jan 2018 11:13:39 +0700</pubDate>
+      <pubDate>Fri, 28 Apr 2017 22:32:20 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/</guid>
       <description>&lt;p&gt;MPD atau Music Player Daemon ini adalah sebuah server daemon yang gunanya untuk memutar music dan NCMPCPP adalah client atau sebuah aplikasi yang digunakan untuk manajemen file musik dan sebagainya, dan kelebihan dari tool ini dapat mengkonfigurasi nya sesuai dengan yang kita inginkan seperti tampilan menu, daftar lagu, visualizer dan sebagainya.&lt;/p&gt;</description>
