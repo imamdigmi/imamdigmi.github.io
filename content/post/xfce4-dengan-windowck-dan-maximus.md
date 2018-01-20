@@ -1,6 +1,6 @@
 ---
-date: 2018-01-20T11:19:42+07:00
-lastmod: 2018-01-20T11:19:42+07:00
+date: 2017-04-29T18:56:51+07:00
+lastmod: 2017-04-29T18:56:51+07:00
 
 title: "Xfce4 dengan Windowck dan Maximus"
 description: "Membuat tampilan layar lebih fit dengan Windowck dan Maximus di XFCE4"

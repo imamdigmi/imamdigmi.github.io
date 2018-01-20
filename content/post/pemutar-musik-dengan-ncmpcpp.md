@@ -1,6 +1,6 @@
 ---
-date: 2018-01-20T11:13:39+07:00
-lastmod: 2018-01-20T11:13:39+07:00
+date: 2017-04-28T22:32:20+07:00
+lastmod: 2017-04-28T22:32:20+07:00
 
 title: "Pemutar musik dengan MPD dan NCMPCPP"
 description: "Memutar musik dengan server MPD dan NCMPCPP sebagai interface"
