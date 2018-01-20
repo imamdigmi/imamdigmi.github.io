@@ -59,14 +59,15 @@ copyright = "Imam Digmi"
   dateFormatToUse = "2006-01-02"
 
   # show word count and read time ?
-  moreMeta = false
+  moreMeta = true
 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
+  comment= true
   toc = true
   autoCollapseToc = false   # Auto expand and collapse toc
   fancybox = true           # see https://github.com/fancyapps/fancybox
   bootcdn = false           # In china. @Deprecated: use [params.publicCDN]
-  mathjax = false           # see https://www.mathjax.org/
+  mathjax = true           # see https://www.mathjax.org/
   mathjaxEnableSingleDollar = false
   linkToMarkDown = false    # if you config contentCopyright and hugo output .md files. #
 
