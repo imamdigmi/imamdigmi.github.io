@@ -3,8 +3,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://imamdigmi.github.io/post/xfce4-dengan-windowck-dan-maximus/</loc>
+    <lastmod>2018-01-20T11:19:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/</loc>
+    <lastmod>2018-01-20T11:13:39+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/about/</loc>
     <lastmod>2018-01-19T23:13:40+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/instalasi-arch-linux/</loc>
+    <lastmod>2017-04-01T19:57:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/redshift-eye-protection/</loc>
+    <lastmod>2017-01-24T18:29:57+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -59,7 +87,22 @@
   </url>
   
   <url>
+    <loc>https://imamdigmi.github.io/categories/arch-linux/</loc>
+    <lastmod>2017-04-01T19:57:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/tags/archlinux/</loc>
+    <lastmod>2017-04-01T19:57:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/categories/</loc>
+    <lastmod>2017-04-01T19:57:42+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -115,7 +158,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/</loc>
-    <lastmod>2018-01-19T23:13:40+07:00</lastmod>
+    <lastmod>2018-01-20T11:19:42+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -129,7 +172,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/post/</loc>
-    <lastmod>2017-01-21T18:25:27+07:00</lastmod>
+    <lastmod>2018-01-20T11:19:42+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -143,21 +186,21 @@
   
   <url>
     <loc>https://imamdigmi.github.io/tags/</loc>
-    <lastmod>2016-06-03T14:06:22+07:00</lastmod>
+    <lastmod>2017-04-01T19:57:42+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imamdigmi.github.io/tags/tips/</loc>
-    <lastmod>2017-01-21T18:17:52+07:00</lastmod>
+    <lastmod>2018-01-20T11:19:42+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imamdigmi.github.io/categories/tips/</loc>
-    <lastmod>2017-01-21T18:17:52+07:00</lastmod>
+    <lastmod>2018-01-20T11:19:42+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

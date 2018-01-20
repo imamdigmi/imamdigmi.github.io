@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Imam Digmi</copyright>
-    <lastBuildDate>Fri, 19 Jan 2018 23:13:40 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2018 11:19:42 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Xfce4 dengan Windowck dan Maximus</title>
+      <link>https://imamdigmi.github.io/post/xfce4-dengan-windowck-dan-maximus/</link>
+      <pubDate>Sat, 20 Jan 2018 11:19:42 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/xfce4-dengan-windowck-dan-maximus/</guid>
+      <description>&lt;p&gt;Pada pembahasan ini kita akan mendekorasi tampilan XFCE4 dan memaksimalkan ruang layar komputer agar lebih fit mirip seperti Unity pada Desktop Ubuntu, untuk itu kita perlu memasang 3 plugin utama yaitu :&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pemutar musik dengan MPD dan NCMPCPP</title>
+      <link>https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/</link>
+      <pubDate>Sat, 20 Jan 2018 11:13:39 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/</guid>
+      <description>&lt;p&gt;MPD atau Music Player Daemon ini adalah sebuah server daemon yang gunanya untuk memutar music dan NCMPCPP adalah client atau sebuah aplikasi yang digunakan untuk manajemen file musik dan sebagainya, dan kelebihan dari tool ini dapat mengkonfigurasi nya sesuai dengan yang kita inginkan seperti tampilan menu, daftar lagu, visualizer dan sebagainya.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -19,6 +37,26 @@
       
       <guid>https://imamdigmi.github.io/about/</guid>
       <description>Hi! I&amp;rsquo;m Imam. I&amp;rsquo;m a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.</description>
+    </item>
+    
+    <item>
+      <title>Instalasi Arch Linux</title>
+      <link>https://imamdigmi.github.io/post/instalasi-arch-linux/</link>
+      <pubDate>Sat, 01 Apr 2017 19:57:42 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/instalasi-arch-linux/</guid>
+      <description>Mungkin bagi sebagian orang yang berkecimpung didunia linux pasti sudah tau salah satu distribusi linux yang satu ini, Archlinux memang menjadi salah satu distribusi linux yang banyak disukai oleh orang-orang karena kemudahannya dalam kustomisasi, karena distribusi linux ini dibangun form scratch yang artinya Archlinux dibangun mulai dari awal dan tanpa mengadopsi atau turunan distribusi apapun ini berbeda dengan ubuntu yang dibangun dari distribusi debian atau fedora yang dibangun dari distribusi linux red hat, biasanya yang menggunakan archlinux ini salah satu orang yang bertipe anti-mainstream namun ada juga yang tidak menyukai Archlinux karena susah digunakan dan tidak direkomendasikan bagi orang yang baru menggunakan linux.</description>
+    </item>
+    
+    <item>
+      <title>Redshift Eye Protection</title>
+      <link>https://imamdigmi.github.io/post/redshift-eye-protection/</link>
+      <pubDate>Tue, 24 Jan 2017 18:29:57 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/redshift-eye-protection/</guid>
+      <description>Aplikasi RedShift ini berfungsi untuk meredamkan layar monitor agar tidak terlalu kontras, sehingga mata kita tidak cepat sakit ketika menatap layar monitor terlalu lama, oke langsung saja kita install.
+Ubuntu sudo apt-get install redshift  Archlinux sudo pacman -S redshift  Start Redshift Untuk menjalankan RedShift secara default perintahnya redshift -l LAT:LON -t DAY:NIGHT [OPTIONS...] contoh :
+redshift -l -7.797068:110.370529 -t 5700:3600  File Konfigurasi Kita juga bisa menambahkan configuration file untuk redshift, namun kita perlu membuat konfigurasinya secara manual di ~/.</description>
     </item>
     
     <item>

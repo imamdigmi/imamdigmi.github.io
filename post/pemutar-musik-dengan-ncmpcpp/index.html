@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Pemutar musik dengan MPD dan NCMPCPP - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memutar musik dengan server MPD dan NCMPCPP sebagai interface" />
+<meta name="keywords" content="mpd, music, ncmpcpp, arch, linux" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Pemutar musik dengan MPD dan NCMPCPP" />
+<meta property="og:description" content="Memutar musik dengan server MPD dan NCMPCPP sebagai interface" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/pemutar-musik-dengan-ncmpcpp/" />
+
+
+
+<meta property="article:published_time" content="2018-01-20T11:13:39&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-01-20T11:13:39&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Pemutar musik dengan MPD dan NCMPCPP">
+<meta itemprop="description" content="Memutar musik dengan server MPD dan NCMPCPP sebagai interface">
+
+
+<meta itemprop="datePublished" content="2018-01-20T11:13:39&#43;07:00" />
+<meta itemprop="dateModified" content="2018-01-20T11:13:39&#43;07:00" />
+<meta itemprop="wordCount" content="767">
+
+
+
+<meta itemprop="keywords" content="tips," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Pemutar musik dengan MPD dan NCMPCPP"/>
+<meta name="twitter:description" content="Memutar musik dengan server MPD dan NCMPCPP sebagai interface"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Pemutar musik dengan MPD dan NCMPCPP</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-20 </span>
+        <div class="post-category">
+            
+              <a href="/categories/tips/"> Tips </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install-mpd">Install MPD</a>
+<ul>
+<li><a href="#konfigurasi">Konfigurasi</a></li>
+</ul></li>
+<li><a href="#install-ncmpcpp">Install NCMPCPP</a></li>
+<li><a href="#shortcut-untuk-tampilan">Shortcut untuk tampilan</a></li>
+<li><a href="#ui-shortcut-lainnya">UI Shortcut lainnya</a></li>
+<li><a href="#instal-cava">Instal Cava</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>MPD atau Music Player Daemon ini adalah sebuah server daemon yang gunanya untuk memutar music dan NCMPCPP adalah client atau sebuah aplikasi yang digunakan untuk manajemen file musik dan sebagainya, dan kelebihan dari tool ini dapat mengkonfigurasi nya sesuai dengan yang kita inginkan seperti tampilan menu, daftar lagu, visualizer dan sebagainya.</p>
+
+<p><img src="/images/pemutar-musik-dengan-ncmpcpp/1.png" alt="Figure 1" /></p>
+
+<p>Langkah instalasinya akan kita bagi menjadi dua yaitu :
+1. Setup MPD (Music Player Daemon)
+2. Setup NCMPCPP (Client untuk MPD)
+3. Setup Cava (Music visualizer external)</p>
+
+<h2 id="install-mpd">Install MPD</h2>
+
+<pre><code>// Arch Linux
+$ sudo pacman -S mpd
+
+// Ubuntu / Debian
+$ sudo apt-get install mpd
+</code></pre>
+
+<p>Agar MPD dapat memutar ulang audio, <a href="https://wiki.archlinux.org/index.php/ALSA">ALSA</a> atau <a href="https://wiki.archlinux.org/index.php/OSS">OSS</a> (opsional dengan <a href="https://wiki.archlinux.org/index.php/PulseAudio">PulseAudio</a>) perlu disiapkan konfigurasinya.
+MPD dikonfigurasi di dalam sebuah file yaitu <code>mpd.conf</code>. Lokasi file ini tergantung bagaimana anda ingin menjalankan MPD (lihat bagian di bawah). Ini adalah opsi konfigurasi yang umum digunakan :</p>
+
+<ul>
+<li><code>pid_file</code> - File dimana MPD menyimpan ID prosesnya</li>
+<li><code>db_file</code> - Database musik</li>
+<li><code>state_file</code> - Kondisi saat ini untuk MPD tercatat pada file ini</li>
+<li><code>playlist_directory</code> - Folder untuk menaruh playlist lagu kita</li>
+<li><code>music_directory</code> - Folder yang digunakan MPD untuk me</li>
+<li><code>sticker_file</code> - Stiker database</li>
+</ul>
+
+<h3 id="konfigurasi">Konfigurasi</h3>
+
+<p>MPD dapat dikonfigurasi perpengguna dan juga secara <em>system-wide (global)</em> pada bahasan ini kita hanya akan menerapkan untuk konfigurasi perpengguna karena lebih baik dan menjalankan MPD sebagai pengguna biasa (bukan root) memiliki keunggulan yaitu :</p>
+
+<ul>
+<li>Direktori tunggal <code>~/.config/mpd/</code> (atau direktori lainnya di bawah <code>$HOME</code>) yang akan berisi semua file konfigurasi MPD.</li>
+<li>Lebih mudah menghindari kesalahan izin read/write yang tak terduga.</li>
+</ul>
+
+<p>Sebaiknya kita membuat satu direktori untuk file dan daftar putar yang dibutuhkan misal <code>~/.config/mpd/</code> atau <code>~/.mpd/</code>. MPD mencari file konfigurasi di <code>$XDG_CONFIG_HOME/mpd/mpd.conf</code> dan kemudian <code>~/.mpdconf</code>. Ini memungkinkan kita untuk melewati jalur lain sebagai argumen baris perintah tanpa harus menyebutkan file konfigurasi yang dimaksudkan pada saat kita hendak menjalankan MPD.</p>
+
+<pre><code>$ mkdir -p ~/.config/mpd
+$ ~/.config/mpd/mpd.conf
+</code></pre>
+
+<p>Berikut konfigurasi MPD yang penulis gunakan :</p>
+
+<pre><code>bind_to_address     &quot;localhost&quot;
+port                &quot;6600&quot;
+log_level           &quot;default&quot;
+
+input {
+  plugin            &quot;curl&quot;
+}
+
+audio_output {
+  type              &quot;pulse&quot;
+  name              &quot;My Pulse Output&quot;
+  options           &quot;dev=dmixer&quot;
+}
+
+audio_output {
+  type              &quot;fifo&quot;
+  name              &quot;My fifo output&quot;
+  path              &quot;/tmp/mpd.fifo&quot;
+  format            &quot;44100:16:2&quot;
+}
+
+db_file             &quot;~/.config/mpd/database&quot;
+log_file            &quot;~/.config/mpd/log&quot;
+
+music_directory     &quot;~/Music&quot;
+playlist_directory  &quot;~/.config/mpd/playlists&quot;
+pid_file            &quot;~/.config/mpd/pid&quot;
+state_file          &quot;~/.config/mpd/state&quot;
+sticker_file        &quot;~/.config/mpd/sticker.sql&quot;
+</code></pre>
+
+<p>Setelah itu kita buat direktori playlists nya :</p>
+
+<pre><code>$ mkdir ~/.config/mpd/playlists
+</code></pre>
+
+<p>Lalu kita coba jalankan MPD nya :</p>
+
+<pre><code>$ mpd
+</code></pre>
+
+<p>Coba kita lihat juga apakah MPD sudah listening :</p>
+
+<pre><code>$ netstat -tulpen
+</code></pre>
+
+<p>Jika terdapat MPD yang sedang LISTEN seperti dibawah ini brarti MPD sudah berhasil kita pasang</p>
+
+<pre><code>(Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name    
+tcp        0      0 127.0.0.1:6600          0.0.0.0:*               LISTEN      1000       497923     7624/mpd            
+tcp6       0      0 ::1:6600                :::*                    LISTEN      1000       497922     7624/mpd            
+tcp6       0      0 :::80                   :::*                    LISTEN      0          13954      -                   
+....
+</code></pre>
+
+<h2 id="install-ncmpcpp">Install NCMPCPP</h2>
+
+<p>Setelah instalasi MPD berhasil dan dikonfigurasikan dengan baik maka kita lanjutkan dengan langkah instalasi NCMPCPP sebagai client untuk pemutar musik kita.</p>
+
+<pre><code>// Arch Linux
+$ sudo pacman -S ncmpcpp
+
+// Ubuntu / Debian
+$ sudo apt-get install ncmpcpp
+</code></pre>
+
+<p>Setelah instalasi selesai file konfigurasi ncmpcpp tidak otomatis dibuat maka kita perlu menambahkannya sendiri yaitu <code>~/.ncmpcpp/config</code>. Konfigurasi untuk NCMPCPP sangatlah mudah dan dapat kita kreasikan sesuai selera, agar lebih mudah cukup salin dan ubah sesuai kebutuhan saja dari konfigurasi yang penulis buat, berikut konfigurasi yang penulis gunakan :</p>
+
+<p>{% gist 81aa7f0cb06275034492ed11421cf06e ncmpcpp.conf %}</p>
+
+<p>Lalu kita jalankan ncmpcpp nya :</p>
+
+<pre><code>$ ncmpcpp
+</code></pre>
+
+<blockquote>
+<p>sebelum kita menjalankan ncmpcpp pastikan mpd sudah running</p>
+</blockquote>
+
+<h2 id="shortcut-untuk-tampilan">Shortcut untuk tampilan</h2>
+
+<ul>
+<li><code>1</code> - Menampilkan playlist saat ini</li>
+<li><code>2</code> - Filesystem browser</li>
+<li><code>3</code> - Pencarian dalam databases</li>
+<li><code>4</code> - Pustaka musik</li>
+<li><code>5</code> - Playlist editor</li>
+<li><code>6</code> - Tag editor</li>
+<li><code>7</code> - Output selector</li>
+<li><code>8</code> - Music visualizer</li>
+<li><code>=</code> - Jam dinding</li>
+<li><code>F1</code> - Help</li>
+</ul>
+
+<h2 id="ui-shortcut-lainnya">UI Shortcut lainnya</h2>
+
+<ul>
+<li><code>q</code> - Keluar</li>
+<li><code>f</code> - Seek forward</li>
+<li><code>b</code> - Seek backward</li>
+<li><code>\</code> - Mengganti tampilan klasik/alternatif</li>
+<li><code>#</code> - Menampilkan bitrate pada lagu</li>
+<li><code>i</code> - Menampilkan info lagu</li>
+<li><code>I</code> - Menampilkan info artis (tersimpan pada file <code>~/.ncmpcpp/artists/ARTIST.txt</code>)</li>
+<li><code>l</code> - Menampilkan lirik untuk lagu yang sedang diputar</li>
+<li><code>L</code> - Mencari lirik lagi yang terdapat di database</li>
+<li><code>&gt;</code> - Lagu selanjutnya</li>
+<li><code>&lt;</code> - Lalu sebelumnya</li>
+<li><code>p</code> - Play/Pause</li>
+<li><code>+</code> - Menambahkan volume</li>
+<li><code>-</code> - Mengurangi volume</li>
+</ul>
+
+<h2 id="instal-cava">Instal Cava</h2>
+
+<p>Cava adalah visualizer berbasis konsol untuk ALSA audio namun dapat digunakan juga untuk audio lainnya seperti PulseAudio dan lain-lai, cava dapat kita gunakan ketika kita menggunakan MPD, cava bisa didapatkan di <a href="https://aur.archlinux.org/packages/cava/">AUR</a> dan untuk instalasi cukup mudah hanya.</p>
+
+<pre><code>$ yaourt -S cava
+</code></pre>
+
+<p>Lalu kita jalankan cava</p>
+
+<pre><code>$ cava
+</code></pre>
+
+<p>If everything have done, berhasil terpasang dan terkonfigurasi dengan baik maka kurang lebih tampilannya akan seperti diatas.</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-01-20</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/tips/">tips</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/xfce4-dengan-windowck-dan-maximus/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Xfce4 dengan Windowck dan Maximus</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/instalasi-arch-linux/">
+            <span class="next-text nav-default">Instalasi Arch Linux</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

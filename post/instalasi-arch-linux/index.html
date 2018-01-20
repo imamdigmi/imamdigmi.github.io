@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Instalasi Arch Linux - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memasang Arch linux dengan systemd boot" />
+<meta name="keywords" content="arch, linux, install" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/instalasi-arch-linux/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Instalasi Arch Linux" />
+<meta property="og:description" content="Memasang Arch linux dengan systemd boot" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/instalasi-arch-linux/" />
+
+
+
+<meta property="article:published_time" content="2017-04-01T19:57:42&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-04-01T19:57:42&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Instalasi Arch Linux">
+<meta itemprop="description" content="Memasang Arch linux dengan systemd boot">
+
+
+<meta itemprop="datePublished" content="2017-04-01T19:57:42&#43;07:00" />
+<meta itemprop="dateModified" content="2017-04-01T19:57:42&#43;07:00" />
+<meta itemprop="wordCount" content="888">
+
+
+
+<meta itemprop="keywords" content="archlinux," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Instalasi Arch Linux"/>
+<meta name="twitter:description" content="Memasang Arch linux dengan systemd boot"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">imamdigmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">imamdigmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Instalasi Arch Linux</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-04-01 </span>
+        <div class="post-category">
+            
+              <a href="/categories/arch-linux/"> Arch Linux </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#langkah-langkah">Langkah-langkah</a></li>
+<li><a href="#pre-installation">Pre Installation</a>
+<ul>
+<li><a href="#download-image-iso-archlinux">Download image ISO archlinux</a></li>
+<li><a href="#membuat-bootable">Membuat bootable</a></li>
+<li><a href="#menjalankan-bootable">Menjalankan bootable</a></li>
+</ul></li>
+<li><a href="#arch-linux-core-installation">Arch Linux Core Installation</a>
+<ul>
+<li><a href="#koneksi-ke-internet">Koneksi ke internet</a></li>
+<li><a href="#membuat-partisi-partitioning">Membuat partisi (Partitioning)</a></li>
+<li><a href="#memilih-server-mirror">Memilih server mirror</a></li>
+<li><a href="#install-base">Install base</a></li>
+<li><a href="#set-system-chroot">Set system (chroot)</a></li>
+<li><a href="#hostname-locale-and-zoneinfo">Hostname, locale and zoneinfo</a></li>
+<li><a href="#instalasi-paket-paket-untuk-mendukungan-jaringan">Instalasi paket-paket untuk mendukungan jaringan</a></li>
+<li><a href="#membuat-user">Membuat user</a></li>
+<li><a href="#create-bootloader">Create bootloader</a></li>
+</ul></li>
+<li><a href="#post-installation">Post Installation</a>
+<ul>
+<li><a href="#install-driver-vga">Install driver VGA</a></li>
+<li><a href="#install-desktop-envirounment">Install Desktop Envirounment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Mungkin bagi sebagian orang yang berkecimpung didunia linux pasti sudah tau salah satu distribusi linux yang satu ini, Archlinux memang menjadi salah satu distribusi linux yang banyak disukai oleh orang-orang karena kemudahannya dalam kustomisasi, karena distribusi linux ini dibangun <em>form scratch</em> yang artinya Archlinux dibangun mulai dari awal dan tanpa mengadopsi atau turunan distribusi apapun ini berbeda dengan ubuntu yang dibangun dari distribusi debian atau fedora yang dibangun dari distribusi linux red hat, biasanya yang menggunakan archlinux ini salah satu orang yang bertipe anti-mainstream namun ada juga yang tidak menyukai Archlinux karena susah digunakan dan tidak direkomendasikan bagi orang yang baru menggunakan linux.</p>
+
+<h2 id="langkah-langkah">Langkah-langkah</h2>
+
+<p>Agar mudah dipahami kita akan membagi proses instalasi ini menjadi tiga bagian yaitu:
+1. Pre Instllation
+2. Arch Linux Core Installation
+3. Post Installation
+Oke mari kita mulai instalasinya.</p>
+
+<h2 id="pre-installation">Pre Installation</h2>
+
+<h3 id="download-image-iso-archlinux">Download image ISO archlinux</h3>
+
+<p>Anda dapat mengunduh file .iso archlinux <a href="http://mirror.devilzc0de.org/archlinux/iso/2017.04.01/">disini</a> atau <a href="http://download.nus.edu.sg/mirror/arch/iso/2017.04.01/">disini</a> atau anda juga dapat melihat daftar server yang menyediakan image ISO nya <a href="https://www.archlinux.org/download/">disini</a> dan pilihlah file yang berekstensi dor iso (<code>*.iso</code>)</p>
+
+<h3 id="membuat-bootable">Membuat bootable</h3>
+
+<p>Untuk membuat bootable anda dapat menggunakan <a href="https://etcher.io/">Etcher</a> atau jika anda menggunakan windows anda dapat menggunakan <a href="https://rufus.akeo.ie/">Rufus</a> atau anda juga dapat memilih aplikasi bootable maker sendiri, feel free to choose your favorite bootable maker tapi menurut pengalaman penulis iso archlinux tidak dapat dibuat dengan aplikasi <a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">Universal Usb Installer</a>.</p>
+
+<h3 id="menjalankan-bootable">Menjalankan bootable</h3>
+
+<p>Untuk menjalankan bootable tema-teman dapat mencari sendiri caranya di internet</p>
+
+<h2 id="arch-linux-core-installation">Arch Linux Core Installation</h2>
+
+<h3 id="koneksi-ke-internet">Koneksi ke internet</h3>
+
+<p>Pertama kita koneksikan dulu ke Internet karena instalasi archlinux membutuhkan koneksi internet untuk mengunduh paket-paket yang dibutuhkan. Koneksi internet hanya dapat dilakukan pada direct wifi access, koneksi seperti Wifi Id tidak mendukung karen harus login dulu ke webnya.</p>
+
+<pre><code># wifi-menu
+</code></pre>
+
+<h3 id="membuat-partisi-partitioning">Membuat partisi (Partitioning)</h3>
+
+<p>Setelah itu kita akan membuat partisi <em>Hard Drive</em> kita</p>
+
+<pre><code># cfdisk
+</code></pre>
+
+<p>Pilih GPT lalu kita buat partisinya, skema yang digunakan penulis seperti yang ada dibawah ini, namun anda dapat merubahnya sesuai keinginan</p>
+
+<pre><code>1. 800 MB, ESP (EFI System Partition)
+2. 16 GB, swap
+3. 70 GB, /
+4. 150 GB, /home
+</code></pre>
+
+<p>Format partisi yang tadi kita buat</p>
+
+<pre><code># mkfs.fat -F 32 /dev/sda1
+# mkswap /dev/sda2
+# mkfs.ext4 /dev/sda3 -L &quot;ArchLinux&quot;
+# mkfs.ext4 /dev/sda4 -L &quot;Home&quot;
+</code></pre>
+
+<p>Lalu kita mount partisinya</p>
+
+<pre><code># mount /dev/sda3 /mnt
+# mkdir /mnt/{boot,home}
+# mount /dev/sda1 /mnt/boot
+# swapon /dev/sda2
+# mount /dev/sda4 /mnt/home
+</code></pre>
+
+<h3 id="memilih-server-mirror">Memilih server mirror</h3>
+
+<p>Untuk melihat daftar mirror yang tersedia anda dapat melihatnya <a href="https://wiki.archlinux.org/index.php/Mirrors#Indonesia">disini</a>. Setelah memilih mirrornya edit file <code>/etc/pacman.d/mirrorlist</code> :</p>
+
+<pre><code># nano /etc/pacman.d/mirrorlist
+</code></pre>
+
+<p>Lalu tambahkan mirror nya, penulis sendiri memilih mirror kambing dari kampus UI di jakarta karena lumayan cepat dan stabil</p>
+
+<pre><code>Server = http://kambing.ui.ac.id/archlinux/$repo/os/$arch
+</code></pre>
+
+<h3 id="install-base">Install base</h3>
+
+<pre><code># pacman -Syy
+# pactsrap /mnt base base-devel
+</code></pre>
+
+<p>tunggu sampai proses sinkronisasi selesai, lalu generate <code>fstab</code> untuk <em>mounting</em>  semua partisi agar dapat di booting oleh system</p>
+
+<pre><code># genfstab -L -p -P /mnt &gt; /mnt/etc/fstab
+</code></pre>
+
+<h3 id="set-system-chroot">Set system (chroot)</h3>
+
+<pre><code># arch-chroot /mnt
+</code></pre>
+
+<h3 id="hostname-locale-and-zoneinfo">Hostname, locale and zoneinfo</h3>
+
+<pre><code># echo idiot &gt; /etc/hostname
+</code></pre>
+
+<p>set locale:</p>
+
+<pre><code># nano /etc/locale.gen
+</code></pre>
+
+<p>cari baris dua baris bahasa dibawah ini dengan cara menakan tombol <code>CTRL+w</code> lalu hilangkan tanda (<code>#</code>), contoh :</p>
+
+<pre><code>en_US.UTF-8 UTF-8
+id_ID.UTF-8 UTF-8
+</code></pre>
+
+<p>setelah itu buat file <code>locale.conf</code></p>
+
+<pre><code># nano /etc/locale.conf
+</code></pre>
+
+<p>Pada file yang baru saja kita buat tambahkan</p>
+
+<pre><code>LC_COLLATE=C
+LANG=en_US.UTF-8
+LC_TIME=id_ID.UTF-8
+</code></pre>
+
+<p>Generate locale</p>
+
+<pre><code># locale-gen
+</code></pre>
+
+<p>dan buat symboliclink untuk localtime</p>
+
+<pre><code># ln -sf /usr/share/zoneinfo/Asia/Jakarta /usr/localtime
+</code></pre>
+
+<h3 id="instalasi-paket-paket-untuk-mendukungan-jaringan">Instalasi paket-paket untuk mendukungan jaringan</h3>
+
+<pre><code># pacman -S bash-completion
+# pacman -S ntfs-3g wpa_supplicant dialog
+</code></pre>
+
+<h3 id="membuat-user">Membuat user</h3>
+
+<p>Buat grup user untuk <code>sudo</code></p>
+
+<pre><code># groupadd sudo
+</code></pre>
+
+<p>lalu buat usernya</p>
+
+<pre><code># useradd -m -g users -G sudo,power,storage nama_user
+</code></pre>
+
+<p>edit file sudoers</p>
+
+<pre><code># nano /etc/sudoers
+</code></pre>
+
+<p>hilangkan tanda (<code>#</code>) pada baris <code>%sudo ALL=(ALL)</code>, lalu buat password untuk user yang kita buat tadi</p>
+
+<pre><code># passwd nama_user
+# passwd root
+</code></pre>
+
+<h3 id="create-bootloader">Create bootloader</h3>
+
+<p>Untuk bootloadernya penulis menggunakan <code>systemd-boot</code> karena lebih mudah, ringan dan simple daripada menggunakan <code>grub</code>
+Buat initramfs:</p>
+
+<pre><code># mkinitcpio -p linux
+</code></pre>
+
+<p>Jika komputer anda menggunakan processor intel maka instal paket <code>intel-ucode</code></p>
+
+<pre><code># pacman -S intel-ucode
+</code></pre>
+
+<p>Buat bootloader</p>
+
+<pre><code># bootctl install
+</code></pre>
+
+<p>Buat entry untuk systemd-boot pada <code>/boot/loader/entries/</code></p>
+
+<pre><code># nano /boot/loader/entries/arhlinux.conf
+</code></pre>
+
+<p>Isikan file tersebut dengan</p>
+
+<pre><code>title Archlinux
+linux /vmlinuz-linux
+initrd /intel-ucode.img
+initrd /initramfs-linux.img
+options root=/dev/sda&lt;X&gt; rw
+</code></pre>
+
+<blockquote>
+<p>Note: Jika anda tidak menggunalan <code>intel-processor</code> hapus barus ini <code>initrd /intel-ucode.img</code> dan ubah <X> dengan partisi <strong>root</strong> anda.</p>
+</blockquote>
+
+<p>Finaly, <code>exit</code> dari chroot lalu <code>reboot</code>.</p>
+
+<h2 id="post-installation">Post Installation</h2>
+
+<h3 id="install-driver-vga">Install driver VGA</h3>
+
+<p>Sebelum kita menginstal dukunagn paket untuk kartu VGA ada baiknya kita memeriksa dulu VGA yang kita gunakan dengan cara</p>
+
+<pre><code>$ sudo lspci | grep VGA
+</code></pre>
+
+<p>setelah sudah diketahui kita instal paket dukungan VGA pilih salah satu saja yang anda gunakan pada komputer anda</p>
+
+<ul>
+<li>Untuk VGA Standard</li>
+</ul>
+
+<pre><code>$ sudo pacman -S xf86-video-vesa mesa mesa-demos
+</code></pre>
+
+<ul>
+<li>Untuk VGA Intel</li>
+</ul>
+
+<pre><code>$ sudo pacman -S xf86-video-intel
+</code></pre>
+
+<ul>
+<li>Untuk VGA Nvidia</li>
+</ul>
+
+<pre><code>$ sudo pacman -S xf86-video-nouveau
+</code></pre>
+
+<h3 id="install-desktop-envirounment">Install Desktop Envirounment</h3>
+
+<p>Feel free to choose your favorite Desktop Envirounment bro, namun penulis lebih memilih XFCE karena ringan dan juga simple</p>
+
+<pre><code>$ sudo pacman -S xfce4 xfce4-goodies
+</code></pre>
+
+<p>instal NetworkManager</p>
+
+<pre><code>$ sudo systemctl enable NetworkManager
+</code></pre>
+
+<p>instal GDM (gnome display manager) untuk tampilan login user</p>
+
+<pre><code>$ sudo pacman -S gdm
+$ sudo systemctl enable gdm
+</code></pre>
+
+<p>atau jika anda lebih menyukai login dengan terminal <code>TTY</code> atau tanpa tampilan anda dapat menggunakan <code>xorg-xinit</code></p>
+
+<pre><code>$ sudo pacman -S xorg-xinit
+</code></pre>
+
+<p>lalu kita buat file <code>~/.xinitrc</code> agar ketika kita ingin masuk ke tampilan desktop kita dapat menggunakan <code>startx</code></p>
+
+<pre><code>$ touch ~/.xinitrc
+$ echo &quot;exec xfce4-session&quot; &gt; ~/.xinitrc
+</code></pre>
+
+<p>lalu reboot</p>
+
+<pre><code>$ sudo reboot
+</code></pre>
+
+<blockquote>
+<p>Note: Jika anda menggunakan <code>startx</code> maka untuk masuk ke tampilan desktop gunakan perintah <code>$ startx</code></p>
+</blockquote>
+
+<p>Tadaaaa, Archlinux sudah bisa digunakan.</p>
+
+<p><strong>Enjoy!</strong>
+Semoga bermanfaat.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-04-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/archlinux/">archlinux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/pemutar-musik-dengan-ncmpcpp/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Pemutar musik dengan MPD dan NCMPCPP</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/redshift-eye-protection/">
+            <span class="next-text nav-default">Redshift Eye Protection</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Imam Digmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

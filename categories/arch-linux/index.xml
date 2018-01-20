@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arch Linux on JournalToday</title>
+    <link>https://imamdigmi.github.io/categories/arch-linux/</link>
+    <description>Recent content in Arch Linux on JournalToday</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Imam Digmi</copyright>
+    <lastBuildDate>Sat, 01 Apr 2017 19:57:42 +0700</lastBuildDate>
+    
+	<atom:link href="https://imamdigmi.github.io/categories/arch-linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Instalasi Arch Linux</title>
+      <link>https://imamdigmi.github.io/post/instalasi-arch-linux/</link>
+      <pubDate>Sat, 01 Apr 2017 19:57:42 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/instalasi-arch-linux/</guid>
+      <description>Mungkin bagi sebagian orang yang berkecimpung didunia linux pasti sudah tau salah satu distribusi linux yang satu ini, Archlinux memang menjadi salah satu distribusi linux yang banyak disukai oleh orang-orang karena kemudahannya dalam kustomisasi, karena distribusi linux ini dibangun form scratch yang artinya Archlinux dibangun mulai dari awal dan tanpa mengadopsi atau turunan distribusi apapun ini berbeda dengan ubuntu yang dibangun dari distribusi debian atau fedora yang dibangun dari distribusi linux red hat, biasanya yang menggunakan archlinux ini salah satu orang yang bertipe anti-mainstream namun ada juga yang tidak menyukai Archlinux karena susah digunakan dan tidak direkomendasikan bagi orang yang baru menggunakan linux.</description>
+    </item>
+    
+  </channel>
+</rss>
