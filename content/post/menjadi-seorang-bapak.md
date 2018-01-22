@@ -1,5 +1,5 @@
 ---
-date: 2016-06-14T09:27:12+07:00
+date: 2016-08-14T09:27:12+07:00
 lastmod: 2018-01-23T00:32:08+07:00
 
 title: "Menjadi Seorang Bapak"
