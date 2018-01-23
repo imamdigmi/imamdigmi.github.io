@@ -115,7 +115,7 @@ Bagaimana jika code diatas kita dijalankan?
 
 ![Closure as Callback](/images/php-anonymous-function-lambda-dan-closure/closure-as-callback.png)
 
-Sudah paham kan? {%gemoji smile%}
+Sudah paham kan? :smile:
 
 Semoga paham dan jika belum paham silahkan kasih komentar dikotak disqus yang ada di bawah ini atau anda dibaca ulang lagi lebih teliti ya,
 karena teknik-teknik ini akan sering kita gunakan didalam pengembangan aplikasi yang menggunakan Laravel.

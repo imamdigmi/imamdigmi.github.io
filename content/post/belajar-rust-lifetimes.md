@@ -58,7 +58,7 @@ println!("{}", v);
 Di sini kita memiliki fungsi `skip_prefix` yang mengambil dua referensi `&str` sebagai parameter dan mengembalikan referensi tunggal `&str`. Kita panggil dengan cara mem-passing ke dalam references pada `p`: dua variable dengan lifetimes yang berbeda.
 
 
-Terimakasih, Semoga bermanfaat {%gemoji wink%}
+Terimakasih, Semoga bermanfaat :wink:
 
 Sumber :
 [Rust Book](https://doc.rust-lang.org/stable/book)
