@@ -16,8 +16,10 @@ categories: ["Docker"]
 
 ## Prerequisites
 To follow this tutorial, you will need the following:
+
 - 64-bit Ubuntu 16.04 Droplet
-- Non-root user with sudo privileges Initial Setup Guide for Ubuntu 16.04 explains how to set this up.) <!-- more -->
+- Non-root user with sudo privileges Initial Setup Guide for Ubuntu 16.04 explains how to set this up.
+
 > Note: Docker requires a 64-bit version of Ubuntu as well as a kernel version equal to or greater than 3.10. The default 64-bit Ubuntu 16.04 Droplet meets these requirements.
 
 All the commands in this tutorial should be run as a non-root user. If root access is required for the command, it will be preceded by sudo. Initial Setup Guide for Ubuntu 16.04 explains how to add users and give them `sudo` access.
