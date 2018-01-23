@@ -7,7 +7,7 @@ enableRobotsTXT = true
 enableEmoji = true        # https://www.webpagefx.com/tools/emoji-cheat-sheet/
 theme = "even"
 
-hasCJKLanguage = false
+hasCJKLanguage = true
 paginate = 3
 disqusShortname = "imamdigmi"
 googleAnalytics = "UA-74531115-2"
