@@ -13,7 +13,7 @@ tags: ["golang"]
 categories: ["GoLang"]
 ---
 
-Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :<!--more-->
+Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :
 ```bash
 No LSB modules are available.
 Distributor ID: Ubuntu
@@ -24,7 +24,8 @@ Codename:       yakkety
 ## Download Golang
 
 Sebelum kita meng-install golang kita harus mendownload aplikasi golang terlebih dahulu [disini](https://golang.org/dl/) lalu klik pada bagian Linux dan jangan lupa pilih jenis bit komputer anda.
-> NOTE: Pada artikel ini ditulis versi stabil dari golang yaitu 1.7.4 dan kita akan menggunakan versi ini.
+
+> Note: Pada artikel ini ditulis versi stabil dari golang yaitu 1.7.4 dan kita akan menggunakan versi ini.
 
 ![Download](/images/instalasi-golang/download.png)
 
@@ -76,7 +77,8 @@ Struktur diatas adalah struktur standar workspace Golang jadi pastikan penamaann
 - `bin` berisi file executable hasil build
 
 Daftarkan `GOPATH` kedalam `PATH Variable` :
-> NOTE: Ganti < **workspace** > sesuai dengan direktori workspace golang di komputer anda.
+
+> Note: Ganti < **workspace** > sesuai dengan direktori workspace golang di komputer anda.
 
 ```bash
 echo "export GOPATH=\"\$HOME/< workspace >\"" >> ~/.profile
@@ -87,7 +89,8 @@ Setelah itu cek apakah GOPATH sudah terdaftar atau belum
 // Output:
 /home/idiot/Workspace/golang
 ```
-> TIP: Jika $GOPATH tidak dikenali cobalah untuk menutup lalu membuka kembali terminal anda
+
+> Tip: Jika $GOPATH tidak dikenali cobalah untuk menutup lalu membuka kembali terminal anda
 
 ```bash
 tree -L 2 $GOPATH
@@ -119,7 +122,8 @@ Golang memang sudah terinstall tapi _envirounment_ nya masih belum friendly, ber
 echo "export GOROOT=\"/usr/local/go\"" >> ~/.profile
 echo "export PATH=\"\$GOPATH/bin:\$(go env GOROOT)/bin:\$PATH\"" >> ~/.profile
 ```
-> TIP: Langkah diatas kita lalukan agar easily accessible ketika kita hendak mengakses file binari yang kita install dengan perintah `go install` pada proyek kita.
+
+> Tip: Langkah diatas kita lalukan agar easily accessible ketika kita hendak mengakses file binari yang kita install dengan perintah `go install` pada proyek kita.
 
 In the end, kumpulan `PATH` yang kita taruh pada file .profile adalah sebagai berikut :
 ![Profile File](/images/instalasi-golang/profile-file.png)
