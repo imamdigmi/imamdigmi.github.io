@@ -18,9 +18,9 @@ WebSocket merupakan sebuah protokol komunikasi dua arah yang dapat digunakan ole
 kita dapat melihat bagaimana dalam kasus AJAX, setiap request dari pengguna maupun respon dari server dilakukan secara terpisah. Jika ingin mengirimkan request ke server, kita perlu membuka koneksi baru yang kemudian akan dibalas oleh server seperti ia membalas permintaan halaman HTML biasa. Server juga tidak dapat langsung melakukan pengiriman data ke klien tanpa ada permintaan terlebih dahulu. Hal ini berbeda dengan pola komunikasi WebSocket, di mana koneksi berjalan tanpa terputus dan server dapat mengirimkan data atau perintah tanpa harus ada permintaan dari pengguna terlebih dahulu. Dengan begitu, WebSocket bahkan juga memungkinkan server mengirimkan data atau perintah ke semua klien yang terkoneksi, misalkan untuk memberikan notifikasi global.
 
 Untuk dapat melihat langsung bagaimana cara kerja WebSocket, kita akan langsung melakukan eksperimen. Objek yang diperlukan untuk menggunakan WebSocket dari browser adalah WebSocket. Tetapi sebelumnya, kita memerlukan sedikit persiapan terlebih dahulu, yaitu komponen server dari WebSocket.
-
+sssss
 ### Websocket dengan golang (Aplikasi Chatting)
-Pertama, pastikan golang sudah terinstall jika belum bisa baca [disini](http://imamdigmi.github.io/blog/2017/01/15/install-golang-di-linux/) and make sure to go get:
+Pertama, pastikan golang sudah terinstall jika belum bisa baca [disini](http://imamdigmi.github.io/post/instalasi-golang/) and make sure to go get:
 ```bash
 go get github.com/gorilla/websocket
 ```
