@@ -16,6 +16,7 @@ Mungkin bagi sebagian orang yang berkecimpung didunia linux pasti sudah tau sala
 
 ## Langkah-langkah
 Agar mudah dipahami kita akan membagi proses instalasi ini menjadi tiga bagian yaitu:
+
 1. Pre Instllation
 2. Arch Linux Core Installation
 3. Post Installation
@@ -86,7 +87,7 @@ Server = http://kambing.ui.ac.id/archlinux/$repo/os/$arch
 
 ```
 # pacman -Syy
-# pactsrap /mnt base base-devel
+# pactstrap /mnt base base-devel
 ```
 
 tunggu sampai proses sinkronisasi selesai, lalu generate `fstab` untuk _mounting_  semua partisi agar dapat di booting oleh system
@@ -266,10 +267,10 @@ $ sudo pacman -S gdm
 $ sudo systemctl enable gdm
 ```
 
-atau jika anda lebih menyukai login dengan terminal `TTY` atau tanpa tampilan anda dapat menggunakan `xorg-xinit`
+atau jika anda lebih menyukai login dengan terminal `TTY` (tanpa tampilan) anda dapat menggunakan `xorg-xinit`
 
 ```
-$ sudo pacman -S xorg-xinit
+$ sudo pacman -S xorg-xinit xorg-server
 ```
 
 lalu kita buat file `~/.xinitrc` agar ketika kita ingin masuk ke tampilan desktop kita dapat menggunakan `startx`
@@ -284,7 +285,7 @@ lalu reboot
 ```
 $ sudo reboot
 ```
-> Note: Jika anda menggunakan `startx` maka untuk masuk ke tampilan desktop gunakan perintah `$ startx`
+> Note: Jika anda menggunakan `startx` maka untuk masuk ke tampilan desktop gunakan perintah `startx`
 
 Tadaaaa, Archlinux sudah bisa digunakan.
 
