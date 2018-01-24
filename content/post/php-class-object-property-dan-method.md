@@ -2,14 +2,14 @@
 date: 2016-05-24T15:41:07+07:00
 lastmod: 2016-05-24T15:41:07+07:00
 
-title: "PHP Class, Object, Property dan Method"
+title: "Belajar Laravel - Class, Object, Property dan Method"
 description: "Memahami Class, Object, Property dan Method di PHP"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
-keywords: ["memahami", "php", "class", "object", "property", "method", "oop"]
-tags: ["php"]
+draft: false
+keywords: ["php", "class", "object", "property", "method", "oop", "laravel"]
+tags: ["php", "laravel"]
 categories: [PHP]
 ---
 

@@ -2,14 +2,14 @@
 date: 2016-05-24T00:43:50+07:00
 lastmod: 2016-05-24T00:43:50+07:00
 
-title: "PHP Pengenalan Framework"
+title: "Belajar Laravel - Pengenalan Framework"
 description: "Berkenalan dengan teknologi framework di PHP"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: ["php", "framework", "laravel"]
-tags: ["php"]
+tags: ["php", "laravel"]
 categories: ["PHP"]
 ---
 

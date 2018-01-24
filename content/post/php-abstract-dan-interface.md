@@ -2,14 +2,14 @@
 date: 2016-05-25T16:19:22+07:00
 lastmod: 2016-05-25T16:19:22+07:00
 
-title: "PHP Abstract dan Interface"
+title: "Belajar Laravel - Abstract dan Interface"
 description: "Memahami abstract dan interface di PHP"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
-keywords: ["php", "oop", "pbo", "abstract", "interface"]
-tags: ["php"]
+draft: false
+keywords: ["php", "oop", "pbo", "abstract", "interface", "laravel"]
+tags: ["php", "laravel"]
 categories: ["PHP"]
 ---
 

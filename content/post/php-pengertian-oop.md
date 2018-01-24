@@ -2,14 +2,14 @@
 date: 2016-05-24T14:39:08+07:00
 lastmod: 2016-05-24T14:39:08+07:00
 
-title: "PHP Pengertian OOP"
+title: "Belajar Laravel - Pengertian OOP"
 description: "Pengenalan Pemrograman Berorientasi Obyek"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
-keywords: ["php", "oop", "pbo"]
-tags: ["php"]
+draft: false
+keywords: ["php", "oop", "pbo", "laravel"]
+tags: ["php", "laravel"]
 categories: ["PHP"]
 ---
 

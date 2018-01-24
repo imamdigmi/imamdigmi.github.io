@@ -2,14 +2,14 @@
 date: 2016-05-26T22:44:46+07:00
 lastmod: 2016-05-26T22:44:46+07:00
 
-title: "PHP Anonymous Function/Lambda dan Closure"
+title: "Belajar Laravel - Anonymous Function/Lambda dan Closure"
 description: "Memahami anonymous function atau lambda dan closure di php"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
-keywords: ["php", "oop", "pbo", "lambda", "anonymous function", "closure"]
-tags: ["php"]
+draft: false
+keywords: ["php", "oop", "pbo", "lambda", "anonymous function", "closure", "laravel"]
+tags: ["php", "laravel"]
 categories: ["PHP"]
 ---
 

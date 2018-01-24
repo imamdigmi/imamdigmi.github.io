@@ -2,14 +2,14 @@
 date: 2016-05-26 01:05:06+07:00
 lastmod: 2016-05-26 01:05:06+07:00
 
-title: "PHP Json (JavaScript Object Notation)"
+title: "Belajar Laravel - Json (JavaScript Object Notation)"
 description: "Memahami JSON di PHP"
 author: "Imam Digmi"
 
 weight: 50
-draft: true
-keywords: ["php", "json"]
-tags: ["php"]
+draft: false
+keywords: ["php", "json", "laravel"]
+tags: ["php", "laravel"]
 categories: ["PHP"]
 ---
 
