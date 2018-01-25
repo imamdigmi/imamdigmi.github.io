@@ -1,16 +1,16 @@
 ---
-date: 2018-01-24T16:30:15+07:00
-lastmod: 2018-01-24T16:30:15+07:00
+date: 2018-01-25T22:51:05+07:00
+lastmod: 2018-01-25T22:51:05+07:00
 
 title: "Deteksi Objek dengan TensorFlow"
 description: "Membuat pendeteksi obyek menggunakan API TensorFlow"
 author: "Imam Digmi"
 
 weight: 50
-draft: false
+draft: true
 keywords: [tensorflow, object detection, api, python, deep learning]
-tags: [tensorflow, python]
-categories: [TensorFlow]
+tags: [tensorflow, python, deep learning, machine learning]
+categories: [Deep Learning]
 ---
 
 # Mempersiapkan Dataset
@@ -410,7 +410,7 @@ Berikut sususan akhir direktori yang penulis gunakan :
 ```
 
 # Training Model
-Setelah semua file yang dibutuhkan selesai dipersiapkan maka kita akan memasuki tahap training Neural Network untuk mengenali pola Tanda Nomor Kendaraan Bermotor (TNKB). Download [TensorFlow Model](https://github.com/tensorflow/models/) lalu ekstrak folder models.
+Setelah semua file yang dibutuhkan selesai dipersiapkan maka kita akan memasuki tahap training Neural Network untuk mengenali pola Tanda Nomor Kendaraan Bermotor (TNKB). Download [TensorFlow Model](https://github.com/tensorflow/models/) lalu ekstrak folder models. Lebih detailnya bisa dilihat [disini](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_locally.md)
 
 Jalankan perintah dibawah ini untuk membuat `PYTHONPATH` variable
 
@@ -436,7 +436,11 @@ Jika kita melihat ke daftar [COCO-trained Model](https://github.com/tensorflow/m
 Baik! setelah itu kita mulai training Neural Network, jalankan perintah dibawah ini untuk memulai proses training.
 
 ```bash
-python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/plate_number_v1.config
+python3 train.py \
+    --logtostderr \
+    --train_dir=training/ \
+    --pipeline_config_path=training/plate_number_v1.config \
+    --num_clones=2
 ```
 
 ![Training Process](/images/deteksi-objek-dengan-tensorflow/training.png)
@@ -454,18 +458,28 @@ Kurang lebih tampilan TensorBoard akan seperti dibawah ini
 
 ![TensorBoard Graph](/images/deteksi-objek-dengan-tensorflow/tensorboard-graph.png)
 
+## Evaluation / Testing
+
+```bash
+python3 eval.py \
+    --logtostderr \
+    --pipeline_config_path=training/plate_number_v1.config \
+    --checkpoint_dir=training/ \
+    --eval_dir=evaluation/
+```
+
 ## Export Graph
 Proses training diatas belum sepenuhnya selesai karena tujuan utama dari proses training Neural Network adalah sebuah model yang akan kita gunakan untuk mendeteksi objek-objek yang telah kita masukkan sebelumnya, maka dari itu kita perlu mengekspor modelnya, jalankan perintah berikut untuk mengekspor model.
 
 ```bash
 python3 export_inference_graph.py \
     --input_type image_tensor \
-    --pipeline_config_path training/ssd_mobilenet_v1_pets.config \
+    --pipeline_config_path training/plate_number_v1.config \
     --trained_checkpoint_prefix training/model.ckpt-25000 \
-    --output_directory plate_model_exported
+    --output_directory plate_number_recognition_model_v1_2018_01_24
 ```
 
-# Testing
+# Mencoba Hasil Model
 Ini adalah tahap terakhir yang kita lalui dan kita akan mencoba menggunakan model yang telah kita latih untuk mengenali Tanda Nomor Kendaraan Bermotor (TNKB) sebelumnya, berikut kode untuk menguji model 
 ```python
 
@@ -474,4 +488,5 @@ Ini adalah tahap terakhir yang kita lalui dan kita akan mencoba menggunakan mode
 Dan hasilnya akan seperti dibawah ini
 
 ![Results Detection](/images/deteksi-objek-dengan-tensorflow/result-1.png)
+
 ![Results Detection](/images/deteksi-objek-dengan-tensorflow/result-2.png)
