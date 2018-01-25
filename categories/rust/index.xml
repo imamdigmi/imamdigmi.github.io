@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on JournalToday</title>
+    <link>https://imamdigmi.github.io/categories/rust/</link>
+    <description>Recent content in Rust on JournalToday</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>imamdigmi</copyright>
+    <lastBuildDate>Fri, 17 Mar 2017 22:41:07 +0700</lastBuildDate>
+    
+	<atom:link href="https://imamdigmi.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Belajar Rust - Memahami Stact Dan Heap</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</link>
+      <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</guid>
+      <description>Jika anda adalah seorang programmer yang berkecimpung di low-level atau systems programming pastinya sudah tidak asing lagi dengan konsep ini dan tentunya sangatlah mengerti tentang pentingnya mengelola resource atau sumber daya memori. Dalam kompilasi sebuah program diciptakan dengan sebuah struktur. Mungkin secara spesifik struktur untuk masing-masing operating system berbeda tapi secara garis besar memiliki beberapa persamaan yaitu pengalamatan memori.
+Pada saat program berjalan (runnig), sebuah program akan menempati lokasi tertentu pada memori.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Rust - Variable</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-variable/</link>
+      <pubDate>Mon, 27 Feb 2017 11:23:08 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/belajar-rust-variable/</guid>
+      <description>Pada artikel sebelumnya kita membahas tentang 3 Konsep Dasar yaitu Lifetimes dan pada kali ini kita akan membahas tentang penulisan Variable atau yang disebut juga Binding.
+Desain utama dari Rust Programming language adalah fast, efficient and memory safe system. Ini adalah desain yang sudah dijadikan standard modern programming language untuk kedepanya sama seperti yang diterapkan dalam Go Programming Language atau golang.
+Pembahasan pada artikel kali ini adalah sebagai berikut :</description>
+    </item>
+    
+    <item>
+      <title>Belajar Rust - Lifetimes</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-lifetimes/</link>
+      <pubDate>Sun, 26 Feb 2017 20:09:23 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/belajar-rust-lifetimes/</guid>
+      <description>Sebelumnya kita membahas tentang konsep dasar kedua dari Rust yaitu References dan Borrowing, pada artikel ini kita masih membahas tentang konsep dasar Rust yaitu Lifetimes. Ketika kita sudah selesai berinteraksi dengan object maka proses untuk dis-alokasi memory akan dilakukan secara otomatis. Sehingga kita tidak perlu secara manual untuk membersihkan memory yang sudah digunakan.
+Pada unmanaged code seperti C++ cukup sulit untuk membuat sebuah program yang benar dan terbebas dari bug, sehingga seringkali menimbulkan celah yang bisa dicompromise.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Rust - References Dan Borrowing</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-references-dan-borrowing/</link>
+      <pubDate>Sun, 26 Feb 2017 17:23:01 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/belajar-rust-references-dan-borrowing/</guid>
+      <description>Sebelumnya kita membahas tentang konsep dasar dari Rust yaitu Ownership, kita masih dalam konsep dasar dan kali ini kita akan membahas tentang konsep dasar selanjutnya yaitu References dan Borrowing.
+Rust adalah bahasa dengan safety code dimana object diatur oleh bahasa pemograman tersebut dari awal hingga akhir. Developer tidak perlu lagi melakukan pointer arithmatic dan manajemen memory seperti yang kita lakukan dalam bahasa C dan C++.
+Oke Let&amp;rsquo;s learn about Borrowing.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Rust - Ownership</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-ownership/</link>
+      <pubDate>Sun, 26 Feb 2017 14:10:24 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/belajar-rust-ownership/</guid>
+      <description>Sebelumnya kita membahas tentang setup rust kali ini kita akan membahas tentang konsep dasar dari bahasa pemrograman Rust, pembahasan yang akan kita bahas meliputi :
+ Ownership Borrowing Lifetimes  Ketiga pembahasan diatas adalah &amp;ldquo;The most of distinct and compelling features in Rust&amp;rdquo; artinya ketiga hal tersebut adalah hal paling mendasar dan penting untuk mulai mempelajari bahasa Rust, karena ketiga pembahasan tersebut cukup panjang maka dibagi menjadi 3 artikel dan untuk artikel ini kita hanya akan membahas tentang ownership.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Rust - Setup</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-setup/</link>
+      <pubDate>Sun, 26 Feb 2017 12:16:03 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/belajar-rust-setup/</guid>
+      <description>Rust adalah bahasa pemrograman yang terbilang baru yang pembuatannya dimulai pada tahun 2006 oleh developer Mozilla. Rust adalah bahasa pemrograman sistem (system programming) yang difokuskan pada tiga tujuan: keamanan, kecepatan, dan concurrency. Ia memelihara tujuan ini tanpa garbage collector yang membuatnya menjadi bahasa yang berguna untuk sejumlah kasus penggunaan bahasa lain. Tidak hanya itu rust juga bahasa dengan general purpose language, bahasa low level yang bisa membantu kita untuk mengeksplorasi potensi sisi system, embedded system, dan hal-hal kritis terkait performance.</description>
+    </item>
+    
+  </channel>
+</rss>

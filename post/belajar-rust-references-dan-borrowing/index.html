@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Rust - References Dan Borrowing - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami References dan Borrowing di Rust" />
+<meta name="keywords" content="rust, references, borrowing" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/belajar-rust-references-dan-borrowing/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Rust - References Dan Borrowing" />
+<meta property="og:description" content="Memahami References dan Borrowing di Rust" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/belajar-rust-references-dan-borrowing/" />
+
+
+
+<meta property="article:published_time" content="2017-02-26T17:23:01&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-02-26T17:23:01&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Rust - References Dan Borrowing">
+<meta itemprop="description" content="Memahami References dan Borrowing di Rust">
+
+
+<meta itemprop="datePublished" content="2017-02-26T17:23:01&#43;07:00" />
+<meta itemprop="dateModified" content="2017-02-26T17:23:01&#43;07:00" />
+<meta itemprop="wordCount" content="847">
+
+
+
+<meta itemprop="keywords" content="rust," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Rust - References Dan Borrowing"/>
+<meta name="twitter:description" content="Memahami References dan Borrowing di Rust"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Rust - References Dan Borrowing</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-02-26 </span>
+        <div class="post-category">
+            
+              <a href="/categories/rust/"> Rust </a>
+            
+          </div>
+        <span class="more-meta"> 847 word </span>
+        <span class="more-meta"> 4 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#borrowing">Borrowing</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#borrowing-rules">Borrowing Rules</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Sebelumnya kita membahas tentang konsep dasar dari Rust yaitu <a href="https://imamdigmi.github.io/post/belajar-rust-ownership/">Ownership</a>, kita masih dalam konsep dasar dan kali ini kita akan membahas tentang konsep dasar selanjutnya yaitu References dan Borrowing.</p>
+
+<p>Rust adalah bahasa dengan safety code dimana object diatur oleh bahasa pemograman tersebut dari awal hingga akhir. Developer tidak perlu lagi melakukan pointer arithmatic dan manajemen memory seperti yang kita lakukan dalam bahasa C dan C++.</p>
+
+<p>Oke Let&rsquo;s learn about Borrowing.</p>
+
+<h2 id="borrowing">Borrowing</h2>
+
+<p>Kode program dibawah ini pada dasarnya untuk menjumlahkan dua buah vector :</p>
+
+<pre><code class="language-rust">fn main() {
+    fn sum_vec(v: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+        return v.iter().fold(0, |a, &amp;b| a + b);
+    }
+    fn foo(v1: &amp;Vec&lt;i32&gt;, v2: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+        let s1 = sum_vec(v1);
+        let s2 = sum_vec(v2);
+        s1 + s2
+    }
+    let v1 = vec![1, 2, 3];
+    let v2 = vec![4, 5, 6];
+    let answer = foo(&amp;v1, &amp;v2);
+    println!(&quot;{}&quot;, answer);
+}
+</code></pre>
+
+<p>Alih-alih kita menggunakan <code>Vec&lt;i32&gt;</code> sebagai argument pada function, kita menggunakan references: <code>&amp;Vec&lt;i32&gt;</code> untuk melakukan pereferensian. Dan kita tidak menggunakan <code>v1</code> dan <code>v2</code> secara langsung melainkan kita menggunakn <code>&amp;v1</code> dan <code>&amp;v2</code>. Kita gunakan &ldquo;references&rdquo; yaitu <code>&amp;T</code> sebagai cara untuk membawa obyek tapi tidak sekaligus dengan pemiliknya. Binding yang di-<em>borrow</em> tidak akan dihapuskan alokasi memorinya sehingga ketika kita memanggil binding tersebut diluar ruanglingkupnya kita masih bisa menggunakan binding yang aslinya.</p>
+
+<p>Referensi tetap bersifat &ldquo;immutable&rdquo; seperti binding, yang artinya jika terdapat binding didalam function <code>foo()</code> maka tidak akan bisa diubah atau dibawa keluar dari &ldquo;scope&rdquo; :</p>
+
+<pre><code class="language-rust">fn main() {
+  fn foo(v: &amp;Vec&lt;i32&gt;) {
+    v.push(5);
+  }
+  let v = vec![];
+  foo(&amp;v);
+}
+</code></pre>
+
+<p>Jika program diatas kita running, maka akan muncul error seperti ini :</p>
+
+<pre><code>error: cannot borrow immutable borrowed content `*v` as mutable
+fn foo(v: &amp;Vec&lt;i32&gt;) {
+          --------- use `&amp;mut Vec&lt;i32&gt;` here to make mutable
+v.push(5);
+^
+</code></pre>
+
+<p>karena kita mencoba untuk memasukkan secara paksa sebuah nilai kedalam vector, dan itu tidak akan bisa kita lalukan.</p>
+
+<h2 id="references">References</h2>
+
+<p>Jenis kedua dari references yaitu : <code>&amp;mut T</code>. Adalah sebuah &ldquo;mutable references&rdquo; yang mana kita diperbolehkan untuk merubah resource dari yang kita borrow. For example :</p>
+
+<pre><code class="language-rust">fn main() {
+  let mut x = 5;
+  {
+    let y = &amp;mut x;
+    *y += 1;
+  }
+  println!(&quot;{}&quot;, x);
+}
+</code></pre>
+
+<p>Program diatas akan menghasilkan angka <code>6</code>. Kita buat mutable reference untuk <code>x</code> (<code>&amp;mut x</code>) lalu kita tambahkan nilai <strong>1</strong> ke <code>y</code>. Karena sebelumnya kita memanggil <code>x</code> dengan mutable references maka kita bisa mengolah <code>x</code> tadi, jika tidak seperti itu maka kita tidak akan bisa mengolahnya.</p>
+
+<p>Ketika kita ingin mengakes pereferensian dari <code>&amp;mut</code> maka kita membutuhkan asterisk (<code>*</code>) sebelum <code>y</code> karena <code>y</code> adalah <code>&amp;mut</code> dari pe-referensian. Selain itu kita tambahkan pula <code>{</code> dan <code>}</code> yang menandakan bahwa pengolahan tersebut dalam ruanglingkup tersendiri, coba kita ubah kode diatas menjadi seperti ini :</p>
+
+<pre><code class="language-rust">fn main() {
+  let mut x = 5;
+  let y = &amp;mut x;
+  *y += 1;
+  println!(&quot;{}&quot;, x);
+}
+</code></pre>
+
+<p>maka kita akan mendapatkan error seperti ini :</p>
+
+<pre><code class="language-bash">error: cannot borrow `x` as immutable because it is also borrowed as mutable
+let y = &amp;mut x;
+             - mutable borrow occurs here
+*y += 1;
+println!(&quot;{}&quot;, x);
+               ^ immutable borrow occurs here
+- mutable borrow ends here
+</code></pre>
+
+<h2 id="borrowing-rules">Borrowing Rules</h2>
+
+<ul>
+<li>Semua borrow harus dalam ruanglingkup (scope) yang tidak lebih dari binding aslinya.</li>
+<li>Boleh memakai satu atau dua dari kedua jenis borrow, tapi tidak memakai kedua jenis borrow secara bersamaan :
+
+<ul>
+<li>satu atau lebih references (<code>&amp;T</code>) ke resource.</li>
+<li>tepat satu mutable reference (<code>&amp;mut T</code>).</li>
+</ul></li>
+</ul>
+
+<p>Dengan references, kemungkinan kita akan memiliki banyak references yang akan kita buat. Namun kita hanya dapat memiliki <code>&amp;mut</code> dalam satu waktu, dengan demikian kita tidak akan bisa memiliki data race jika kita menggunakan <code>&amp;mut</code> secara bersamaan. Inilah mengapa Rust mencegah data races pada saat kompilasi dan kita akan mendapatkan error ketika kita melanggar aturan yang ada.</p>
+
+<p>Oke, let&rsquo;s consider our example again.</p>
+
+<pre><code class="language-rust">fn main() {
+  let mut x = 5;
+  let y = &amp;mut x;
+  *y += 1;
+  println!(&quot;{}&quot;, x);
+}
+</code></pre>
+
+<p>Jika kode diatas kita jalankan, maka kita akan mendapatkan error seperti ini :</p>
+
+<pre><code class="language-bash">error: cannot borrow `x` as immutable because it is also borrowed as mutable
+let y = &amp;mut x;
+             - mutable borrow occurs here
+*y += 1;
+println!(&quot;{}&quot;, x);
+               ^ immutable borrow occurs here
+- mutable borrow ends here
+</code></pre>
+
+<p>Error tersebut karena kita telah melanggar aturan : <code>&amp;mut T</code> yang di pointing ke <code>x</code>, dan kita tidak diperbolehkan untuk membuat <code>&amp;T</code>.</p>
+
+<pre><code class="language-rust">fn main() {
+  let mut x = 5;
+  let y = &amp;mut x;    // -+ &amp;mut borrow `x` dimulai disini.
+  *y += 1;           //  |
+  println!(&quot;{}&quot;, x); // -+ - mencoba mem-borrow kembali `x` disini.
+}                    // -+ &amp;mut borrow dari `x` berkahir disini.
+</code></pre>
+
+<p>Scope nya akan konflik karena kita tidak bisa membuat <code>&amp;x</code> selama <code>y</code> masih dalam scope yang sama dengan binding yang aslinya.
+Dan ketika kita membuat scope untuk borrowing diatas kita tandai dengan <code>{</code> dan <code>}</code> :</p>
+
+<pre><code class="language-rust">let mut x = 5;
+{
+    let y = &amp;mut x; // -+ &amp;mut borrow dimulai disini.
+    *y += 1;        //  |
+}                   // -+ ... borrow berakhir disini.
+println!(&quot;{}&quot;, x);  // &lt;- `x` di-borrow kembali disini.
+</code></pre>
+
+<p>Kode diatas tidak akan mendapatkan masalah karena kita mem-borrow dalam scope yang berbeda.</p>
+
+<p>Baik, sekian dulu belajar kali ini.
+Terimakasih, Semoga bermanfaat 😉</p>
+
+<p>Sumber :
+<a href="https://doc.rust-lang.org/stable/book">Rust Book</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-02-26</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/rust/">rust</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/belajar-rust-lifetimes/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Rust - Lifetimes</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/belajar-rust-ownership/">
+            <span class="next-text nav-default">Belajar Rust - Ownership</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

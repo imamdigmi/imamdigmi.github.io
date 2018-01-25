@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Rust - Memahami Stact Dan Heap - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami Stack dan Heap di Rust" />
+<meta name="keywords" content="rust, stack, heap" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Rust - Memahami Stact Dan Heap" />
+<meta property="og:description" content="Memahami Stack dan Heap di Rust" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/" />
+
+
+
+<meta property="article:published_time" content="2017-03-17T22:41:07&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-03-17T22:41:07&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Rust - Memahami Stact Dan Heap">
+<meta itemprop="description" content="Memahami Stack dan Heap di Rust">
+
+
+<meta itemprop="datePublished" content="2017-03-17T22:41:07&#43;07:00" />
+<meta itemprop="dateModified" content="2017-03-17T22:41:07&#43;07:00" />
+<meta itemprop="wordCount" content="714">
+
+
+
+<meta itemprop="keywords" content="rust," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Rust - Memahami Stact Dan Heap"/>
+<meta name="twitter:description" content="Memahami Stack dan Heap di Rust"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Rust - Memahami Stact Dan Heap</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-03-17 </span>
+        <div class="post-category">
+            
+              <a href="/categories/rust/"> Rust </a>
+            
+          </div>
+        <span class="more-meta"> 714 word </span>
+        <span class="more-meta"> 4 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#apa-itu-segment-text">Apa itu Segment text?</a></li>
+<li><a href="#apa-itu-stack">Apa itu Stack?</a></li>
+<li><a href="#apa-itu-heap">Apa itu heap?</a></li>
+<li><a href="#lalu-apa-perbedaan-stack-dan-heap">Lalu apa perbedaan Stack dan Heap?</a></li>
+<li><a href="#mengapa-stack-dan-heap-begitu-penting">Mengapa stack dan heap begitu penting?</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Jika anda adalah seorang programmer yang berkecimpung di <em>low-level</em> atau <em>systems programming</em> pastinya sudah tidak asing lagi dengan konsep ini dan tentunya sangatlah mengerti tentang pentingnya mengelola <em>resource</em> atau sumber daya memori. Dalam kompilasi sebuah program diciptakan dengan sebuah struktur. Mungkin secara spesifik struktur untuk masing-masing <em>operating system</em> berbeda tapi secara garis besar memiliki beberapa persamaan yaitu pengalamatan memori.</p>
+
+<p>Pada saat program berjalan (runnig), sebuah program akan menempati lokasi tertentu pada memori. Lokasi ini kemudian dikenal dengan alamat memori. Saat program berjalan, memori akan dibagi menjadi tiga bagian atau tiga segment. Ketiga segment itu adalah:</p>
+
+<ol>
+<li>text (code)</li>
+<li>Stack</li>
+<li>Heap</li>
+</ol>
+
+<h2 id="apa-itu-segment-text">Apa itu Segment text?</h2>
+
+<p>Sering juga disebut sebagai code segment yaitu tempat kode dari program tersebut (basic instruction) berada. Contohnya saat anda membuka file binari di text editor, anda akan menjumpai simbol-simbol yang terkadang terbaca atau tidak dimengerti oleh manusia. Bagian ini merupakan kode-kode bahasa mesin, representasi dari instruksi program. Bagian ini menyertakan semua simbol-simbol yang didefinisikan pengguna ketika menciptakan program (contoh: fungsi-fungsi yang didefinisikan).
+Nah, kedua bagian selain code segment digunakan untuk menyimpan data yang akan dioperasikan oleh fungsi-fungsi tersebut. Lantas apa perbedaan antara keduanya (<em>stack</em> dan <em>heap</em>) ?</p>
+
+<h2 id="apa-itu-stack">Apa itu Stack?</h2>
+
+<p>Stack adalah salah satu bagian yang digunakan untuk menyimpan data-data atau variabel yang pengalamatan memorinya telah dilakukan pada saat kompilasi (alamat pastinya sudah ditentukan dari awal). Bingung? Coba bayangkan seperti ini. Pada suatu waktu kita akan memasak. Dalam kegiatan memasak itu terdapat daftar barang-barang yang dibutuhkan alat-alat (misal: pisau, wajan, panci, dsb) dan bahan-bahan (misal: ayam, telur, minyak goreng, dsb). Ketika kita hendak memasak pasti kita membutuhkan tempat khusus bukan? Semisal kita memasak di dapur, maka kita harus menyiapkan tempat untuk menaruh semua alat dan bahan tersebut sebelum melakukan kegiatan masak-memasak. Dalam bahasa pemprograman, dapat diilustrasikan bahwa kegiatan memasak tersebut disebut fungsi (melakukan kerja). Di awal sebelum memasak kita telah membuat daftar apa yang harus kita lakukan. Fungsi tersebut membutuhkan variabel-variabel atau data (alat dan bahan). Untuk memasak kita butuh tempat atau bagian dari dapur untuk menaruh alat dan bahan. Tempat yang kita persiapkan itulah yang disebut <em>stack</em>, <em>stack</em> ditentukan sejak awal-awal.</p>
+
+<p>Dalam <em>stack</em>, data disimpan menggunakan metode Last In First Out (LIFO). Stack artinya tumpukan, maksudnya data yang tersimpan di memori akan di-alokasikan dan di-dealokasikan hanya di akhir memori (dinamakan puncak <em>stack</em>). Hal ini bisa kita analogikan seperti saat kita menumpuk piring, pada saat kita menumpuk piring kita akan meletakkannya dalam satu, piring yang pertama kali kita taruh pasti letaknya di bawah dan pasti akan kita ambil terakhir kali karena kita ngambilnya dari atas (ingat konsep LIFO). Alokasi semacam inilah yang diimplementasikan dalam memori komputer. Stack adalah bagian memori yang fungsinya digunakan untuk menyimpan memori yang bersifat sementara.</p>
+
+<h2 id="apa-itu-heap">Apa itu heap?</h2>
+
+<p>Selain konsep stack ada juga <em>heap</em>, adalah area memori yang digunakan untuk alokasi secara dinamis. Bagian-bagian memori yang dialokasikan dilakukan secara sembarang atau tanpa pola awal (no pattern). artinya kode-kode yang akan dieksekusi akan diletakkan pada lokasi penyimpanan dalam memori, namun lokasi ini tidak memiliki pattern atau tidak berpola (acak). Lokasi memori yang ditempati ini tidak akan diketahui sebelum runtime (saat dijalankan). Heap seringkali digunakan oleh program untuk berbagai keperluan, tetapi intinya adalah <em>heap</em> dialokasikan untuk mensuplai memori tambahan yang tidak dialokasikan saat kompilasi. Alokasi ini dilakukan saat runtime, seiring berjalannya program.</p>
+
+<p>Untuk memesan alamat memori, program akan terlebih dahulu melakukan pengecekan terhadap kapasitas memori sesuai besar data yang diperlukan. Jika memori tersedia namun dalam ruang terpisah maka program akan memecah informasi tersebut menjadi bagian-bagian kecil yang dapat menempati memori yang tersedia.</p>
+
+<h2 id="lalu-apa-perbedaan-stack-dan-heap">Lalu apa perbedaan Stack dan Heap?</h2>
+
+<p>Dibandingkan dengan heap, stack terlihat lebih banyak digunakan dalam kaitannya untuk mengalokasikan memori bagi variabel-variabel yang digunakan didalam fungsi dan stack digunakan untuk menyimpan data yang sifatnya &ldquo;sementara&rdquo;. Sementara heap diperuntukkan bagi informasi yang menetap dan dialokasikan secara khusus oleh pengguna, heap digunakan untuk menyimpan data tambahan sesuai permintaan (request data).</p>
+
+<p>Karena memori yang dipakai oleh stack bersifat sementara, maka informasi yang terdapat di alamat stack akan langsung didealokasi secara otomatis ketika scope (ruang lingkup) sebuah program sudah berakhir ini disebut <em>lifetimes</em>, sedangkan memori yang dialokasikan pada heap akan tetap bertahan sampai program benar-benar mendealokasikannya.</p>
+
+<h2 id="mengapa-stack-dan-heap-begitu-penting">Mengapa stack dan heap begitu penting?</h2>
+
+<p>Ketika program diload ke memori, dia akan membutuhkan penanganan memori. Jika manajemen memori tidak ada di memori komputer, program akan clash karena data akan saling bertabrakan tak teratur (saling serobot tempat)</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-03-17</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/rust/">rust</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/instalasi-arch-linux/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Instalasi Arch Linux</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/belajar-rust-variable/">
+            <span class="next-text nav-default">Belajar Rust - Variable</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

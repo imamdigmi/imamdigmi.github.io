@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Laravel - Pengertian OOP - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Pengenalan Pemrograman Berorientasi Obyek" />
+<meta name="keywords" content="php, oop, pbo, laravel" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/php-pengertian-oop/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Laravel - Pengertian OOP" />
+<meta property="og:description" content="Pengenalan Pemrograman Berorientasi Obyek" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/php-pengertian-oop/" />
+
+
+
+<meta property="article:published_time" content="2016-05-24T14:39:08&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-05-24T14:39:08&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Laravel - Pengertian OOP">
+<meta itemprop="description" content="Pengenalan Pemrograman Berorientasi Obyek">
+
+
+<meta itemprop="datePublished" content="2016-05-24T14:39:08&#43;07:00" />
+<meta itemprop="dateModified" content="2016-05-24T14:39:08&#43;07:00" />
+<meta itemprop="wordCount" content="433">
+
+
+
+<meta itemprop="keywords" content="php,laravel," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Laravel - Pengertian OOP"/>
+<meta name="twitter:description" content="Pengenalan Pemrograman Berorientasi Obyek"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Laravel - Pengertian OOP</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-24 </span>
+        <div class="post-category">
+            
+              <a href="/categories/php/"> PHP </a>
+            
+          </div>
+        <span class="more-meta"> 433 word </span>
+        <span class="more-meta"> 3 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#apa-itu-oop">Apa itu OOP?</a></li>
+<li><a href="#konsep-dasar-oop">Konsep Dasar OOP</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Pada artikel <a href="http://imamdigmi.github.io/post/php-pengenalan-framework/">sebelumnya</a> kita telah membahas sedikit mengenai apa itu framework, namun sebelum kita mulai mendalami framework khususnya framework php yaitu laravel, kita perlu memahami tentang Pemrograman Berorientasi Obyek atau sering disebut OOP.</p>
+
+<p><strong>Note :</strong>
+Jika anda seorang pemula dalam pemrograman saya sarankan anda belajar dulu tentang OOP secara mendalam agar anda dapat dengan mudah menggunakan atau mendalami framework yang akan kita pelajari ini.</p>
+
+<h2 id="apa-itu-oop">Apa itu OOP?</h2>
+
+<p>(Object-oriented programming disingkat OOP) merupakan paradigma pemrograman yang berorientasikan kepada objek. Semua data dan fungsi di dalam paradigma ini dibungkus dalam kelas-kelas atau objek-objek. Bandingkan dengan logika pemrograman terstruktur. Setiap objek dapat menerima pesan, memproses data, dan mengirim pesan ke objek lainnya,
+Model data berorientasi objek dikatakan dapat memberi fleksibilitas yang lebih, kemudahan mengubah program, dan digunakan luas dalam teknik piranti lunak skala besar. Lebih jauh lagi, pendukung OOP mengklaim bahwa OOP lebih mudah dipelajari bagi pemula dibanding dengan pendekatan sebelumnya, dan pendekatan OOP lebih mudah dikembangkan dan dirawat <a href="https://id.wikipedia.org/wiki/Pemrograman_berorientasi_objek">Wikipedia</a>.</p>
+
+<p>Nah itu penjelasan singkat mengenai OOP dari wikipedia, lebih simpelnya adalah pemrograman berorientasi obyek ini adalah suatu pendekatan untuk membuat aplikasi yang digunakan oleh laravel, kalau tidak menggunakan OOP akan sangat susah sekali untuk membangun sebuah framework. Mengapa demikian?
+Karena dengan menggunakan pendekatan OOP kita bisa dengan mudah menklasifikasi kan obyek-obyek nyata kedalam sebuah class-class yang nantinya kita jadikan class tersebut sebagai cetakan untuk menghasilkan obyek.</p>
+
+<h2 id="konsep-dasar-oop">Konsep Dasar OOP</h2>
+
+<ul>
+<li><p>Class (Kelas) itu kumpulan data atau fungsi-fungsi yang kita buat untuk membuat suatu obyek (Bayangkan: cetakan kue). Contohnya Class dari &ldquo;Kue&rdquo; adalah satu unit yang terdiri dari fungsi-fungsi yang bertujuan untuk menjelaskan/menggambarkan pola dari bentuk kue yang ingin kita cetak.</p></li>
+
+<li><p>Object (Obyek) nah kalau Obyek itu hasil dari class yang kita buat, Class itu cetakannya dan Obyek itu hasil dari cetakannya, jika kita membuat cetakan kue maka hasil dari cetakan kue tersebut sudah pasti adalah kue, nah &ldquo;kue&rdquo; inilah yang kita sebut sebagai Obyek.</p></li>
+
+<li><p>Abstraction (Abstraksi) ini gunanya untuk menyebunyikan sebuah proses, dalam kenyataannya setelah kita membuat sebuah obyek yaitu &ldquo;kue&rdquo; lalu kita ingin menjualnya orang yang akan membeli kue tersebut tidak akan tau bagaimana kue tersebut dibuat, bahannya apa, masaknya gimana dsb.</p></li>
+
+<li><p>Encapsulation (Enkapsulasi) sebenarnya sebuah teknik pembungkusan obyek, setelah kita mencetak &ldquo;kue&rdquo; tentu kita perlu membungkus kue tersebut agar tidak terkena debu, air dsb. Gunanya enkapsulasian ini agar obyek telah kita cetak tidak dapat terpengaruh oleh obyek lainnya.</p></li>
+
+<li><p>Polymorphism (Polimorfisme) <em>poly</em> itu banyak dan <em>morph</em> itu bentuk jadi, konsep ini digunakan ketika class-class yang kita buat memiliki prilaku yang sama, contohnya kita membuat class &ldquo;kue&rdquo; dan &ldquo;nasi&rdquo; nah untuk membuat kue dan nasi ada kemiripan dimana keduanya perlu dimasak walaupun bahan yang dimasak itu berbeda.</p></li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-05-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/laravel/">laravel</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/php-class-object-property-dan-method/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Laravel - Class, Object, Property dan Method</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/php-pengenalan-framework/">
+            <span class="next-text nav-default">Belajar Laravel - Pengenalan Framework</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

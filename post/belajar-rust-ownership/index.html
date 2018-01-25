@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Rust - Ownership - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami ownership di Rust" />
+<meta name="keywords" content="rust, ownership" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/belajar-rust-ownership/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Rust - Ownership" />
+<meta property="og:description" content="Memahami ownership di Rust" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/belajar-rust-ownership/" />
+
+
+
+<meta property="article:published_time" content="2017-02-26T14:10:24&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-02-26T14:10:24&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Rust - Ownership">
+<meta itemprop="description" content="Memahami ownership di Rust">
+
+
+<meta itemprop="datePublished" content="2017-02-26T14:10:24&#43;07:00" />
+<meta itemprop="dateModified" content="2017-02-26T14:10:24&#43;07:00" />
+<meta itemprop="wordCount" content="955">
+
+
+
+<meta itemprop="keywords" content="rust," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Rust - Ownership"/>
+<meta name="twitter:description" content="Memahami ownership di Rust"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Rust - Ownership</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-02-26 </span>
+        <div class="post-category">
+            
+              <a href="/categories/rust/"> Rust </a>
+            
+          </div>
+        <span class="more-meta"> 955 word </span>
+        <span class="more-meta"> 5 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ownership">Ownership</a></li>
+<li><a href="#copy-types">Copy types</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Sebelumnya kita membahas tentang <a href="https://imamdigmi.github.io/setup/belajar-rust-setup/">setup rust</a> kali ini kita akan membahas tentang konsep dasar dari bahasa pemrograman Rust, pembahasan yang akan kita bahas meliputi :</p>
+
+<ol>
+<li><a href="https://imamdigmi.github.io/post/belajar-rust-ownnership/">Ownership</a></li>
+<li><a href="https://imamdigmi.github.io/post/belajar-rust-references-dan-borrowing/">Borrowing</a></li>
+<li><a href="https://imamdigmi.github.io/post/belajar-rust-lifetimes/">Lifetimes</a></li>
+</ol>
+
+<p>Ketiga pembahasan diatas adalah &ldquo;The most of distinct and compelling features in Rust&rdquo; artinya ketiga hal tersebut adalah hal paling mendasar dan penting untuk mulai mempelajari bahasa Rust, karena ketiga pembahasan tersebut cukup panjang maka dibagi menjadi 3 artikel dan untuk artikel ini kita hanya akan membahas tentang ownership.</p>
+
+<p>Sebelum kita mulai membahas lebih detail tentang Ownership, perlu diketahui bahwa Rust adalah bahasa pemrograman yang fokus pada keamanan (<em>safety</em>) dan kecepatan (<em>speed</em>) dengan fokus tersebut rust dapat memenuhi tujuan &ldquo;zero-cost abstractions&rdquo; artinya bahwa dengan bahasa Rust kita dapat membuat aplikasi dengan biaya yang sedikit mungkin, biaya yang dimaksudkan adalah biaya alokasi memori. Ownership adalah contoh utama dari zero-cost abstractions. Untuk mempelajari Rust memang harus lebih disiplin dan jika anda mempunyai pengalaman dalam bahasa pemrograman lainnya maka anda perlu belajar kembali tentang kedisiplinan penulisan maupun penyusunan kode program karena dalam hal ini Rust adalah bahasa yang jauh berbeda dengan bahasa lainnya.</p>
+
+<p>Oke Let&rsquo;s learn about Ownership.</p>
+
+<h2 id="ownership">Ownership</h2>
+
+<p>Jika di bahasa indonesiakan ownership adalah &ldquo;kepemilikan&rdquo; yang artinya Rust hanya memperbolehkan satu variable hanya memiliki satu pemilik saja atau apapun yang di ikatkan (binding) dengan variable tersebut, ini berarti ketika binding tersebut keluar dari ruang lingkupnya (scope) dengan otomatis Rust akan mengosongkan sumberdaya terkait (will free the bound of resources), contoh :</p>
+
+<pre><code class="language-rust">fn foo() {
+    let name = &quot;Monkey D. Luffy&quot;;
+}
+</code></pre>
+
+<p>Ketika function <code>foo()</code> di panggil dan disitu terdapat variable <code>name</code> maka <em>string</em> baru akan di buat kedalam stack, dan akan di alokasikan ruang memori kedalam heap untuk variable <code>name</code>. Tapi ketika function <code>foo()</code> sudah selesai melaksanakan tugasnya dan variable <code>name</code> selesai dieksekusi maka Rust akan membersihkan ruang yang tadinya dipakai oleh variable <code>name</code> dan semua yang berhubungan dengan alokasi ruang yang dipakai dalam function tersebut. Perlu diketahui bahwa ruang lingkup (scope) diawali dengan <code>{</code> dan di akhiri <code>}</code>.</p>
+
+<p>Rust selalu memastikan bahwa hanya ada satu pemilik untuk satu binding (variable) untuk semua resource yang diberikan. Contoh :</p>
+
+<pre><code class="language-rust">let crew = vec![&quot;Monkey D. Luffy&quot;, &quot;Roronoa Zoro&quot;, &quot;Vinsmoke Sanji&quot;];
+let crew2 = crew;
+println!(&quot;The captain {}&quot;, crew[0]);
+</code></pre>
+
+<p>Kita mempunyai satu variable <code>crew</code> dan variable tersebut sudah di berikan ke variable lainnya yaitu <code>crew2</code>, jika kita panggil kembali variable <code>crew</code> maka kita akan mendapatan error seperti ini :</p>
+
+<pre><code>use of moved value: `crew`
+let crew2 = crew;
+    ----- value moved here
+println!(&quot;The captain {}&quot;, crew[0]);
+                           ^^^^ value used here after move
+</code></pre>
+
+<p>Itu artinya kita tidak boleh menggunakan variable yang sudah di pindahkan ke variable atau binding lainnya.</p>
+
+<p>Ketika kita mempunyai kode seperti ini :</p>
+
+<pre><code class="language-rust">let age = 21;
+</code></pre>
+
+<p>Maka rust akan mengalokasikan memori dengan tipe data integer <a href="https://doc.rust-lang.org/stable/book/primitive-types.html#numeric-types">i32</a> ke dalam stack lalu menyalin alamat memori (bit pattern) dan menghubungkan ke variable <code>age</code> tadi.</p>
+
+<p>Mari kita bahas lebih dalam lagi tentang ownership. Jika kita mempunyai kode seperti ini :</p>
+
+<pre><code class="language-rust">let crew = vec![&quot;Monkey D. Luffy&quot;, &quot;Roronoa Zoro&quot;, &quot;Vinsmoke Sanji&quot;];
+let mut crew2 = crew;
+</code></pre>
+
+<p>Pada baris pertama, Rust mengalokasikan memori untuk obyek vektor <code>crew</code> kedalam stack, tapi selain itu Rust juga mengalokasikan beberapa memori di heap untuk data aktual <code>([&quot;Monkey D. Luffy&quot;, &quot;Roronoa Zoro&quot;, &quot;Vinsmoke Sanji&quot;])</code> lalu Rust menyalin alamat memori di heap tadi kedalam pointer internal yang merupakan bagian dari obyek vektor tadi yang ditempatkan di stack (ini disebut data pointer). Kedua bagian dari vektor (satu di stack dan satu lagi di heap) panjang (length), capacity (kapassitas) dan lain-lain adalah sama nilainya.</p>
+
+<p>Ketika kita memindahakan <code>crew</code> ke <code>crew2</code>, Sebenarnya Rust menyalin bitwise dari obyek vektor <code>crew</code> ke dalam alokasi stack untuk <code>crew2</code> tapi salinan ini tidak membuat kopian dari alokasi di heap yang berisi data aktual. Artinya bahwa akan ada dua pointer untuk kedua obyek vector yang mengarah ke heap yang sama.</p>
+
+<p>Lalu bagaimana jika kedua obyek tersebut diakses secara bersamaan? For example, jika kita menghapus elemen ke tiga dari obyek <code>crew2</code> :</p>
+
+<pre><code class="language-rust">crew2.truncate(2);
+</code></pre>
+
+<p>sedangkan obyek <code>crew</code> masih diakses maka kita akan mendapatkan obyek vektor yang tidak lagi valid karena obyek <code>crew</code> tidak akan tahu bahwa salah satu elemen telah dihapuskan. Sekarang obyek <code>crew</code> pada stack tidak lagi sama dengan di heap, ini adalah kesalah yang riskan, karena menyebabkan kesalahan segmentasi atau lebih buruknya lagi memunginkan pengguna yang tidak sah untuk membaca alamat memori yang sudah tidak lagi memiliki akses. <strong><strong>Inilah sebabnya mengapa Rust melarang untuk menggunakan obyek yang sebelumnya sudah dipindahkan/dipergunakan</strong></strong>.</p>
+
+<h2 id="copy-types">Copy types</h2>
+
+<p>Rust sudah menetapkan bahwa ketika ownership sudah di transfer ke binding yang lain maka kita tidak dapat lagi menggunakan binding yang sebelumnya (asli). Namun kita bisa menggunakan fitur dari <code>trait</code> untuk menangani masalah ini yaitu <code>Copy</code>, namun untuk saat ini kita tidak akan membahas lebih dalam tentang trait, For example :</p>
+
+<pre><code class="language-rust">let a = 1;
+let aa = a;
+println!(&quot;A is: {}&quot;, v);
+</code></pre>
+
+<p>In this case, tipe <code>a</code> adalah <code>i32</code>, yang mengimplementasikan trait <code>Copy</code>. Ketika kita meng-assign <code>a</code> ke <code>aa</code> maka duplikat dari <code>a</code> akan dibuat tapi tidak dipindahkan dan kita tetap dapat mengakses <code>a</code>. Karena <code>i32</code> memiliki pointer ke data yang lain.</p>
+
+<p>Semua <a href="https://doc.rust-lang.org/stable/book/primitive-types.html">Primitive Types</a> adalah implementasi dari trait <code>Copy</code> dan kepemilikan nya tidak dipindahkan seperti yang diasumsikan mengikuti &ldquo;aturan ownership&rdquo;. Untuk mengilustrasikannya, 2 potongan kode dibawah ini hanya mengkompilasi tipe data <code>i32</code> dan <code>boolean</code>.</p>
+
+<pre><code class="language-rust">fn main() {
+    let var_x = 5;
+
+    let _y = double(var_x);
+    println!(&quot;{}&quot;, var_x);
+}
+
+fn double(x: i32) -&gt; i32 {
+    x * 2
+}
+</code></pre>
+
+<pre><code class="language-rust">fn main() {
+    let var_x = true;
+
+    let _y = change_truth(var_x);
+    println!(&quot;{}&quot;, var_x);
+}
+
+fn change_truth(x: bool) -&gt; bool {
+    !x
+}
+</code></pre>
+
+<p>Jika kita menggunakan tipe data yang tidak mengimplementasikan trait <code>Copy</code>, maka pada saat kompilasi kita akan mendapatkan pesan error karena kita mencoba untuk memindahakan nilai dari variable diatas.</p>
+
+<pre><code>error: use of moved value: `var_x`
+println!(&quot;{}&quot;, var_x);
+               ^
+</code></pre>
+
+<p>Terimakasih, Semoga bermanfaat 😉</p>
+
+<p>Sumber :
+<a href="https://doc.rust-lang.org/stable/book">Rust Book</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-02-26</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/rust/">rust</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/belajar-rust-references-dan-borrowing/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Rust - References Dan Borrowing</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/belajar-rust-setup/">
+            <span class="next-text nav-default">Belajar Rust - Setup</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

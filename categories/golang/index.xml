@@ -6,7 +6,7 @@
     <description>Recent content in Golang on JournalToday</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Imam Digmi</copyright>
+    <copyright>imamdigmi</copyright>
     <lastBuildDate>Sat, 21 Jan 2017 18:25:27 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
@@ -27,7 +27,9 @@
       <pubDate>Sun, 15 Jan 2017 17:47:17 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/instalasi-golang/</guid>
-      <description>&lt;p&gt;Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :&lt;/p&gt;</description>
+      <description>Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :
+No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 16.10 Release: 16.10 Codename: yakkety  Download Golang Sebelum kita meng-install golang kita harus mendownload aplikasi golang terlebih dahulu disini lalu klik pada bagian Linux dan jangan lupa pilih jenis bit komputer anda.
+ Note: Pada artikel ini ditulis versi stabil dari golang yaitu 1.</description>
     </item>
     
     <item>

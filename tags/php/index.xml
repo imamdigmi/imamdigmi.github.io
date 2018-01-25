@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on JournalToday</title>
+    <link>https://imamdigmi.github.io/tags/php/</link>
+    <description>Recent content in Php on JournalToday</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>imamdigmi</copyright>
+    <lastBuildDate>Thu, 26 May 2016 22:44:46 +0700</lastBuildDate>
+    
+	<atom:link href="https://imamdigmi.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Belajar Laravel - Anonymous Function/Lambda dan Closure</title>
+      <link>https://imamdigmi.github.io/post/php-anonymous-function-lambda-dan-closure/</link>
+      <pubDate>Thu, 26 May 2016 22:44:46 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/php-anonymous-function-lambda-dan-closure/</guid>
+      <description>Pada artikel sebelumnya kita telah membahas tentang apa itu JSON. Nah kali ini kita akan membahas tentang Anonymous Function/Lambda dan Closure, Ukee mari kita bahas satu persatu dan kita mulai dari Anonymous Function atau Lambda.
+Apa itu Anonymous Function/Lamda? Apakah anda pernah menonton film Hacker? mereka sering menyebutkan dirinya sebagai anonymous kan? tidak mau menyebutkan nama asli mereka kan? Nah, Anonymous Function/Lambda pun sama, mereka berdua tidak mau menyebutkan namanya tetapi tindakan dan perlakuannya sangat terasa oleh kita.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Laravel - Json (JavaScript Object Notation)</title>
+      <link>https://imamdigmi.github.io/post/php-json/</link>
+      <pubDate>Thu, 26 May 2016 01:05:06 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/php-json/</guid>
+      <description>Pada artikel sebelumnya kita telah membahas tentang konsep dasar OOP. Ukee Broo or Sist! saya yakin anda sudah tidak sabar untuk membahas tentang laravel, karena mungkin anda sudah tau mengapa anda memilih framework laravel untuk dipelajari yaitu framework yang sekarang banyak digunakan dan lagi terkenal. Tapi santai dulu, saya pengen agar anda bisa paham banget di laravel, makadari itu sengaja saya sisipkan konsep dasarnya dulu yaah agar anda tidak tersesat dalam proses pembelajaran ini.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Laravel - Abstract dan Interface</title>
+      <link>https://imamdigmi.github.io/post/php-abstract-dan-interface/</link>
+      <pubDate>Wed, 25 May 2016 16:19:22 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/php-abstract-dan-interface/</guid>
+      <description>Pada artikel sebelumnya kita telah membahas bagaimana membuat Class, Object, Property dan Meethod. Untuk mendalami framwork laravel sangat penting sekali bagi kita untuk memahami tentang Abstract dan Interface, jika Class adalah nasi dan gorengan tempe maka abstract dan interface adalah lalapan dan sambalnya, hmmm jadi inget masakan ibu 😅
+Abstract Ukee, mari kita mulai dengan abstract. Sebenarnya apasih abstract itu?
+Abstract adalah sebuah class yang tidak bisa &amp;ldquo;diinstansiasi&amp;rdquo; atau tidak bisa dijadikan object secara langsung (Wikipedia).</description>
+    </item>
+    
+    <item>
+      <title>Belajar Laravel - Class, Object, Property dan Method</title>
+      <link>https://imamdigmi.github.io/post/php-class-object-property-dan-method/</link>
+      <pubDate>Tue, 24 May 2016 15:41:07 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/php-class-object-property-dan-method/</guid>
+      <description>Pada artikel sebelumnya kita telah membahas pengetian OOP dan bagaimana konsep dasar dari pendekatan OOP itu sendiri, nah sekarang mari kita praktekan bagaimana membuat Class, Object, Property dan Method.
+Class Kita akan mulai dengan membuat Class terlebih dulu, Untuk membuat Class, penulisannya harus diawali dengan keyword class kemudian diikuti dengan nama Class, namun ada aturan penamaan dalam penulisan nama Class yaitu diawali dengan huruf kapital dan jika nama class tersebut lebih dari dua atau lebih maka kata selanjutnya disambung dan diawali dengan huruf kapital juga contohnya &amp;ldquo;KueDonat&amp;rdquo; penamaan seperti ini disebut dengan (Camel Case).</description>
+    </item>
+    
+    <item>
+      <title>Belajar Laravel - Pengertian OOP</title>
+      <link>https://imamdigmi.github.io/post/php-pengertian-oop/</link>
+      <pubDate>Tue, 24 May 2016 14:39:08 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/php-pengertian-oop/</guid>
+      <description>Pada artikel sebelumnya kita telah membahas sedikit mengenai apa itu framework, namun sebelum kita mulai mendalami framework khususnya framework php yaitu laravel, kita perlu memahami tentang Pemrograman Berorientasi Obyek atau sering disebut OOP.
+Note : Jika anda seorang pemula dalam pemrograman saya sarankan anda belajar dulu tentang OOP secara mendalam agar anda dapat dengan mudah menggunakan atau mendalami framework yang akan kita pelajari ini.
+Apa itu OOP? (Object-oriented programming disingkat OOP) merupakan paradigma pemrograman yang berorientasikan kepada objek.</description>
+    </item>
+    
+    <item>
+      <title>Belajar Laravel - Pengenalan Framework</title>
+      <link>https://imamdigmi.github.io/post/php-pengenalan-framework/</link>
+      <pubDate>Tue, 24 May 2016 00:43:50 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/php-pengenalan-framework/</guid>
+      <description>Apakah buku ini sudah selesai? Belum, Doakan saja semoga penulis sehat selalu agar buku ini dapat segera terselesaikan 😉 Okay, mari kita bahas dulu apa itu framework dan bagaiamana cara kerjanya.
+Apa itu framework? Adalah suatu struktur konseptual dasar yang digunakan untuk memecahkan atau menangani suatu masalah kompleks. Istilah ini sering digunakan antara lain dalam bidang perangkat lunak untuk menggambarkan suatu desain sistem perangkat lunak yang dapat digunakan kembali, serta dalam bidang manajemen untuk menggambarkan suatu konsep yang memungkinkan penanganan berbagai jenis atau entitas bisnis secara homogen.</description>
+    </item>
+    
+  </channel>
+</rss>

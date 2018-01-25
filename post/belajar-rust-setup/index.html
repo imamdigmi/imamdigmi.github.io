@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Rust - Setup - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Instalasi Rust" />
+<meta name="keywords" content="install, setup, rust" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/belajar-rust-setup/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Rust - Setup" />
+<meta property="og:description" content="Instalasi Rust" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/belajar-rust-setup/" />
+
+
+
+<meta property="article:published_time" content="2017-02-26T12:16:03&#43;07:00"/>
+
+<meta property="article:modified_time" content="2017-02-26T12:16:03&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Rust - Setup">
+<meta itemprop="description" content="Instalasi Rust">
+
+
+<meta itemprop="datePublished" content="2017-02-26T12:16:03&#43;07:00" />
+<meta itemprop="dateModified" content="2017-02-26T12:16:03&#43;07:00" />
+<meta itemprop="wordCount" content="527">
+
+
+
+<meta itemprop="keywords" content="rust," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Rust - Setup"/>
+<meta name="twitter:description" content="Instalasi Rust"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Rust - Setup</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-02-26 </span>
+        <div class="post-category">
+            
+              <a href="/categories/rust/"> Rust </a>
+            
+          </div>
+        <span class="more-meta"> 527 word </span>
+        <span class="more-meta"> 3 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#pembahasan">Pembahasan</a></li>
+<li><a href="#install-rust">Install rust</a>
+<ul>
+<li><a href="#versi-nightly">Versi Nightly</a></li>
+</ul></li>
+<li><a href="#komponen-tambahan">Komponen Tambahan</a></li>
+<li><a href="#pustaka-tambahan">Pustaka Tambahan</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Rust adalah bahasa pemrograman yang terbilang baru yang pembuatannya dimulai pada tahun 2006 oleh developer Mozilla. Rust adalah bahasa pemrograman sistem (system programming) yang difokuskan pada tiga tujuan: keamanan, kecepatan, dan concurrency. Ia memelihara tujuan ini tanpa <em>garbage collector</em> yang membuatnya menjadi bahasa yang berguna untuk sejumlah kasus penggunaan bahasa lain. Tidak hanya itu rust juga bahasa dengan general purpose language, bahasa low level yang bisa membantu kita untuk mengeksplorasi potensi sisi system, embedded system, dan hal-hal kritis terkait performance. Salah satu aplikasi menarik yang dibuat dengan rust programming language adalah pembuatan servo sebuah parallel browser engine <a href="https://servo.org/">https://servo.org/</a></p>
+
+<h2 id="pembahasan">Pembahasan</h2>
+
+<ol>
+<li>Install rust</li>
+<li>Komponen tambahan</li>
+<li>Pustaka tambahan</li>
+</ol>
+
+<h2 id="install-rust">Install rust</h2>
+
+<pre><code class="language-bash">curl https://sh.rustup.rs -sSf | sh
+</code></pre>
+
+<p>Output</p>
+
+<pre><code class="language-bash">info: downloading installer
+
+Welcome to Rust!
+
+This will download and install the official compiler for the Rust programming
+language, and its package manager, Cargo.
+
+It will add the cargo, rustc, rustup and other commands to Cargo's bin
+
+directory, located at:
+
+  /home/idiot/.cargo/bin
+
+This path will then be added to your PATH environment variable by modifying the
+profile file located at:
+
+  /home/idiot/.profile
+
+You can uninstall at any time with rustup self uninstall and these changes will
+be reverted.
+
+Current installation options:
+
+   default host triple: x86_64-unknown-linux-gnu
+     default toolchain: stable
+  modify PATH variable: yes
+
+1) Proceed with installation (default)
+2) Customize installation
+3) Cancel installation
+</code></pre>
+
+<p>Ketik <strong>1</strong> lalu enter, maka outputnya :</p>
+
+<pre><code class="language-bash">info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: downloading component 'rustc'
+ 35.9 MiB /  35.9 MiB (100 %)   1.2 MiB/s ETA:   0 s
+
+info: downloading component 'rust-std'
+ 49.2 MiB /  49.2 MiB (100 %)   1.2 MiB/s ETA:   0 s
+info: downloading component 'cargo'
+  4.4 MiB /   4.4 MiB (100 %)   1.2 MiB/s ETA:   0 s
+info: installing component 'rustc'
+info: installing component 'rust-std'
+info: installing component 'cargo'
+info: default toolchain set to 'stable'
+
+  stable installed - rustc 1.15.1 (021bd294c 2017-02-08)
+
+
+Rust is installed now. Great!
+
+To get started you need Cargo's bin directory in your PATH environment
+variable. Next time you log in this will be done automatically.
+
+To configure your current shell run source $HOME/.cargo/env
+</code></pre>
+
+<p>Instalasi rust sudah berhasil, periksa instalasi :</p>
+
+<pre><code class="language-bash">rustc --version
+
+// Output
+rustc 1.15.1 (021bd294c 2017-02-08)
+</code></pre>
+
+<p>Setelah itu kita tambahkan <strong>PATH</strong> environment variable untuk Cargo :</p>
+
+<pre><code class="language-bash">echo &quot;export PATH=$HOME/.cargo/bin:$PATH&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+
+<h3 id="versi-nightly">Versi Nightly</h3>
+
+<p>By default, ketika kita memasang Rust maka yang terpasang adalah rust versi stabil (stable) namun dalam kasus lain misalkan kita ingin menggunakan <a href="http://rocket.rs">Rocket Web Framework</a> maka kita diharuskan untuk menggunakan versi Nightly (baca: <a href="http://superuser.com/a/330447">nightly build vs stable</a>) untuk mengganti versi dari stabil ke nighly caranya :</p>
+
+<pre><code class="language-bash">rustup default nightly
+</code></pre>
+
+<p>Atau bisa juga hanya dalam satu proyek saja :</p>
+
+<pre><code class="language-bash">cd /path/to/project/
+rustup override set nightly
+</code></pre>
+
+<h2 id="komponen-tambahan">Komponen Tambahan</h2>
+
+<pre><code class="language-bash">rustup component add rust-src
+
+// Output
+nfo: downloading component 'rust-src'
+ 27.1 MiB /  27.1 MiB (100 %)   1.2 MiB/s ETA:   0 s
+info: installing component 'rust-src'
+</code></pre>
+
+<h2 id="pustaka-tambahan">Pustaka Tambahan</h2>
+
+<p>Racer</p>
+
+<pre><code class="language-bash">cargo install racer
+</code></pre>
+
+<p>Periksa instalasi Racer :</p>
+
+<pre><code class="language-bash">racer complete std::io::B
+// Output
+MATCH BufRead,1208,10,/home/idiot/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/io/mod.rs,Trait,pub trait BufRead: Read
+MATCH Bytes,1605,11,/home/idiot/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/io/mod.rs,Struct,pub struct Bytes&lt;R&gt;
+MATCH BufReader,50,11,/home/idiot/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufReader&lt;R&gt;
+MATCH BufWriter,309,11,/home/idiot/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufWriter&lt;W: Write&gt;
+</code></pre>
+
+<p>Rust Formater</p>
+
+<pre><code class="language-bash">cargo install rustfmt
+</code></pre>
+
+<p>Rust Symbol</p>
+
+<pre><code class="language-bash">cargo install rustsym
+</code></pre>
+
+<p>And then?
+You can playing with rust directly in <a href="https://play.rust-lang.org/">Rust Playground</a> or read <a href="https://doc.rust-lang.org/stable/book/">Official Book</a> biar lebih Rock N Roll!</p>
+
+<p>Terimakasih, semoga bermanfaat 😄.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-02-26</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/rust/">rust</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/belajar-rust-ownership/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Rust - Ownership</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/redshift-eye-protection/">
+            <span class="next-text nav-default">Redshift Eye Protection</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

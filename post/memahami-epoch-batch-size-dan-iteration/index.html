@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Memahami Epoch Batch Size Dan Iteration - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami cara kerja dan fungsi Epoch, Batch Size, dan Iterations pada Machine Learning" />
+<meta name="keywords" content="machine learning, deep learning, neural network, epoch, batch size, iterations" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Memahami Epoch Batch Size Dan Iteration" />
+<meta property="og:description" content="Memahami cara kerja dan fungsi Epoch, Batch Size, dan Iterations pada Machine Learning" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/" />
+
+
+
+<meta property="article:published_time" content="2018-01-25T22:53:14&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-01-25T22:53:14&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Memahami Epoch Batch Size Dan Iteration">
+<meta itemprop="description" content="Memahami cara kerja dan fungsi Epoch, Batch Size, dan Iterations pada Machine Learning">
+
+
+<meta itemprop="datePublished" content="2018-01-25T22:53:14&#43;07:00" />
+<meta itemprop="dateModified" content="2018-01-25T22:53:14&#43;07:00" />
+<meta itemprop="wordCount" content="740">
+
+
+
+<meta itemprop="keywords" content="machine learning,deep learning," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Memahami Epoch Batch Size Dan Iteration"/>
+<meta name="twitter:description" content="Memahami cara kerja dan fungsi Epoch, Batch Size, dan Iterations pada Machine Learning"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Memahami Epoch Batch Size Dan Iteration</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/machine-learning/"> Machine Learning </a>
+            
+          </div>
+        <span class="more-meta"> 740 word </span>
+        <span class="more-meta"> 4 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#gradient-descent">Gradient Descent</a></li>
+<li><a href="#epoch">Epoch</a></li>
+<li><a href="#batch-size">Batch Size</a></li>
+<li><a href="#iterations">Iterations</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Jika anda adalah seseorang yang sedang menggeluti bidang <em>Machine Learning</em> atau <em>Deep Learning</em> pasti sangat familiar dengan ketiga hal ini, namun mungkin juga anda sering bingung sampai menggaruk-garuk kepala anda dan bertanya-tanya &ldquo;Mengapa saya mengetik ketiga istilah ini dalam kode saya dan apa bedanya? fungsinya apa?&rdquo; karena semuanya terlihat sangat mirip.</p>
+
+<p>Baiklah mari kita bahas, tapi untuk mengetahui perbedaan antara ketiga hal ini kita perlu mengetahui beberapa istilah pada <em>Machine Learning</em> seperti <em>Gradient Descent</em> agar kita lebih memahami fungsi dari Epoch, Batch Size, dan Iterations.</p>
+
+<h2 id="gradient-descent">Gradient Descent</h2>
+
+<p><em>Gradient Descent</em> adalah algoritma untuk mengoptimalkan iteratif yang digunakan pada Machine Learning untuk menemukan hasil yang terbaik (minima kurva). Algoritma iteratif berarti bahwa kita perlu mendapatkan hasilnya berkali-kali untuk mendapatkan hasil yang paling optimal atau bisa dikatakan hampir sempurna. Kualitas iteratif dari <em>Gradient Descent</em> membantu grafik yang tidak dilengkapi untuk membuat grafik sesuai dengan optimal pada data.</p>
+
+<p><img src="/images/memahami-epoch-batch-size-iteration/gradient-descent.gif" alt="Gradient Descent" /></p>
+
+<p><em>Gradient Descent</em> mempunyai sebuah parameter yang bernama <strong><em>learning rate</em></strong>, seperti yang anda lihat di atas (sebelah kiri). Pada awalnya, langkahnya lebih besar yang berarti <em>learning rate</em> tersebut tinggi dan dipertengahan hasilnya menurun, <em>learning rate</em> menjadi lebih kecil dengan ukuran langkah yang lebih pendek. Begitupun juga dengan <em>Cost Function</em> yang menurun atau _Cost_nya menurun. Kadang, mungkin anda pernah mendengar orang mengatakan bahwa _Loss Function_nya menurun atau _Cost_nya menurun, dan perlu diketahui juga bahwa &ldquo;Cost&rdquo; dan &ldquo;Loss&rdquo; merupakan hal yang sama. Dan jika <em>Cost</em> atau _Loss_nya menurun itu bagus karena pada prinsipnya semakin kecil kerugian yang kita dapatkan akan semakin bagus untuk kita, kan?.</p>
+
+<p>Mungkin juga anda bertanya-tanya mengapa ada istilah <em>Epoch</em>, <em>Batch Size</em>, dan <em>Iterations</em> di <em>Machine Learning</em>. Jawabannya adalah, karena ketiga hal ini menjadi sebuah solusi untuk menangani data yang jumlahnya besar yang mana komputer kita tidak memungkinkan untuk men-training data begitu banyaknya dalam satu kali training. Jadi, untuk mengatasi masalah ini kita perlu membagi data menjadi ukuran yang lebih kecil dan memberikannya ke komputer kita satu per satu dan memperbarui weight (bobot) pada <em>Neural Network</em> di akhir setiap langkah agar sesuai dengan data yang diberikan.</p>
+
+<h2 id="epoch">Epoch</h2>
+
+<p><em>Epoch</em> adalah ketika seluruh dataset sudah melalui proses training pada Neural Netwok sampai dikembalikan ke awal untuk sekali putaran, karena satu <em>Epoch</em> terlalu besar untuk dimasukkan (feeding) kedalam komputer maka dari itu kita perlu membaginya kedalam satuan kecil (batches).</p>
+
+<p>Tapi, mengapa kita perlu lebih dari satu Epoch?
+Kita tahu itu tidak masuk akal di awal bahwa melewati seluruh dataset melalui jaringan saraf tidak cukup dan kita perlu melewati dataset penuh beberapa kali ke jaringan saraf yang sama. Namun perlu diingat bahwa kita menggunakan dataset yang terbatas dan untuk mengoptimalkan pembelajaran dan grafik yang kita gunakan adalah <em>Gradient Descent</em> yang merupakan proses iteratif. Jadi, mengupdate weight (bobot) dengan satu epoch saja tidak cukup.</p>
+
+<p>Satu epoch mengarah pada underfitting pada grafik (di bawah).</p>
+
+<p><img src="/images/memahami-epoch-batch-size-iteration/epoch.png" alt="Epoch" /></p>
+
+<p>Seiring bertambahnya jumlah epoch, semakin banyak pula weight (bobot) yang berubah dalam Neural Network dan kurvanya melengkung dari kurva yang kurang sesuai hingga selaras dengan kurva yang overfitting.</p>
+
+<p>Lalu berapakah jumlah epoch yang harus kita tentukan?
+Sayangnya, tidak ada jawaban yang benar untuk pertanyaan ini. Jawabannya berbeda untuk dataset yang berbeda tapi anda bisa mengatakan bahwa jumlah epoch terkait dengan beragamnya data anda, jadi jumlah epoch tergantung dataset yang anda miliki.</p>
+
+<h2 id="batch-size">Batch Size</h2>
+
+<p><em>Batch Size</em> adalah jumlah sampel data yang disebarkan ke Neural Network. Contoh: jika kita mempunyai 100 dataset dan batch size kita adalah 5 maka algoritma ini akan menggunakan 5 sempel data pertama dari 100 data yang kita miliki (<sup>ke</sup>1, <sup>ke</sup>2, <sup>ke</sup>3, <sup>ke</sup>4, dan <sup>ke</sup>5) lalu disebarkankan atau ditraining oleh Neural Network sampai selesai kemudian mengambil kembali 5 sampel data kedua dari 100 data (<sup>ke</sup>6, <sup>ke</sup>7, <sup>ke</sup>8, <sup>ke</sup>9, dan <sup>ke</sup>10), dan begitu seterusnya sampai 5 sampel data ke 20 (<sup>100</sup>&frasl;<sub>5</sub>=20).</p>
+
+<p>Tapi, apa itu Batch?
+Seperti yang penulis katakan sebelumnya, kita tidak bisa melewati seluruh dataset ke dalam jaring saraf sekaligus. Jadi, kita membagi dataset menjadi sejumlah atau satu set atau bagian. Sama seperti kita membagi sebuah naskah skripsi yang panjang menjadi beberapa bagian seperti BAB 1, BAB 2, dan BAB 3 yang memudahkan kita untuk pembacanya dan memahami keseluruhan naskah tersebut. 😄</p>
+
+<h2 id="iterations">Iterations</h2>
+
+<p><em>Iterations</em> adalah jumlah batch yang diperlukan untuk menyelesaikan satu epoch. Tapi, untuk memahami iterasi sebenarnya kita hanya perlu mengetahui tabel perkalian atau memiliki kalkulator 😜</p>
+
+<blockquote>
+<p>Note: Jumlah batch sama dengan jumlah iterasi untuk satu epoch.</p>
+</blockquote>
+
+<p>Katakanlah kita memiliki 2000 contoh training yang akan kita gunakan, maka kita dapat membagi dataset dari 2000 contoh tersebut menjadi batch dari 500 maka akan dibutuhkan 4 iterasi untuk menyelesaikan 1 epoch 😉</p>
+
+<p>Referensi :
+<a href="https://medium.com/onfido-tech/machine-learning-101-be2e0a86c96a">Machine Learning 101</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-01-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/machine-learning/">machine learning</a>
+          
+          <a href="/tags/deep-learning/">deep learning</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/xfce4-dengan-windowck-dan-maximus/">
+            <span class="next-text nav-default">Xfce4 dengan Windowck dan Maximus</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

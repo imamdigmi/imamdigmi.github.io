@@ -6,7 +6,7 @@
     <description>Recent content in Categories on JournalToday</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Imam Digmi</copyright>
+    <copyright>imamdigmi</copyright>
     <lastBuildDate>Sat, 01 Apr 2017 19:57:42 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
@@ -24,7 +24,7 @@
     <item>
       <title>Diary</title>
       <link>https://imamdigmi.github.io/categories/diary/</link>
-      <pubDate>Wed, 20 Apr 2016 17:44:20 +0700</pubDate>
+      <pubDate>Sun, 14 Aug 2016 09:27:12 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/categories/diary/</guid>
       <description></description>
@@ -49,11 +49,38 @@
     </item>
     
     <item>
+      <title>Machine Learning</title>
+      <link>https://imamdigmi.github.io/categories/machine-learning/</link>
+      <pubDate>Thu, 25 Jan 2018 22:53:14 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Nosql</title>
       <link>https://imamdigmi.github.io/categories/nosql/</link>
       <pubDate>Fri, 03 Jun 2016 14:06:22 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/categories/nosql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>https://imamdigmi.github.io/categories/php/</link>
+      <pubDate>Thu, 26 May 2016 22:44:46 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://imamdigmi.github.io/categories/rust/</link>
+      <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/categories/rust/</guid>
       <description></description>
     </item>
     

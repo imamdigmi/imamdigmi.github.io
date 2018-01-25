@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Laravel - Class, Object, Property dan Method - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami Class, Object, Property dan Method di PHP" />
+<meta name="keywords" content="php, class, object, property, method, oop, laravel" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/php-class-object-property-dan-method/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Laravel - Class, Object, Property dan Method" />
+<meta property="og:description" content="Memahami Class, Object, Property dan Method di PHP" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/php-class-object-property-dan-method/" />
+
+
+
+<meta property="article:published_time" content="2016-05-24T15:41:07&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-05-24T15:41:07&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Laravel - Class, Object, Property dan Method">
+<meta itemprop="description" content="Memahami Class, Object, Property dan Method di PHP">
+
+
+<meta itemprop="datePublished" content="2016-05-24T15:41:07&#43;07:00" />
+<meta itemprop="dateModified" content="2016-05-24T15:41:07&#43;07:00" />
+<meta itemprop="wordCount" content="400">
+
+
+
+<meta itemprop="keywords" content="php,laravel," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Laravel - Class, Object, Property dan Method"/>
+<meta name="twitter:description" content="Memahami Class, Object, Property dan Method di PHP"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Laravel - Class, Object, Property dan Method</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-24 </span>
+        <div class="post-category">
+            
+              <a href="/categories/php/"> PHP </a>
+            
+          </div>
+        <span class="more-meta"> 400 word </span>
+        <span class="more-meta"> 2 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#class">Class</a></li>
+<li><a href="#property">Property</a></li>
+<li><a href="#method">Method</a></li>
+<li><a href="#object">Object</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Pada artikel <a href="http://imamdigmi.github.io/post/php-pengertian-oop/">sebelumnya</a> kita telah membahas pengetian OOP dan bagaimana konsep dasar dari pendekatan OOP itu sendiri, nah sekarang mari kita praktekan bagaimana membuat Class, Object, Property dan Method.</p>
+
+<h2 id="class">Class</h2>
+
+<p>Kita akan mulai dengan membuat Class terlebih dulu, Untuk membuat Class, penulisannya harus diawali dengan keyword <strong>class</strong> kemudian diikuti dengan nama Class, namun ada aturan penamaan dalam penulisan nama Class yaitu diawali dengan huruf <em>kapital</em> dan jika nama class tersebut lebih dari dua atau lebih maka kata selanjutnya disambung dan diawali dengan huruf <em>kapital</em> juga contohnya &ldquo;<strong>KueDonat</strong>&rdquo; penamaan seperti ini disebut dengan (Camel Case).</p>
+
+<p>berikut contoh kode sederhana pemembuatan Class :</p>
+
+<pre><code class="language-php">&lt;?php
+class Kue {
+    // isi dengan perintah...
+}
+</code></pre>
+
+<h2 id="property">Property</h2>
+
+<p>Property atau juga disebut dengan atribut adalah data yang ada di dalam Class itu sendiri, sebenarnya property sama dengan variable tapi didalam OOP disebut property. Aturan penulisan nya pun sama dengan variable bisa langsung di definisikan bisa juga diawali dengan keyword <strong>var</strong> dan bisa juga langsung di berikan nilai.</p>
+
+<p>Berikut contoh pembuatan property lanjutan dari Class Kue :</p>
+
+<pre><code class="language-php">&lt;?php
+class Kue {
+    var $bahan = ['Tepung', 'Gula', 'Telur'];
+    var $bentuk;
+}
+</code></pre>
+
+<h2 id="method">Method</h2>
+
+<p>Method pada dasarnya adalah fungsi (function) didalam sebuah Class yang berguna untuk melakukan suatu perintah-perintah, function juga bisa menerima parameter atau argumen dan mengembalikan sebuah nilai dengan keyword <strong>return</strong>. Berbeda dengan Class, aturan penamaan sebuah method sebaiknya diawali dengan huruf kecil tapi jika ada lebih dari 1 kata maka bisa disambign dengan <em>underscore</em> (Snake Case) seperti <strong>memasak_kue</strong> atau dengan disambung huruf kapital di awal kata (Camel Case) seperti <strong>memasakKue</strong>.</p>
+
+<p>Berikut contoh sederhana pembuatan method :</p>
+
+<pre><code class="language-php">&lt;?php
+class Kue {
+    var $bahan = ['Tepung', 'Gula', 'Telur'];
+    var $bentuk;
+
+    function memasak_kue ([parameter]) {
+        // isi dengan perintah...
+    }
+
+    function membungkusKue ([parameter]) {
+        // isi dengan perintah...
+    }
+}
+</code></pre>
+
+<h2 id="object">Object</h2>
+
+<p>Object (obyek) adalah hasil/cetakan atau hasil &ldquo;<em>konkret</em>&rdquo; dari sebuah Class, jika diatas kita membuatan Class <strong>Kue</strong> maka object bisa <em>kue_bolu</em>, <em>kue_donat</em>, <em>kue_gethuk</em> dan lain-lain. Dan tentunya object-object tersebut akan memiliki ciri-ciri dari Class pembuatnya yaitu sebuah Kue, yang dihasilkan dari property-property dan method-methodnya.
+Untuk membuat sebuah object harus kita awali dengan keyword <strong>new</strong> lalu diikuti dengan nama Classnya.</p>
+
+<p>Berikut contoh pembuatan object dari Class Kue tadi :</p>
+
+<pre><code class="language-php">&lt;?php
+class Kue {
+    var $bahan = ['Tepung', 'Gula', 'Telur'];
+    var $bentuk;
+
+    function memasak_kue ([parameter]) {
+        // isi dengan perintah...
+    }
+
+    function membungkusKue ([parameter]) {
+        // isi dengan perintah...
+    }
+}
+
+$kue_bolu = new Kue();
+$kue_donat = new Kue();
+$kue_gethuk = new Kue();
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-05-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/laravel/">laravel</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/php-abstract-dan-interface/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Laravel - Abstract dan Interface</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/php-pengertian-oop/">
+            <span class="next-text nav-default">Belajar Laravel - Pengertian OOP</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

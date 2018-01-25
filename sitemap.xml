@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/</loc>
+    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/about/</loc>
     <lastmod>2018-01-19T23:13:40+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,6 +33,48 @@
   <url>
     <loc>https://imamdigmi.github.io/post/instalasi-arch-linux/</loc>
     <lastmod>2017-04-01T19:57:42+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</loc>
+    <lastmod>2017-03-17T22:41:07+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/belajar-rust-variable/</loc>
+    <lastmod>2017-02-27T11:23:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/belajar-rust-lifetimes/</loc>
+    <lastmod>2017-02-26T20:09:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/belajar-rust-references-dan-borrowing/</loc>
+    <lastmod>2017-02-26T17:23:01+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/belajar-rust-ownership/</loc>
+    <lastmod>2017-02-26T14:10:24+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/belajar-rust-setup/</loc>
+    <lastmod>2017-02-26T12:16:03+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,8 +122,57 @@
   </url>
   
   <url>
+    <loc>https://imamdigmi.github.io/post/menjadi-seorang-bapak/</loc>
+    <lastmod>2018-01-23T00:32:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/post/graph-database-dengan-neo4j/</loc>
     <lastmod>2016-06-03T14:06:22+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/php-anonymous-function-lambda-dan-closure/</loc>
+    <lastmod>2016-05-26T22:44:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/php-json/</loc>
+    <lastmod>2016-05-26T01:05:06+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/php-abstract-dan-interface/</loc>
+    <lastmod>2016-05-25T16:19:22+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/php-class-object-property-dan-method/</loc>
+    <lastmod>2016-05-24T15:41:07+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/php-pengertian-oop/</loc>
+    <lastmod>2016-05-24T14:39:08+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/post/php-pengenalan-framework/</loc>
+    <lastmod>2016-05-24T00:43:50+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -115,15 +213,22 @@
   </url>
   
   <url>
+    <loc>https://imamdigmi.github.io/tags/deep-learning/</loc>
+    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/tags/diary/</loc>
-    <lastmod>2016-04-20T17:44:20+07:00</lastmod>
+    <lastmod>2018-01-23T00:32:08+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imamdigmi.github.io/categories/diary/</loc>
-    <lastmod>2016-04-20T17:44:20+07:00</lastmod>
+    <lastmod>2018-01-23T00:32:08+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -158,7 +263,28 @@
   
   <url>
     <loc>https://imamdigmi.github.io/</loc>
-    <lastmod>2018-01-19T23:13:40+07:00</lastmod>
+    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/tags/laravel/</loc>
+    <lastmod>2016-05-26T22:44:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/tags/machine-learning/</loc>
+    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/categories/machine-learning/</loc>
+    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -171,8 +297,36 @@
   </url>
   
   <url>
+    <loc>https://imamdigmi.github.io/tags/php/</loc>
+    <lastmod>2016-05-26T22:44:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/categories/php/</loc>
+    <lastmod>2016-05-26T22:44:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/post/</loc>
-    <lastmod>2017-04-29T18:56:51+07:00</lastmod>
+    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/tags/rust/</loc>
+    <lastmod>2017-03-17T22:41:07+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/categories/rust/</loc>
+    <lastmod>2017-03-17T22:41:07+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

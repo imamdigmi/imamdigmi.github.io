@@ -73,7 +73,7 @@
 
 <meta itemprop="datePublished" content="2017-01-15T17:47:17&#43;07:00" />
 <meta itemprop="dateModified" content="2017-01-15T17:47:17&#43;07:00" />
-<meta itemprop="wordCount" content="613">
+<meta itemprop="wordCount" content="611">
 
 
 
@@ -94,7 +94,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">imamdigmi</a>
+    <a href="/" class="logo">Imam Digmi</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -120,7 +120,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">imamdigmi</a>
+  <a href="/" class="logo">Imam Digmi</a>
 </div>
 
 <nav class="site-navbar">
@@ -155,7 +155,7 @@
               <a href="/categories/golang/"> GoLang </a>
             
           </div>
-        <span class="more-meta"> 613 word </span>
+        <span class="more-meta"> 611 word </span>
         <span class="more-meta"> 3 min read </span>
         
       </div>
@@ -186,7 +186,9 @@
 
     
     <div class="post-content">
-      <p>Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :</p>
+      
+
+<p>Pada artikel kali ini kita akan membahas cara meng-install golang (Google Go Language) di Linux, disini Linux yang penulis gunakan adalah :</p>
 
 <pre><code class="language-bash">No LSB modules are available.
 Distributor ID: Ubuntu
@@ -197,8 +199,11 @@ Codename:       yakkety
 
 <h2 id="download-golang">Download Golang</h2>
 
-<p>Sebelum kita meng-install golang kita harus mendownload aplikasi golang terlebih dahulu <a href="https://golang.org/dl/">disini</a> lalu klik pada bagian Linux dan jangan lupa pilih jenis bit komputer anda.
-&gt; NOTE: Pada artikel ini ditulis versi stabil dari golang yaitu 1.7.4 dan kita akan menggunakan versi ini.</p>
+<p>Sebelum kita meng-install golang kita harus mendownload aplikasi golang terlebih dahulu <a href="https://golang.org/dl/">disini</a> lalu klik pada bagian Linux dan jangan lupa pilih jenis bit komputer anda.</p>
+
+<blockquote>
+<p>Note: Pada artikel ini ditulis versi stabil dari golang yaitu 1.7.4 dan kita akan menggunakan versi ini.</p>
+</blockquote>
 
 <p><img src="/images/instalasi-golang/download.png" alt="Download" /></p>
 
@@ -251,8 +256,11 @@ go version go1.7.4 linux/amd64
 - <code>pkg</code> berisi file hasil kompilasi
 - <code>bin</code> berisi file executable hasil build</p>
 
-<p>Daftarkan <code>GOPATH</code> kedalam <code>PATH Variable</code> :
-&gt; NOTE: Ganti &lt; <strong>workspace</strong> &gt; sesuai dengan direktori workspace golang di komputer anda.</p>
+<p>Daftarkan <code>GOPATH</code> kedalam <code>PATH Variable</code> :</p>
+
+<blockquote>
+<p>Note: Ganti &lt; <strong>workspace</strong> &gt; sesuai dengan direktori workspace golang di komputer anda.</p>
+</blockquote>
 
 <pre><code class="language-bash">echo &quot;export GOPATH=\&quot;\$HOME/&lt; workspace &gt;\&quot;&quot; &gt;&gt; ~/.profile
 </code></pre>
@@ -265,7 +273,7 @@ go version go1.7.4 linux/amd64
 </code></pre>
 
 <blockquote>
-<p>TIP: Jika $GOPATH tidak dikenali cobalah untuk menutup lalu membuka kembali terminal anda</p>
+<p>Tip: Jika $GOPATH tidak dikenali cobalah untuk menutup lalu membuka kembali terminal anda</p>
 </blockquote>
 
 <pre><code class="language-bash">tree -L 2 $GOPATH
@@ -299,7 +307,7 @@ echo &quot;export PATH=\&quot;\$GOPATH/bin:\$(go env GOROOT)/bin:\$PATH\&quot;&q
 </code></pre>
 
 <blockquote>
-<p>TIP: Langkah diatas kita lalukan agar easily accessible ketika kita hendak mengakses file binari yang kita install dengan perintah <code>go install</code> pada proyek kita.</p>
+<p>Tip: Langkah diatas kita lalukan agar easily accessible ketika kita hendak mengakses file binari yang kita install dengan perintah <code>go install</code> pada proyek kita.</p>
 </blockquote>
 
 <p>In the end, kumpulan <code>PATH</code> yang kita taruh pada file .profile adalah sebagai berikut :
@@ -351,6 +359,7 @@ func main() {
 <p><img src="/images/instalasi-golang/test-installation.png" alt="Test Installation" /></p>
 
 <p>Oke sampai disini dulu, semoga bermanfaat</p>
+
     </div>
 
     
@@ -453,7 +462,7 @@ func main() {
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
-    <span class="author">Imam Digmi</span>
+    <span class="author">imamdigmi</span>
   </span>
 </div>
     </footer>

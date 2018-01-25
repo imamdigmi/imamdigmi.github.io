@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Laravel - Json (JavaScript Object Notation) - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami JSON di PHP" />
+<meta name="keywords" content="php, json, laravel" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/php-json/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Laravel - Json (JavaScript Object Notation)" />
+<meta property="og:description" content="Memahami JSON di PHP" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/php-json/" />
+
+
+
+<meta property="article:published_time" content="2016-05-26T01:05:06&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-05-26T01:05:06&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Laravel - Json (JavaScript Object Notation)">
+<meta itemprop="description" content="Memahami JSON di PHP">
+
+
+<meta itemprop="datePublished" content="2016-05-26T01:05:06&#43;07:00" />
+<meta itemprop="dateModified" content="2016-05-26T01:05:06&#43;07:00" />
+<meta itemprop="wordCount" content="440">
+
+
+
+<meta itemprop="keywords" content="php,laravel," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Laravel - Json (JavaScript Object Notation)"/>
+<meta name="twitter:description" content="Memahami JSON di PHP"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Laravel - Json (JavaScript Object Notation)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-26 </span>
+        <div class="post-category">
+            
+              <a href="/categories/php/"> PHP </a>
+            
+          </div>
+        <span class="more-meta"> 440 word </span>
+        <span class="more-meta"> 3 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#apa-itu-json">Apa itu JSON?</a></li>
+<li><a href="#bagaimana-menulis-format-json">Bagaimana menulis format JSON?</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Pada artikel <a href="http://imamdigmi.github.io/post/php-abstract-dan-interface/">sebelumnya</a> kita telah membahas tentang konsep dasar OOP. Ukee Broo or Sist! saya yakin anda sudah tidak sabar untuk membahas tentang laravel,
+karena mungkin anda sudah tau mengapa anda memilih framework laravel untuk dipelajari yaitu framework yang sekarang banyak digunakan dan lagi terkenal.
+Tapi santai dulu, saya pengen agar anda bisa paham banget di laravel, makadari itu sengaja saya sisipkan konsep dasarnya dulu yaah agar anda tidak tersesat dalam proses pembelajaran ini.</p>
+
+<p><em>Note :
+Pada bagian ini, saya sarankan anda bukanlah orang yang baru kenal dengan PHP, dan kalo udah ngerasa mual-mual, puyeng, kepala sakit berlanjut setelah membaca artikel ini silahkan hubungi paman google dan pelajari dasar-dasar PHP prosedural atau OOP secara mendalam.</em></p>
+
+<h2 id="apa-itu-json">Apa itu JSON?</h2>
+
+<p>JSON (dibaca: &ldquo;jeyson&rdquo;) adalah singkatan dari <em>Javascript Object Notation</em> adalah format ringkasan pertukaran data dalam komputer. Tapi secara teknis, biasanya JSON ini digunakan untuk pertukaran
+data dalam satu aplikasi ke aplikasi lainnya, bisa dari web ke mobile ataupun sebaliknya atau juga bisa dari satu bahasa pemrograman ke bahasa lainnya. Pada awalnya JSON hanya digunakan di javascript saja
+tapi siringnya waktu, JSON ini digunakan oleh bahasa-bahasa lain.
+Konsepnya hampir mirip dengan <em>array</em> bisa terdapat lebih dari satu dimensi didalamnya dan juga key-value. Hanya saja, jika di array hanya berupa element sedangakn JSON berupa object.</p>
+
+<h2 id="bagaimana-menulis-format-json">Bagaimana menulis format JSON?</h2>
+
+<p>Nah cara menulisnya sangat mudah, yaitu data yang tersimpan harus didalam kurung-kurawal <code>{...}</code> lalu diikuti dengan nama indexnya penamaanya sama dengan variable dan valuenya pun sama dengan mendefinisikan variable, seperi ini format penulisannya :</p>
+
+<pre><code class="language-json">{
+    key1: value1,
+    key2: {
+        key3: value3,
+        key4: value4,
+        key5: value5
+    },
+    key6: value6
+}
+</code></pre>
+
+<p>JSON juga mendukung berbagai format data, diataranya :</p>
+
+<ul>
+<li>Number    : bilangan bulat atau desimal.</li>
+<li>String    : teks yang diapit tanda petik (<em>single/double quotes</em>).</li>
+<li>Boolean   : Isian benar (<em>true</em>) atau salah (<em>false</em>).</li>
+<li>Array     : Data terurut yang diapit <code>[...]</code> dan dibatasi dengan koma. Array juga bisa berisi gabungan tipe data yang lain.</li>
+<li>Object    : Data tidak terurut yang diapit <code>{...}</code> dan dibatasi koma. Setiap elemen object berisi key-value yang dibatasi dengan <code>:</code> (<em>titik dua</em>).</li>
+<li>NULL      : nilai kosong, diisi dengan keyword null.</li>
+</ul>
+
+<p>Jika format data tersebut di gabungkan maka penulisannya seperti ini :</p>
+
+<pre><code class="language-json">{
+    &quot;nim&quot;: 135610103,
+    &quot;nama&quot;: &quot;Imam Digmi&quot;,
+    &quot;umur&quot;: 20,
+    &quot;lulus&quot;: false,
+    &quot;ipk&quot;: 1.80,
+    &quot;telpon&quot;: null,
+    &quot;hobi&quot;: [
+        'membaca',
+        'menulis',
+        'main gitar'
+    ],
+    &quot;mata_kuliah&quot;: {
+        &quot;Distributed Database&quot;,
+        &quot;Cloud Computing&quot;,
+        &quot;Enterprise Information Systems&quot;,
+        &quot;System Information Functional&quot;
+    },
+    &quot;asal_sekolah&quot;: {
+        {&quot;tingkat&quot;: &quot;SD&quot;, &quot;nama_lembaga&quot;: &quot;SDN 1 Cikedung, Indramayu&quot;},
+        {&quot;tingkat&quot;: &quot;SMP&quot;, &quot;nama_lembaga&quot;: &quot;SMP Terisila, Indramayu&quot;},
+        {&quot;tingkat&quot;: &quot;SMK&quot;, &quot;nama_lembaga&quot;: &quot;SMKN 1 Cikedung, Indramayu&quot;},
+        {&quot;tingkat&quot;: &quot;S1&quot;, &quot;nama_lembaga&quot;: &quot;STMIK AKAKOM Yogyakarta&quot;}
+    }
+}
+</code></pre>
+
+<p>Karena kita akan menggunakan laravel, maka kita akan sering berjumpa dengan JSON. Maka dari itu, anda pastikan paham dengan ini.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-05-26</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/laravel/">laravel</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/php-anonymous-function-lambda-dan-closure/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Laravel - Anonymous Function/Lambda dan Closure</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/php-abstract-dan-interface/">
+            <span class="next-text nav-default">Belajar Laravel - Abstract dan Interface</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

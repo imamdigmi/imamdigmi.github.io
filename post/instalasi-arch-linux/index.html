@@ -73,7 +73,7 @@
 
 <meta itemprop="datePublished" content="2017-04-01T19:57:42&#43;07:00" />
 <meta itemprop="dateModified" content="2017-04-01T19:57:42&#43;07:00" />
-<meta itemprop="wordCount" content="888">
+<meta itemprop="wordCount" content="884">
 
 
 
@@ -94,7 +94,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">imamdigmi</a>
+    <a href="/" class="logo">Imam Digmi</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -120,7 +120,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">imamdigmi</a>
+  <a href="/" class="logo">Imam Digmi</a>
 </div>
 
 <nav class="site-navbar">
@@ -155,7 +155,7 @@
               <a href="/categories/arch-linux/"> Arch Linux </a>
             
           </div>
-        <span class="more-meta"> 888 word </span>
+        <span class="more-meta"> 884 word </span>
         <span class="more-meta"> 5 min read </span>
         
       </div>
@@ -209,11 +209,14 @@
 
 <h2 id="langkah-langkah">Langkah-langkah</h2>
 
-<p>Agar mudah dipahami kita akan membagi proses instalasi ini menjadi tiga bagian yaitu:
-1. Pre Instllation
-2. Arch Linux Core Installation
-3. Post Installation
-Oke mari kita mulai instalasinya.</p>
+<p>Agar mudah dipahami kita akan membagi proses instalasi ini menjadi tiga bagian yaitu:</p>
+
+<ol>
+<li>Pre Instllation</li>
+<li>Arch Linux Core Installation</li>
+<li>Post Installation
+Oke mari kita mulai instalasinya.</li>
+</ol>
 
 <h2 id="pre-installation">Pre Installation</h2>
 
@@ -285,7 +288,7 @@ Oke mari kita mulai instalasinya.</p>
 <h3 id="install-base">Install base</h3>
 
 <pre><code># pacman -Syy
-# pactsrap /mnt base base-devel
+# pactstrap /mnt base base-devel
 </code></pre>
 
 <p>tunggu sampai proses sinkronisasi selesai, lalu generate <code>fstab</code> untuk <em>mounting</em>  semua partisi agar dapat di booting oleh system</p>
@@ -453,9 +456,9 @@ options root=/dev/sda&lt;X&gt; rw
 $ sudo systemctl enable gdm
 </code></pre>
 
-<p>atau jika anda lebih menyukai login dengan terminal <code>TTY</code> atau tanpa tampilan anda dapat menggunakan <code>xorg-xinit</code></p>
+<p>atau jika anda lebih menyukai login dengan terminal <code>TTY</code> (tanpa tampilan) anda dapat menggunakan <code>xorg-xinit</code></p>
 
-<pre><code>$ sudo pacman -S xorg-xinit
+<pre><code>$ sudo pacman -S xorg-xinit xorg-server
 </code></pre>
 
 <p>lalu kita buat file <code>~/.xinitrc</code> agar ketika kita ingin masuk ke tampilan desktop kita dapat menggunakan <code>startx</code></p>
@@ -470,7 +473,7 @@ $ echo &quot;exec xfce4-session&quot; &gt; ~/.xinitrc
 </code></pre>
 
 <blockquote>
-<p>Note: Jika anda menggunakan <code>startx</code> maka untuk masuk ke tampilan desktop gunakan perintah <code>$ startx</code></p>
+<p>Note: Jika anda menggunakan <code>startx</code> maka untuk masuk ke tampilan desktop gunakan perintah <code>startx</code></p>
 </blockquote>
 
 <p>Tadaaaa, Archlinux sudah bisa digunakan.</p>
@@ -517,8 +520,8 @@ Semoga bermanfaat.</p>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/post/redshift-eye-protection/">
-            <span class="next-text nav-default">Redshift Eye Protection</span>
+          <a class="next" href="/post/belajar-rust-memahami-stact-dan-heap/">
+            <span class="next-text nav-default">Belajar Rust - Memahami Stact Dan Heap</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -580,7 +583,7 @@ Semoga bermanfaat.</p>
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
-    <span class="author">Imam Digmi</span>
+    <span class="author">imamdigmi</span>
   </span>
 </div>
     </footer>

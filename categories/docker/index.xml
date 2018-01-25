@@ -6,7 +6,7 @@
     <description>Recent content in Docker on JournalToday</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Imam Digmi</copyright>
+    <copyright>imamdigmi</copyright>
     <lastBuildDate>Sat, 14 Jan 2017 18:02:13 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +18,9 @@
       <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/setup-docker-on-ubuntu/</guid>
-      <description>Prerequisites To follow this tutorial, you will need the following: - 64-bit Ubuntu 16.04 Droplet - Non-root user with sudo privileges Initial Setup Guide for Ubuntu 16.04 explains how to set this up.) &amp;gt; Note: Docker requires a 64-bit version of Ubuntu as well as a kernel version equal to or greater than 3.10. The default 64-bit Ubuntu 16.04 Droplet meets these requirements.
-All the commands in this tutorial should be run as a non-root user.</description>
+      <description>Prerequisites To follow this tutorial, you will need the following:
+ 64-bit Ubuntu 16.04 Droplet Non-root user with sudo privileges Initial Setup Guide for Ubuntu 16.04 explains how to set this up.   Note: Docker requires a 64-bit version of Ubuntu as well as a kernel version equal to or greater than 3.10. The default 64-bit Ubuntu 16.04 Droplet meets these requirements.
+ All the commands in this tutorial should be run as a non-root user.</description>
     </item>
     
   </channel>

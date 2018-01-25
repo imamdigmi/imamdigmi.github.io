@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning on JournalToday</title>
+    <link>https://imamdigmi.github.io/tags/deep-learning/</link>
+    <description>Recent content in Deep Learning on JournalToday</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>imamdigmi</copyright>
+    <lastBuildDate>Thu, 25 Jan 2018 22:53:14 +0700</lastBuildDate>
+    
+	<atom:link href="https://imamdigmi.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Memahami Epoch Batch Size Dan Iteration</title>
+      <link>https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/</link>
+      <pubDate>Thu, 25 Jan 2018 22:53:14 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/</guid>
+      <description>Jika anda adalah seseorang yang sedang menggeluti bidang Machine Learning atau Deep Learning pasti sangat familiar dengan ketiga hal ini, namun mungkin juga anda sering bingung sampai menggaruk-garuk kepala anda dan bertanya-tanya &amp;ldquo;Mengapa saya mengetik ketiga istilah ini dalam kode saya dan apa bedanya? fungsinya apa?&amp;rdquo; karena semuanya terlihat sangat mirip.
+Baiklah mari kita bahas, tapi untuk mengetahui perbedaan antara ketiga hal ini kita perlu mengetahui beberapa istilah pada Machine Learning seperti Gradient Descent agar kita lebih memahami fungsi dari Epoch, Batch Size, dan Iterations.</description>
+    </item>
+    
+  </channel>
+</rss>

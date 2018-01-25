@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Belajar Laravel - Pengenalan Framework - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Berkenalan dengan teknologi framework di PHP" />
+<meta name="keywords" content="php, framework, laravel" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.33" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/php-pengenalan-framework/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Belajar Laravel - Pengenalan Framework" />
+<meta property="og:description" content="Berkenalan dengan teknologi framework di PHP" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/php-pengenalan-framework/" />
+
+
+
+<meta property="article:published_time" content="2016-05-24T00:43:50&#43;07:00"/>
+
+<meta property="article:modified_time" content="2016-05-24T00:43:50&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Belajar Laravel - Pengenalan Framework">
+<meta itemprop="description" content="Berkenalan dengan teknologi framework di PHP">
+
+
+<meta itemprop="datePublished" content="2016-05-24T00:43:50&#43;07:00" />
+<meta itemprop="dateModified" content="2016-05-24T00:43:50&#43;07:00" />
+<meta itemprop="wordCount" content="544">
+
+
+
+<meta itemprop="keywords" content="php,laravel," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Laravel - Pengenalan Framework"/>
+<meta name="twitter:description" content="Berkenalan dengan teknologi framework di PHP"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Belajar Laravel - Pengenalan Framework</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-24 </span>
+        <div class="post-category">
+            
+              <a href="/categories/php/"> PHP </a>
+            
+          </div>
+        <span class="more-meta"> 544 word </span>
+        <span class="more-meta"> 3 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#apakah-buku-ini-sudah-selesai">Apakah buku ini sudah selesai?</a></li>
+<li><a href="#apa-itu-framework">Apa itu framework?</a></li>
+<li><a href="#mengapa-menggunakan-framwork">Mengapa menggunakan framwork?</a></li>
+<li><a href="#daftar-isi">Daftar isi</a>
+<ul>
+<li><a href="#1-konsep-dasar-oop">1. Konsep Dasar OOP</a>
+<ul>
+<li><a href="#pengertian-oop-https-imamdigmi-github-io-post-php-pengertian-oop"><a href="https://imamdigmi.github.io/post/php-pengertian-oop/">Pengertian OOP</a></a></li>
+<li><a href="#class-object-property-dan-method-https-imamdigmi-github-io-post-php-class-object-property-dan-method"><a href="https://imamdigmi.github.io/post/php-class-object-property-dan-method/">Class, Object, Property dan Method</a></a></li>
+<li><a href="#abstract-dan-interfaces-https-imamdigmi-github-io-post-php-abstract-dan-interface"><a href="https://imamdigmi.github.io/post/php-abstract-dan-interface/">Abstract dan Interfaces</a></a></li>
+</ul></li>
+<li><a href="#2-konsep-dasar">2. Konsep Dasar</a>
+<ul>
+<li><a href="#json-https-imamdigmi-github-io-post-php-json"><a href="https://imamdigmi.github.io/post/php-json/">JSON</a></a></li>
+<li><a href="#anonymous-function-lambda-closure-https-imamdigmi-github-io-post-php-anonymous-function-lambda-dan-closure"><a href="https://imamdigmi.github.io/post/php-anonymous-function-lambda-dan-closure/">Anonymous Function/Lambda &amp; Closure</a></a></li>
+<li><a href="#autoloader-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Autoloader</a></a></li>
+<li><a href="#traits-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Traits</a></a></li>
+<li><a href="#namespace-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Namespace</a></a></li>
+<li><a href="#magic-method-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Magic Method</a></a></li>
+<li><a href="#reflection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Reflection</a></a></li>
+<li><a href="#composer-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Composer</a></a></li>
+</ul></li>
+<li><a href="#3-konfigurasi-untuk-project-skala-besar">3. Konfigurasi, untuk Project Skala Besar</a>
+<ul>
+<li><a href="#kebutuhan-sistem-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Kebutuhan Sistem</a></a></li>
+<li><a href="#instalasi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Instalasi</a></a></li>
+<li><a href="#homestead-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Homestead</a></a></li>
+<li><a href="#artisan-cli-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Artisan CLI</a></a></li>
+<li><a href="#environment-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Environment</a></a></li>
+<li><a href="#arsitektur-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Arsitektur Laravel</a></a></li>
+<li><a href="#struktur-aplikasi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Struktur Aplikasi</a></a></li>
+<li><a href="#service-providers-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Service Providers</a></a></li>
+<li><a href="#service-container-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Service Container</a></a></li>
+<li><a href="#facades-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Facades</a></a></li>
+<li><a href="#contracts-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Contracts</a></a></li>
+<li><a href="#alur-request-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Alur Request</a></a></li>
+</ul></li>
+<li><a href="#4-routing-kendalikan-alur-aplikasi">4. Routing, Kendalikan Alur Aplikasi</a>
+<ul>
+<li><a href="#kenapa-menggunakan-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Kenapa menggunakan routing?</a></a></li>
+<li><a href="#konfigurasi-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi Routing</a></a></li>
+<li><a href="#memahami-http-verb-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami HTTP Verb</a></a></li>
+<li><a href="#menggunakan-beberapa-verb-untuk-satu-route-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Beberapa Verb untuk Satu Route</a></a></li>
+<li><a href="#memahami-parameter-dalam-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Parameter dalam Routing</a></a></li>
+<li><a href="#regex-parameter-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Regex Parameter</a></a></li>
+<li><a href="#optional-parameter-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Optional Parameter</a></a></li>
+<li><a href="#memahami-named-routes-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Named Routes</a></a></li>
+<li><a href="#memahami-route-groups-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Route Groups</a></a></li>
+<li><a href="#subdomain-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Subdomain Routing</a></a></li>
+<li><a href="#whats-next-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Whats next?</a></a></li>
+</ul></li>
+<li><a href="#5-mengakses-database">5. Mengakses Database</a>
+<ul>
+<li><a href="#konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></a></li>
+<li><a href="#database-migration-schema-builder-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Database Migration &amp; Schema Builder</a></a></li>
+<li><a href="#basic-crud-query-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Basic CRUD Query</a></a></li>
+<li><a href="#database-seeding-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Database Seeding</a></a></li>
+<li><a href="#query-builder-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Query Builder</a></a></li>
+<li><a href="#transaksi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Transaksi</a></a></li>
+<li><a href="#logging-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Logging</a></a></li>
+<li><a href="#database-caching-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Database Caching</a></a></li>
+<li><a href="#menggunakan-multiple-database-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Multiple Database</a></a></li>
+<li><a href="#konfigurasi-read-write-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi Read/Write</a></a></li>
+</ul></li>
+<li><a href="#6-model-dari-mvc">6. Model dari MVC</a>
+<ul>
+<li><a href="#memahami-orm-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami ORM</a></a></li>
+<li><a href="#eloquent-orm-powerfull-dari-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Eloquent, ORM Powerfull dari Laravel</a></a></li>
+<li><a href="#konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework-1"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></a></li>
+<li><a href="#mass-assignment-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Mass Assignment</a></a></li>
+<li><a href="#crud-dasar-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">CRUD Dasar</a></a></li>
+<li><a href="#output-model-ke-array-json-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Output Model ke Array / JSON</a></a></li>
+<li><a href="#query-dalam-eloquent-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Query dalam Eloquent</a></a></li>
+<li><a href="#soft-delete-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Soft Delete</a></a></li>
+<li><a href="#query-scope-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Query Scope</a></a></li>
+<li><a href="#global-scope-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Global Scope</a></a></li>
+<li><a href="#menggunakan-accessors-dan-mutators-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Accessors dan Mutators</a></a></li>
+<li><a href="#date-mutator-carbon-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Date Mutator &amp; Carbon</a></a></li>
+<li><a href="#attribute-casting-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Attribute Casting</a></a></li>
+<li><a href="#model-event-observer-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Model Event &amp; Observer</a></a></li>
+<li><a href="#route-model-binding-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Route Model Binding</a></a></li>
+</ul></li>
+<li><a href="#7-relationship-dalam-eloquent">7. Relationship dalam Eloquent</a>
+<ul>
+<li><a href="#memahami-jenis-relationship-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Jenis Relationship</a></a></li>
+<li><a href="#one-to-one-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">One To One</a></a></li>
+<li><a href="#one-to-many-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">One To Many</a></a></li>
+<li><a href="#many-to-many-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Many To Many</a></a></li>
+<li><a href="#has-many-through-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Has Many Through</a></a></li>
+<li><a href="#polymorphic-relations-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Polymorphic Relations</a></a></li>
+<li><a href="#self-referencing-relationship-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Self Referencing Relationship</a></a></li>
+<li><a href="#many-to-many-polymorphic-relations-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Many To Many Polymorphic Relations</a></a></li>
+<li><a href="#custom-key-untuk-relationship-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Custom Key untuk Relationship</a></a></li>
+<li><a href="#eager-loading-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Eager Loading</a></a></li>
+</ul></li>
+<li><a href="#8-collection-dengan-eloquent">8. Collection dengan Eloquent</a>
+<ul>
+<li><a href="#class-collection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Class Collection</a></a></li>
+<li><a href="#membuat-collection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Collection</a></a></li>
+<li><a href="#method-pada-collection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Method pada Collection</a></a></li>
+</ul></li>
+<li><a href="#9-view-dari-mvc">9. View dari MVC</a>
+<ul>
+<li><a href="#penggunaan-view-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Penggunaan View</a></a></li>
+<li><a href="#konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework-2"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></a></li>
+<li><a href="#passing-variable-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Passing Variable</a></a></li>
+<li><a href="#view-composer-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">View Composer</a></a></li>
+<li><a href="#blade-templating-engine-dari-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Blade, Templating Engine dari Laravel</a></a></li>
+<li><a href="#blade-layout-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Blade Layout</a></a></li>
+<li><a href="#blade-control-structure-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Blade Control Structure</a></a></li>
+<li><a href="#elixir-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Elixir</a></a></li>
+<li><a href="#form-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Form</a></a></li>
+<li><a href="#form-model-binding-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Form Model Binding</a></a></li>
+</ul></li>
+<li><a href="#10-controller-dari-mvc">10. Controller dari MVC</a>
+<ul>
+<li><a href="#penggunaan-controller-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Penggunaan Controller</a></a></li>
+<li><a href="#konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework-3"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></a></li>
+<li><a href="#implicit-controller-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Implicit Controller</a></a></li>
+<li><a href="#restful-resource-controller-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">RESTful Resource Controller</a></a></li>
+<li><a href="#dependency-injection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Dependency Injection</a></a></li>
+<li><a href="#route-caching-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Route Caching</a></a></li>
+<li><a href="#whats-next-https-imamdigmi-github-io-post-php-pengenalan-framework-1"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Whats Next?</a></a></li>
+</ul></li>
+<li><a href="#11-request-response">11. Request &amp; Response</a>
+<ul>
+<li><a href="#memahami-request-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Request di Laravel</a></a></li>
+<li><a href="#menerima-input-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menerima Input</a></a></li>
+<li><a href="#old-input-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Old Input</a></a></li>
+<li><a href="#menerima-upload-file-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menerima Upload File</a></a></li>
+<li><a href="#bekerja-dengan-cookie-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Bekerja dengan Cookie</a></a></li>
+<li><a href="#mengambil-info-dari-request-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Mengambil info dari Request</a></a></li>
+<li><a href="#memahami-response-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Response di Laravel</a></a></li>
+<li><a href="#membuat-response-redirect-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Response Redirect</a></a></li>
+<li><a href="#membuat-response-json-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Response JSON</a></a></li>
+<li><a href="#membuat-response-download-file-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Response Download File</a></a></li>
+<li><a href="#menggunakan-response-macro-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Response Macro</a></a></li>
+</ul></li>
+<li><a href="#11-middleware">11. Middleware</a>
+<ul>
+<li><a href="#membuat-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Middleware</a></a></li>
+<li><a href="#after-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">After Middleware</a></a></li>
+<li><a href="#register-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Register</a></a></li>
+<li><a href="#terminable-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Terminable</a></a></li>
+<li><a href="#middleware-parameters-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Middleware Parameters</a></a></li>
+<li><a href="#route-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Route Middleware</a></a></li>
+<li><a href="#controller-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Controller Middleware</a></a></li>
+<li><a href="#middleware-group-update-laravel-5-2-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Middleware Group (update Laravel 5.2)</a></a></li>
+</ul></li>
+<li><a href="#12-authentikasi-authorisasi-dari-login-hingga-hak-akses">12. Authentikasi &amp; Authorisasi, dari Login hingga Hak Akses</a>
+<ul>
+<li><a href="#memahami-alur-authentikasi-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Alur Authentikasi Laravel</a></a></li>
+<li><a href="#proteksi-route-dengan-auth-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Proteksi route dengan Auth Middleware</a></a></li>
+<li><a href="#menambah-field-baru-ke-table-user-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menambah field baru ke table user</a></a></li>
+<li><a href="#menggunakan-username-untuk-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Username untuk login</a></a></li>
+<li><a href="#kustomisasi-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Kustomisasi Login</a></a></li>
+<li><a href="#password-reminder-reset-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Password Reminder &amp; Reset</a></a></li>
+<li><a href="#menggunakan-throttles-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Throttles Login</a></a></li>
+<li><a href="#auto-generate-authentikasi-update-laravel-5-2-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Auto Generate Authentikasi (Update Laravel 5.2)</a></a></li>
+<li><a href="#menambahkan-fitur-suspend-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menambahkan fitur Suspend</a></a></li>
+<li><a href="#mengakses-user-yang-telah-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Mengakses User yang telah Login</a></a></li>
+<li><a href="#social-authentication-dengan-socialite-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Social Authentication dengan Socialite</a></a></li>
+<li><a href="#membangun-hak-akses-user-rbac-acl-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membangun Hak Akses User (RBAC + ACL)</a></a></li>
+<li><a href="#menggunakan-ability-policy-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Ability &amp; Policy</a></a></li>
+<li><a href="#jwt-json-web-token-authentication-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">JWT (JSON Web Token) Authentication</a></a></li>
+</ul></li>
+<li><a href="#13-validasi-data">13. Validasi Data</a>
+<ul>
+<li><a href="#memahami-validasi-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Validasi di Laravel</a></a></li>
+<li><a href="#menampilkan-pesan-error-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menampilkan pesan error</a></a></li>
+<li><a href="#memodifikasi-pesan-error-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memodifikasi pesan error</a></a></li>
+<li><a href="#validasi-kondisional-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi Kondisional</a></a></li>
+<li><a href="#validasi-array-update-laravel-5-2-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi Array (update Laravel 5.2)</a></a></li>
+<li><a href="#validasi-untuk-ajax-api-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi untuk Ajax / API</a></a></li>
+<li><a href="#menggunakan-berbagai-rule-validasi-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan berbagai rule validasi di Laravel</a></a></li>
+<li><a href="#membuat-custom-rule-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Custom Rule</a></a></li>
+<li><a href="#validasi-dengan-form-request-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi dengan Form Request</a></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="apakah-buku-ini-sudah-selesai">Apakah buku ini sudah selesai?</h2>
+
+<p><strong>Belum</strong>, Doakan saja semoga penulis sehat selalu agar buku ini dapat segera terselesaikan 😉
+Okay, mari kita bahas dulu apa itu framework dan bagaiamana cara kerjanya.</p>
+
+<h2 id="apa-itu-framework">Apa itu framework?</h2>
+
+<p>Adalah suatu struktur konseptual dasar yang digunakan untuk memecahkan atau menangani suatu masalah kompleks. Istilah ini sering digunakan antara lain dalam bidang perangkat lunak untuk menggambarkan suatu desain sistem perangkat lunak yang dapat digunakan kembali, serta dalam bidang manajemen untuk menggambarkan suatu konsep yang memungkinkan penanganan berbagai jenis atau entitas bisnis secara homogen.
+<a href="https://id.wikipedia.org/wiki/Kerangka_kerja"><em>Wikipedia</em></a>.</p>
+
+<h2 id="mengapa-menggunakan-framwork">Mengapa menggunakan framwork?</h2>
+
+<p>Framwork dibuat tentunya dengan adanya alasan dan manfaat yang terkandung didalamnya, apa saja manfaatnya? Framework daat mempercepat dan mempermudah pembangunan sebuah aplikasi, tanpa harus membuat fungsi atau class dari awal.</p>
+
+<h2 id="daftar-isi">Daftar isi</h2>
+
+<h3 id="1-konsep-dasar-oop">1. Konsep Dasar OOP</h3>
+
+<h4 id="pengertian-oop-https-imamdigmi-github-io-post-php-pengertian-oop"><a href="https://imamdigmi.github.io/post/php-pengertian-oop/">Pengertian OOP</a></h4>
+
+<h4 id="class-object-property-dan-method-https-imamdigmi-github-io-post-php-class-object-property-dan-method"><a href="https://imamdigmi.github.io/post/php-class-object-property-dan-method/">Class, Object, Property dan Method</a></h4>
+
+<h4 id="abstract-dan-interfaces-https-imamdigmi-github-io-post-php-abstract-dan-interface"><a href="https://imamdigmi.github.io/post/php-abstract-dan-interface/">Abstract dan Interfaces</a></h4>
+
+<h3 id="2-konsep-dasar">2. Konsep Dasar</h3>
+
+<h4 id="json-https-imamdigmi-github-io-post-php-json"><a href="https://imamdigmi.github.io/post/php-json/">JSON</a></h4>
+
+<h4 id="anonymous-function-lambda-closure-https-imamdigmi-github-io-post-php-anonymous-function-lambda-dan-closure"><a href="https://imamdigmi.github.io/post/php-anonymous-function-lambda-dan-closure/">Anonymous Function/Lambda &amp; Closure</a></h4>
+
+<h4 id="autoloader-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Autoloader</a></h4>
+
+<h4 id="traits-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Traits</a></h4>
+
+<h4 id="namespace-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Namespace</a></h4>
+
+<h4 id="magic-method-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Magic Method</a></h4>
+
+<h4 id="reflection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Reflection</a></h4>
+
+<h4 id="composer-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Composer</a></h4>
+
+<h3 id="3-konfigurasi-untuk-project-skala-besar">3. Konfigurasi, untuk Project Skala Besar</h3>
+
+<h4 id="kebutuhan-sistem-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Kebutuhan Sistem</a></h4>
+
+<h4 id="instalasi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Instalasi</a></h4>
+
+<h4 id="homestead-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Homestead</a></h4>
+
+<h4 id="artisan-cli-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Artisan CLI</a></h4>
+
+<h4 id="environment-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Environment</a></h4>
+
+<h4 id="arsitektur-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Arsitektur Laravel</a></h4>
+
+<h4 id="struktur-aplikasi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Struktur Aplikasi</a></h4>
+
+<h4 id="service-providers-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Service Providers</a></h4>
+
+<h4 id="service-container-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Service Container</a></h4>
+
+<h4 id="facades-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Facades</a></h4>
+
+<h4 id="contracts-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Contracts</a></h4>
+
+<h4 id="alur-request-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Alur Request</a></h4>
+
+<h3 id="4-routing-kendalikan-alur-aplikasi">4. Routing, Kendalikan Alur Aplikasi</h3>
+
+<h4 id="kenapa-menggunakan-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Kenapa menggunakan routing?</a></h4>
+
+<h4 id="konfigurasi-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi Routing</a></h4>
+
+<h4 id="memahami-http-verb-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami HTTP Verb</a></h4>
+
+<h4 id="menggunakan-beberapa-verb-untuk-satu-route-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Beberapa Verb untuk Satu Route</a></h4>
+
+<h4 id="memahami-parameter-dalam-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Parameter dalam Routing</a></h4>
+
+<h4 id="regex-parameter-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Regex Parameter</a></h4>
+
+<h4 id="optional-parameter-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Optional Parameter</a></h4>
+
+<h4 id="memahami-named-routes-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Named Routes</a></h4>
+
+<h4 id="memahami-route-groups-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Route Groups</a></h4>
+
+<h4 id="subdomain-routing-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Subdomain Routing</a></h4>
+
+<h4 id="whats-next-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Whats next?</a></h4>
+
+<h3 id="5-mengakses-database">5. Mengakses Database</h3>
+
+<h4 id="konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></h4>
+
+<h4 id="database-migration-schema-builder-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Database Migration &amp; Schema Builder</a></h4>
+
+<h4 id="basic-crud-query-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Basic CRUD Query</a></h4>
+
+<h4 id="database-seeding-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Database Seeding</a></h4>
+
+<h4 id="query-builder-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Query Builder</a></h4>
+
+<h4 id="transaksi-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Transaksi</a></h4>
+
+<h4 id="logging-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Logging</a></h4>
+
+<h4 id="database-caching-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Database Caching</a></h4>
+
+<h4 id="menggunakan-multiple-database-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Multiple Database</a></h4>
+
+<h4 id="konfigurasi-read-write-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi Read/Write</a></h4>
+
+<h3 id="6-model-dari-mvc">6. Model dari MVC</h3>
+
+<h4 id="memahami-orm-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami ORM</a></h4>
+
+<h4 id="eloquent-orm-powerfull-dari-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Eloquent, ORM Powerfull dari Laravel</a></h4>
+
+<h4 id="konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework-1"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></h4>
+
+<h4 id="mass-assignment-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Mass Assignment</a></h4>
+
+<h4 id="crud-dasar-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">CRUD Dasar</a></h4>
+
+<h4 id="output-model-ke-array-json-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Output Model ke Array / JSON</a></h4>
+
+<h4 id="query-dalam-eloquent-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Query dalam Eloquent</a></h4>
+
+<h4 id="soft-delete-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Soft Delete</a></h4>
+
+<h4 id="query-scope-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Query Scope</a></h4>
+
+<h4 id="global-scope-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Global Scope</a></h4>
+
+<h4 id="menggunakan-accessors-dan-mutators-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Accessors dan Mutators</a></h4>
+
+<h4 id="date-mutator-carbon-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Date Mutator &amp; Carbon</a></h4>
+
+<h4 id="attribute-casting-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Attribute Casting</a></h4>
+
+<h4 id="model-event-observer-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Model Event &amp; Observer</a></h4>
+
+<h4 id="route-model-binding-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Route Model Binding</a></h4>
+
+<h3 id="7-relationship-dalam-eloquent">7. Relationship dalam Eloquent</h3>
+
+<h4 id="memahami-jenis-relationship-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Jenis Relationship</a></h4>
+
+<h4 id="one-to-one-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">One To One</a></h4>
+
+<h4 id="one-to-many-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">One To Many</a></h4>
+
+<h4 id="many-to-many-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Many To Many</a></h4>
+
+<h4 id="has-many-through-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Has Many Through</a></h4>
+
+<h4 id="polymorphic-relations-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Polymorphic Relations</a></h4>
+
+<h4 id="self-referencing-relationship-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Self Referencing Relationship</a></h4>
+
+<h4 id="many-to-many-polymorphic-relations-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Many To Many Polymorphic Relations</a></h4>
+
+<h4 id="custom-key-untuk-relationship-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Custom Key untuk Relationship</a></h4>
+
+<h4 id="eager-loading-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Eager Loading</a></h4>
+
+<h3 id="8-collection-dengan-eloquent">8. Collection dengan Eloquent</h3>
+
+<h4 id="class-collection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Class Collection</a></h4>
+
+<h4 id="membuat-collection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Collection</a></h4>
+
+<h4 id="method-pada-collection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Method pada Collection</a></h4>
+
+<h3 id="9-view-dari-mvc">9. View dari MVC</h3>
+
+<h4 id="penggunaan-view-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Penggunaan View</a></h4>
+
+<h4 id="konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework-2"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></h4>
+
+<h4 id="passing-variable-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Passing Variable</a></h4>
+
+<h4 id="view-composer-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">View Composer</a></h4>
+
+<h4 id="blade-templating-engine-dari-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Blade, Templating Engine dari Laravel</a></h4>
+
+<h4 id="blade-layout-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Blade Layout</a></h4>
+
+<h4 id="blade-control-structure-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Blade Control Structure</a></h4>
+
+<h4 id="elixir-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Elixir</a></h4>
+
+<h4 id="form-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Form</a></h4>
+
+<h4 id="form-model-binding-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Form Model Binding</a></h4>
+
+<h3 id="10-controller-dari-mvc">10. Controller dari MVC</h3>
+
+<h4 id="penggunaan-controller-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Penggunaan Controller</a></h4>
+
+<h4 id="konfigurasi-https-imamdigmi-github-io-post-php-pengenalan-framework-3"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Konfigurasi</a></h4>
+
+<h4 id="implicit-controller-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Implicit Controller</a></h4>
+
+<h4 id="restful-resource-controller-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">RESTful Resource Controller</a></h4>
+
+<h4 id="dependency-injection-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Dependency Injection</a></h4>
+
+<h4 id="route-caching-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Route Caching</a></h4>
+
+<h4 id="whats-next-https-imamdigmi-github-io-post-php-pengenalan-framework-1"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Whats Next?</a></h4>
+
+<h3 id="11-request-response">11. Request &amp; Response</h3>
+
+<h4 id="memahami-request-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Request di Laravel</a></h4>
+
+<h4 id="menerima-input-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menerima Input</a></h4>
+
+<h4 id="old-input-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Old Input</a></h4>
+
+<h4 id="menerima-upload-file-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menerima Upload File</a></h4>
+
+<h4 id="bekerja-dengan-cookie-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Bekerja dengan Cookie</a></h4>
+
+<h4 id="mengambil-info-dari-request-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Mengambil info dari Request</a></h4>
+
+<h4 id="memahami-response-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Response di Laravel</a></h4>
+
+<h4 id="membuat-response-redirect-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Response Redirect</a></h4>
+
+<h4 id="membuat-response-json-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Response JSON</a></h4>
+
+<h4 id="membuat-response-download-file-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Response Download File</a></h4>
+
+<h4 id="menggunakan-response-macro-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Response Macro</a></h4>
+
+<h3 id="11-middleware">11. Middleware</h3>
+
+<h4 id="membuat-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Middleware</a></h4>
+
+<h4 id="after-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">After Middleware</a></h4>
+
+<h4 id="register-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Register</a></h4>
+
+<h4 id="terminable-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Terminable</a></h4>
+
+<h4 id="middleware-parameters-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Middleware Parameters</a></h4>
+
+<h4 id="route-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Route Middleware</a></h4>
+
+<h4 id="controller-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Controller Middleware</a></h4>
+
+<h4 id="middleware-group-update-laravel-5-2-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Middleware Group (update Laravel 5.2)</a></h4>
+
+<h3 id="12-authentikasi-authorisasi-dari-login-hingga-hak-akses">12. Authentikasi &amp; Authorisasi, dari Login hingga Hak Akses</h3>
+
+<h4 id="memahami-alur-authentikasi-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Alur Authentikasi Laravel</a></h4>
+
+<h4 id="proteksi-route-dengan-auth-middleware-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Proteksi route dengan Auth Middleware</a></h4>
+
+<h4 id="menambah-field-baru-ke-table-user-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menambah field baru ke table user</a></h4>
+
+<h4 id="menggunakan-username-untuk-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Username untuk login</a></h4>
+
+<h4 id="kustomisasi-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Kustomisasi Login</a></h4>
+
+<h4 id="password-reminder-reset-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Password Reminder &amp; Reset</a></h4>
+
+<h4 id="menggunakan-throttles-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Throttles Login</a></h4>
+
+<h4 id="auto-generate-authentikasi-update-laravel-5-2-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Auto Generate Authentikasi (Update Laravel 5.2)</a></h4>
+
+<h4 id="menambahkan-fitur-suspend-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menambahkan fitur Suspend</a></h4>
+
+<h4 id="mengakses-user-yang-telah-login-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Mengakses User yang telah Login</a></h4>
+
+<h4 id="social-authentication-dengan-socialite-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Social Authentication dengan Socialite</a></h4>
+
+<h4 id="membangun-hak-akses-user-rbac-acl-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membangun Hak Akses User (RBAC + ACL)</a></h4>
+
+<h4 id="menggunakan-ability-policy-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan Ability &amp; Policy</a></h4>
+
+<h4 id="jwt-json-web-token-authentication-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">JWT (JSON Web Token) Authentication</a></h4>
+
+<h3 id="13-validasi-data">13. Validasi Data</h3>
+
+<h4 id="memahami-validasi-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memahami Validasi di Laravel</a></h4>
+
+<h4 id="menampilkan-pesan-error-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menampilkan pesan error</a></h4>
+
+<h4 id="memodifikasi-pesan-error-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Memodifikasi pesan error</a></h4>
+
+<h4 id="validasi-kondisional-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi Kondisional</a></h4>
+
+<h4 id="validasi-array-update-laravel-5-2-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi Array (update Laravel 5.2)</a></h4>
+
+<h4 id="validasi-untuk-ajax-api-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi untuk Ajax / API</a></h4>
+
+<h4 id="menggunakan-berbagai-rule-validasi-di-laravel-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Menggunakan berbagai rule validasi di Laravel</a></h4>
+
+<h4 id="membuat-custom-rule-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Membuat Custom Rule</a></h4>
+
+<h4 id="validasi-dengan-form-request-https-imamdigmi-github-io-post-php-pengenalan-framework"><a href="https://imamdigmi.github.io/post/php-pengenalan-framework/#">Validasi dengan Form Request</a></h4>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-05-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/laravel/">laravel</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/php-pengertian-oop/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Belajar Laravel - Pengertian OOP</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/pulang-sekolah-menjelang-sore/">
+            <span class="next-text nav-default">Pulang Sekolah Menjelang Sore</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
