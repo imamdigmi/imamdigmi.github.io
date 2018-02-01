@@ -24,7 +24,7 @@ Oke mari kita mulai instalasinya.
 
 ## Pre Installation
 ### Download image ISO archlinux
-Anda dapat mengunduh file .iso archlinux [disini](http://mirror.devilzc0de.org/archlinux/iso/2017.04.01/) atau [disini](http://download.nus.edu.sg/mirror/arch/iso/2017.04.01/) atau anda juga dapat melihat daftar server yang menyediakan image ISO nya [disini](https://www.archlinux.org/download/) dan pilihlah file yang berekstensi dor iso (`*.iso`)
+Anda dapat mengunduh file image archlinux [disini](https://www.archlinux.org/download/) dengan menggunakan torrent atau download langsung via http dengan memilih server kemudian pilih file yang berekstensi dot iso (`*.iso`)
 
 ### Membuat bootable
 Untuk membuat bootable anda dapat menggunakan [Etcher](https://etcher.io/) atau jika anda menggunakan windows anda dapat menggunakan [Rufus](https://rufus.akeo.ie/) atau anda juga dapat memilih aplikasi bootable maker sendiri, feel free to choose your favorite bootable maker tapi menurut pengalaman penulis iso archlinux tidak dapat dibuat dengan aplikasi [Universal Usb Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/).
@@ -46,12 +46,12 @@ Setelah itu kita akan membuat partisi _Hard Drive_ kita
 ```
 Pilih GPT lalu kita buat partisinya, skema yang digunakan penulis seperti yang ada dibawah ini, namun anda dapat merubahnya sesuai keinginan
 
-```
-1. 800 MB, ESP (EFI System Partition)
-2. 16 GB, swap
-3. 70 GB, /
-4. 150 GB, /home
-```
+| Ukuran    | Tipe               | Label    |
+|:----------|:-------------------|:---------|
+| 800 MB    | _EFI System_       | `/boot`  |
+| 4 GB      | _Linux Swap_       | `/swap`  |
+| 70 GB     | _Linux Filesystem_ | `/root`  |
+| 163 GB    | _Linux Filesystem_ | `/home`  |
 Format partisi yang tadi kita buat
 
 ```
@@ -87,41 +87,41 @@ Server = http://kambing.ui.ac.id/archlinux/$repo/os/$arch
 
 ```
 # pacman -Syy
-# pactstrap /mnt base base-devel
+# pacstrap /mnt base base-devel
 ```
 
-tunggu sampai proses sinkronisasi selesai, lalu generate `fstab` untuk _mounting_  semua partisi agar dapat di booting oleh system
+tunggu sampai proses sinkronisasi selesai, lalu generate `fstab` untuk _mounting_ semua partisi agar dapat di booting oleh system
 
 ```
 # genfstab -L -p -P /mnt > /mnt/etc/fstab
 ```
 
 ### Set system (chroot)
-
+Masuk ke root system yang telah kita buat
 ```
 # arch-chroot /mnt
 ```
 
 ### Hostname, locale and zoneinfo
-
+Buat hostname untuk root yang kita buat
 ```
-# echo idiot > /etc/hostname
+# echo digmi > /etc/hostname
 ```
 
-set locale:
+Generate konfigurasi locale
 
 ```
 # nano /etc/locale.gen
 ```
 
-cari baris dua baris bahasa dibawah ini dengan cara menakan tombol `CTRL+w` lalu hilangkan tanda (`#`), contoh :
+Enable locale Indonesia dengan cara, cari baris dua baris bahasa dibawah ini dengan cara menakan tombol `CTRL+w` lalu hilangkan tanda (`#`), contoh :
 
 ```
 en_US.UTF-8 UTF-8
 id_ID.UTF-8 UTF-8
 ```
 
-setelah itu buat file `locale.conf`
+kemudian buat file `locale.conf`
 
 ```
 # nano /etc/locale.conf
@@ -164,7 +164,7 @@ Buat grup user untuk `sudo`
 lalu buat usernya
 
 ```
-# useradd -m -g users -G sudo,power,storage nama_user
+# useradd -m -g users -G sudo,power,storage idiot
 ```
 
 edit file sudoers
@@ -176,7 +176,7 @@ edit file sudoers
 hilangkan tanda (`#`) pada baris `%sudo ALL=(ALL)`, lalu buat password untuk user yang kita buat tadi
 
 ```
-# passwd nama_user
+# passwd idiot
 # passwd root
 ```
 
@@ -203,19 +203,19 @@ Buat bootloader
 Buat entry untuk systemd-boot pada `/boot/loader/entries/`
 
 ```
-# nano /boot/loader/entries/arhlinux.conf
+# nano /boot/loader/entries/archlinux.conf
 ```
 
 Isikan file tersebut dengan
 
 ```
-title Archlinux
+title ArchLinux
 linux /vmlinuz-linux
 initrd /intel-ucode.img
 initrd /initramfs-linux.img
-options root=/dev/sda<X> rw
+options root=/dev/sda3 rw
 ```
-> Note: Jika anda tidak menggunalan `intel-processor` hapus barus ini `initrd /intel-ucode.img` dan ubah <X> dengan partisi **root** anda.
+> Note: Jika anda tidak menggunalan `intel-processor` hapus barus ini `initrd /intel-ucode.img`.
 
 Finaly, `exit` dari chroot lalu `reboot`.
 
@@ -257,6 +257,11 @@ $ sudo pacman -S xfce4 xfce4-goodies
 instal NetworkManager
 
 ```
+$ sudo pacman -S networkmanager network-manager-applet
+```
+
+Enable Network Manager
+```
 $ sudo systemctl enable NetworkManager
 ```
 
@@ -277,7 +282,7 @@ lalu kita buat file `~/.xinitrc` agar ketika kita ingin masuk ke tampilan deskto
 
 ```
 $ touch ~/.xinitrc
-$ echo "exec xfce4-session" > ~/.xinitrc
+$ echo "startxfce4" > ~/.xinitrc
 ```
 
 lalu reboot
