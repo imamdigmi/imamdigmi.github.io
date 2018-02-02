@@ -73,7 +73,7 @@
 
 <meta itemprop="datePublished" content="2018-02-01T16:36:07&#43;00:00" />
 <meta itemprop="dateModified" content="2018-02-01T16:36:07&#43;00:00" />
-<meta itemprop="wordCount" content="269">
+<meta itemprop="wordCount" content="379">
 
 
 
@@ -155,7 +155,7 @@
               <a href="/categories/arch-linux/"> Arch Linux </a>
             
           </div>
-        <span class="more-meta"> 269 word </span>
+        <span class="more-meta"> 379 word </span>
         <span class="more-meta"> 2 min read </span>
         
       </div>
@@ -175,6 +175,10 @@
 <li><a href="#crash-netctl">Crash Netctl</a></li>
 <li><a href="#xinit-config">Xinit Config</a></li>
 <li><a href="#tty-font">TTY Font</a></li>
+<li><a href="#optional">Optional</a>
+<ul>
+<li><a href="#monitor-for-xfce">Monitor for XFCE</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -284,6 +288,54 @@ FONT_MAP=8859-2
 </code></pre>
 
 <p>Selengkapnya bisa dibaca di dokumentasi resminya <a href="https://wiki.archlinux.org/index.php/Fonts#Console_fonts">disini</a></p>
+
+<h1 id="optional">Optional</h1>
+
+<h2 id="monitor-for-xfce">Monitor for XFCE</h2>
+
+<p>Download code</p>
+
+<pre><code>$ wget https://raw.githubusercontent.com/lightful/xfce-hkmon/master/xfce-hkmon.cpp
+</code></pre>
+
+<p>Compile</p>
+
+<pre><code>$ g++ -std=c++0x -O3 -lrt xfce-hkmon.cpp -o xfce-hkmon
+</code></pre>
+
+<p>Pindahkan hasil complie (executable) ke direktori <code>/usr/local/bin/</code></p>
+
+<pre><code>$ sudo mv xfce-hkmon /usr/local/bin/
+</code></pre>
+
+<p>Tambahkan item <strong>Generic Monitor</strong> pada panel :
+1. Menu Settings
+2. Klik menu Panel
+3. Klik Tab Items
+4. Klik Tombol <strong>+</strong> warna hijau
+5. Pilih <strong>Generic Monitor</strong> lalu klik tombol <strong>add</strong></p>
+
+<p><img src="/images/post-installation-archlinux/add-generic-monitor.png" alt="Generic Monitor" /></p>
+
+<blockquote>
+<p>Jika tidak ada maka harus install dulu dengan cara <code>sudo pacman -S xfce4-genmon-plugin</code></p>
+</blockquote>
+
+<p>Klik kanan pada <strong>Generic Monitor</strong> applet di panel lalu klik <em>properties</em> lalu isikan kode di bawah ini pada kolom <strong>Command</strong></p>
+
+<pre><code>/usr/local/bin/xfce-hkmon NET CPU TEMP IO RAM
+</code></pre>
+
+<p><img src="/images/post-installation-archlinux/generic-monitor-config.png" alt="Generic Monitor Config" /></p>
+
+<p>Refresh panel</p>
+
+<pre><code>$ xfce4-panel -r
+</code></pre>
+
+<p>Hasilnya seperti gambar berikut</p>
+
+<p><img src="/images/post-installation-archlinux/result-generic-monitor.png" alt="Generic Monitor Result" /></p>
 
     </div>
 

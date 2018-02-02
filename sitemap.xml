@@ -234,13 +234,6 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/diary/</loc>
-    <lastmod>2018-01-23T00:32:08+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://imamdigmi.github.io/tags/diary/</loc>
     <lastmod>2018-01-23T00:32:08+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -248,8 +241,8 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/docker/</loc>
-    <lastmod>2017-01-14T18:02:13+07:00</lastmod>
+    <loc>https://imamdigmi.github.io/categories/diary/</loc>
+    <lastmod>2018-01-23T00:32:08+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -262,14 +255,21 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/golang/</loc>
-    <lastmod>2017-01-21T18:25:27+07:00</lastmod>
+    <loc>https://imamdigmi.github.io/categories/docker/</loc>
+    <lastmod>2017-01-14T18:02:13+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imamdigmi.github.io/tags/golang/</loc>
+    <lastmod>2017-01-21T18:25:27+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imamdigmi.github.io/categories/golang/</loc>
     <lastmod>2017-01-21T18:25:27+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -290,14 +290,14 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/machine-learning/</loc>
+    <loc>https://imamdigmi.github.io/tags/machine-learning/</loc>
     <lastmod>2018-01-25T22:53:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/tags/machine-learning/</loc>
+    <loc>https://imamdigmi.github.io/categories/machine-learning/</loc>
     <lastmod>2018-01-25T22:53:14+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -311,14 +311,14 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/php/</loc>
+    <loc>https://imamdigmi.github.io/tags/php/</loc>
     <lastmod>2016-05-26T22:44:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/tags/php/</loc>
+    <loc>https://imamdigmi.github.io/categories/php/</loc>
     <lastmod>2016-05-26T22:44:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -332,14 +332,14 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/rust/</loc>
+    <loc>https://imamdigmi.github.io/tags/rust/</loc>
     <lastmod>2017-03-17T22:41:07+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/tags/rust/</loc>
+    <loc>https://imamdigmi.github.io/categories/rust/</loc>
     <lastmod>2017-03-17T22:41:07+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -360,14 +360,14 @@
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/categories/tips/</loc>
+    <loc>https://imamdigmi.github.io/tags/tips/</loc>
     <lastmod>2017-04-29T18:56:51+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://imamdigmi.github.io/tags/tips/</loc>
+    <loc>https://imamdigmi.github.io/categories/tips/</loc>
     <lastmod>2017-04-29T18:56:51+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
