@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.33" />
+<meta name="generator" content="Hugo 0.34" />
 
 
 <link rel="canonical" href="https://imamdigmi.github.io/post/instalasi-arch-linux/" />
@@ -73,7 +73,7 @@
 
 <meta itemprop="datePublished" content="2017-04-01T19:57:42&#43;07:00" />
 <meta itemprop="dateModified" content="2017-04-01T19:57:42&#43;07:00" />
-<meta itemprop="wordCount" content="884">
+<meta itemprop="wordCount" content="906">
 
 
 
@@ -155,7 +155,7 @@
               <a href="/categories/arch-linux/"> Arch Linux </a>
             
           </div>
-        <span class="more-meta"> 884 word </span>
+        <span class="more-meta"> 906 word </span>
         <span class="more-meta"> 5 min read </span>
         
       </div>
@@ -222,7 +222,7 @@ Oke mari kita mulai instalasinya.</li>
 
 <h3 id="download-image-iso-archlinux">Download image ISO archlinux</h3>
 
-<p>Anda dapat mengunduh file .iso archlinux <a href="http://mirror.devilzc0de.org/archlinux/iso/2017.04.01/">disini</a> atau <a href="http://download.nus.edu.sg/mirror/arch/iso/2017.04.01/">disini</a> atau anda juga dapat melihat daftar server yang menyediakan image ISO nya <a href="https://www.archlinux.org/download/">disini</a> dan pilihlah file yang berekstensi dor iso (<code>*.iso</code>)</p>
+<p>Anda dapat mengunduh file image archlinux <a href="https://www.archlinux.org/download/">disini</a> dengan menggunakan torrent atau download langsung via http dengan memilih server kemudian pilih file yang berekstensi dot iso (<code>*.iso</code>)</p>
 
 <h3 id="membuat-bootable">Membuat bootable</h3>
 
@@ -250,11 +250,41 @@ Oke mari kita mulai instalasinya.</li>
 
 <p>Pilih GPT lalu kita buat partisinya, skema yang digunakan penulis seperti yang ada dibawah ini, namun anda dapat merubahnya sesuai keinginan</p>
 
-<pre><code>1. 800 MB, ESP (EFI System Partition)
-2. 16 GB, swap
-3. 70 GB, /
-4. 150 GB, /home
-</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Ukuran</th>
+<th align="left">Tipe</th>
+<th align="left">Label</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">800 MB</td>
+<td align="left"><em>EFI System</em></td>
+<td align="left"><code>/boot</code></td>
+</tr>
+
+<tr>
+<td align="left">4 GB</td>
+<td align="left"><em>Linux Swap</em></td>
+<td align="left"><code>/swap</code></td>
+</tr>
+
+<tr>
+<td align="left">70 GB</td>
+<td align="left"><em>Linux Filesystem</em></td>
+<td align="left"><code>/root</code></td>
+</tr>
+
+<tr>
+<td align="left">163 GB</td>
+<td align="left"><em>Linux Filesystem</em></td>
+<td align="left"><code>/home</code></td>
+</tr>
+</tbody>
+</table>
 
 <p>Format partisi yang tadi kita buat</p>
 
@@ -288,36 +318,40 @@ Oke mari kita mulai instalasinya.</li>
 <h3 id="install-base">Install base</h3>
 
 <pre><code># pacman -Syy
-# pactstrap /mnt base base-devel
+# pacstrap /mnt base base-devel
 </code></pre>
 
-<p>tunggu sampai proses sinkronisasi selesai, lalu generate <code>fstab</code> untuk <em>mounting</em>  semua partisi agar dapat di booting oleh system</p>
+<p>tunggu sampai proses sinkronisasi selesai, lalu generate <code>fstab</code> untuk <em>mounting</em> semua partisi agar dapat di booting oleh system</p>
 
 <pre><code># genfstab -L -p -P /mnt &gt; /mnt/etc/fstab
 </code></pre>
 
 <h3 id="set-system-chroot">Set system (chroot)</h3>
 
+<p>Masuk ke root system yang telah kita buat</p>
+
 <pre><code># arch-chroot /mnt
 </code></pre>
 
 <h3 id="hostname-locale-and-zoneinfo">Hostname, locale and zoneinfo</h3>
 
-<pre><code># echo idiot &gt; /etc/hostname
+<p>Buat hostname untuk root yang kita buat</p>
+
+<pre><code># echo digmi &gt; /etc/hostname
 </code></pre>
 
-<p>set locale:</p>
+<p>Generate konfigurasi locale</p>
 
 <pre><code># nano /etc/locale.gen
 </code></pre>
 
-<p>cari baris dua baris bahasa dibawah ini dengan cara menakan tombol <code>CTRL+w</code> lalu hilangkan tanda (<code>#</code>), contoh :</p>
+<p>Enable locale Indonesia dengan cara, cari baris dua baris bahasa dibawah ini dengan cara menakan tombol <code>CTRL+w</code> lalu hilangkan tanda (<code>#</code>), contoh :</p>
 
 <pre><code>en_US.UTF-8 UTF-8
 id_ID.UTF-8 UTF-8
 </code></pre>
 
-<p>setelah itu buat file <code>locale.conf</code></p>
+<p>kemudian buat file <code>locale.conf</code></p>
 
 <pre><code># nano /etc/locale.conf
 </code></pre>
@@ -354,7 +388,7 @@ LC_TIME=id_ID.UTF-8
 
 <p>lalu buat usernya</p>
 
-<pre><code># useradd -m -g users -G sudo,power,storage nama_user
+<pre><code># useradd -m -g users -G sudo,power,storage idiot
 </code></pre>
 
 <p>edit file sudoers</p>
@@ -364,7 +398,7 @@ LC_TIME=id_ID.UTF-8
 
 <p>hilangkan tanda (<code>#</code>) pada baris <code>%sudo ALL=(ALL)</code>, lalu buat password untuk user yang kita buat tadi</p>
 
-<pre><code># passwd nama_user
+<pre><code># passwd idiot
 # passwd root
 </code></pre>
 
@@ -388,20 +422,20 @@ Buat initramfs:</p>
 
 <p>Buat entry untuk systemd-boot pada <code>/boot/loader/entries/</code></p>
 
-<pre><code># nano /boot/loader/entries/arhlinux.conf
+<pre><code># nano /boot/loader/entries/archlinux.conf
 </code></pre>
 
 <p>Isikan file tersebut dengan</p>
 
-<pre><code>title Archlinux
+<pre><code>title ArchLinux
 linux /vmlinuz-linux
 initrd /intel-ucode.img
 initrd /initramfs-linux.img
-options root=/dev/sda&lt;X&gt; rw
+options root=/dev/sda3 rw
 </code></pre>
 
 <blockquote>
-<p>Note: Jika anda tidak menggunalan <code>intel-processor</code> hapus barus ini <code>initrd /intel-ucode.img</code> dan ubah <X> dengan partisi <strong>root</strong> anda.</p>
+<p>Note: Jika anda tidak menggunalan <code>intel-processor</code> hapus barus ini <code>initrd /intel-ucode.img</code>.</p>
 </blockquote>
 
 <p>Finaly, <code>exit</code> dari chroot lalu <code>reboot</code>.</p>
@@ -447,6 +481,11 @@ options root=/dev/sda&lt;X&gt; rw
 
 <p>instal NetworkManager</p>
 
+<pre><code>$ sudo pacman -S networkmanager network-manager-applet
+</code></pre>
+
+<p>Enable Network Manager</p>
+
 <pre><code>$ sudo systemctl enable NetworkManager
 </code></pre>
 
@@ -464,7 +503,7 @@ $ sudo systemctl enable gdm
 <p>lalu kita buat file <code>~/.xinitrc</code> agar ketika kita ingin masuk ke tampilan desktop kita dapat menggunakan <code>startx</code></p>
 
 <pre><code>$ touch ~/.xinitrc
-$ echo &quot;exec xfce4-session&quot; &gt; ~/.xinitrc
+$ echo &quot;startxfce4&quot; &gt; ~/.xinitrc
 </code></pre>
 
 <p>lalu reboot</p>

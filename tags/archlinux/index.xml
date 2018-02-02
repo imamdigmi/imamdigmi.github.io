@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Sat, 01 Apr 2017 19:57:42 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2018 16:36:07 +0000</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Post-Installation Arch Linux</title>
+      <link>https://imamdigmi.github.io/post/post-installation-archlinux/</link>
+      <pubDate>Thu, 01 Feb 2018 16:36:07 +0000</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/post-installation-archlinux/</guid>
+      <description>Disable Beep Sound (PC speaker) PC speaker dapat di-disabled dengan cara meng-unload pcspkr kernel module
+sudo rmmod pcspkr  Blacklist module pcspkr akan mencegah udev pada saat booting sistem
+echo &amp;quot;blacklist pcspkr&amp;quot; &amp;gt; /etc/modprobe.d/nobeep.conf  Selengkapnya bisa dibaca di dokumentasi resminya disini
+File Manager Support Flashdisk dan Device Android tidak terbaca dan ekstrak file tidak bisa di thunar
+$ sudo pacman -S gvfs file-roller libmtp  Selengkapnya bisa dibaca di dokumentasi resminya disini</description>
+    </item>
     
     <item>
       <title>Instalasi Arch Linux</title>

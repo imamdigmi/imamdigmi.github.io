@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Belajar Laravel - Class, Object, Property dan Method - JournalToday</title>
+  <title>Post-Installation Arch Linux - JournalToday</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Imam Digmi" /><meta name="description" content="Memahami Class, Object, Property dan Method di PHP" />
-<meta name="keywords" content="php, class, object, property, method, oop, laravel" />
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Beberapa hal yang baik dilakukan setelah instalasi Arch Linux" />
+<meta name="keywords" content="arch, linux, post-installation" />
 
 
 
@@ -28,7 +28,7 @@
 <meta name="generator" content="Hugo 0.34" />
 
 
-<link rel="canonical" href="https://imamdigmi.github.io/post/php-class-object-property-dan-method/" />
+<link rel="canonical" href="https://imamdigmi.github.io/post/post-installation-archlinux/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -46,20 +46,16 @@
 <link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="Belajar Laravel - Class, Object, Property dan Method" />
-<meta property="og:description" content="Memahami Class, Object, Property dan Method di PHP" />
+<meta property="og:title" content="Post-Installation Arch Linux" />
+<meta property="og:description" content="Beberapa hal yang baik dilakukan setelah instalasi Arch Linux" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://imamdigmi.github.io/post/php-class-object-property-dan-method/" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/post-installation-archlinux/" />
 
 
 
-<meta property="article:published_time" content="2016-05-24T15:41:07&#43;07:00"/>
+<meta property="article:published_time" content="2018-02-01T16:36:07&#43;00:00"/>
 
-<meta property="article:modified_time" content="2016-05-24T15:41:07&#43;07:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-02-01T16:36:07&#43;00:00"/>
 
 
 
@@ -67,19 +63,23 @@
 
 
 
-<meta itemprop="name" content="Belajar Laravel - Class, Object, Property dan Method">
-<meta itemprop="description" content="Memahami Class, Object, Property dan Method di PHP">
-
-
-<meta itemprop="datePublished" content="2016-05-24T15:41:07&#43;07:00" />
-<meta itemprop="dateModified" content="2016-05-24T15:41:07&#43;07:00" />
-<meta itemprop="wordCount" content="400">
 
 
 
-<meta itemprop="keywords" content="php,laravel," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Laravel - Class, Object, Property dan Method"/>
-<meta name="twitter:description" content="Memahami Class, Object, Property dan Method di PHP"/>
+
+<meta itemprop="name" content="Post-Installation Arch Linux">
+<meta itemprop="description" content="Beberapa hal yang baik dilakukan setelah instalasi Arch Linux">
+
+
+<meta itemprop="datePublished" content="2018-02-01T16:36:07&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-01T16:36:07&#43;00:00" />
+<meta itemprop="wordCount" content="269">
+
+
+
+<meta itemprop="keywords" content="archlinux," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Post-Installation Arch Linux"/>
+<meta name="twitter:description" content="Beberapa hal yang baik dilakukan setelah instalasi Arch Linux"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -146,16 +146,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Belajar Laravel - Class, Object, Property dan Method</h1>
+      <h1 class="post-title">Post-Installation Arch Linux</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-05-24 </span>
+        <span class="post-time"> 2018-02-01 </span>
         <div class="post-category">
             
-              <a href="/categories/php/"> PHP </a>
+              <a href="/categories/arch-linux/"> Arch Linux </a>
             
           </div>
-        <span class="more-meta"> 400 word </span>
+        <span class="more-meta"> 269 word </span>
         <span class="more-meta"> 2 min read </span>
         
       </div>
@@ -169,13 +169,12 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#class">Class</a></li>
-<li><a href="#property">Property</a></li>
-<li><a href="#method">Method</a></li>
-<li><a href="#object">Object</a></li>
-</ul></li>
+<li><a href="#disable-beep-sound-pc-speaker">Disable Beep Sound (PC speaker)</a></li>
+<li><a href="#file-manager-support">File Manager Support</a></li>
+<li><a href="#cursor-size">Cursor Size</a></li>
+<li><a href="#crash-netctl">Crash Netctl</a></li>
+<li><a href="#xinit-config">Xinit Config</a></li>
+<li><a href="#tty-font">TTY Font</a></li>
 </ul>
 </nav>
   </div>
@@ -185,79 +184,106 @@
     <div class="post-content">
       
 
-<p>Pada artikel <a href="http://imamdigmi.github.io/post/php-pengertian-oop/">sebelumnya</a> kita telah membahas pengetian OOP dan bagaimana konsep dasar dari pendekatan OOP itu sendiri, nah sekarang mari kita praktekan bagaimana membuat Class, Object, Property dan Method.</p>
+<h1 id="disable-beep-sound-pc-speaker">Disable Beep Sound (PC speaker)</h1>
 
-<h2 id="class">Class</h2>
+<p>PC speaker dapat di-<em>disabled</em> dengan cara meng-unload <code>pcspkr</code> kernel module</p>
 
-<p>Kita akan mulai dengan membuat Class terlebih dulu, Untuk membuat Class, penulisannya harus diawali dengan keyword <strong>class</strong> kemudian diikuti dengan nama Class, namun ada aturan penamaan dalam penulisan nama Class yaitu diawali dengan huruf <em>kapital</em> dan jika nama class tersebut lebih dari dua atau lebih maka kata selanjutnya disambung dan diawali dengan huruf <em>kapital</em> juga contohnya &ldquo;<strong>KueDonat</strong>&rdquo; penamaan seperti ini disebut dengan (Camel Case).</p>
-
-<p>berikut contoh kode sederhana pemembuatan Class :</p>
-
-<pre><code class="language-php">&lt;?php
-class Kue {
-    // isi dengan perintah...
-}
+<pre><code>sudo rmmod pcspkr
 </code></pre>
 
-<h2 id="property">Property</h2>
+<p>Blacklist module <code>pcspkr</code> akan mencegah <strong>udev</strong> pada saat booting sistem</p>
 
-<p>Property atau juga disebut dengan atribut adalah data yang ada di dalam Class itu sendiri, sebenarnya property sama dengan variable tapi didalam OOP disebut property. Aturan penulisan nya pun sama dengan variable bisa langsung di definisikan bisa juga diawali dengan keyword <strong>var</strong> dan bisa juga langsung di berikan nilai.</p>
-
-<p>Berikut contoh pembuatan property lanjutan dari Class Kue :</p>
-
-<pre><code class="language-php">&lt;?php
-class Kue {
-    var $bahan = ['Tepung', 'Gula', 'Telur'];
-    var $bentuk;
-}
+<pre><code>echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf
 </code></pre>
 
-<h2 id="method">Method</h2>
+<p>Selengkapnya bisa dibaca di dokumentasi resminya <a href="https://wiki.archlinux.org/index.php/PC_speaker#Disable_PC_Speaker">disini</a></p>
 
-<p>Method pada dasarnya adalah fungsi (function) didalam sebuah Class yang berguna untuk melakukan suatu perintah-perintah, function juga bisa menerima parameter atau argumen dan mengembalikan sebuah nilai dengan keyword <strong>return</strong>. Berbeda dengan Class, aturan penamaan sebuah method sebaiknya diawali dengan huruf kecil tapi jika ada lebih dari 1 kata maka bisa disambign dengan <em>underscore</em> (Snake Case) seperti <strong>memasak_kue</strong> atau dengan disambung huruf kapital di awal kata (Camel Case) seperti <strong>memasakKue</strong>.</p>
+<h1 id="file-manager-support">File Manager Support</h1>
 
-<p>Berikut contoh sederhana pembuatan method :</p>
+<p>Flashdisk dan Device Android tidak terbaca dan ekstrak file tidak bisa di thunar</p>
 
-<pre><code class="language-php">&lt;?php
-class Kue {
-    var $bahan = ['Tepung', 'Gula', 'Telur'];
-    var $bentuk;
-
-    function memasak_kue ([parameter]) {
-        // isi dengan perintah...
-    }
-
-    function membungkusKue ([parameter]) {
-        // isi dengan perintah...
-    }
-}
+<pre><code>$ sudo pacman -S gvfs file-roller libmtp
 </code></pre>
 
-<h2 id="object">Object</h2>
+<p>Selengkapnya bisa dibaca di dokumentasi resminya <a href="https://wiki.archlinux.org/index.php/MTP">disini</a></p>
 
-<p>Object (obyek) adalah hasil/cetakan atau hasil &ldquo;<em>konkret</em>&rdquo; dari sebuah Class, jika diatas kita membuatan Class <strong>Kue</strong> maka object bisa <em>kue_bolu</em>, <em>kue_donat</em>, <em>kue_gethuk</em> dan lain-lain. Dan tentunya object-object tersebut akan memiliki ciri-ciri dari Class pembuatnya yaitu sebuah Kue, yang dihasilkan dari property-property dan method-methodnya.
-Untuk membuat sebuah object harus kita awali dengan keyword <strong>new</strong> lalu diikuti dengan nama Classnya.</p>
+<h1 id="cursor-size">Cursor Size</h1>
 
-<p>Berikut contoh pembuatan object dari Class Kue tadi :</p>
+<p>Buat file <code>.Xresources</code> di direktori home</p>
 
-<pre><code class="language-php">&lt;?php
-class Kue {
-    var $bahan = ['Tepung', 'Gula', 'Telur'];
-    var $bentuk;
-
-    function memasak_kue ([parameter]) {
-        // isi dengan perintah...
-    }
-
-    function membungkusKue ([parameter]) {
-        // isi dengan perintah...
-    }
-}
-
-$kue_bolu = new Kue();
-$kue_donat = new Kue();
-$kue_gethuk = new Kue();
+<pre><code>$ nano ~/.Xresources
 </code></pre>
+
+<p>Definisikan ukuran cursor</p>
+
+<pre><code>!Xcursor.theme: cursor-theme
+Xcursor.size: 16
+</code></pre>
+
+<p>Selengkapnya bisa dibaca di dokumentasi resminya <a href="https://wiki.archlinux.org/index.php/Cursor_themes#X_resources">disini</a></p>
+
+<h1 id="crash-netctl">Crash Netctl</h1>
+
+<p>Jika menggunakan <code>wifi-menu</code> tapi muncul error seperti berikut</p>
+
+<pre><code>Job for netctl@wlp6s0\x2dF48EDF4B5991C93D.service failed because the control process exited with error code.
+See &quot;systemctl status &quot;netctl@wlp6s0\\x2dF48EDF4B5991C93D.service&quot;&quot; and &quot;journalctl -xe&quot; for details.
+</code></pre>
+
+<p>karena service <code>NetworkManager</code> telah aktif, menonaktifkan networkmanager dapat dilakukan dengan menggunakan <code>systemctl</code></p>
+
+<pre><code>$ sudo systemctl stop NetworkManager
+</code></pre>
+
+<p>Jika ingin secara otomatis mendeteksi dan mengkoneksikan <code>wifi</code> dapat menggunakan applet networkmanager dan meng-<em>enable</em> service NetworkManager</p>
+
+<pre><code>sudo pacman -S networkmanager network-manager-applet
+</code></pre>
+
+<h1 id="xinit-config">Xinit Config</h1>
+
+<p>Buat file <code>.xinitrc</code> di direktori home</p>
+
+<pre><code>$ nano ~/.xinitrc
+</code></pre>
+
+<p>Buat beberapa exec session DE atau WM</p>
+
+<pre><code>session=${1:-xfce}
+
+case $session in
+    i3|i3wm           ) exec i3;;
+    xfce|xfce4        ) exec startxfce4;;
+    *                 ) exec $1;;
+esac
+</code></pre>
+
+<p>Konfigurasi diatas secara default akan mengaktifkan session XFCE4 pada saat mengeksekusi <code>startx</code>, jika ingin menggunakan session lain (DE/WM) maka tambahkan dibagian <code>case</code> lalu ekseskusi dengan cara <code>startx &lt;nama session&gt;</code>, contoh :</p>
+
+<pre><code>$ startx i3
+</code></pre>
+
+<p>atau</p>
+
+<pre><code>$ startx ~/.xinitrc session
+</code></pre>
+
+<p>Selengkapnya bisa dibaca di dokumentasi resminya <a href="https://wiki.archlinux.org/index.php/Xinit">disini</a></p>
+
+<h1 id="tty-font">TTY Font</h1>
+
+<p>Buat file <code>/etc/vconsole.conf</code></p>
+
+<pre><code>$ sudo nano /etc/vconsole.conf
+</code></pre>
+
+<p>Definisikan nama font dan map nya</p>
+
+<pre><code>FONT=latarcyrheb-sun32
+FONT_MAP=8859-2
+</code></pre>
+
+<p>Selengkapnya bisa dibaca di dokumentasi resminya <a href="https://wiki.archlinux.org/index.php/Fonts#Console_fonts">disini</a></p>
 
     </div>
 
@@ -270,7 +296,7 @@ $kue_gethuk = new Kue();
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2016-05-24</span>
+    <span class="item-content">2018-02-01</span>
   </p>
   
   <p class="copyright-item">
@@ -285,23 +311,16 @@ $kue_gethuk = new Kue();
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/php/">php</a>
-          
-          <a href="/tags/laravel/">laravel</a>
+          <a href="/tags/archlinux/">archlinux</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/php-abstract-dan-interface/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Belajar Laravel - Abstract dan Interface</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/php-pengertian-oop/">
-            <span class="next-text nav-default">Belajar Laravel - Pengertian OOP</span>
+          <a class="next" href="/post/memahami-epoch-batch-size-dan-iteration/">
+            <span class="next-text nav-default">Memahami Epoch Batch Size Dan Iteration</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
