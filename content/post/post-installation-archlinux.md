@@ -110,3 +110,48 @@ FONT_MAP=8859-2
 ```
 
 Selengkapnya bisa dibaca di dokumentasi resminya [disini](https://wiki.archlinux.org/index.php/Fonts#Console_fonts)
+
+# Optional
+## Monitor for XFCE
+Download code
+```
+$ wget https://raw.githubusercontent.com/lightful/xfce-hkmon/master/xfce-hkmon.cpp
+```
+
+Compile
+```
+$ g++ -std=c++0x -O3 -lrt xfce-hkmon.cpp -o xfce-hkmon
+```
+
+Pindahkan hasil complie (executable) ke direktori `/usr/local/bin/`
+```
+$ sudo mv xfce-hkmon /usr/local/bin/
+```
+
+Tambahkan item __Generic Monitor__ pada panel :
+1. Menu Settings
+2. Klik menu Panel
+3. Klik Tab Items
+4. Klik Tombol __+__ warna hijau
+5. Pilih __Generic Monitor__ lalu klik tombol __add__
+
+![Generic Monitor](/images/post-installation-archlinux/add-generic-monitor.png)
+
+> Jika tidak ada maka harus install dulu dengan cara `sudo pacman -S xfce4-genmon-plugin`
+
+Klik kanan pada __Generic Monitor__ applet di panel lalu klik _properties_ lalu isikan kode di bawah ini pada kolom __Command__
+
+```
+/usr/local/bin/xfce-hkmon NET CPU TEMP IO RAM
+```
+
+![Generic Monitor Config](/images/post-installation-archlinux/generic-monitor-config.png)
+
+Refresh panel
+```
+$ xfce4-panel -r
+```
+
+Hasilnya seperti gambar berikut
+
+![Generic Monitor Result](/images/post-installation-archlinux/result-generic-monitor.png)
