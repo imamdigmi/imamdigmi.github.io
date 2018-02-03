@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Thu, 01 Feb 2018 16:36:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 06:30:26 +0000</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Arch Linux</title>
       <link>https://imamdigmi.github.io/categories/arch-linux/</link>
-      <pubDate>Thu, 01 Feb 2018 16:36:07 +0000</pubDate>
+      <pubDate>Sat, 03 Feb 2018 06:30:26 +0000</pubDate>
       
       <guid>https://imamdigmi.github.io/categories/arch-linux/</guid>
       <description></description>
@@ -81,6 +81,15 @@
       <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/categories/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://imamdigmi.github.io/categories/tensorflow/</link>
+      <pubDate>Wed, 24 Jan 2018 16:30:15 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/categories/tensorflow/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Setup NVIDIA di Arch Linux - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Setup NVIDIA Driver di Archlinux" />
+<meta name="keywords" content="archlinux, nvidia, setup" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.34" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/nvidia-setup-archlinux/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Setup NVIDIA di Arch Linux" />
+<meta property="og:description" content="Setup NVIDIA Driver di Archlinux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/nvidia-setup-archlinux/" />
+
+
+
+<meta property="article:published_time" content="2018-02-03T06:30:26&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-02-03T06:30:26&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Setup NVIDIA di Arch Linux">
+<meta itemprop="description" content="Setup NVIDIA Driver di Archlinux">
+
+
+<meta itemprop="datePublished" content="2018-02-03T06:30:26&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-03T06:30:26&#43;00:00" />
+<meta itemprop="wordCount" content="639">
+
+
+
+<meta itemprop="keywords" content="archlinux," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Setup NVIDIA di Arch Linux"/>
+<meta name="twitter:description" content="Setup NVIDIA Driver di Archlinux"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Setup NVIDIA di Arch Linux</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-03 </span>
+        <div class="post-category">
+            
+              <a href="/categories/arch-linux/"> Arch Linux </a>
+            
+          </div>
+        <span class="more-meta"> 639 word </span>
+        <span class="more-meta"> 3 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#memeriksa-hardware">Memeriksa hardware</a></li>
+<li><a href="#instalasi-driver">Instalasi Driver</a></li>
+<li><a href="#konfigurasi-driver">Konfigurasi Driver</a>
+<ul>
+<li><a href="#konfigurasi-kernel-module">Konfigurasi Kernel Module</a></li>
+</ul></li>
+<li><a href="#post-installation">Post-installation</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="memeriksa-hardware">Memeriksa hardware</h1>
+
+<p>Cek driver hardware komputer</p>
+
+<pre><code>$ lspci -k | grep -A 2 -E &quot;(VGA|3D)&quot;
+</code></pre>
+
+<p>Outputnya kurang lebih akan seperti ini</p>
+
+<pre><code>00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)
+        Subsystem: Dell 4th Gen Core Processor Integrated Graphics Controller
+        Kernel driver in use: i915
+--
+02:00.0 3D controller: NVIDIA Corporation GK107GLM [Quadro K1100M] (rev a1)
+        Subsystem: Dell GK107GLM [Quadro K1100M]
+        Kernel driver in use: nvidia
+</code></pre>
+
+<h1 id="instalasi-driver">Instalasi Driver</h1>
+
+<p>Install NVIDIA driver</p>
+
+<pre><code>$ yaourt -S nvidia nvidia-utils cuda
+</code></pre>
+
+<p>Install cUDNN</p>
+
+<pre><code>$ yaourt -S cudnn
+</code></pre>
+
+<p>Cek NVIDIA GPU info</p>
+
+<pre><code>$ sudo nvidia-xconfig --query-gpu-info
+</code></pre>
+
+<p>Kurang lebih ouputnya akan seperti ini</p>
+
+<pre><code>Number of GPUs: 1
+
+GPU #0:
+    Name      : Quadro K1100M
+    UUID      : GPU-6e0ecd29-e6da-a3cd-30bc-9c2d3fe458ce
+    PCI BusID : PCI:2:0:0
+
+    Number of Display Devices: 0
+</code></pre>
+
+<h1 id="konfigurasi-driver">Konfigurasi Driver</h1>
+
+<p>Generate konfigurasi NVIDIA untuk X secara otomatis</p>
+
+<pre><code>$ sudo nvidia-xconfig
+</code></pre>
+
+<p>Jika menggunakan konfigurasi hasil generate tersebut pada komputer saya NVIDIA tidak berjalan lancar maka perlu tambahan konfigurasi pada file <code>/etc/X11/xorg.conf</code>. Konfigurasinya kurang lebih seperti berikut</p>
+
+<pre><code>Section &quot;ServerLayout&quot;
+    Identifier     &quot;layout&quot;
+    Screen      0  &quot;nvidia&quot;
+    Inactive	   &quot;intel&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier      &quot;intel&quot;
+    Driver	        &quot;modesetting&quot;
+    BusID           &quot;PCI:0:2:0&quot;
+    Option          &quot;AccelMethod&quot;   &quot;None&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier      &quot;nvidia&quot;
+    Driver          &quot;nvidia&quot;
+    BusID           &quot;PCI:2:0:0&quot;
+    Option          &quot;ConstrainCursor&quot;   &quot;off&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier      &quot;Device0&quot;
+    Driver          &quot;nvidia&quot;
+    VendorName      &quot;NVIDIA Corporation&quot;
+    BoardName       &quot;Quadro K1100M&quot;
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier      &quot;intel&quot;
+    Device          &quot;intel&quot;
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier      &quot;nvidia&quot;
+    Device          &quot;nvidia&quot;
+    Option          &quot;AllowEmptyInitialConfiguration&quot;    &quot;on&quot;
+    Option          &quot;IgnoreDisplayDevices&quot;  &quot;CRT&quot;
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier      &quot;Screen0&quot;
+    Device          &quot;Device0&quot;
+    Monitor         &quot;Monitor0&quot;
+    DefaultDepth    24
+    SubSection      &quot;Display&quot;
+        Depth       24
+    EndSubSection
+EndSection
+
+Section &quot;InputDevice&quot;
+    # generated from default
+    Identifier      &quot;Mouse0&quot;
+    Driver          &quot;mouse&quot;
+    Option          &quot;Protocol&quot;          &quot;auto&quot;
+    Option          &quot;Device&quot;            &quot;/dev/psaux&quot;
+    Option          &quot;Emulate3Buttons&quot;   &quot;no&quot;
+    Option          &quot;ZAxisMapping&quot;      &quot;4 5&quot;
+EndSection
+
+Section &quot;InputDevice&quot;
+    # generated from default
+    Identifier      &quot;Keyboard0&quot;
+    Driver          &quot;kbd&quot;
+EndSection
+
+Section &quot;Monitor&quot;
+    Identifier      &quot;Monitor0&quot;
+    VendorName      &quot;Unknown&quot;
+    ModelName       &quot;Unknown&quot;
+    HorizSync       28.0 - 33.0
+    VertRefresh     43.0 - 72.0
+    Option          &quot;DPMS&quot;
+EndSection
+
+Section &quot;Module&quot;
+    Load            &quot;modesetting&quot;
+EndSection
+</code></pre>
+
+<blockquote>
+<p>Note: sesuaikan tipe NVIDIA yang anda miliki</p>
+</blockquote>
+
+<p>Buat konfigurasi untuk driver Intel</p>
+
+<pre><code>$ sudo nano /etc/X11/xorg.conf.d/20-intel.conf
+</code></pre>
+
+<p>Tambahkan konfigurasi berikut</p>
+
+<pre><code>Section &quot;Device&quot;
+     Identifier    &quot;Intel Graphics&quot;
+     Driver        &quot;intel&quot;
+     Option        &quot;AccelMethod&quot;
+EndSection
+</code></pre>
+
+<p>Tambahkan mode setting pada <code>~/.xinitrc</code></p>
+
+<pre><code>xrandr --setproviderouputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre>
+
+<h2 id="konfigurasi-kernel-module">Konfigurasi Kernel Module</h2>
+
+<p>Tambahkan kernel module nvidia pada bagian <code>MODULES=()</code>. <sup><a href="https://wiki.archlinux.org/index.php/Mkinitcpio#MODULES">Dokumentasi</a></sup></p>
+
+<pre><code>MODULES=(nvidia nvidia_modeset nvidia_drm nvidia_uvm)
+</code></pre>
+
+<p>Untuk menghindari kemungkinan lupa update pada <code>initramfs</code> setelah upgrade driver NVIDIA, anda mungkin ingin menggunakan hook pacman :</p>
+
+<pre><code>$ sudo mkdir -p /etc/pacman.d/hooks &amp;&amp; nano /etc/pacman.d/hooks/nvidia.hook
+</code></pre>
+
+<p>Tambahkan konfigurasi berikut</p>
+
+<pre><code>[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia-dkms
+
+[Action]
+Depends=mkinitcpio
+When=PostTransaction
+Exec=/usr/bin/mkinitcpio -P
+</code></pre>
+
+<p>Tambahkan DRM kernel pada file bootloader <code>/boot/loader/entries/archlinux.conf</code></p>
+
+<pre><code>nvidia-drm.modeset=1
+</code></pre>
+
+<p>Update initramfs</p>
+
+<pre><code>$ sudo mkinitcpio -p linux
+</code></pre>
+
+<p>Restart komputer</p>
+
+<pre><code>sudo reboot
+</code></pre>
+
+<h1 id="post-installation">Post-installation</h1>
+
+<p>Untuk melihat hasil</p>
+
+<pre><code>$ sudo pacman -S nvidia-settings; nvidia-settings
+</code></pre>
+
+<p><img src="/images/nvidia-setup-archlinux/nvidia-xsettings.png" alt="NVIDIA Setting" /></p>
+
+<blockquote>
+<p>Note: Jika error  dapat dilihat di log <code>cat /var/log/Xorg.0.log | grep nvidia</code></p>
+</blockquote>
+
+<p>Untuk melihat informasi NVIDIA yang terinstal dapat menggunakan <code>nvidia-smi</code></p>
+
+<pre><code>$ sudo nvidia-smi
+</code></pre>
+
+<p>Kurang lebih outputnya akan seperti berikut</p>
+
+<pre><code>Sat Feb  3 06:57:07 2018       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 387.34                 Driver Version: 387.34                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Quadro K1100M       Off  | 00000000:02:00.0 Off |                  N/A |
+| N/A   58C    P5    N/A /  N/A |    394MiB /  2001MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0       581      G   /usr/lib/xorg-server/Xorg                    201MiB |
+|    0       859      G   ...u-secondary-device-ids=0x0416 --gpu-act   120MiB |
+|    0      3039      G   ...=0x0416 --service-request-channel-token    69MiB |
++-----------------------------------------------------------------------------+
+</code></pre>
+
+<p>Untuk melihat temperatur GPU</p>
+
+<pre><code>$ sudo nvidia-smi -q -d TEMPERATURE
+</code></pre>
+
+<p>Kurang lebih outputnya akan seperti berikut</p>
+
+<pre><code>==============NVSMI LOG==============
+
+Timestamp                           : Sat Feb  3 06:56:45 2018
+Driver Version                      : 387.34
+
+Attached GPUs                       : 1
+GPU 00000000:02:00.0
+    Temperature
+        GPU Current Temp            : 58 C
+        GPU Shutdown Temp           : 105 C
+        GPU Slowdown Temp           : 100 C
+        GPU Max Operating Temp      : 96 C
+        Memory Current Temp         : N/A
+        Memory Max Operating Temp   : N/A
+</code></pre>
+
+<p>Referensi :</p>
+
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA">NVIDIA Arch Linux</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Mkinitcpio#MODULES">mkinitcpio</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Dynamic_Kernel_Module_Support">DKMS</a></li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-02-03</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/archlinux/">archlinux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/post-installation-archlinux/">
+            <span class="next-text nav-default">Post-Installation Arch Linux</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

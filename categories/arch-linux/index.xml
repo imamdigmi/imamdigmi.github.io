@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Thu, 01 Feb 2018 16:36:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 06:30:26 +0000</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/arch-linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup NVIDIA di Arch Linux</title>
+      <link>https://imamdigmi.github.io/post/nvidia-setup-archlinux/</link>
+      <pubDate>Sat, 03 Feb 2018 06:30:26 +0000</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/nvidia-setup-archlinux/</guid>
+      <description>Memeriksa hardware Cek driver hardware komputer
+$ lspci -k | grep -A 2 -E &amp;quot;(VGA|3D)&amp;quot;  Outputnya kurang lebih akan seperti ini
+00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06) Subsystem: Dell 4th Gen Core Processor Integrated Graphics Controller Kernel driver in use: i915 -- 02:00.0 3D controller: NVIDIA Corporation GK107GLM [Quadro K1100M] (rev a1) Subsystem: Dell GK107GLM [Quadro K1100M] Kernel driver in use: nvidia  Instalasi Driver Install NVIDIA driver</description>
+    </item>
     
     <item>
       <title>Post-Installation Arch Linux</title>

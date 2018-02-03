@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Thu, 01 Feb 2018 16:36:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 06:30:26 +0000</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup NVIDIA di Arch Linux</title>
+      <link>https://imamdigmi.github.io/post/nvidia-setup-archlinux/</link>
+      <pubDate>Sat, 03 Feb 2018 06:30:26 +0000</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/nvidia-setup-archlinux/</guid>
+      <description>Memeriksa hardware Cek driver hardware komputer
+$ lspci -k | grep -A 2 -E &amp;quot;(VGA|3D)&amp;quot;  Outputnya kurang lebih akan seperti ini
+00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06) Subsystem: Dell 4th Gen Core Processor Integrated Graphics Controller Kernel driver in use: i915 -- 02:00.0 3D controller: NVIDIA Corporation GK107GLM [Quadro K1100M] (rev a1) Subsystem: Dell GK107GLM [Quadro K1100M] Kernel driver in use: nvidia  Instalasi Driver Install NVIDIA driver</description>
+    </item>
     
     <item>
       <title>Post-Installation Arch Linux</title>
@@ -33,6 +44,19 @@ $ sudo pacman -S gvfs file-roller libmtp  Selengkapnya bisa dibaca di dokumentas
       <guid>https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/</guid>
       <description>Jika anda adalah seseorang yang sedang menggeluti bidang Machine Learning atau Deep Learning pasti sangat familiar dengan ketiga hal ini, namun mungkin juga anda sering bingung sampai menggaruk-garuk kepala anda dan bertanya-tanya &amp;ldquo;Mengapa saya mengetik ketiga istilah ini dalam kode saya dan apa bedanya? fungsinya apa?&amp;rdquo; karena semuanya terlihat sangat mirip.
 Baiklah mari kita bahas, tapi untuk mengetahui perbedaan antara ketiga hal ini kita perlu mengetahui beberapa istilah pada Machine Learning seperti Gradient Descent agar kita lebih memahami fungsi dari Epoch, Batch Size, dan Iterations.</description>
+    </item>
+    
+    <item>
+      <title>Instalasi Tensorflow</title>
+      <link>https://imamdigmi.github.io/post/tensorflow-installation/</link>
+      <pubDate>Wed, 24 Jan 2018 16:30:15 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tensorflow-installation/</guid>
+      <description>Dependencies Instal dependency untuk Python
+$ sudo pacman -S python-numpy python-dev python-pip python-wheel  Untuk instalasi TensorFlow dengan GPU anda harus menginstal NVIDIA terlebih dahulu, cara instalasinya saya sudah tuliskan disini
+Buat LD_LIBRARY_PATH variable
+$ export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}   Note: Sesuaikan lokasi instalasi CUDA
+ Instalasi Package Wheel CPU $ pip install --upgrade tensorflow # for Python 2.7 $ pip3 install --upgrade tensorflow # for Python 3.n  GPU $ pip install --upgrade tensorflow-gpu # for Python 2.</description>
     </item>
     
     <item>
