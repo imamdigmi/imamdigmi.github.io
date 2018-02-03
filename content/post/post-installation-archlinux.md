@@ -29,7 +29,7 @@ Selengkapnya bisa dibaca di dokumentasi resminya [disini](https://wiki.archlinux
 # File Manager Support
 Flashdisk dan Device Android tidak terbaca dan ekstrak file tidak bisa di thunar
 ```
-$ sudo pacman -S gvfs file-roller libmtp
+$ sudo pacman -S gvfs file-roller libmtp gvfs-mtp gvfs-gphoto2
 ```
 
 Selengkapnya bisa dibaca di dokumentasi resminya [disini](https://wiki.archlinux.org/index.php/MTP)
