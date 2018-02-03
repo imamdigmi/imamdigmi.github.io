@@ -204,7 +204,7 @@ Jalankan dengan perintah berikut di dalam direktori `models/research/object_dete
 $ python object_detection_tutorial.py
 ```
 
-> __Tip__: Tekan tombol `Q` atau `Esc` untuk menutup window webcame
+> __Tip__: Tekan tombol `Q` atau `Esc` untuk menutup window webcam
 
 Maka hasilnya akan seperti berikut
 ![Result Webcam](/images/tensorflow-object-detection-overview/result-webcam.png)
