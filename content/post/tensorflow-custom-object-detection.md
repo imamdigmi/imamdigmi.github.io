@@ -12,11 +12,24 @@ keywords: [object detection api, tensorflow, python, deep learning, machine lear
 tags: [tensorflow, python, deep learning, machine learning]
 categories: [Deep Learning]
 ---
+Tutorial ini adalah lanjutan dari tutorial [TensorFlow - Object Detection API](https://imamdigmi.github.io/post/tensorflow-object-detection-overview/) yang membahas tentang penggunaan API untuk deteksi objek menggunakan TensorFlow, pada tutorial sebelumnya terdapat permasalahan yaitu objek yang dikenali hanya objek umum saja dan model yang kita gunakan adalah model yang sudah di-_training_ oleh seseorang yang kita tidak tahu bagaimana prosesnya, maka pada tutorial ini menjawab pertanyaan pada tutorial sebelumnya yaitu "Bagaimana jika kita ingin mendeteksi objek khusus yang kita tentukan sendiri?".
+
+Tutorial ini membahas bagaimana cara menggunakan objek yang kita tentukan sendiri yaitu pada kasus ini adalah deteksi objek Tanda Nomor Kendaraan Bermotor (TNKB) atau yang sering disebut Plat Nomor.
 
 # Mempersiapkan Dataset
+Jika kita ingin mengenali objek "khusus" yang ingin kita deteksi, tentu kita memerlukan dataset untuk proses training, sehingga _Neural Network_ yang akan kita latih untuk mengenali objek tersebut dapat mengenali objek yang kita maksud. Penulis sudah menyiapkan dataset yang kita butuhkan yaitu dataset gambar Plat Nomor sebanyak 502 beserta annotationnya, 472 untuk training dan 30 untuk testing/validation. Namun jika anda bermaksud untuk mendeteksi objek yang anda tentukan sendiri silahkan mengumpulkan dataset tersebut minimal 100 gambar.
 
-## Membuat Anotation
-Untuk memuat _anotation_ atau memberikan label pada gambar kita akan menggunakan aplikasi [LabelImg](https://github.com/tzutalin/labelImg) yang nantinya akan disimpan kedalam file `XML` dengan format [PASCAL VOC](http://www.image-net.org/)
+Jika ingin menggunakan dataset yang sudah penulis siapkan silahkan unduh [disini](https://www.kaggle.com/imamdigmi/indonesian-licence-plate/data) yang berukuran 102MB. Unduh file `annotations.zip` dan `images.zip` saja dan langsung ke tahap [Training](#training-model). Tapi jika ingin menggunakan dataset sendiri langsung menuju tahap [Membuat Annotation](#membuat-annotation) dibawah ini.
+
+## Membuat struktur direktori
+Struktur direktori berikut ini digunakan untuk menyimpan konfigurasi dan dataset annotation maupun gambar yang akan kita gunakan untuk proses training
+```
+$ mkdir data
+$ mkdir {images,annotations}/{train,test}
+```
+
+## Membuat Annotation
+Untuk memuat _annotation_ atau memberikan label pada gambar kita akan menggunakan aplikasi [LabelImg](https://github.com/tzutalin/labelImg) yang nantinya akan disimpan kedalam file `XML` dengan format [PASCAL VOC](http://www.image-net.org/)
 Cara membuat anotasinya :
 
 1. Buka aplikasi `labelImg`
@@ -28,11 +41,14 @@ Cara membuat anotasinya :
 7. Simpan hasil pelabelan dengan menekan tombol `CTRL+S`
 8. Pilih direktori penyimpanan file hasil pelabelan `*.xml`
 
->Note: Nama label objek yang dikenali harus sama `Case Sensitive`.
+> __Note__: Nama label objek yang dikenali harus sama `Case Sensitive`.
+
+Simpan hasilnya kedalam direktori yang sama dengan data gambar
 
 ![Pelabelan Gambar](/images/tensorflow-custom-object-detection-api/pelabelan-gambar.png)
 
 ## Convert XML ke CSV
+Dataset annotation yang kita buat diatas menggunakan aplikasi `labelImg` perlu dikonversi dari format `.xml` ke `.csv` yang nantinya akan digunakan untuk mengenerate berkas `TFRecord`, berikut kode untuk mengkonversi format berkas yang kita butuhkan
 ```python
 import os
 import glob
@@ -68,13 +84,14 @@ def main():
 
 main()
 ```
-Simpan kode program berikut dengan nama `xml_to_csv.py`. Lalu jalankan perintah dibawah ini untuk mengkonversi file XML ke CSV.
+Simpan kode program diatas dengan nama `xml_to_csv.py`. Lalu jalankan perintah dibawah ini untuk mengkonversi file XML ke CSV.
 
-```bash
+```
 $ python3 xml_to_csv.py
 ```
 
 ## Convert TFRecord
+Pada saat proses training, pertama-tama TensorFlow akan membaca data input dan proses ini dinamakan _feeding data_ yang dijalankan melalui fungsi `feed_dictionary`, fungsi tersebut secara langsung mengambil informasi dataset yang telah kita siapkan dalam format TFRecord maka dari itu kita perlu men-_generate_ data annotation yang telah kita konversi ke `.csv` tadi kedalam format TFRecord. Berikut ini adalah kode untuk men-_generate_ file TFRecord
 ```python
 from __future__ import division
 from __future__ import print_function
@@ -160,27 +177,28 @@ def main(_):
 if __name__ == '__main__':
     tf.app.run()
 ```
-Simpan kode program berikut dengan nama `generate_tfrecord.py`. Lalu jalankan perintah dibawah ini untuk men-generate TFRecord file.
+Simpan kode program diatas dengan nama `generate_tfrecord.py`. Kemudian jalankan perintah dibawah ini untuk men-generate TFRecord file.
 
-```bash
+```
 $ python3 generate_tfrecord.py --type=train --csv_input=data/train_labels.csv  --output_path=data/train.record
 // dan
 $ python3 generate_tfrecord.py --type=test --csv_input=data/test_labels.csv  --output_path=data/test.record
 ```
 
 ## Membuat Label Map
-```json
+Berikut ini adalah konfigurasi untuk memetakan label yang akan kita gunakan untuk memberikan penamaan pada objek yang akan kita deteksi. Jika objek yang akan kita deteksi ada lebih dari satu objek maka buat `item` sebanyak objek yang akan kita deteksi dan `id` maupun `name` harus menyesuaikan <sup>[dokumentasi](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/using_your_own_dataset.md)</sup>, namun pada kasus ini kita akan mendeteksi hanya untuk satu objek saja. Berikut konfigurasi label map yang akan kita gunakan
+```
 item {
-    id: 1
-    name: 'plate'
+	id: 1
+	name: 'plate'
 }
 ```
-Simpan konfigurasi label map tersebut dengan nama `object-detection.pbtxt` kedalam folder `data`.
+Simpan konfigurasi label map tersebut dengan nama `plate_number_map.pbtxt` kedalam folder `data`.
 
 ## Konfiguras Pipeline
 Karena tensorflow menggunakan ProtoBuf maka kita perlu membuat konfigurasi pipeline dan kita akan menggunakan konfigurasi dari [SSD with Mobilenet v1](https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs/ssd_mobilenet_v1_pets.config) yang digunakan oleh Oxford-IIIT untuk Dataset hewan peliharaan. Contoh konfigurasi dapat dilihat [disini](https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs).
 
-```json
+```
 model {
   ssd {
     num_classes: 1
@@ -317,7 +335,7 @@ model {
 }
 
 train_config: {
-  batch_size: 8
+  batch_size: 4
   optimizer {
     rms_prop_optimizer: {
       learning_rate: {
@@ -334,7 +352,7 @@ train_config: {
   }
   fine_tune_checkpoint: "ssd_mobilenet_v1_coco_2017_11_17/model.ckpt"
   from_detection_checkpoint: true
-  num_steps: 25000
+  num_steps: 100000
   data_augmentation_options {
     random_horizontal_flip {
     }
@@ -349,11 +367,11 @@ train_input_reader: {
   tf_record_input_reader {
     input_path: "data/train.record"
   }
-  label_map_path: "data/object-detection.pbtxt"
+  label_map_path: "data/plate_number_map.pbtxt"
 }
 
 eval_config: {
-  num_examples: 2000
+  num_examples: 30
   max_evals: 10
 }
 
@@ -361,14 +379,19 @@ eval_input_reader: {
   tf_record_input_reader {
     input_path: "data/test.record"
   }
-  label_map_path: "data/object-detection.pbtxt"
+  label_map_path: "data/plate_number_map.pbtxt"
   shuffle: false
   num_readers: 1
+  num_epochs: 1
 }
 ```
-Simpan file konfigurasi diatas dengan nama `plate_number_v1.config` kedalam folder `training`. Sampai ditahap ini kita sudah selesai menyiapkan semua file yang dibutuhkan pada saat training model object detection kita.
+Simpan file konfigurasi diatas dengan nama `plate_number_v1.config` kedalam folder `training`.
 
-> Note: Pastikan struktur direktori dan file dengan benar.
+Konfigurasi diatas menggunakan `batch_size=4` dan `num_steps=100000` pada komputer penulis dengan spesifikasi 8 Core CPU, 1 GPU, dan RAM 16GB, nilai tersebut cukup berhasil untuk mendeteksi objek Plat Nomor, tapi sebaiknya nilai tersebut disesuaikan dengan spesifikasi komputer yang anda gunakan. Jika komputer yang anda gunakan mempunyai spesifikasi dibawah komputer yang penulis gunakan maka direkomendasikan untuk menurunkan nilai `batch_size` setidaknya `batch_size=2` dan `num_steps=140000`.
+
+Sampai ditahap ini kita sudah selesai menyiapkan semua file yang dibutuhkan pada saat training model object detection kita.
+
+> __Note__: Pastikan struktur direktori dan file dengan benar.
 
 Berikut sususan akhir direktori yang penulis gunakan :
 ```
@@ -385,7 +408,7 @@ Berikut sususan akhir direktori yang penulis gunakan :
 │       ├── 255.E 6527 OD-02-20.xml
 │       └── 256.E 4572 SS-01-16.xml
 ├── data
-│   ├── object-detection.pbtxt
+│   ├── plate_number_map.pbtxt
 │   ├── test.record
 │   ├── test_labels.csv
 │   ├── train.record
@@ -410,46 +433,28 @@ Berikut sususan akhir direktori yang penulis gunakan :
 ```
 
 # Training Model
-Setelah semua file yang dibutuhkan selesai dipersiapkan maka kita akan memasuki tahap training Neural Network untuk mengenali pola Tanda Nomor Kendaraan Bermotor (TNKB). Download [TensorFlow Model](https://github.com/tensorflow/models/) lalu ekstrak folder models. Lebih detailnya bisa dilihat [disini](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_locally.md)
-
-Jalankan perintah dibawah ini untuk membuat `PYTHONPATH` variable
-
-```bash
-$ cd models/research
-$ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
-```
-
-Jalankan perintah dibawah ini untuk mengkompilasi ProtoBuf yang akan kita butuhkan pada saat proses training.
-
-```bash
-$ protoc object_detection/protos/*.proto --python_out=.
-$ cd object_detection
-```
-
-Setelah kita menyiapkan TensorFlow Model kita perlu menyalin berkas-berkas yang kita buat sebelumnya untuk kebutuhan proses trainig.
+Setelah semua file yang dibutuhkan selesai dipersiapkan maka kita akan memasuki tahap training Neural Network untuk mengenali pola Tanda Nomor Kendaraan Bermotor (TNKB). Kita perlu menyiapkan TensorFlow Model dan menyalin berkas-berkas yang kita buat sebelumnya untuk kebutuhan proses training.
 
 1. Salin direktori `data`, `images`, dan `training` yang kita buat sebelumnya ke dalam folder `models/research/object_detection`.
 2. Setelah semua berkas sudah disalin kita akan menggunakan pre-trained model yang bernama `SSD Mobilnet v1` dari [COCO](http://cocodataset.org/) model tersebut bisa diunduh [disini](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz), jika sudah berhasil diunduh lalu ekstrak `ssd_mobilenet_v1_coco_2017_11_17.tar.gz` kedalam direktori `models/research/object_detection`.
 
 Jika kita melihat ke daftar [COCO-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models) maka akan ada banyak model yang tersedia dan silahkan pilih sendiri mana yang akan kita gunakan untuk training Neural Network kita, tapi penulis akan memilih yang tercepat yaitu `ssd_mobilenet_v1_coco` yang mana kecepatannya sampai 30/milisecond.
 
-Baik! setelah itu kita mulai training Neural Network, jalankan perintah dibawah ini untuk memulai proses training.
-
-```bash
-python3 train.py \
-    --logtostderr \
-    --train_dir=training/ \
-    --pipeline_config_path=training/plate_number_v1.config \
-    --num_clones=2
+Baik! Mari kita mulai training Neural Network, jalankan perintah dibawah ini untuk memulai proses training.
 ```
-
+$ python3 train.py \
+    --logtostderr \
+    --train_dir=training \
+    --pipeline_config_path=training/plate_number_v1.config
+```
+Tunggu sampai proses training selesai, dikomputer penulis sendiri membutuhkan waktu sekitar __12 sampai 13 jam__ untuk proses training ini
 ![Training Process](/images/tensorflow-custom-object-detection-api/training.png)
 
 ## Grafik TensorBoard
 Untuk melihat grafik selama proses training kita akan menggunakan TensorBoard, jalankan perintah dibawah ini untuk menjalankan TensorBoard.
 
-```bash
-tensorboard --logdir=training
+```
+$ tensorboard --logdir=training
 ```
 
 Kurang lebih tampilan TensorBoard akan seperti dibawah ini
@@ -459,34 +464,70 @@ Kurang lebih tampilan TensorBoard akan seperti dibawah ini
 ![TensorBoard Graph](/images/tensorflow-custom-object-detection-api/tensorboard-graph.png)
 
 ## Evaluation / Testing
-
-```bash
-python3 eval.py \
+Proses ini untuk mengevaluasi hasil dari tahap proses training sebelumnya, boleh dilakukan boleh juga tidak tapi direkomendasikan proses ini tetap dilakukan agar model yang dihasilkan mendapatkan hasil yang bagus
+```
+$ python3 eval.py \
     --logtostderr \
     --pipeline_config_path=training/plate_number_v1.config \
-    --checkpoint_dir=training/ \
-    --eval_dir=evaluation/
+    --checkpoint_dir=training \
+    --eval_dir=evaluation
 ```
 
 ## Export Graph
 Proses training diatas belum sepenuhnya selesai karena tujuan utama dari proses training Neural Network adalah sebuah model yang akan kita gunakan untuk mendeteksi objek-objek yang telah kita masukkan sebelumnya, maka dari itu kita perlu mengekspor modelnya, jalankan perintah berikut untuk mengekspor model.
 
-```bash
-python3 export_inference_graph.py \
+```
+$ python3 export_inference_graph.py \
     --input_type image_tensor \
     --pipeline_config_path training/plate_number_v1.config \
-    --trained_checkpoint_prefix training/model.ckpt-25000 \
+    --trained_checkpoint_prefix training/model.ckpt-100000 \
     --output_directory plate_number_recognition_model_v1_2018_01_24
 ```
 
 # Mencoba Hasil Model
-Ini adalah tahap terakhir yang kita lalui dan kita akan mencoba menggunakan model yang telah kita latih untuk mengenali Tanda Nomor Kendaraan Bermotor (TNKB) sebelumnya, berikut kode untuk menguji model 
-```python
+Ini adalah tahap terakhir yang kita lalui dan kita akan mencoba menggunakan model yang telah kita latih untuk mengenali Tanda Nomor Kendaraan Bermotor (TNKB) sebelumnya.
 
+Tahap pengujian berikut ini membutuhkan sampel gambar yang berbeda dari gambar dataset yang kita gunakan pada proses training dan testing, maka kita perlu untuk mendapatkan sampel gambar, anda dapat mencarinya via [Google Images](https://images.google.com/) atau bisa juga memotret langsung menggunakan kamera sendiri.
+
+Taruh 2 sampel gambar kedalam direktori `models/research/object_detection/test_images` dan berikan nama `image1.jpg` dan `image2.jpg` atau replace gambar yang ada.
+
+## Pengujian via Jupyter Notebook
+Untuk pengujian via Jupyter Notebook kita hanya perlu mengubah `MODEL_NAME` dengan model yang telah kita ekspor sebelumnya dan `NUM_CLASSES` menjadi nilai `1` karena hanya satu objek yang akan kita deteksi
+
+Ubah kode berikut
+```python
+MODEL_NAME = 'ssd_mobilenet_v1_coco_2017_11_17'
+MODEL_FILE = MODEL_NAME + '.tar.gz'
+DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
+PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
+NUM_CLASSES = 90
 ```
 
-Dan hasilnya akan seperti dibawah ini
+Menjadi
+```python
+MODEL_NAME = 'plate_number_recognition_model_v1_2018_01_24'
+# MODEL_FILE = MODEL_NAME + '.tar.gz'
+# DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
+PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
+NUM_CLASSES = 1
+```
+
+Dan hapus bagian berikut ini karena kita tidak perlu mengunduh model `ssd_mobilenet_v1_coco_2017_11_17` karena kita akan menggunakan model yang telah kita training sendiri
+```python
+opener = urllib.request.URLopener()
+opener.retrieve(DOWNLOAD_BASE + MODEL_FILE, MODEL_FILE)
+tar_file = tarfile.open(MODEL_FILE)
+for file in tar_file.getmembers():
+	file_name = os.path.basename(file.name)
+	if 'frozen_inference_graph.pb' in file_name:
+		tar_file.extract(file, os.getcwd())
+```
+Dan hasilnya kurang lebih akan seperti dibawah ini
 
 ![Results Detection](/images/tensorflow-custom-object-detection-api/result-1.png)
-
 ![Results Detection](/images/tensorflow-custom-object-detection-api/result-2.png)
+
+## Pengujian via Webcam
+Untuk pengujian model menggunakan webcam langkahnya sama seperti pada pengujian via Jupyter Notebook yaitu mengubah `MODEL_NAME` dan `NUM_CLASSES` kemudian kita hanya perlu menambahkan beberapa baris kode untuk menggunakan webcam melalui pustaka OpenCV, langkah ini sama seperti pada tutorial [sebelumnya](https://imamdigmi.github.io/post/tensorflow-object-detection-overview/#deteksi-objek-via-webcam).
