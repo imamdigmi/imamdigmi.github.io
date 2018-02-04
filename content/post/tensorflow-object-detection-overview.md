@@ -27,7 +27,7 @@ Kemudian kita perlu mendownload TensorFlow Models [disini](https://codeload.gith
 $ cd models/research
 ```
 
-API Deteksi Objek Tensorflow menggunakan ProtoBuf untuk mengkonfigurasi parameter model dan training. Sebelum masuk proses training, library ProtoBuf harus dikompilasi terlebih dahulu. Jalankan perintah berikut pada direktori `models/research`
+API Deteksi Objek Tensorflow menggunakan ProtoBuf untuk mengkonfigurasi parameter model dan training. Library ProtoBuf harus dikompilasi terlebih dahulu. Jalankan perintah berikut pada direktori `models/research`
 ```
 $ protoc object_detection/protos/*.proto --python_out=.
 ```
