@@ -7,7 +7,7 @@ description: "Membuat deteksi objek dengan dataset sendiri menggunakan API Tenso
 author: "Imam Digmi"
 
 weight: 50
-draft: true
+draft: false
 keywords: [object detection api, tensorflow, python, deep learning, machine learning]
 tags: [tensorflow, python, deep learning, machine learning]
 categories: [Deep Learning]
