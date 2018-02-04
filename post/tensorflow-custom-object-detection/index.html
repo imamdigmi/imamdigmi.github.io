@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>TensorFlow - Custom Object Detection API - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Membuat deteksi objek dengan dataset sendiri menggunakan API TensorFlow" />
+<meta name="keywords" content="object detection api, tensorflow, python, deep learning, machine learning" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.34" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/tensorflow-custom-object-detection/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="TensorFlow - Custom Object Detection API" />
+<meta property="og:description" content="Membuat deteksi objek dengan dataset sendiri menggunakan API TensorFlow" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/tensorflow-custom-object-detection/" />
+
+
+
+<meta property="article:published_time" content="2018-01-25T22:51:05&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-01-25T22:51:05&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="TensorFlow - Custom Object Detection API">
+<meta itemprop="description" content="Membuat deteksi objek dengan dataset sendiri menggunakan API TensorFlow">
+
+
+<meta itemprop="datePublished" content="2018-01-25T22:51:05&#43;07:00" />
+<meta itemprop="dateModified" content="2018-01-25T22:51:05&#43;07:00" />
+<meta itemprop="wordCount" content="2043">
+
+
+
+<meta itemprop="keywords" content="tensorflow,python,deep learning,machine learning," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="TensorFlow - Custom Object Detection API"/>
+<meta name="twitter:description" content="Membuat deteksi objek dengan dataset sendiri menggunakan API TensorFlow"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">TensorFlow - Custom Object Detection API</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/deep-learning/"> Deep Learning </a>
+            
+          </div>
+        <span class="more-meta"> 2043 word </span>
+        <span class="more-meta"> 10 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#mempersiapkan-dataset">Mempersiapkan Dataset</a>
+<ul>
+<li><a href="#membuat-struktur-direktori">Membuat struktur direktori</a></li>
+<li><a href="#membuat-annotation">Membuat Annotation</a></li>
+<li><a href="#convert-xml-ke-csv">Convert XML ke CSV</a></li>
+<li><a href="#convert-tfrecord">Convert TFRecord</a></li>
+<li><a href="#membuat-label-map">Membuat Label Map</a></li>
+<li><a href="#konfiguras-pipeline">Konfiguras Pipeline</a></li>
+</ul></li>
+<li><a href="#training-model">Training Model</a>
+<ul>
+<li><a href="#grafik-tensorboard">Grafik TensorBoard</a></li>
+<li><a href="#evaluation-testing">Evaluation / Testing</a></li>
+<li><a href="#export-graph">Export Graph</a></li>
+</ul></li>
+<li><a href="#mencoba-hasil-model">Mencoba Hasil Model</a>
+<ul>
+<li><a href="#pengujian-via-jupyter-notebook">Pengujian via Jupyter Notebook</a></li>
+<li><a href="#pengujian-via-webcam">Pengujian via Webcam</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Tutorial ini adalah lanjutan dari tutorial <a href="https://imamdigmi.github.io/post/tensorflow-object-detection-overview/">TensorFlow - Object Detection API</a> yang membahas tentang penggunaan API untuk deteksi objek menggunakan TensorFlow, pada tutorial sebelumnya terdapat permasalahan yaitu objek yang dikenali hanya objek umum saja dan model yang kita gunakan adalah model yang sudah di-<em>training</em> oleh seseorang yang kita tidak tahu bagaimana prosesnya, maka pada tutorial ini menjawab pertanyaan pada tutorial sebelumnya yaitu &ldquo;Bagaimana jika kita ingin mendeteksi objek khusus yang kita tentukan sendiri?&rdquo;.</p>
+
+<p>Tutorial ini membahas bagaimana cara menggunakan objek yang kita tentukan sendiri yaitu pada kasus ini adalah deteksi objek Tanda Nomor Kendaraan Bermotor (TNKB) atau yang sering disebut Plat Nomor.</p>
+
+<h1 id="mempersiapkan-dataset">Mempersiapkan Dataset</h1>
+
+<p>Jika kita ingin mengenali objek &ldquo;khusus&rdquo; yang ingin kita deteksi, tentu kita memerlukan dataset untuk proses training, sehingga <em>Neural Network</em> yang akan kita latih untuk mengenali objek tersebut dapat mengenali objek yang kita maksud. Penulis sudah menyiapkan dataset yang kita butuhkan yaitu dataset gambar Plat Nomor sebanyak 502 beserta annotationnya, 472 untuk training dan 30 untuk testing/validation. Namun jika anda bermaksud untuk mendeteksi objek yang anda tentukan sendiri silahkan mengumpulkan dataset tersebut minimal 100 gambar.</p>
+
+<p>Jika ingin menggunakan dataset yang sudah penulis siapkan silahkan unduh <a href="https://www.kaggle.com/imamdigmi/indonesian-licence-plate/data">disini</a> yang berukuran 102MB. Unduh file <code>annotations.zip</code> dan <code>images.zip</code> saja dan langsung ke tahap <a href="#training-model">Training</a>. Tapi jika ingin menggunakan dataset sendiri langsung menuju tahap <a href="#membuat-annotation">Membuat Annotation</a> dibawah ini.</p>
+
+<h2 id="membuat-struktur-direktori">Membuat struktur direktori</h2>
+
+<p>Struktur direktori berikut ini digunakan untuk menyimpan konfigurasi dan dataset annotation maupun gambar yang akan kita gunakan untuk proses training</p>
+
+<pre><code>$ mkdir data
+$ mkdir {images,annotations}/{train,test}
+</code></pre>
+
+<h2 id="membuat-annotation">Membuat Annotation</h2>
+
+<p>Untuk memuat <em>annotation</em> atau memberikan label pada gambar kita akan menggunakan aplikasi <a href="https://github.com/tzutalin/labelImg">LabelImg</a> yang nantinya akan disimpan kedalam file <code>XML</code> dengan format <a href="http://www.image-net.org/">PASCAL VOC</a>
+Cara membuat anotasinya :</p>
+
+<ol>
+<li>Buka aplikasi <code>labelImg</code></li>
+<li>Klik tombol &ldquo;OpenDir&rdquo;</li>
+<li>Pilih direktori dataset gambar</li>
+<li>Klik tombol &ldquo;Create RectBox&rdquo; untuk membuat kotak area objek yang akan dikenali</li>
+<li>Arahkan kursos dan tarik area kotak disekitar objek</li>
+<li>Lalu akan muncul kotak dialog untuk memberikan nama label dari objek yang akan kita kenali</li>
+<li>Simpan hasil pelabelan dengan menekan tombol <code>CTRL+S</code></li>
+<li>Pilih direktori penyimpanan file hasil pelabelan <code>*.xml</code></li>
+</ol>
+
+<blockquote>
+<p><strong>Note</strong>: Nama label objek yang dikenali harus sama <code>Case Sensitive</code>.</p>
+</blockquote>
+
+<p>Simpan hasilnya kedalam direktori yang sama dengan data gambar</p>
+
+<p><img src="/images/tensorflow-custom-object-detection-api/pelabelan-gambar.png" alt="Pelabelan Gambar" /></p>
+
+<h2 id="convert-xml-ke-csv">Convert XML ke CSV</h2>
+
+<p>Dataset annotation yang kita buat diatas menggunakan aplikasi <code>labelImg</code> perlu dikonversi dari format <code>.xml</code> ke <code>.csv</code> yang nantinya akan digunakan untuk mengenerate berkas <code>TFRecord</code>, berikut kode untuk mengkonversi format berkas yang kita butuhkan</p>
+
+<pre><code class="language-python">import os
+import glob
+import pandas as pd
+import xml.etree.ElementTree as ET
+
+def xml_to_csv(path):
+    xml_list = []
+    for xml_file in glob.glob(path + '/*.xml'):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+        for member in root.findall('object'):
+            value = (root.find('filename').text,
+                     int(root.find('size')[0].text),
+                     int(root.find('size')[1].text),
+                     member[0].text,
+                     int(member[4][0].text),
+                     int(member[4][1].text),
+                     int(member[4][2].text),
+                     int(member[4][3].text)
+                     )
+            xml_list.append(value)
+    column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
+    xml_df = pd.DataFrame(xml_list, columns=column_name)
+    return xml_df
+
+def main():
+    for directory in ['train', 'test']:
+        image_path = os.path.join(os.getcwd(), 'annotations/{}'.format(directory))
+        xml_df = xml_to_csv(image_path)
+        xml_df.to_csv('data/{}_labels.csv'.format(directory), index=None)
+        print('Successfully converted xml to csv.')
+
+main()
+</code></pre>
+
+<p>Simpan kode program diatas dengan nama <code>xml_to_csv.py</code>. Lalu jalankan perintah dibawah ini untuk mengkonversi file XML ke CSV.</p>
+
+<pre><code>$ python3 xml_to_csv.py
+</code></pre>
+
+<h2 id="convert-tfrecord">Convert TFRecord</h2>
+
+<p>Pada saat proses training, pertama-tama TensorFlow akan membaca data input dan proses ini dinamakan <em>feeding data</em> yang dijalankan melalui fungsi <code>feed_dictionary</code>, fungsi tersebut secara langsung mengambil informasi dataset yang telah kita siapkan dalam format TFRecord maka dari itu kita perlu men-<em>generate</em> data annotation yang telah kita konversi ke <code>.csv</code> tadi kedalam format TFRecord. Berikut ini adalah kode untuk men-<em>generate</em> file TFRecord</p>
+
+<pre><code class="language-python">from __future__ import division
+from __future__ import print_function
+from __future__ import absolute_import
+import os
+import io
+import pandas as pd
+import tensorflow as tf
+from PIL import Image
+from object_detection.utils import dataset_util
+from collections import namedtuple, OrderedDict
+
+flags = tf.app.flags
+flags.DEFINE_string('type', '', 'Type of CSV input (train/test)')
+flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
+flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
+FLAGS = flags.FLAGS
+
+def class_text_to_int(row_label):
+    if row_label == 'plate':
+        return 1
+    else:
+        None
+
+def split(df, group):
+    data = namedtuple('data', ['filename', 'object'])
+    gb = df.groupby(group)
+    return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
+
+def create_tf_example(group, path):
+    with tf.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
+        encoded_jpg = fid.read()
+    encoded_jpg_io = io.BytesIO(encoded_jpg)
+    image = Image.open(encoded_jpg_io)
+    width, height = image.size
+
+    filename = group.filename.encode('utf8')
+    image_format = b'jpg'
+    xmins = []
+    xmaxs = []
+    ymins = []
+    ymaxs = []
+    classes_text = []
+    classes = []
+
+    for index, row in group.object.iterrows():
+        xmins.append(row['xmin'] / width)
+        xmaxs.append(row['xmax'] / width)
+        ymins.append(row['ymin'] / height)
+        ymaxs.append(row['ymax'] / height)
+        classes_text.append(row['class'].encode('utf8'))
+        classes.append(class_text_to_int(row['class']))
+
+    tf_example = tf.train.Example(features=tf.train.Features(feature={
+        'image/height': dataset_util.int64_feature(height),
+        'image/width': dataset_util.int64_feature(width),
+        'image/filename': dataset_util.bytes_feature(filename),
+        'image/source_id': dataset_util.bytes_feature(filename),
+        'image/encoded': dataset_util.bytes_feature(encoded_jpg),
+        'image/format': dataset_util.bytes_feature(image_format),
+        'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
+        'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
+        'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
+        'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
+        'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
+        'image/object/class/label': dataset_util.int64_list_feature(classes),
+    }))
+    return tf_example
+
+def main(_):
+    writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
+    path = os.path.join(os.getcwd(), 'images/{}'.format(FLAGS.type))
+    examples = pd.read_csv(FLAGS.csv_input)
+    grouped = split(examples, 'filename')
+    for group in grouped:
+        tf_example = create_tf_example(group, path)
+        writer.write(tf_example.SerializeToString())
+
+    writer.close()
+    output_path = os.path.join(os.getcwd(), FLAGS.output_path)
+    print('Successfully created the TFRecords: {}'.format(output_path))
+
+if __name__ == '__main__':
+    tf.app.run()
+</code></pre>
+
+<p>Simpan kode program diatas dengan nama <code>generate_tfrecord.py</code>. Kemudian jalankan perintah dibawah ini untuk men-generate TFRecord file.</p>
+
+<pre><code>$ python3 generate_tfrecord.py --type=train --csv_input=data/train_labels.csv  --output_path=data/train.record
+// dan
+$ python3 generate_tfrecord.py --type=test --csv_input=data/test_labels.csv  --output_path=data/test.record
+</code></pre>
+
+<h2 id="membuat-label-map">Membuat Label Map</h2>
+
+<p>Berikut ini adalah konfigurasi untuk memetakan label yang akan kita gunakan untuk memberikan penamaan pada objek yang akan kita deteksi. Jika objek yang akan kita deteksi ada lebih dari satu objek maka buat <code>item</code> sebanyak objek yang akan kita deteksi dan <code>id</code> maupun <code>name</code> harus menyesuaikan <sup><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/using_your_own_dataset.md">dokumentasi</a></sup>, namun pada kasus ini kita akan mendeteksi hanya untuk satu objek saja. Berikut konfigurasi label map yang akan kita gunakan</p>
+
+<pre><code>item {
+	id: 1
+	name: 'plate'
+}
+</code></pre>
+
+<p>Simpan konfigurasi label map tersebut dengan nama <code>plate_number_map.pbtxt</code> kedalam folder <code>data</code>.</p>
+
+<h2 id="konfiguras-pipeline">Konfiguras Pipeline</h2>
+
+<p>Karena tensorflow menggunakan ProtoBuf maka kita perlu membuat konfigurasi pipeline dan kita akan menggunakan konfigurasi dari <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs/ssd_mobilenet_v1_pets.config">SSD with Mobilenet v1</a> yang digunakan oleh Oxford-IIIT untuk Dataset hewan peliharaan. Contoh konfigurasi dapat dilihat <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs">disini</a>.</p>
+
+<pre><code>model {
+  ssd {
+    num_classes: 1
+    box_coder {
+      faster_rcnn_box_coder {
+        y_scale: 10.0
+        x_scale: 10.0
+        height_scale: 5.0
+        width_scale: 5.0
+      }
+    }
+    matcher {
+      argmax_matcher {
+        matched_threshold: 0.5
+        unmatched_threshold: 0.5
+        ignore_thresholds: false
+        negatives_lower_than_unmatched: true
+        force_match_for_each_row: true
+      }
+    }
+    similarity_calculator {
+      iou_similarity {
+      }
+    }
+    anchor_generator {
+      ssd_anchor_generator {
+        num_layers: 6
+        min_scale: 0.2
+        max_scale: 0.95
+        aspect_ratios: 1.0
+        aspect_ratios: 2.0
+        aspect_ratios: 0.5
+        aspect_ratios: 3.0
+        aspect_ratios: 0.3333
+      }
+    }
+    image_resizer {
+      fixed_shape_resizer {
+        height: 300
+        width: 300
+      }
+    }
+    box_predictor {
+      convolutional_box_predictor {
+        min_depth: 0
+        max_depth: 0
+        num_layers_before_predictor: 0
+        use_dropout: false
+        dropout_keep_probability: 0.8
+        kernel_size: 1
+        box_code_size: 4
+        apply_sigmoid_to_scores: false
+        conv_hyperparams {
+          activation: RELU_6,
+          regularizer {
+            l2_regularizer {
+              weight: 0.00004
+            }
+          }
+          initializer {
+            truncated_normal_initializer {
+              stddev: 0.03
+              mean: 0.0
+            }
+          }
+          batch_norm {
+            train: true,
+            scale: true,
+            center: true,
+            decay: 0.9997,
+            epsilon: 0.001,
+          }
+        }
+      }
+    }
+    feature_extractor {
+      type: 'ssd_mobilenet_v1'
+      min_depth: 16
+      depth_multiplier: 1.0
+      conv_hyperparams {
+        activation: RELU_6,
+        regularizer {
+          l2_regularizer {
+            weight: 0.00004
+          }
+        }
+        initializer {
+          truncated_normal_initializer {
+            stddev: 0.03
+            mean: 0.0
+          }
+        }
+        batch_norm {
+          train: true,
+          scale: true,
+          center: true,
+          decay: 0.9997,
+          epsilon: 0.001,
+        }
+      }
+    }
+    loss {
+      classification_loss {
+        weighted_sigmoid {
+          anchorwise_output: true
+        }
+      }
+      localization_loss {
+        weighted_smooth_l1 {
+          anchorwise_output: true
+        }
+      }
+      hard_example_miner {
+        num_hard_examples: 3000
+        iou_threshold: 0.99
+        loss_type: CLASSIFICATION
+        max_negatives_per_positive: 3
+        min_negatives_per_image: 0
+      }
+      classification_weight: 1.0
+      localization_weight: 1.0
+    }
+    normalize_loss_by_num_matches: true
+    post_processing {
+      batch_non_max_suppression {
+        score_threshold: 1e-8
+        iou_threshold: 0.6
+        max_detections_per_class: 100
+        max_total_detections: 100
+      }
+      score_converter: SIGMOID
+    }
+  }
+}
+
+train_config: {
+  batch_size: 4
+  optimizer {
+    rms_prop_optimizer: {
+      learning_rate: {
+        exponential_decay_learning_rate {
+          initial_learning_rate: 0.004
+          decay_steps: 800720
+          decay_factor: 0.95
+        }
+      }
+      momentum_optimizer_value: 0.9
+      decay: 0.9
+      epsilon: 1.0
+    }
+  }
+  fine_tune_checkpoint: &quot;ssd_mobilenet_v1_coco_2017_11_17/model.ckpt&quot;
+  from_detection_checkpoint: true
+  num_steps: 100000
+  data_augmentation_options {
+    random_horizontal_flip {
+    }
+  }
+  data_augmentation_options {
+    ssd_random_crop {
+    }
+  }
+}
+
+train_input_reader: {
+  tf_record_input_reader {
+    input_path: &quot;data/train.record&quot;
+  }
+  label_map_path: &quot;data/plate_number_map.pbtxt&quot;
+}
+
+eval_config: {
+  num_examples: 30
+  max_evals: 10
+}
+
+eval_input_reader: {
+  tf_record_input_reader {
+    input_path: &quot;data/test.record&quot;
+  }
+  label_map_path: &quot;data/plate_number_map.pbtxt&quot;
+  shuffle: false
+  num_readers: 1
+  num_epochs: 1
+}
+</code></pre>
+
+<p>Simpan file konfigurasi diatas dengan nama <code>plate_number_v1.config</code> kedalam folder <code>training</code>.</p>
+
+<p>Konfigurasi diatas menggunakan <code>batch_size=4</code> dan <code>num_steps=100000</code> pada komputer penulis dengan spesifikasi 8 Core CPU, 1 GPU, dan RAM 16GB, nilai tersebut cukup berhasil untuk mendeteksi objek Plat Nomor, tapi sebaiknya nilai tersebut disesuaikan dengan spesifikasi komputer yang anda gunakan. Jika komputer yang anda gunakan mempunyai spesifikasi dibawah komputer yang penulis gunakan maka direkomendasikan untuk menurunkan nilai <code>batch_size</code> setidaknya <code>batch_size=2</code> dan <code>num_steps=140000</code>.</p>
+
+<p>Sampai ditahap ini kita sudah selesai menyiapkan semua file yang dibutuhkan pada saat training model object detection kita.</p>
+
+<blockquote>
+<p><strong>Note</strong>: Pastikan struktur direktori dan file dengan benar.</p>
+</blockquote>
+
+<p>Berikut sususan akhir direktori yang penulis gunakan :</p>
+
+<pre><code>.
+├── annotations
+│   ├── test
+│   │   ├── IMG-20180108-WA0115.xml
+│   │   ├── ...
+│   │   ├── IMG-20180108-WA0120.xml
+│   │   └── IMG-20180108-WA0121.xml
+│   └── train
+│       ├── 100.E 6467 QW-09-20.xml
+│       ├── ...
+│       ├── 255.E 6527 OD-02-20.xml
+│       └── 256.E 4572 SS-01-16.xml
+├── data
+│   ├── plate_number_map.pbtxt
+│   ├── test.record
+│   ├── test_labels.csv
+│   ├── train.record
+│   └── train_labels.csv
+├── images
+│   ├── test
+│   │   ├── IMG-20180108-WA0115.jpeg
+│   │   ├── ...
+│   │   ├── IMG-20180108-WA0120.jpg
+│   │   └── IMG-20180108-WA0121.jpg
+│   └── train
+│       ├── 100.E 6467 QW-09-20.jpeg
+│       ├── ...
+│       ├── 255.E 6527 OD-02-20.jpg
+│       └── 256.E 4572 SS-01-16.jpg
+├── training
+│   └── plate_number_v1.config
+├── generate_tfrecord.py
+└── xml_to_csv.py
+
+8 directories, 1016 files
+</code></pre>
+
+<h1 id="training-model">Training Model</h1>
+
+<p>Setelah semua file yang dibutuhkan selesai dipersiapkan maka kita akan memasuki tahap training Neural Network untuk mengenali pola Tanda Nomor Kendaraan Bermotor (TNKB). Kita perlu menyiapkan TensorFlow Model dan menyalin berkas-berkas yang kita buat sebelumnya untuk kebutuhan proses training.</p>
+
+<ol>
+<li>Salin direktori <code>data</code>, <code>images</code>, dan <code>training</code> yang kita buat sebelumnya ke dalam folder <code>models/research/object_detection</code>.</li>
+<li>Setelah semua berkas sudah disalin kita akan menggunakan pre-trained model yang bernama <code>SSD Mobilnet v1</code> dari <a href="http://cocodataset.org/">COCO</a> model tersebut bisa diunduh <a href="http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz">disini</a>, jika sudah berhasil diunduh lalu ekstrak <code>ssd_mobilenet_v1_coco_2017_11_17.tar.gz</code> kedalam direktori <code>models/research/object_detection</code>.</li>
+</ol>
+
+<p>Jika kita melihat ke daftar <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md#coco-trained-models-coco-models">COCO-trained Model</a> maka akan ada banyak model yang tersedia dan silahkan pilih sendiri mana yang akan kita gunakan untuk training Neural Network kita, tapi penulis akan memilih yang tercepat yaitu <code>ssd_mobilenet_v1_coco</code> yang mana kecepatannya sampai 30/milisecond.</p>
+
+<p>Baik! Mari kita mulai training Neural Network, jalankan perintah dibawah ini untuk memulai proses training.</p>
+
+<pre><code>$ python3 train.py \
+    --logtostderr \
+    --train_dir=training \
+    --pipeline_config_path=training/plate_number_v1.config
+</code></pre>
+
+<p>Tunggu sampai proses training selesai, dikomputer penulis sendiri membutuhkan waktu sekitar <strong>12 sampai 13 jam</strong> untuk proses training ini
+<img src="/images/tensorflow-custom-object-detection-api/training.png" alt="Training Process" /></p>
+
+<h2 id="grafik-tensorboard">Grafik TensorBoard</h2>
+
+<p>Untuk melihat grafik selama proses training kita akan menggunakan TensorBoard, jalankan perintah dibawah ini untuk menjalankan TensorBoard.</p>
+
+<pre><code>$ tensorboard --logdir=training
+</code></pre>
+
+<p>Kurang lebih tampilan TensorBoard akan seperti dibawah ini</p>
+
+<p><img src="/images/tensorflow-custom-object-detection-api/tensorboard.png" alt="TensorBoard Stats" /></p>
+
+<p><img src="/images/tensorflow-custom-object-detection-api/tensorboard-graph.png" alt="TensorBoard Graph" /></p>
+
+<h2 id="evaluation-testing">Evaluation / Testing</h2>
+
+<p>Proses ini untuk mengevaluasi hasil dari tahap proses training sebelumnya, boleh dilakukan boleh juga tidak tapi direkomendasikan proses ini tetap dilakukan agar model yang dihasilkan mendapatkan hasil yang bagus</p>
+
+<pre><code>$ python3 eval.py \
+    --logtostderr \
+    --pipeline_config_path=training/plate_number_v1.config \
+    --checkpoint_dir=training \
+    --eval_dir=evaluation
+</code></pre>
+
+<h2 id="export-graph">Export Graph</h2>
+
+<p>Proses training diatas belum sepenuhnya selesai karena tujuan utama dari proses training Neural Network adalah sebuah model yang akan kita gunakan untuk mendeteksi objek-objek yang telah kita masukkan sebelumnya, maka dari itu kita perlu mengekspor modelnya, jalankan perintah berikut untuk mengekspor model.</p>
+
+<pre><code>$ python3 export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path training/plate_number_v1.config \
+    --trained_checkpoint_prefix training/model.ckpt-100000 \
+    --output_directory plate_number_recognition_model_v1_2018_01_24
+</code></pre>
+
+<h1 id="mencoba-hasil-model">Mencoba Hasil Model</h1>
+
+<p>Ini adalah tahap terakhir yang kita lalui dan kita akan mencoba menggunakan model yang telah kita latih untuk mengenali Tanda Nomor Kendaraan Bermotor (TNKB) sebelumnya.</p>
+
+<p>Tahap pengujian berikut ini membutuhkan sampel gambar yang berbeda dari gambar dataset yang kita gunakan pada proses training dan testing, maka kita perlu untuk mendapatkan sampel gambar, anda dapat mencarinya via <a href="https://images.google.com/">Google Images</a> atau bisa juga memotret langsung menggunakan kamera sendiri.</p>
+
+<p>Taruh 2 sampel gambar kedalam direktori <code>models/research/object_detection/test_images</code> dan berikan nama <code>image1.jpg</code> dan <code>image2.jpg</code> atau replace gambar yang ada.</p>
+
+<h2 id="pengujian-via-jupyter-notebook">Pengujian via Jupyter Notebook</h2>
+
+<p>Untuk pengujian via Jupyter Notebook kita hanya perlu mengubah <code>MODEL_NAME</code> dengan model yang telah kita ekspor sebelumnya dan <code>NUM_CLASSES</code> menjadi nilai <code>1</code> karena hanya satu objek yang akan kita deteksi</p>
+
+<p>Ubah kode berikut</p>
+
+<pre><code class="language-python">MODEL_NAME = 'ssd_mobilenet_v1_coco_2017_11_17'
+MODEL_FILE = MODEL_NAME + '.tar.gz'
+DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
+PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
+NUM_CLASSES = 90
+</code></pre>
+
+<p>Menjadi</p>
+
+<pre><code class="language-python">MODEL_NAME = 'plate_number_recognition_model_v1_2018_01_24'
+# MODEL_FILE = MODEL_NAME + '.tar.gz'
+# DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
+PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
+NUM_CLASSES = 1
+</code></pre>
+
+<p>Dan hapus bagian berikut ini karena kita tidak perlu mengunduh model <code>ssd_mobilenet_v1_coco_2017_11_17</code> karena kita akan menggunakan model yang telah kita training sendiri</p>
+
+<pre><code class="language-python">opener = urllib.request.URLopener()
+opener.retrieve(DOWNLOAD_BASE + MODEL_FILE, MODEL_FILE)
+tar_file = tarfile.open(MODEL_FILE)
+for file in tar_file.getmembers():
+	file_name = os.path.basename(file.name)
+	if 'frozen_inference_graph.pb' in file_name:
+		tar_file.extract(file, os.getcwd())
+</code></pre>
+
+<p>Dan hasilnya kurang lebih akan seperti dibawah ini</p>
+
+<p><img src="/images/tensorflow-custom-object-detection-api/result-1.png" alt="Results Detection" />
+<img src="/images/tensorflow-custom-object-detection-api/result-2.png" alt="Results Detection" /></p>
+
+<h2 id="pengujian-via-webcam">Pengujian via Webcam</h2>
+
+<p>Untuk pengujian model menggunakan webcam langkahnya sama seperti pada pengujian via Jupyter Notebook yaitu mengubah <code>MODEL_NAME</code> dan <code>NUM_CLASSES</code> kemudian kita hanya perlu menambahkan beberapa baris kode untuk menggunakan webcam melalui pustaka OpenCV, langkah ini sama seperti pada tutorial <a href="https://imamdigmi.github.io/post/tensorflow-object-detection-overview/#deteksi-objek-via-webcam">sebelumnya</a>.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-01-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/tensorflow/">tensorflow</a>
+          
+          <a href="/tags/python/">python</a>
+          
+          <a href="/tags/deep-learning/">deep learning</a>
+          
+          <a href="/tags/machine-learning/">machine learning</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/memahami-epoch-batch-size-dan-iteration/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Memahami Epoch Batch Size Dan Iteration</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/tensorflow-object-detection-overview/">
+            <span class="next-text nav-default">TensorFlow - Object Detection API</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Thu, 25 Jan 2018 15:51:05 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2018 22:51:05 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TensorFlow - Custom Object Detection API</title>
+      <link>https://imamdigmi.github.io/post/tensorflow-custom-object-detection/</link>
+      <pubDate>Thu, 25 Jan 2018 22:51:05 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tensorflow-custom-object-detection/</guid>
+      <description>Tutorial ini adalah lanjutan dari tutorial TensorFlow - Object Detection API yang membahas tentang penggunaan API untuk deteksi objek menggunakan TensorFlow, pada tutorial sebelumnya terdapat permasalahan yaitu objek yang dikenali hanya objek umum saja dan model yang kita gunakan adalah model yang sudah di-training oleh seseorang yang kita tidak tahu bagaimana prosesnya, maka pada tutorial ini menjawab pertanyaan pada tutorial sebelumnya yaitu &amp;ldquo;Bagaimana jika kita ingin mendeteksi objek khusus yang kita tentukan sendiri?</description>
+    </item>
     
     <item>
       <title>TensorFlow - Object Detection API</title>

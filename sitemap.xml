@@ -24,6 +24,13 @@
   </url>
   
   <url>
+    <loc>https://imamdigmi.github.io/post/tensorflow-custom-object-detection/</loc>
+    <lastmod>2018-01-25T22:51:05+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/post/tensorflow-object-detection-overview/</loc>
     <lastmod>2018-01-25T15:51:05+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -256,7 +263,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/categories/deep-learning/</loc>
-    <lastmod>2018-01-25T15:51:05+07:00</lastmod>
+    <lastmod>2018-01-25T22:51:05+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -361,7 +368,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/tags/python/</loc>
-    <lastmod>2018-01-25T15:51:05+07:00</lastmod>
+    <lastmod>2018-01-25T22:51:05+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -396,7 +403,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/tags/tensorflow/</loc>
-    <lastmod>2018-01-25T15:51:05+07:00</lastmod>
+    <lastmod>2018-01-25T22:51:05+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
