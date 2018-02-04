@@ -33,7 +33,7 @@ $ lspci -k | grep -A 2 -E &amp;quot;(VGA|3D)&amp;quot;  Outputnya kurang lebih a
 sudo rmmod pcspkr  Blacklist module pcspkr akan mencegah udev pada saat booting sistem
 echo &amp;quot;blacklist pcspkr&amp;quot; &amp;gt; /etc/modprobe.d/nobeep.conf  Selengkapnya bisa dibaca di dokumentasi resminya disini
 File Manager Support Flashdisk dan Device Android tidak terbaca dan ekstrak file tidak bisa di thunar
-$ sudo pacman -S gvfs file-roller libmtp  Selengkapnya bisa dibaca di dokumentasi resminya disini</description>
+$ sudo pacman -S gvfs file-roller libmtp gvfs-mtp gvfs-gphoto2  Selengkapnya bisa dibaca di dokumentasi resminya disini</description>
     </item>
     
     <item>
@@ -44,6 +44,17 @@ $ sudo pacman -S gvfs file-roller libmtp  Selengkapnya bisa dibaca di dokumentas
       <guid>https://imamdigmi.github.io/post/memahami-epoch-batch-size-dan-iteration/</guid>
       <description>Jika anda adalah seseorang yang sedang menggeluti bidang Machine Learning atau Deep Learning pasti sangat familiar dengan ketiga hal ini, namun mungkin juga anda sering bingung sampai menggaruk-garuk kepala anda dan bertanya-tanya &amp;ldquo;Mengapa saya mengetik ketiga istilah ini dalam kode saya dan apa bedanya? fungsinya apa?&amp;rdquo; karena semuanya terlihat sangat mirip.
 Baiklah mari kita bahas, tapi untuk mengetahui perbedaan antara ketiga hal ini kita perlu mengetahui beberapa istilah pada Machine Learning seperti Gradient Descent agar kita lebih memahami fungsi dari Epoch, Batch Size, dan Iterations.</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow - Object Detection API</title>
+      <link>https://imamdigmi.github.io/post/tensorflow-object-detection-overview/</link>
+      <pubDate>Thu, 25 Jan 2018 15:51:05 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tensorflow-object-detection-overview/</guid>
+      <description>Setup TensorFlow Model Untuk menggunakan TensorFlow Object Detection API harus sudah terinstal package TensorFlow, jika belum baca artikel saya tentang Instalasi TensorFlow.
+Pertama-tama kita perlu menginstal dependencies yang dibutuhkan, salah satunya adalah ProtoBuf dan dependency lainnya
+$ sudo sudo pacman -S protobuf $ pip install --user pillow lxml jupyter matplotlib  Kemudian kita perlu mendownload TensorFlow Models disini jika download sudah selesai ekstrak file .zip lalu masuk ke direktori models/research</description>
     </item>
     
     <item>

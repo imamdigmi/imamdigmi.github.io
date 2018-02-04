@@ -33,7 +33,7 @@ $ lspci -k | grep -A 2 -E &amp;quot;(VGA|3D)&amp;quot;  Outputnya kurang lebih a
 sudo rmmod pcspkr  Blacklist module pcspkr akan mencegah udev pada saat booting sistem
 echo &amp;quot;blacklist pcspkr&amp;quot; &amp;gt; /etc/modprobe.d/nobeep.conf  Selengkapnya bisa dibaca di dokumentasi resminya disini
 File Manager Support Flashdisk dan Device Android tidak terbaca dan ekstrak file tidak bisa di thunar
-$ sudo pacman -S gvfs file-roller libmtp  Selengkapnya bisa dibaca di dokumentasi resminya disini</description>
+$ sudo pacman -S gvfs file-roller libmtp gvfs-mtp gvfs-gphoto2  Selengkapnya bisa dibaca di dokumentasi resminya disini</description>
     </item>
     
     <item>

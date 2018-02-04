@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>TensorFlow - Object Detection API - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Membuat pendeteksi objek menggunakan API TensorFlow" />
+<meta name="keywords" content="tensorflow, object detection, api, python, deep learning, machine learning" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.34" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/tensorflow-object-detection-overview/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="TensorFlow - Object Detection API" />
+<meta property="og:description" content="Membuat pendeteksi objek menggunakan API TensorFlow" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/tensorflow-object-detection-overview/" />
+
+
+
+<meta property="article:published_time" content="2018-01-25T15:51:05&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-01-25T15:51:05&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="TensorFlow - Object Detection API">
+<meta itemprop="description" content="Membuat pendeteksi objek menggunakan API TensorFlow">
+
+
+<meta itemprop="datePublished" content="2018-01-25T15:51:05&#43;07:00" />
+<meta itemprop="dateModified" content="2018-01-25T15:51:05&#43;07:00" />
+<meta itemprop="wordCount" content="550">
+
+
+
+<meta itemprop="keywords" content="tensorflow,python,deep learning,machine learning," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="TensorFlow - Object Detection API"/>
+<meta name="twitter:description" content="Membuat pendeteksi objek menggunakan API TensorFlow"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">TensorFlow - Object Detection API</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/deep-learning/"> Deep Learning </a>
+            
+          </div>
+        <span class="more-meta"> 550 word </span>
+        <span class="more-meta"> 3 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#setup-tensorflow-model">Setup TensorFlow Model</a></li>
+<li><a href="#deteksi-objek-pada-gambar">Deteksi Objek pada Gambar</a></li>
+<li><a href="#deteksi-objek-via-webcam">Deteksi Objek via Webcam</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="setup-tensorflow-model">Setup TensorFlow Model</h1>
+
+<p>Untuk menggunakan TensorFlow Object Detection API harus sudah terinstal package TensorFlow, jika belum baca artikel saya tentang <a href="https://imamdigmi.github.io/post/tensorflow-installation/">Instalasi TensorFlow</a>.</p>
+
+<p>Pertama-tama kita perlu menginstal dependencies yang dibutuhkan, salah satunya adalah <a href="https://github.com/google/protobuf">ProtoBuf</a> dan dependency lainnya</p>
+
+<pre><code>$ sudo sudo pacman -S protobuf
+$ pip install --user pillow lxml jupyter matplotlib
+</code></pre>
+
+<p>Kemudian kita perlu mendownload TensorFlow Models <a href="https://codeload.github.com/tensorflow/models/zip/master">disini</a> jika download sudah selesai ekstrak file <code>.zip</code> lalu masuk ke direktori <code>models/research</code></p>
+
+<pre><code>$ cd models/research
+</code></pre>
+
+<p>API Deteksi Objek Tensorflow menggunakan ProtoBuf untuk mengkonfigurasi parameter model dan training. Sebelum masuk proses training, library ProtoBuf harus dikompilasi terlebih dahulu. Jalankan perintah berikut pada direktori <code>models/research</code></p>
+
+<pre><code>$ protoc object_detection/protos/*.proto --python_out=.
+</code></pre>
+
+<p>Jalankan perintah berikut di dalam direktori <code>models/research</code> untuk mambahkan <code>PYTHONPATH</code> variable</p>
+
+<pre><code>export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+</code></pre>
+
+<blockquote>
+<p>Note: Perintah diatas harus dijalankan setiap kali kita ingin menggunakan API</p>
+</blockquote>
+
+<p>Lebih lengkapnya dapat dilihat <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md">disini</a>.</p>
+
+<h1 id="deteksi-objek-pada-gambar">Deteksi Objek pada Gambar</h1>
+
+<p>Untuk memulai deteksi objek kita akan menggunakan Jupyter Notebook, jalankan perintah berikut</p>
+
+<pre><code>$ jupyter notebook --notebook-dir=object_detection
+</code></pre>
+
+<ol>
+<li>Klik file <code>object_detection_tutorial.ipynb</code></li>
+<li>Klik menu <code>Cell</code></li>
+<li>Pilih menu <code>Run All</code></li>
+</ol>
+
+<p>Maka hasilnya akan seperti berikut</p>
+
+<p><img src="/images/tensorflow-object-detection-overview/result-image-1.png" alt="Result Image 1" />
+<img src="/images/tensorflow-object-detection-overview/result-image-2.png" alt="Result Image 1" /></p>
+
+<h1 id="deteksi-objek-via-webcam">Deteksi Objek via Webcam</h1>
+
+<p>Kita juga dapat menggunakan Webcam untuk mendeteksi objek secara <em>real-time</em></p>
+
+<ol>
+<li>Klik menu <code>File</code></li>
+<li>Pilih <code>Download as</code></li>
+<li>Pilih <code>Python (.py)</code></li>
+</ol>
+
+<p>Kemudian pindahkan file tersebut (<code>object_detection_tutorial.py</code>) kedalam direktori <code>models/research/object_detection</code></p>
+
+<p>Instal opencv</p>
+
+<pre><code>$ sudo pacman -S opencv
+</code></pre>
+
+<p>Instal library opencv-python</p>
+
+<pre><code>$ pip install --user opencv-python
+</code></pre>
+
+<p>Tambhakan kode berikut</p>
+
+<pre><code class="language-python">import cv2
+cap = cv2.VideoCapture(0)
+</code></pre>
+
+<p>Hapus baris <code>get_ipython().run_line_magic('matplotlib', 'inline')</code></p>
+
+<p>Kemudian ubah kode berikut</p>
+
+<pre><code class="language-python">for image_path in TEST_IMAGE_PATHS:
+    image = Image.open(image_path)
+    # the array based representation of the image will be used later in order to prepare the
+    # result image with boxes and labels on it.
+    image_np = load_image_into_numpy_array(image)
+</code></pre>
+
+<p>Menjadi</p>
+
+<pre><code class="language-python">while True:
+    ret, image_np = cap.read()
+</code></pre>
+
+<p>Kemudian ubah kode berikut</p>
+
+<pre><code class="language-python">plt.figure(figsize=IMAGE_SIZE)
+plt.imshow(image_np)
+</code></pre>
+
+<p>Menjadi</p>
+
+<pre><code class="language-python">cv2.imshow('object detection', cv2.resize(image_np, (800,600)))
+if cv2.waitKey(25) &amp; 0xFF == ord('q'):
+    cv2.destroyAllWindows()
+    break
+</code></pre>
+
+<p>Full code</p>
+
+<pre><code class="language-python">import numpy as np
+import os
+import six.moves.urllib as urllib
+import sys
+import tarfile
+import tensorflow as tf
+import zipfile
+from collections import defaultdict
+from io import StringIO
+from matplotlib import pyplot as plt
+from PIL import Image
+
+if tf.__version__ &lt; '1.4.0':
+  raise ImportError('Please upgrade your tensorflow installation to v1.4.* or later!')
+
+import cv2
+cap = cv2.VideoCapture(0)
+
+sys.path.append(&quot;..&quot;)
+
+from utils import label_map_util
+from utils import visualization_utils as vis_util
+MODEL_NAME = 'ssd_mobilenet_v1_coco_2017_11_17'
+MODEL_FILE = MODEL_NAME + '.tar.gz'
+DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
+PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
+NUM_CLASSES = 90
+
+opener = urllib.request.URLopener()
+opener.retrieve(DOWNLOAD_BASE + MODEL_FILE, MODEL_FILE)
+tar_file = tarfile.open(MODEL_FILE)
+for file in tar_file.getmembers():
+  file_name = os.path.basename(file.name)
+  if 'frozen_inference_graph.pb' in file_name:
+    tar_file.extract(file, os.getcwd())
+
+detection_graph = tf.Graph()
+with detection_graph.as_default():
+  od_graph_def = tf.GraphDef()
+  with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+    serialized_graph = fid.read()
+    od_graph_def.ParseFromString(serialized_graph)
+    tf.import_graph_def(od_graph_def, name='')
+
+label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
+categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
+category_index = label_map_util.create_category_index(categories)
+
+with detection_graph.as_default():
+  with tf.Session(graph=detection_graph) as sess:
+    image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
+    detection_boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
+    detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
+    detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
+    num_detections = detection_graph.get_tensor_by_name('num_detections:0')
+    while True:
+      ret, image_np = cap.read()
+      image_np_expanded = np.expand_dims(image_np, axis=0)
+      (boxes, scores, classes, num) = sess.run(
+          [detection_boxes, detection_scores, detection_classes, num_detections],
+          feed_dict={image_tensor: image_np_expanded})
+      vis_util.visualize_boxes_and_labels_on_image_array(
+          image_np,
+          np.squeeze(boxes),
+          np.squeeze(classes).astype(np.int32),
+          np.squeeze(scores),
+          category_index,
+          use_normalized_coordinates=True,
+          line_thickness=8)
+      cv2.imshow('object detection', cv2.resize(image_np, (800,600)))
+      if cv2.waitKey(25) &amp; 0xFF == ord('q'):
+        cv2.destroyAllWindows()
+        break
+</code></pre>
+
+<p>Jalankan dengan perintah berikut di dalam direktori <code>models/research/object_detection</code></p>
+
+<pre><code>$ python object_detection_tutorial.py
+</code></pre>
+
+<blockquote>
+<p><strong>Tip</strong>: Tekan tombol <code>Q</code> atau <code>Esc</code> untuk menutup window webcam</p>
+</blockquote>
+
+<p>Maka hasilnya akan seperti berikut
+<img src="/images/tensorflow-object-detection-overview/result-webcam.png" alt="Result Webcam" /></p>
+
+<p>Tapi, bagaimana jika ingin menggunakan dataset sendiri untuk mendeteksi objek yang kita tentukan? Nah kita akan bahas pada <a href="https://imamdigmi.github.io/post/tensorflow-custom-object-detection/">tutorial selanjutnya</a> sampai jumpa 😉</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-01-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/tensorflow/">tensorflow</a>
+          
+          <a href="/tags/python/">python</a>
+          
+          <a href="/tags/deep-learning/">deep learning</a>
+          
+          <a href="/tags/machine-learning/">machine learning</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/memahami-epoch-batch-size-dan-iteration/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Memahami Epoch Batch Size Dan Iteration</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/tensorflow-installation/">
+            <span class="next-text nav-default">Instalasi Tensorflow</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74531115-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

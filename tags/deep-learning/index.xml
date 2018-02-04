@@ -22,5 +22,16 @@
 Baiklah mari kita bahas, tapi untuk mengetahui perbedaan antara ketiga hal ini kita perlu mengetahui beberapa istilah pada Machine Learning seperti Gradient Descent agar kita lebih memahami fungsi dari Epoch, Batch Size, dan Iterations.</description>
     </item>
     
+    <item>
+      <title>TensorFlow - Object Detection API</title>
+      <link>https://imamdigmi.github.io/post/tensorflow-object-detection-overview/</link>
+      <pubDate>Thu, 25 Jan 2018 15:51:05 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tensorflow-object-detection-overview/</guid>
+      <description>Setup TensorFlow Model Untuk menggunakan TensorFlow Object Detection API harus sudah terinstal package TensorFlow, jika belum baca artikel saya tentang Instalasi TensorFlow.
+Pertama-tama kita perlu menginstal dependencies yang dibutuhkan, salah satunya adalah ProtoBuf dan dependency lainnya
+$ sudo sudo pacman -S protobuf $ pip install --user pillow lxml jupyter matplotlib  Kemudian kita perlu mendownload TensorFlow Models disini jika download sudah selesai ekstrak file .zip lalu masuk ke direktori models/research</description>
+    </item>
+    
   </channel>
 </rss>
