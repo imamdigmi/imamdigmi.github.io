@@ -199,3 +199,5 @@ $ python object_detection_tutorial.py
 
 Maka hasilnya akan seperti berikut
 ![Result Webcam](/images/tensorflow-object-detection-overview/result-webcam.png)
+
+Tapi, bagaimana jika ingin menggunakan dataset sendiri untuk mendeteksi objek yang kita tentukan? Nah kita akan bahas pada [tutorial selanjutnya](https://imamdigmi.github.io/post/tensorflow-custom-object-detection/) sampai jumpa :wink:
