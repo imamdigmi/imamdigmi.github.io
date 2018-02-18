@@ -7,7 +7,7 @@ description: ""
 author: "Imam Digmi"
 
 weight: 50
-draft: false
+draft: true
 keywords: []
 tags: []
 categories: []
