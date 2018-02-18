@@ -85,7 +85,7 @@ $ export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
       <pubDate>Fri, 19 Jan 2018 23:13:40 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/about/</guid>
-      <description>Hi! I&amp;rsquo;m Imam. I&amp;rsquo;m a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.</description>
+      <description>figure { float: left; text-align: center; font-style: italic; font-size: 8pt; text-indent: 0; margin: 0.5em; padding-right: 0.1em; } img.scaled { margin: 0px 12px 5px 0px; height: 300px; width: 250px; }  Ramita&#39;s graduationHi! I&#39;m Imam. I&#39;m a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.</description>
     </item>
     
     <item>
