@@ -3,7 +3,7 @@ date: {{ .Date }}
 lastmod: {{ .Date }}
 
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
-description: ""
+description: "{{ replace .TranslationBaseName "-" " " | title }}"
 author: "Imam Digmi"
 
 weight: 50
