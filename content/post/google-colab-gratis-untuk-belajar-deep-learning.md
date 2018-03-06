@@ -7,19 +7,21 @@ description: "Google Colab Gratis Untuk Belajar Deep Learning"
 author: "Imam Digmi"
 
 weight: 50
-autoCollapseToc: true
 draft: false
 keywords: [deep learning, machine learning, google, colab]
 tags: [deep learning]
 categories: [Deep Learning]
 ---
 
-Google Colaboratory atau disebut juga _Colab_ adalah tools baru yang dikeluarkan oleh [Google Internal Research](https://research.google.com) yang dibuat untuk membantu para Researcher dalam mengolah data untuk keperluan belajar Machine Learning, tools ini secara penggunaan mirip seperti [Jupyter Notebook](http://jupyter.org/) dan dibuat diatas _envirounment_ Jupyter yang tidak memerlukan pengaturan atau setup terlebih dahulu untuk digunakan dan berjalan sepenuhnya pada Cloud dengan memanfaatkan media penyimpanan Google Drive. Yang menjadi menarik perhatian adalah tools Colab ini menyediakan GPU gratis kepada penggunanya sebagai backend komputasi dan dapat digunakan selama 12 jam pada suatu waktu, menarik bukan? kita tidak perlu mengeluarkan sejumlah uang atau membeli perangkat komputer dengan tambahan GPU jika kita ingin belajar Machine Learning, karena pada praktiknya proses pelatihan (_training_) yang dilakukan untuk membuat sistem yang mampu belajar sendiri dari data atau informasi yang diberikan cukup membuat kita patah semangat karena keterbatasan perangkat yang kita miliki, apalagi jika kita hanya sekedar mencoba. 
+Google Colaboratory atau disebut juga _Colab_ adalah tools baru yang dikeluarkan oleh [Google Internal Research](https://research.google.com) yang dibuat untuk membantu para Researcher dalam mengolah data untuk keperluan belajar maupun bereksperimen pada pengolahan data khususnya bidang _Machine Learning_, tools ini secara penggunaan mirip seperti [Jupyter Notebook](http://jupyter.org/) dan dibuat diatas _envirounment_ Jupyter yang tidak memerlukan pengaturan atau setup terlebih dahulu sebelum digunakan dan berjalan sepenuhnya pada Cloud dengan memanfaatkan media penyimpanan Google Drive.
 
-Dengan Google Colab anda dapat membangun aplikasi berbasis Deep Learning menggunakan pustaka polular seperti [Keras](https://keras.io/), [TensorFlow](https://www.tensorflow.org/), [PyTorch](http://pytorch.org/) dan [OpenCV](https://opencv.org/).
+Yang menjadi menarik perhatian adalah tools Colab ini menyediakan layanan GPU gratis kepada penggunanya sebagai backend komputasi dan dapat digunakan selama 12 jam pada suatu waktu, menarik bukan? kita tidak perlu mengeluarkan sejumlah uang atau membeli perangkat komputer dengan tambahan GPU jika kita ingin belajar Machine Learning, karena pada praktiknya proses pelatihan (_training_) pada bidang Machine Learning ini cukup membuat pusing terlebih lagi jika perangkat yang kita miliki kurang memadai dan mungkin akan patah, apalagi jika kita hanya sekedar mencoba. 
+
+Dengan Google Colab anda dapat membangun aplikasi berbasis Deep Learning menggunakan pustaka poluler seperti [Keras](https://keras.io/), [TensorFlow](https://www.tensorflow.org/), [PyTorch](http://pytorch.org/) dan [OpenCV](https://opencv.org/).
 
 Pada atikel ini akan membahas penggunaan dasar dari Google Colaboratory, dan jika anda pernah menggunakan Jupyter Notebook pastinya anda sudah tidak asing lagi dengan ini karena pada prinsipnya tools ini sama seperti Jupyter Notebook, hanya perbedaannya Colab berjalan diatas cloud milik Google dan menyimpan berkas kita kedalam Google Drive, perbedaan mendasar lainnya adalah jika pada Jupyter Notebook kita hanya dapat menjalankan _syntax_ Python dan Markdown saja maka di Google Colab ini kita dapat menjalankan _command line_ langsung pada cell notebook dengan diawali tanda `!`.
 
+# Setup
 ## Install Colab
 Untuk dapat menggunakan Google Colab kita perlu menambahkan ekstensi baru ke Google Drive kita dengan cara klik tombol **New > More > Connect more apps** lalu tuliskan "colab" pada kolom search kemudian klik tombol **connect**.
 ![Install Colab](/images/google-colab-gratis-untuk-belajar-deep-learning/connect-app.png)
@@ -33,7 +35,7 @@ Maka tampilan awal dari Notebook kita adalah seperti berikut
 
 ![Create New Notebook](/images/google-colab-gratis-untuk-belajar-deep-learning/startpage.png)
 
-Ada baiknya kita berikan nama notebook kita dengan cara double klik pada area `Untitled0.ipynd` lalu tuliskan nama notebook seperti berikut 
+Ada baiknya kita berikan nama notebook kita dengan cara double klik pada area `Untitled0.ipnyb` lalu tuliskan nama notebook seperti berikut 
 
 ![Rename Notebook](/images/google-colab-gratis-untuk-belajar-deep-learning/rename-notebook.png)
 
@@ -42,7 +44,7 @@ Karena Colab menyediakan GPU gratis untuk penggunanya kita pun dapat memberikan 
 
 ![Setup GPU](/images/google-colab-gratis-untuk-belajar-deep-learning/setup-gpu.png)
 
-## Menjalankan Numpy
+## Menjalankan Kode Pertama
 Proses setup sudah selesai dan mari kita mencoba beberapa operasi tipe data dasar, berikut potongan kodenya
 
 ```python
@@ -62,7 +64,7 @@ print(type(y)) # Prints "<class 'float'>"
 print(y, y + 1, y * 2, y ** 2) # Prints "2.5 3.5 5.0 6.25"
 ```
 
-Tekan tombol ">" dibagian kiri cell untuk menjalankan perintah tersebut atau dapat juga dengan shortcut **Ctrl+Enter**
+Tekan tombol :arrow_forward: dibagian kiri cell untuk menjalankan perintah tersebut atau dapat juga dengan shortcut **Ctrl+Enter**
 
 > **Tip!**: Tekan **Shift+Enter** jika ingin menjalankan perintah sekaligus menambah cell dibawahnya
 
@@ -113,7 +115,7 @@ Instal Keras
 !pip install -q keras
 ```
 
-Upload kode `mnist_cnn.py` kedalam direktori Colab di Google Drive, file tersebut dapat diunduh [disini](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py). Kemudian jalankan file `mnist_cnn.py` tersebut dengan dengan cara :
+Upload kode `mnist_cnn.py` kedalam direktori Colab di Google Drive, file tersebut dapat diunduh [disini](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py). Kemudian jalankan file `mnist_cnn.py` tersebut dengan cara :
 
 ```
 !python3 drive/Colab/mnist_cnn.py
@@ -124,7 +126,7 @@ Maka proses training mnist menggunakan pustaka Keras akan seperti berikut.
 ![Training MNIST Code](/images/google-colab-gratis-untuk-belajar-deep-learning/mnist-training.png)
 
 # Dataset Titanic (.csv)
-Lalu bagaimana jika ingin menggunakan dataset yang kita miliki dan mengoperasikannya? Baiklah mari kita coba menggunakan dataset [Titanic]() dan melakukan beberapa perintah di Notebook. Pertama-tama download dulu datasetnya dengan menjalankan perintah berikut pada cell maka file `Titanic.csv` akan otomatis tersimpan pada direktori Colab kita di Google Drive.
+Lalu bagaimana jika ingin menggunakan dataset yang kita miliki dan mengoperasikannya? Baiklah mari kita coba menggunakan dataset [Titanic](https://data.world/nrippner/titanic-disaster-dataset) dan melakukan beberapa perintah di Notebook. Pertama-tama download dulu datasetnya dengan menjalankan perintah berikut pada cell maka file `Titanic.csv` akan otomatis tersimpan pada direktori Colab kita di Google Drive.
 
 ```
 !wget https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/datasets/Titanic.csv -P drive/Colab
@@ -145,7 +147,7 @@ Kode diatas akan menampilkan 5 data pertama pada berkas Titanic.csv dan outputny
 
 
 # Cloning Repo Git
-Mungkin ada satu kasus dimana kita ingin menggunakan kode dari repository seperti GitHub atau Bitbucket dan kita ingin mencobanya didalam Notebook, maka kita perlu mengkloning kode sumber tersebut kedalam Drive dan mengaksesnya melalui Notebook, dan dapat dilakukan dengan mudah seperti mengkloning repository biasanya, caranya seperti berikut
+Mungkin ada satu kasus dimana kita ingin menggunakan kode dari repository seperti GitHub atau Bitbucket dan kita ingin mencobanya didalam Notebook, maka kita perlu mengkloning kode sumber tersebut kedalam Drive dan mengaksesnya melalui Notebook, ini dapat dilakukan dengan mudah seperti mengkloning repository seperti biasanya, caranya seperti berikut
 
 ```
 !git clone https://github.com/imamdigmi/keras-mnist-tutorial.git drive/Colab/keras-mnist-tutorial
