@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://imamdigmi.github.io/post/google-colab-gratis-untuk-belajar-deep-learning/</loc>
+    <lastmod>2018-02-21T05:39:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://imamdigmi.github.io/post/nvidia-setup-archlinux/</loc>
     <lastmod>2018-02-03T06:30:26+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -256,14 +263,14 @@
   
   <url>
     <loc>https://imamdigmi.github.io/tags/deep-learning/</loc>
-    <lastmod>2018-01-25T22:53:14+07:00</lastmod>
+    <lastmod>2018-02-21T05:39:09+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imamdigmi.github.io/categories/deep-learning/</loc>
-    <lastmod>2018-01-25T22:51:05+07:00</lastmod>
+    <lastmod>2018-02-21T05:39:09+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -312,7 +319,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/</loc>
-    <lastmod>2018-02-03T06:30:26+00:00</lastmod>
+    <lastmod>2018-02-21T05:39:09+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -361,7 +368,7 @@
   
   <url>
     <loc>https://imamdigmi.github.io/post/</loc>
-    <lastmod>2018-02-03T06:30:26+00:00</lastmod>
+    <lastmod>2018-02-21T05:39:09+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

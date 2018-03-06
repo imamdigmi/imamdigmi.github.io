@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Thu, 25 Jan 2018 22:51:05 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 21 Feb 2018 05:39:09 +0000</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/categories/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google Colab Gratis Untuk Belajar Deep Learning</title>
+      <link>https://imamdigmi.github.io/post/google-colab-gratis-untuk-belajar-deep-learning/</link>
+      <pubDate>Wed, 21 Feb 2018 05:39:09 +0000</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/google-colab-gratis-untuk-belajar-deep-learning/</guid>
+      <description>Google Colaboratory atau disebut juga Colab adalah tools baru yang dikeluarkan oleh Google Internal Research yang dibuat untuk membantu para Researcher dalam mengolah data untuk keperluan belajar Machine Learning, tools ini secara penggunaan mirip seperti Jupyter Notebook dan dibuat diatas envirounment Jupyter yang tidak memerlukan pengaturan atau setup terlebih dahulu untuk digunakan dan berjalan sepenuhnya pada Cloud dengan memanfaatkan media penyimpanan Google Drive. Yang menjadi menarik perhatian adalah tools Colab ini menyediakan GPU gratis kepada penggunanya sebagai backend komputasi dan dapat digunakan selama 12 jam pada suatu waktu, menarik bukan?</description>
+    </item>
     
     <item>
       <title>TensorFlow - Custom Object Detection API</title>

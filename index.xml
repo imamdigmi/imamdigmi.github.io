@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Sat, 03 Feb 2018 06:30:26 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Feb 2018 05:39:09 +0000</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google Colab Gratis Untuk Belajar Deep Learning</title>
+      <link>https://imamdigmi.github.io/post/google-colab-gratis-untuk-belajar-deep-learning/</link>
+      <pubDate>Wed, 21 Feb 2018 05:39:09 +0000</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/google-colab-gratis-untuk-belajar-deep-learning/</guid>
+      <description>Google Colaboratory atau disebut juga Colab adalah tools baru yang dikeluarkan oleh Google Internal Research yang dibuat untuk membantu para Researcher dalam mengolah data untuk keperluan belajar Machine Learning, tools ini secara penggunaan mirip seperti Jupyter Notebook dan dibuat diatas envirounment Jupyter yang tidak memerlukan pengaturan atau setup terlebih dahulu untuk digunakan dan berjalan sepenuhnya pada Cloud dengan memanfaatkan media penyimpanan Google Drive. Yang menjadi menarik perhatian adalah tools Colab ini menyediakan GPU gratis kepada penggunanya sebagai backend komputasi dan dapat digunakan selama 12 jam pada suatu waktu, menarik bukan?</description>
+    </item>
     
     <item>
       <title>Setup NVIDIA di Arch Linux</title>
@@ -85,7 +94,7 @@ $ export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
       <pubDate>Fri, 19 Jan 2018 23:13:40 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/about/</guid>
-      <description>Hi! I&amp;rsquo;m Imam. I&amp;rsquo;m a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.</description>
+      <description>figure { float: left; text-align: center; font-style: italic; font-size: 8pt; text-indent: 0; margin: 0.5em; padding-right: 0.1em; } img.scaled { margin: 0px 12px 5px 0px; height: 300px; width: 250px; }  Ramita&#39;s graduationHi! I&#39;m Imam. I&#39;m a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.</description>
     </item>
     
     <item>
