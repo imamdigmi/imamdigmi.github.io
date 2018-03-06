@@ -8,7 +8,7 @@ author: "Imam Digmi"
 
 weight: 50
 autoCollapseToc: true
-draft: true
+draft: false
 keywords: [deep learning, machine learning, google, colab]
 tags: [deep learning]
 categories: [Deep Learning]
