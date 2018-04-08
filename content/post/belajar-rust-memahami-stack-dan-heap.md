@@ -2,7 +2,7 @@
 date: 2017-03-17T22:41:07+07:00
 lastmod: 2017-03-17T22:41:07+07:00
 
-title: "Belajar Rust - Memahami Stact Dan Heap"
+title: "Belajar Rust - Memahami Stack Dan Heap"
 description: "Memahami Stack dan Heap di Rust"
 author: "Imam Digmi"
 
