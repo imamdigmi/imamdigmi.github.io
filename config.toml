@@ -49,7 +49,7 @@ copyright = "imamdigmi"
   keywords = ["imamdigmi", "digmi", "blog", "JournalToday"]
   description = "Belajar adalah cara untuk menghargai waktu."
   archive-paginate = 100
-  dateFormatToUse = "2006-01-02"
+  dateFormatToUse = "Monday, Jan 2, 2006"
   moreMeta = true
 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
