@@ -90,13 +90,13 @@ copyright = "imamdigmi"
 
   [params.social]
     a-email = "mailto:imamdigmi@gmail.com"
-    b-stack-overflow = "https://stackoverflow.com/story/imamdigmi"
-    c-twitter = "https://twitter.com/imamdigmi/"
-    d-facebook = "https://facebook.com/imamdigmi/"
-    e-linkedin = "https://www.linkedin.com/in/imamdigmi"
-    f-google = "https://plus.google.com/+imamdigmi"
-    g-github = "https://github.com/imamdigmi/"
-    m-instagram = "https://www.instagram.com/imamdigmi/"
+    b-telegram = "https://t.me/imamdigmi"
+    c-linkedin = "https://www.linkedin.com/in/imamdigmi"
+    d-github = "https://github.com/imamdigmi/"
+    e-stack-overflow = "https://stackoverflow.com/story/imamdigmi"
+    f-twitter = "https://twitter.com/imamdigmi/"
+    g-facebook = "https://facebook.com/imamdigmi/"
+    h-instagram = "https://www.instagram.com/imamdigmi/"
 
 # Uncomment these options to make hugo output .md files.
 #[mediaTypes]
