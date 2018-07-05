@@ -7,20 +7,36 @@ description: "Aku mencoba untuk menjadi suami yang baik dan menjadi bapak yang p
 author: "Imam Digmi"
 
 weight: 50
-draft: false
+draft: true
 keywords: ["life", "vision", "father"]
 tags: ["diary"]
 categories: ["Diary"]
 ---
 
-# Dengan istri ku
-## Ketika kita memasuki tahap perkenalan
-## Sebuah ikatan yang indah
-## Ketika istri ku mengandung anak ku
-## Ketika istri ku melahirkan
-### Diusia pertengahan kandungan
+Siapapun kamu, kamu adalah wanita yang telah lama ku pilih.
 
----
+Siapapun kamu, kamu adalah wanita yang telah lama ku nantikan.
+
+Siapapun kamu, kamu adalah wanita yang telah lama ku persiapkan.
+
+Aku selalu memikirkan tentang mu,
+
+tentang kelembutan mu,
+
+tentang halusnya tutur kata mu,
+
+tentang cerdasnya daya fikir mu dalam menjaga dan mendidik anak-anak ku,
+
+tentang tulusnya kasih sayang mu untuk menemani ku dan anak-anak ku.
+
+Banyak hal yang ingin ku ungkapkan kepada mu tenang diriku, tentang impian ku, rencana besar ku, buruk ku, baik ku, lemah ku, kuat ku, sedih ku, bahagia ku, banyak pula yang ingin aku ceritakan tentang apa yang telah aku persiapkan untuk mu.
+
+# Dengan istri ku
+## Ketika kita baru berkenalan
+## Sebuah ikatan yang indah
+## Ketika kau mengandung anak ku
+## Ketika kau melahirkan anak ku
+### Diusia pertengahan kandungan mu
 
 # Dengan anak ku
 ## Kamu dalam kandungan ibu mu
@@ -30,3 +46,4 @@ categories: ["Diary"]
 ## Ketika kamu dapat berdiri
 ## Ketika kamu dapat berjalan
 ## Ketika kamu dapat berlari
+## Ketika kamu dapat berbicara
