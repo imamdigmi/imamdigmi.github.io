@@ -39,4 +39,4 @@ mathjaxEnableSingleDollar: false
     }
 </style>
 
-<p><figure><img class="scaled" src="/images/about.jpg" alt="Ramita's graduation"><figcaption>Ramita's graduation</figcaption></figure>Hi! I'm Imam. I'm a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.<br style="clear:both"/></p>
+<p><figure><img class="scaled" src="/images/about.jpg" alt="Ramita's graduation"><figcaption>Ramita's graduation</figcaption></figure>Hi! I'm Imam. I'm a Computer Science student at STMIK AKAKOM Yogyakarta. I am Data Engineering enthusiast and I love reading about, thinking about, designing, building, and most of all, understanding distributed and scalable systems, and programming languages. I spend my time researching topics related to Big Data and Machine Learning fields at Digmi Lab.<br style="clear:both"/></p>
