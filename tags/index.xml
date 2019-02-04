@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Sat, 03 Feb 2018 06:30:26 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Nov 2018 13:41:36 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apache Airflow</title>
+      <link>https://imamdigmi.github.io/tags/apache-airflow/</link>
+      <pubDate>Sat, 17 Nov 2018 13:41:36 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/apache-airflow/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Archlinux</title>
@@ -18,6 +27,15 @@
       <pubDate>Sat, 03 Feb 2018 06:30:26 +0000</pubDate>
       
       <guid>https://imamdigmi.github.io/tags/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Pipeline</title>
+      <link>https://imamdigmi.github.io/tags/data-pipeline/</link>
+      <pubDate>Sat, 17 Nov 2018 13:41:36 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/data-pipeline/</guid>
       <description></description>
     </item>
     
@@ -42,7 +60,7 @@
     <item>
       <title>Diary</title>
       <link>https://imamdigmi.github.io/tags/diary/</link>
-      <pubDate>Sun, 14 Aug 2016 09:27:12 +0700</pubDate>
+      <pubDate>Wed, 20 Apr 2016 17:44:20 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/tags/diary/</guid>
       <description></description>

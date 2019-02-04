@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tutorial Airflow - Pengenalan (Bagian 1) - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Tutorial Airflow - Pengenalan (Bagian 1)" />
+<meta name="keywords" content="airflow, apache airflow, data, pipeline, data engineer" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53-DEV" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/tutorial-airflow-part-1/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Tutorial Airflow - Pengenalan (Bagian 1)" />
+<meta property="og:description" content="Tutorial Airflow - Pengenalan (Bagian 1)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/tutorial-airflow-part-1/" /><meta property="article:published_time" content="2018-11-01T19:42:26&#43;07:00"/>
+<meta property="article:modified_time" content="2019-01-28T19:42:26&#43;07:00"/>
+
+<meta itemprop="name" content="Tutorial Airflow - Pengenalan (Bagian 1)">
+<meta itemprop="description" content="Tutorial Airflow - Pengenalan (Bagian 1)">
+
+
+<meta itemprop="datePublished" content="2018-11-01T19:42:26&#43;07:00" />
+<meta itemprop="dateModified" content="2019-01-28T19:42:26&#43;07:00" />
+<meta itemprop="wordCount" content="2450">
+
+
+
+<meta itemprop="keywords" content="data-pipeline,apache-airflow," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tutorial Airflow - Pengenalan (Bagian 1)"/>
+<meta name="twitter:description" content="Tutorial Airflow - Pengenalan (Bagian 1)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tutorial Airflow - Pengenalan (Bagian 1)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Thursday, Nov 1, 2018 </span>
+        <div class="post-category">
+            
+              <a href="/categories/data-pipeline/"> Data Pipeline </a>
+            
+              <a href="/categories/python/"> Python </a>
+            
+          </div>
+        <span class="more-meta"> 2450 word </span>
+        <span class="more-meta"> 12 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#workflow-management-systems">Workflow Management Systems</a></li>
+<li><a href="#apache-airflow">Apache Airflow</a></li>
+<li><a href="#kenapa-apache-airflow">Kenapa Apache Airflow?</a>
+<ul>
+<li><a href="#konsep-utama">Konsep Utama</a>
+<ul>
+<li><a href="#dag">DAG</a></li>
+<li><a href="#tasks">Tasks</a></li>
+<li><a href="#operator">Operator</a></li>
+<li><a href="#scheduler">Scheduler</a></li>
+</ul></li>
+<li><a href="#istilah-lain">Istilah Lain</a>
+<ul>
+<li><a href="#start-date">Start Date</a></li>
+<li><a href="#schedule-interval">Schedule Interval</a></li>
+<li><a href="#dag-run">DAG Run</a></li>
+<li><a href="#execution-date">Execution Date</a></li>
+<li><a href="#task-instances">Task Instances</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#recap">Recap</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (<em>insights</em>) yang mendalam dari data tentang kebutuhan (<em>needs</em>), perilaku (<em>behaviors</em>), dan motif pelanggan mereka.</p>
+
+<p><strong><h4>TL;DR</h4></strong></p>
+
+<p>Seiring semakin banyaknya bisnis yang didorong oleh data (<em>data-driven</em>), ada kebutuhan yang semakin besar untuk melaksanakan &ldquo;pipa&rdquo; pemrosesan data (data pipeline) yang kompleks dan yang secara teratur mengekstraksi data dari berbagai sumber, mengubah data menjadi format yang memfasilitasi logika bisnis, dan menyimpan artefak yang dihasilkan dengan cara yang memfasilitasi peningkatan produk dan pengambilan keputusan pemangku kepentingan (<em>stakeholder</em>).</p>
+
+<p>Hubungan perusahaan-perusahaan (kebanyakan adalah startup) seperti: <a href="https://tokopedia.com">Tokopedia</a>, <a href="https://bukalapak.com">BukaLapak</a>, <a href="https://www.go-jek.com">GO-JEK</a> dengan data tentu tidak dapat terhindarkan. Dengan produk dan penggunanya yang bertumbuh sangat pesat, ribuan, jutaan, bahkan milyaran, dan mencatat ratusan juta peristiwa (<em>events</em>) setiap harinya tentunya perusahaan tersebut membutuhkan kerangka kerja (<em>framework</em>) untuk mengatur jalur pemrosesan data (<em>data pipeline</em>) yang pastinya sangat kompleks, atau alur kerja data seperti yang sering mereka sebut sebagai <strong>workflow</strong>.</p>
+
+<p><strong><h4>Penting</h4></strong></p>
+
+<p>Sebelum kita memahami apa itu Apache Airflow, kita wajib tahu dulu tentang masalah yang melatar belakangi mengapa Apache Airflow dibuat dan menjadi salah satu proyek terbesar di GitHub yang saat ini jumlah stargazers nya lebih dari 10.000, dengan begitu kita tidak tersesat dalam menggunakannya dan mudah untuk mengaplikasikannya.</p>
+
+<p>Karena saya sering mendapatkan pertanyaan seperti ini: &ldquo;Mam, kamu bikin aplikasi Android pake apa? Java atau Android Studio?&rdquo; Aaaaakkkhhh gemesss!, dan, &ldquo;Mam, bikin web pake apa yaa? XAMPP? atau Sublime?&rdquo; Aaaaakkh geliii tolong jangan siksa akuuuu 😥, yaaa ada benernya sih tapi kenapa kayak gitu pertanyaannya 😑</p>
+
+<h1 id="workflow-management-systems">Workflow Management Systems</h1>
+
+<p>Singkatnya, Workflow Management Systems (WFMS) adalah suatu cara untuk mengatur tugas-tugas yang harus dikerjakan untuk mencapai tujuan/tahapan tertentu agar tugas-tugas tersebut tidak <em>repetitive</em>.</p>
+
+<p>Lebih detilnya <strong>Workflow</strong> adalah serangkaian tugas-tugas yang harus dikerjakan entah secara berurutan maupun tidak, biasanya tugas-tugas tersebut memiliki ketergantungan satu sama lain. <strong>Management</strong> adalah cara mengatur tugas-tugas diatas. Sedangkan <strong>System</strong> adalah serangkaian komponen yang saling berkaitan demi mencapai tujuan tertenti.</p>
+
+<p><strong>Apa tujuannya? jelas untuk menyederhanakan proses yang berulang-ulang</strong></p>
+
+<h1 id="apache-airflow">Apache Airflow</h1>
+
+<p><a href="https://airflow.apache.org/">Apache Airflow</a> adalah tool untuk orkestrasi pada komputasi manajemen workflow namun ada juga yang menyebut bahwa Airflow adalah ETL Framework, <strong>kamu jangan bingung</strong> ini adalah definisi yang sama saja, karena ETL singkatnya adalah serangkaian tugas-tugas atau proses dalam dunia data.</p>
+
+<p>Jika kamu ditanya, &ldquo;apa itu Apache Airflow?&rdquo; kemudian kamu menjawab: Apache Airflow adalah Framework ETL! (ini benar), atau, Apache Airflow adalah tool Workflow Management System untuk data! (ini juga benar), asalkan jangan menjawab &ldquo;Apache Airflow adalah Dashboard berbasis web untuk ETL&rdquo; (ini salah).</p>
+
+<p>Mengapa Apache Airflow dibuat? seperti yang dikatakan mas Maxime Beauchemin si pembuat Airflow dalam artikelnya yang berjudul <a href="https://medium.freecodecamp.org/the-rise-of-the-data-engineer-91be18f1e603">The Rise of the Data Engineer</a></p>
+
+<p><center style="font-size: 13pt; font-style: italic;">
+    We've also observed a general shift away from drag-and-drop ETL (Extract Transform and Load) tools towards a more programmatic approach. Product know-how on platforms like Informatica, IBM Datastage, Cognos, AbInitio or Microsoft SSIS isn't common amongst modern data engineers, and being replaced by more generic software engineering skills along with understanding of programmatic or configuration driven platforms like Airflow, Oozie, Azkabhan or Luigi. It's also fairly common for engineers to develop and manage their own job orchestrator/scheduler.
+</center></p>
+
+<p>Yang pada intinya, ETL di zaman sekarang (era Big Data) lebih kompleks ketimbang zaman dahulu yang tidak dapat diselesaikan dengan hanya drag-and-drop task, maka dari itu perlu dibuat suatu tool untuk mengakomodir ETL yang super kompleks tersebut.</p>
+
+<p>Dan, yang perlu kamu ingat adalah Apache Airflow diciptakan untuk solusi Batch Processing <strong>bukan Stream Processing atau Data Streaming</strong>, krna itu jika kamu hendak mencari tool untuk <em>Stream Processing</em> maka pilihlah <a href="http://spark.apache.org/streaming/">Apache Spark</a>, <a href="https://storm.apache.org/">Apache Storm</a> dan kawan-kawannya.</p>
+
+<h1 id="kenapa-apache-airflow">Kenapa Apache Airflow?</h1>
+
+<p>Jika kamu seorang web developer, pasti kalian pernah menggunakan framework bukan? jika kalian menggunakan Python maka framework yang dapat digunakan adalah: Django, Flask, Falcon, dll, jika kamu menggunakan PHP? kalian bisa menggunakan: Laravel, Symfony, Yii, dst. Tapi bagaimana jika Workflow Management System? ada banyak pilihannya, kalian bisa menggunakan: Apache Airflow (AirBnB), Luigi (Spotify), Azkaban (LinkedIn), Pinball (Pinterest), dll.</p>
+
+<p>Berikut ini adalah komparasi beberapa framework untuk WFMS (lihat lebih lengkapnya <a href="http://bytepawn.com/luigi-airflow-pinball.html">disini</a>)
+<img src="/images/tutorial-airflow/part-1-1.png" alt="Luigi vs Airflow vs Pinball" />
+<p><center style="font-size: 10pt; font-style: italic;"><a href="http://bytepawn.com/luigi-airflow-pinball.html">Sumber</a>: Marton Trencseni&rsquo;s - Luigi vs Airflow vs Pinball</center></p></p>
+
+<p>Seperti yang dapat kita lihat bahwa Apache Airflow memiliki banyak fitur, dan didukung dengan integrasi tool eksternal yang banyak seperti: Hive, Pig, Google BigQuery, Amazon Redshift, Amazon S3, dst dan juga Apache Airflow memiliki keunggulanuntuk urusan <em>scaling</em>. Wajar saja kita Apache Airflow menjadi pilihan yang tepat untuk membangun data pipeline saat ini.</p>
+
+<h2 id="konsep-utama">Konsep Utama</h2>
+
+<p>Sebagian orang atau bahkan diantara kamu biasanya tidak sabar dalam hal belajar, selalu buru-buru menulis kode tanpa mengetahui konsep dasarnya, itulah mengapa kebanyakan orang ketika belajar tersesat pada arah yang salah (dulu akupun begitu 😁). Maka dari itu, kita perlu memahami konsep yang digunakan oleh Apache Airflow sehingga kita dapat lebih mudah mengimplementasikan dan mengaplikasikannya ke dalam dunia nyata dan apabila jika terdapat suatu masalah kamu dengan mudah mengatasinya.</p>
+
+<p>Atau bahkan, kamu bisa saja kebingungan bagaimana cara membuat workflow, sedangkan kamu familiar dengan bahasa Python, karena itu, ini bukan hanya programming yang menjadi tumpuan melainkan sebuah metodologi dan konsep bagaimana membangun workflow, karena Apache Airflow sudah mengadopsi <em>best-practice</em> ETL atau workflow, itulah salah satu keuntungan yang kita dapatkan ketika menggunakan Airflow.</p>
+
+<p><center style="font-size: 13pt; font-style: italic;">
+    Karena sejatinya, teknologi adalah sebuah produk dimana kita sebuah menciptakan solusi.
+</center></p>
+
+<p>Berikut ini adalah komponen utama dalam membangun workflow atau data-pipeline menggunakan Apache Airflow, komponen utamanya adalah DAG, karena setiap kali kita membuat sebuah workflow pastinya kita akan menuliskan bariskan kode berupa DAG.</p>
+
+<p><img src="/images/tutorial-airflow/part-1-2.png" alt="DAG" />
+<p><center style="font-size: 10pt; font-style: italic;"><em>Directed Acyclic Graphs</em></center></p></p>
+
+<h3 id="dag">DAG</h3>
+
+<p>DAG adalah kepanjangan dari <em>Directed Acyclic Graphs</em> yang kita gunakan untuk membuat suatu workflow atau kita juga dapat memahami DAG sebagai sekumpulan dari Tasks. DAG inilah yang mencerminkan tentang alur dari workflow beserta relasi antar proses dan ketergantungan antar prosesnya.</p>
+
+<p><center><img src="/images/tutorial-airflow/part-1-3.png" alt="Contoh DAG"></center>
+<p><center style="font-size: 10pt; font-style: italic;">Contoh DAG Sederhana 1</center></p></p>
+
+<p>Seperti contoh diatas, secara sederhana kita membuat DAG yang memiliki 3 tugas di dalamnya yaitu: <code>tugas_1</code>, <code>tugas_2</code>, <code>tugas_3</code>, tugas-tugas tersebut ada urutannya 1-2-3, bisa dikatakan bahwa <code>tugas_1</code> harus berhasil dijalankan sebelum <code>tugas_2</code> dijalankan dan begitu pun juga dengan <code>tugas_3</code> bahwa akan dijalankan hanya jika <code>tugas_2</code> berhasil dijalankan.</p>
+
+<p><center><img src="/images/tutorial-airflow/part-1-4.png" alt="Contoh DAG"></center>
+<p><center style="font-size: 10pt; font-style: italic;">Contoh DAG Sederhana 2</center></p></p>
+
+<p>Contoh lainnya adalah seperti DAG pada gambar diatas yang menunjukkan bahwa, kita memiliki 4 tugas yaitu: <code>tugas_1</code>, <code>tugas_1_2</code>, <code>tugas_2</code>, dan <code>tugas_3</code>. Yang berbeda dari DAG sebelumnya yakni pada Task <code>tugas_2</code> tidak memiliki ketergantungan pada Task sebelumnya, namun Task <code>tugas_3</code> akan dijalankan hanya jika <code>tugas_1_2</code> dan <code>tugas_2</code> berhasil dijalankan.</p>
+
+<p>Tapi bagaimana jika ada suatu Task yang gagal dijalankan (terjadi error)? ya tentunya Task yang gagal tersebut akan dijalankan ulang (<em>retry</em>) sampai berhasil dijalankan dan Task selanjutnya akan menunggu dengan rentang waktu yang kita tentukan barulah kemudian Task selanjutnya dijalankan.</p>
+
+<p>Dengan ini, DAG dapat mendefinisikan bagaimana kita ingin melakukan workflow atau data-pipeline kita, tapi kita belum menentukan apa saja yang dilakukan oleh tugas-tugas tersebut, bisa saja untuk <code>tugas_1</code> bertanggung jawab dalam mengambil data kemudian <code>tugas_2</code> bertanggung untuk membersihkan data dan yang terakhir <code>tugas_3</code> bertanggung jawab dalam menyimpan data hasil dari <code>tugas_2</code> kedalam data-store kita.</p>
+
+<p><strong>Yang perlu kita ingat bahwa</strong>:</p>
+
+<ol>
+<li>DAG bersifat <u>&ldquo;acyclic&rdquo;</u> yang artinya tiap Task tidak akan berputar atau tidak kembali ke Task sebelumnya. Jika dianalogikan, ini seperti seorang ayah dari seorang anak, tentunya sang ayah kandung tidak akan menjadi seorang anak dari anak kandungnya sendiri</li>
+<li>DAG tidak peduli apa yang sedang kita lakukan, karena DAG hanya bertugas dalam memastikan tugas-tugas didalamnya, dieksekusi pada waktu yang tepat, dengan urutan yang tepat, dan dengan penanganan yang benar atas masalah yang tidak terduga.</li>
+<li>Dan juga, di dalam membuat DAG terdapat <code>dag_id</code> yang digunakan Airflow untuk mengidentifikasi <strong>satu</strong> DAG saja, ini bersifat unik yang artinya kita tidak boleh menggunakan nama <code>dag_id</code> lebih dari satu kali</li>
+</ol>
+
+<blockquote>
+<p>Saat Airflow mencari DAG, Airflow hanya akan mengakui berkas <code>.py</code> yang memiliki string &ldquo;airflow&rdquo; dan &ldquo;DAG&rdquo; di dalamnya.</p>
+</blockquote>
+
+<h3 id="tasks">Tasks</h3>
+
+<p>Tasks adalah &ldquo;aktivitas&rdquo; yang kamu buat kemudian dijalankan oleh Operator. Task bisa berupa Python function atau eksternal yang bisa dipanggil. Tasks ini diharapkan bersifat <em>idempotent</em> (penjelasan tentang idempotent dapat dilihat <a href="https://en.wikipedia.org/wiki/Idempotence">disini</a>, <a href="https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation">disini</a>, dan <a href="https://stackoverflow.com/questions/40296211/what-is-the-difference-between-an-idempotent-and-a-deterministic-function">disini</a>), yang intinya, jika nilai yang dimasukkan sama maka hasilnya akan tetap sama — tidak peduli berapa kali Tasks ini dijalankan.</p>
+
+<p><strong>Yang perlu diingat bahwa</strong>:
+Dalam membuat Tasks, terdapat <code>task_id</code> sama halnya dengan <code>dag_id</code> ini bersifat unik tidak boleh digunakan berulang kali dalam satu DAG itu sendiri tapi <code>task_id</code> boleh sama dengan DAG lainnya, misal: <code>dag_1</code> memiliki <code>task_a</code> dan <code>task_b</code> maka kita boleh menggunakan <code>task_id</code> yang sama pada <code>dag_2</code>.</p>
+
+<h3 id="operator">Operator</h3>
+
+<p>Operator adalah yang &ldquo;menjalankan&rdquo; Tasks yang kamu buat. Ketika kita membuat suatu workflow (data-pipeline) di Airflow, maka workflow tersebut didefinisikan menggunakan Operator di dalam DAG, karena setiap operator menjalankan Tasks tertentu yang ditulis sebagai Python function atau perintah shell. Airflow sudah membuatkan banyak sekali Operator yang bisa kita gunakan untuk keperluan ini, tapi buat kamu yang selalu penasaran untuk mencoba dan merasa ada yang kurang, kamu bisa membuatnya sendiri dengan meng-<em>extend</em> class <code>BaseOperator</code> dan meng-<em>implement</em> method <code>execute()</code>.</p>
+
+<p><strong>Kamu jangan bingung dengan Operator dan Tasks</strong>, Tasks itu adalah &ldquo;apa yang kita jalankan&rdquo; sedangkan Operator adalah &ldquo;cara bagaimana kita menjalankannya&rdquo;, sebagai contoh, kamu ingin makan mie rebus maka mie rebus inilah disebut sebagai <strong>Tasks</strong> dan cara/langkah kamu memasaknya disebut sebagai <strong>Operator</strong>.</p>
+
+<h3 id="scheduler">Scheduler</h3>
+
+<p>Scheduler (penjadwalan) adalah otak di balik pengaturan workflow di Airflow atau jika dianalogikan, Scheduler adalah &ldquo;petugas&rdquo; yang bertanggung jawab dalam memantau <strong>semua DAG beserta Tasks</strong> yang ada, dan memicu (men-<em>trigger</em>) <strong>semua</strong> <em>Task Instances</em> yang dependensinya telah terpenuhi, scheduler ini juga yang memastikan DAGs yang ada di dalam <em>DAG-Bag</em> tetap tersinkronisasi dengan Airflow, makanya setiap kali kita menambahkan satu berkas Python berisi DAG kedalam DAg-Bags Airflow akan segera mengetahuinya dan menampilkannya di Web Dashboard (selama scheduler dijalankan).</p>
+
+<!-- ### Backfill -->
+
+<!-- ### Executor -->
+
+<!-- ### Sensor -->
+
+<!-- ### XCom -->
+
+<h2 id="istilah-lain">Istilah Lain</h2>
+
+<p>Selain konsep-konsep diatas ada juga istilah-istilah yang menjadi kunci utama dalam membangun workflow dan mesti kamu pahami, karena jika kamu salah memahami ini atau bahkan tidak paham maka workflow atau data-pipeline yang kamu buat tidak akan sesuai dengan yang kamu harapkan, istilah ini dapat kamu jumpai dalam menuliskan DAG, Task, maupun di web dashboard Airflow.</p>
+
+<blockquote>
+<p>Isitlah ini juga sering saya temukan dan dipertanyakan di StackOverflow maupun di forum lainnya yang membuat kebanyakan orang bingung</p>
+</blockquote>
+
+<h3 id="start-date">Start Date</h3>
+
+<p><code>start_date</code> adalah tanggal dimulainya data kamu diambil. <code>start_date</code> ini biasanya dituliskan di dalam <code>default_args</code> pada saat kamu membuat DAG. Sebagai contoh, kamu memiliki 5 data seperti berikut:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="left">nama</th>
+<th align="left">tanggal</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">Data Satu</td>
+<td align="left">2018-10-30</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="left">Data Dua</td>
+<td align="left">2018-10-31</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="left">Data Tiga</td>
+<td align="left">2018-11-01</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="left">Data Empat</td>
+<td align="left">2018-11-02</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="left">Data Lima</td>
+<td align="left">2018-11-03</td>
+</tr>
+</tbody>
+</table>
+
+<p>Jika <code>start_date</code> nya adalah 2018-11-01 (<code>datetime(2018, 11, 1)</code>) maka data yang akan kamu dapatkan adalah data dengan id 3, 4, dan 5. Jadi data yang id nya 1 dan 2 tidak akan ikut diambil karena diluar <code>start_date</code> yang kamu tentukan.</p>
+
+<p><strong>Penting</strong>: <code>start_date</code> tidak boleh menggunakan tanggal dinamis seperti <code>datetime.now()</code> karena akan membingungkan dan akan menimbulkan permasalahan</p>
+
+<blockquote>
+<p>Tips: Terdapat function bantuan yang disediakan oleh Airflow yaitu <code>airflow.utils.dates.days_ago(n)</code> untuk mendapatkan tanggal yang lalu dimana <code>n</code> adalah total harinya</p>
+</blockquote>
+
+<h3 id="schedule-interval">Schedule Interval</h3>
+
+<p><code>schedule_interval</code> adalah rentang waktu DAG dijalankan. <code>schedule_interval</code> ini diletakkan pada argument DAG yang nilainya dapat berupa <code>timedelta(n)</code> atau berupa string yang memuat <a href="https://en.wikipedia.org/wiki/Cron#CRON_expression">Cron Expression</a> atau preset yang telah disediakan oleh Airflow, berikut ini adalah contoh dari ketiga pilihan tersebut untuk menambah pemahaman kamu:</p>
+
+<table>
+<thead>
+<tr>
+<th>Kode</th>
+<th>Rentang waktu</th>
+<th>Jenis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>DAG(..., schedule_interval=timedelta(days=1))</code></td>
+<td>Perhari</td>
+<td>Python Timedelta</td>
+</tr>
+
+<tr>
+<td><code>DAG(..., schedule_interval='0 0 * * 1')</code></td>
+<td>Tiap hari Senin jam 00:00</td>
+<td>Cron Expression</td>
+</tr>
+
+<tr>
+<td><code>DAG(..., schedule_interval='@hourly')</code></td>
+<td>Per satu jam</td>
+<td>Preset</td>
+</tr>
+</tbody>
+</table>
+
+<p>dan berikut ini adalah daftar preset yang diambil dari <a href="https://airflow.apache.org/scheduler.html#dag-runs">Official Documentation Ariflow</a></p>
+
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Penjadwalan</th>
+<th>Cron</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td>Tidak terjadwal</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>@once</code></td>
+<td>Hanya sekali</td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>@hourly</code></td>
+<td>Tiap jam</td>
+<td><code>0 * * * *</code></td>
+</tr>
+
+<tr>
+<td><code>@daily</code></td>
+<td>Tiap hari pada tengah malam</td>
+<td><code>0 0 * * *</code></td>
+</tr>
+
+<tr>
+<td><code>@weekly</code></td>
+<td>Tiap minggu pagi pada tengah malam</td>
+<td><code>0 0 * * 0</code></td>
+</tr>
+
+<tr>
+<td><code>@monthly</code></td>
+<td>Tiap awal bulan pada tengah malam</td>
+<td><code>0 0 1 * *</code></td>
+</tr>
+
+<tr>
+<td><code>@yearly</code></td>
+<td>Tiap awal tahun pada tengah malam (1 Januari)</td>
+<td><code>0 0 1 1 *</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><center><img src="/images/tutorial-airflow/part-1-4.png" alt="Contoh DAG"></center>
+<p><center style="font-size: 10pt; font-style: italic;">Contoh DAG Sederhana 2</center></p></p>
+
+<p><strong>Penting</strong>:</p>
+
+<ol>
+<li>Jika ingin tidak terjadwal maka nilainya harus <code>None</code> tidak boleh <code>'None'</code> (string)</li>
+<li>Nilai default dari <code>schedule_interval</code> adalah satu hari yaitu <code>datetime.timedelta(1)</code></li>
+<li>Jangan mendefinisikan <code>schedule_interval</code> didalam <code>default_args</code> melainkan harus sebagai argument</li>
+<li><code>schedule_interval</code> tidak boleh didefinisikan ulang (<em>override</em>) oleh Task</li>
+</ol>
+
+<blockquote>
+<p>Tips: kamu dapat menggunakan <a href="https://crontab.guru/">crontab.guru</a> sebagai sarana untuk menentukan <code>schedule_interval</code> ala-ala cronjob</p>
+</blockquote>
+
+<h3 id="dag-run">DAG Run</h3>
+
+<p>Seperti namanya, DAG Run adalah <strong>DAG yang dijalankan</strong> oleh Airflow, sebenarnya dibalik ini Airflow membuat objek yang mewakili instantiasi DAG dalam waktu tertentu. Kita ambil contoh pada sub bagian <a href="/post/tutorial-airflow-part-1/#start-date">Start Date</a>, jika sekarang tanggal 2018-11-04 dan kita menetapkan <code>schedule_interval</code> nya <code>@daily</code> maka DAG Run yang kita miliki adalah 4 karena <code>start_date</code> kita adalah 2018-11-01, yang artinya Airflow sudah menjalankan DAG tersebut empat kali.</p>
+
+<p>Lalu kapan DAG kita dijalankan oleh Airflow? Jawabannya adalah, ketika <code>start_date</code> + <code>schedule_interval</code> telah terlewati.</p>
+
+<h3 id="execution-date">Execution Date</h3>
+
+<p>Ini adalah tanggal atau waktu yang <strong>menunjukkan kapan</strong> DAG dijalankan. Karena tentunya kita ingin mengetahui kapan saja DAG tersebut dijalankan dalam waktu tertentu maka Execution Date muncul ketika DAG Run diinstantiasi. Sebagai contoh, mari kita ambil kasus dan data pada sub bagian <a href="/post/tutorial-airflow-part-1/#start-date">Start Date</a> tadi, jika kita merujuk pada penjelasan sub bagian <a href="/post/tutorial-airflow-part-1/#dag-run">Dag Run</a> maka execution date nya adalah sebagai berikut:</p>
+
+<ol>
+<li><code>2018-11-01 00:00:00</code></li>
+<li><code>2018-11-02 00:00:00</code></li>
+<li><code>2018-11-03 00:00:00</code></li>
+<li><code>2018-11-04 00:00:00</code></li>
+</ol>
+
+<h3 id="task-instances">Task Instances</h3>
+
+<p>Task Instace adalah Task di dalam DAG <strong>yang telah di instantiasi</strong> oleh Airflow. Semua Task terasosiasi dengan DAG Run dan Task tersebut direferensikan sebagai <code>TaskInstance</code>, dengan kata lain sebuah <code>TaskInstance</code> adalah Task yang terinstantiasi dan memiliki konteks <code>ExecutionDate</code>. Sebagai contoh kita ambil dari data sebelumnya dan kita memiliki 3 Task maka Task Instance nya adalah sebagai Berikut:</p>
+
+<ol>
+<li>DAG Run <code>2018-11-01 00:00:00</code>: <code>task_1</code>, <code>task_2</code>, <code>task_3</code></li>
+<li>DAG Run <code>2018-11-02 00:00:00</code>: <code>task_1</code>, <code>task_2</code>, <code>task_3</code></li>
+<li>DAG Run <code>2018-11-03 00:00:00</code>: <code>task_1</code>, <code>task_2</code>, <code>task_3</code></li>
+<li>DAG Run <code>2018-11-04 00:00:00</code>: <code>task_1</code>, <code>task_2</code>, <code>task_3</code></li>
+</ol>
+
+<p>DAGRun dan TaskInstance juga konsep utama dalam Airflow, setiap DAGRun dan TaskInstance saling terhubung dengan entri dalam database metadata Airflow yang mencatat kondisi (status) mereka seperti: &ldquo;queued&rdquo;, &ldquo;running&rdquo;, &ldquo;failed&rdquo;, &ldquo;skipped&rdquo;, dan &ldquo;up for retry&rdquo;. Membaca (<em>read</em>) dan memperbarui (<em>update</em>) status ini adalah kunci untuk penjadwalan dan proses eksekusi yang dilakukan oleh Airflow.</p>
+
+<h1 id="recap">Recap</h1>
+
+<p>Secara sederhana, berikut ini adalah alur bagaimana Scheduler Airflow bekerja (kan Scheduler &ldquo;petugasnya&rdquo; Airflow dalam memantu DAG 😄)</p>
+
+<ol>
+<li>Memuat DAG yang tersedia di DagBag</li>
+<li>Scheduler menggunakan DAG yang telah dimuat untuk mengidentifikasi dan atau menginisialisasi DagRun di metadata database</li>
+<li>Scheduler :
+
+<ul>
+<li>memeriksa kondisi (status) dari TaskInstances yang terhubung dengan DagRun yang sedang aktif</li>
+<li>menyelesaikan semua ketergantungan tiap TaskInstance</li>
+<li>mengidentifikasi TaskInstance yang harus dieksekusi</li>
+<li>menambahkannya kedalam worker queue</li>
+<li>memperbarui status dari TaskInstance dari &ldquo;newly-queued&rdquo; ke &ldquo;queued&rdquo; pada database</li>
+</ul></li>
+<li>Tiap worker yang tersedia, mengambil TaskInstance dari queue dan menjalankannya kemudian memperbarui status TaskInstance dari &ldquo;queued&rdquo; ke &ldquo;running&rdquo;</li>
+<li>Ketika TaskInstance berhasil dijalankan, maka worker yang terkait mengubah statusnya pada database menjadi: &ldquo;finished&rdquo;, &ldquo;failed&rdquo;, dst (tergantung dari kondisi TaskInstance saat dijalankan)</li>
+<li>Scheduler mengubah status semua DagRun yang aktif ke: &ldquo;running&rdquo;, &ldquo;failed&rdquo;, &ldquo;finished&rdquo;. Tergantung pada semua kondisi TaskInstance</li>
+<li>Ulangi langkah 2 s/d 6</li>
+</ol>
+
+<p><strong>Sumber</strong>:</p>
+
+<ul>
+<li><a href="https://medium.freecodecamp.org/the-rise-of-the-data-engineer-91be18f1e603">The Rise of the Data Engineer</a></li>
+<li><a href="https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation">What Is an Idempotent</a></li>
+<li><a href="https://airflow.apache.org/faq.html">Airflow FAQ</a></li>
+<li><a href="https://airflow.apache.org/concepts.html">Airflow Concepts</a></li>
+<li><a href="https://airflow.apache.org/scheduler.html">Airflow Scheduler</a></li>
+<li><a href="https://airflow.apache.org/code.html">Airflow API</a></li>
+</ul>
+
+<p><strong><h4>Di bagian ini saya akan memperbaruinya secara berkala agar kamu dapat kembali ke bagian ini kapan saja untuk mendapatkan pemahaman lebih (walaupun tidak semuanya), saya tidak berjanji namun akan diusahakan.</h4></strong></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">Monday, Jan 28, 2019</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/data-pipeline/">data-pipeline</a>
+          
+          <a href="/tags/apache-airflow/">apache-airflow</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/tutorial-airflow-part-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tutorial Airflow - Instalasi (Bagian 2)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/google-colab-gratis-untuk-belajar-deep-learning/">
+            <span class="next-text nav-default">Google Colab Gratis Untuk Belajar Deep Learning</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://t.me/imamdigmi" class="iconfont icon-telegram" title="telegram"></a>
+      <a href="https://www.linkedin.com/in/imamdigmi" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74531115-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

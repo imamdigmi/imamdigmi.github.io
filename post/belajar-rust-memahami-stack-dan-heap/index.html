@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Belajar Rust - Memahami Stact Dan Heap - JournalToday</title>
+  <title>Belajar Rust - Memahami Stack Dan Heap - JournalToday</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -25,10 +25,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.34" />
+<meta name="generator" content="Hugo 0.53-DEV" />
 
 
-<link rel="canonical" href="https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/" />
+<link rel="canonical" href="https://imamdigmi.github.io/post/belajar-rust-memahami-stack-dan-heap/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -46,28 +46,13 @@
 <link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="Belajar Rust - Memahami Stact Dan Heap" />
+<meta property="og:title" content="Belajar Rust - Memahami Stack Dan Heap" />
 <meta property="og:description" content="Memahami Stack dan Heap di Rust" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/" />
-
-
-
-<meta property="article:published_time" content="2017-03-17T22:41:07&#43;07:00"/>
-
+<meta property="og:url" content="https://imamdigmi.github.io/post/belajar-rust-memahami-stack-dan-heap/" /><meta property="article:published_time" content="2017-03-17T22:41:07&#43;07:00"/>
 <meta property="article:modified_time" content="2017-03-17T22:41:07&#43;07:00"/>
 
-
-
-
-
-
-
-
-
-
-
-<meta itemprop="name" content="Belajar Rust - Memahami Stact Dan Heap">
+<meta itemprop="name" content="Belajar Rust - Memahami Stack Dan Heap">
 <meta itemprop="description" content="Memahami Stack dan Heap di Rust">
 
 
@@ -78,7 +63,8 @@
 
 
 <meta itemprop="keywords" content="rust," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Belajar Rust - Memahami Stact Dan Heap"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Belajar Rust - Memahami Stack Dan Heap"/>
 <meta name="twitter:description" content="Memahami Stack dan Heap di Rust"/>
 
 <!--[if lte IE 9]>
@@ -146,10 +132,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Belajar Rust - Memahami Stact Dan Heap</h1>
+      <h1 class="post-title">Belajar Rust - Memahami Stack Dan Heap</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2017-03-17 </span>
+        <span class="post-time"> Friday, Mar 17, 2017 </span>
         <div class="post-category">
             
               <a href="/categories/rust/"> Rust </a>
@@ -234,7 +220,7 @@ Nah, kedua bagian selain code segment digunakan untuk menyimpan data yang akan d
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-03-17</span>
+    <span class="item-content">Friday, Mar 17, 2017</span>
   </p>
   
   <p class="copyright-item">
@@ -296,12 +282,12 @@ Nah, kedua bagian selain code segment digunakan untuk menyimpan data yang akan d
     <footer id="footer" class="footer">
       <div class="social-links">
       <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://t.me/imamdigmi" class="iconfont icon-telegram" title="telegram"></a>
+      <a href="https://www.linkedin.com/in/imamdigmi" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
       <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
       <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
       <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="https://www.linkedin.com/in/imam-digmi-07307ab3/" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="https://plus.google.com/&#43;imamdigmi" class="iconfont icon-google" title="google"></a>
-      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
       <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
   <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
@@ -321,7 +307,7 @@ Nah, kedua bagian selain code segment digunakan untuk menyimpan data yang akan d
     &copy; 
     
       2017 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -349,12 +335,16 @@ Nah, kedua bagian selain code segment digunakan untuk menyimpan data yang akan d
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-74531115-2', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74531115-2', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

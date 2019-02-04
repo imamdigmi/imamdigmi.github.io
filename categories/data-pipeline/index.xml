@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Pipeline on JournalToday</title>
+    <link>https://imamdigmi.github.io/categories/data-pipeline/</link>
+    <description>Recent content in Data Pipeline on JournalToday</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>imamdigmi</copyright>
+    <lastBuildDate>Sat, 17 Nov 2018 13:41:36 +0700</lastBuildDate>
+    
+	<atom:link href="https://imamdigmi.github.io/categories/data-pipeline/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tutorial Airflow - Instalasi (Bagian 2)</title>
+      <link>https://imamdigmi.github.io/post/tutorial-airflow-part-2/</link>
+      <pubDate>Sat, 17 Nov 2018 13:41:36 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tutorial-airflow-part-2/</guid>
+      <description>&lt;p&gt;Seperti yang sudah kita bahas pada &lt;a href=&#34;https://imamdigmi.github.io/post/tutorial-airflow-part-1&#34;&gt;Pengenalan Airflow - Bagian 1&lt;/a&gt; bahwa Apache Airflow adalah pilihan yang tepat saat ini, maka pada Bagian 2 ini kita akan mencoba menginstal Apache Airflow di komputer masing-masing dan mencoba menjalankan contoh DAGs yang sudah disediakan oleh Airflow untuk kita memulai belajar&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Airflow - Pengenalan (Bagian 1)</title>
+      <link>https://imamdigmi.github.io/post/tutorial-airflow-part-1/</link>
+      <pubDate>Thu, 01 Nov 2018 19:42:26 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tutorial-airflow-part-1/</guid>
+      <description>&lt;p&gt;Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (&lt;em&gt;insights&lt;/em&gt;) yang mendalam dari data tentang kebutuhan (&lt;em&gt;needs&lt;/em&gt;), perilaku (&lt;em&gt;behaviors&lt;/em&gt;), dan motif pelanggan mereka.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

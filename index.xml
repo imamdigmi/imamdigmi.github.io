@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
-    <lastBuildDate>Wed, 21 Feb 2018 05:39:09 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Nov 2018 13:41:36 +0700</lastBuildDate>
     
 	<atom:link href="https://imamdigmi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tutorial Airflow - Instalasi (Bagian 2)</title>
+      <link>https://imamdigmi.github.io/post/tutorial-airflow-part-2/</link>
+      <pubDate>Sat, 17 Nov 2018 13:41:36 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tutorial-airflow-part-2/</guid>
+      <description>&lt;p&gt;Seperti yang sudah kita bahas pada &lt;a href=&#34;https://imamdigmi.github.io/post/tutorial-airflow-part-1&#34;&gt;Pengenalan Airflow - Bagian 1&lt;/a&gt; bahwa Apache Airflow adalah pilihan yang tepat saat ini, maka pada Bagian 2 ini kita akan mencoba menginstal Apache Airflow di komputer masing-masing dan mencoba menjalankan contoh DAGs yang sudah disediakan oleh Airflow untuk kita memulai belajar&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Airflow - Pengenalan (Bagian 1)</title>
+      <link>https://imamdigmi.github.io/post/tutorial-airflow-part-1/</link>
+      <pubDate>Thu, 01 Nov 2018 19:42:26 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/post/tutorial-airflow-part-1/</guid>
+      <description>&lt;p&gt;Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (&lt;em&gt;insights&lt;/em&gt;) yang mendalam dari data tentang kebutuhan (&lt;em&gt;needs&lt;/em&gt;), perilaku (&lt;em&gt;behaviors&lt;/em&gt;), dan motif pelanggan mereka.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Google Colab Gratis Untuk Belajar Deep Learning</title>
@@ -94,7 +112,7 @@ $ export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
       <pubDate>Fri, 19 Jan 2018 23:13:40 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/about/</guid>
-      <description>figure { float: left; text-align: center; font-style: italic; font-size: 8pt; text-indent: 0; margin: 0.5em; padding-right: 0.1em; } img.scaled { margin: 0px 12px 5px 0px; height: 300px; width: 250px; }  Ramita&#39;s graduationHi! I&#39;m Imam. I&#39;m a computer science student at STMIK AKAKOM Yogyakarta. I love reading about, thinking about, designing, building, and most of all, understanding low-level systems, and programming languages. I spend my time researching topics related to artificial intelligence and programming languages at Digmi.</description>
+      <description>figure { float: left; text-align: center; font-style: italic; font-size: 8pt; text-indent: 0; margin: 0.5em; padding-right: 0.1em; } img.scaled { margin: 0px 12px 5px 0px; height: 300px; width: 250px; }  Ramita&#39;s graduationHi! I&#39;m Imam. I&#39;m a Computer Science student at STMIK AKAKOM Yogyakarta. I am Data Engineering enthusiast and I love reading about, thinking about, designing, building, and most of all, understanding distributed and scalable systems, and programming languages. I spend my time researching topics related to Big Data and Machine Learning fields at Digmi Lab.</description>
     </item>
     
     <item>
@@ -126,11 +144,11 @@ $ export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
     </item>
     
     <item>
-      <title>Belajar Rust - Memahami Stact Dan Heap</title>
-      <link>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</link>
+      <title>Belajar Rust - Memahami Stack Dan Heap</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-memahami-stack-dan-heap/</link>
       <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</guid>
+      <guid>https://imamdigmi.github.io/post/belajar-rust-memahami-stack-dan-heap/</guid>
       <description>Jika anda adalah seorang programmer yang berkecimpung di low-level atau systems programming pastinya sudah tidak asing lagi dengan konsep ini dan tentunya sangatlah mengerti tentang pentingnya mengelola resource atau sumber daya memori. Dalam kompilasi sebuah program diciptakan dengan sebuah struktur. Mungkin secara spesifik struktur untuk masing-masing operating system berbeda tapi secara garis besar memiliki beberapa persamaan yaitu pengalamatan memori.
 Pada saat program berjalan (runnig), sebuah program akan menempati lokasi tertentu pada memori.</description>
     </item>
@@ -245,15 +263,6 @@ No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 16.10 R
       <description>Prerequisites To follow this tutorial, you will need the following:
  64-bit Ubuntu 16.04 Droplet Non-root user with sudo privileges Initial Setup Guide for Ubuntu 16.04 explains how to set this up.   Note: Docker requires a 64-bit version of Ubuntu as well as a kernel version equal to or greater than 3.10. The default 64-bit Ubuntu 16.04 Droplet meets these requirements.
  All the commands in this tutorial should be run as a non-root user.</description>
-    </item>
-    
-    <item>
-      <title>Menjadi Seorang Bapak</title>
-      <link>https://imamdigmi.github.io/post/menjadi-seorang-bapak/</link>
-      <pubDate>Sun, 14 Aug 2016 09:27:12 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/post/menjadi-seorang-bapak/</guid>
-      <description> Dengan istri ku Ketika kita memasuki tahap perkenalan Sebuah ikatan yang indah Ketika istri ku mengandung anak ku Ketika istri ku melahirkan Diusia pertengahan kandungan Dengan anak ku Kamu dalam kandungan ibu mu Setelah kamu lahir Kamu berusia beberapa bulan Ketika kamu bisa merangkak Ketika kamu dapat berdiri Ketika kamu dapat berjalan Ketika kamu dapat berlari </description>
     </item>
     
     <item>

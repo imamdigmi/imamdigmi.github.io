@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Belajar Rust - Memahami Stact Dan Heap</title>
-      <link>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</link>
+      <title>Belajar Rust - Memahami Stack Dan Heap</title>
+      <link>https://imamdigmi.github.io/post/belajar-rust-memahami-stack-dan-heap/</link>
       <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/post/belajar-rust-memahami-stact-dan-heap/</guid>
+      <guid>https://imamdigmi.github.io/post/belajar-rust-memahami-stack-dan-heap/</guid>
       <description>Jika anda adalah seorang programmer yang berkecimpung di low-level atau systems programming pastinya sudah tidak asing lagi dengan konsep ini dan tentunya sangatlah mengerti tentang pentingnya mengelola resource atau sumber daya memori. Dalam kompilasi sebuah program diciptakan dengan sebuah struktur. Mungkin secara spesifik struktur untuk masing-masing operating system berbeda tapi secara garis besar memiliki beberapa persamaan yaitu pengalamatan memori.
 Pada saat program berjalan (runnig), sebuah program akan menempati lokasi tertentu pada memori.</description>
     </item>

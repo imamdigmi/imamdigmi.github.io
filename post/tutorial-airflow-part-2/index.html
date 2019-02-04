@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tutorial Airflow - Instalasi (Bagian 2) - JournalToday</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Imam Digmi" /><meta name="description" content="Tutorial Airflow - Instalasi (Bagian 2)" />
+<meta name="keywords" content="airflow, apache airflow, data, pipeline, data engineer" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53-DEV" />
+
+
+<link rel="canonical" href="https://imamdigmi.github.io/post/tutorial-airflow-part-2/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.2" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Tutorial Airflow - Instalasi (Bagian 2)" />
+<meta property="og:description" content="Tutorial Airflow - Instalasi (Bagian 2)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://imamdigmi.github.io/post/tutorial-airflow-part-2/" /><meta property="article:published_time" content="2018-11-17T13:41:36&#43;07:00"/>
+<meta property="article:modified_time" content="2018-11-17T13:41:36&#43;07:00"/>
+
+<meta itemprop="name" content="Tutorial Airflow - Instalasi (Bagian 2)">
+<meta itemprop="description" content="Tutorial Airflow - Instalasi (Bagian 2)">
+
+
+<meta itemprop="datePublished" content="2018-11-17T13:41:36&#43;07:00" />
+<meta itemprop="dateModified" content="2018-11-17T13:41:36&#43;07:00" />
+<meta itemprop="wordCount" content="730">
+
+
+
+<meta itemprop="keywords" content="data-pipeline,apache-airflow," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tutorial Airflow - Instalasi (Bagian 2)"/>
+<meta name="twitter:description" content="Tutorial Airflow - Instalasi (Bagian 2)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Imam Digmi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Imam Digmi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tutorial Airflow - Instalasi (Bagian 2)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> Saturday, Nov 17, 2018 </span>
+        <div class="post-category">
+            
+              <a href="/categories/data-pipeline/"> Data Pipeline </a>
+            
+              <a href="/categories/python/"> Python </a>
+            
+          </div>
+        <span class="more-meta"> 730 word </span>
+        <span class="more-meta"> 4 min read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#instalasi-apache-airflow">Instalasi Apache Airflow</a></li>
+<li><a href="#penanganan-kendala">Penanganan Kendala</a>
+<ul>
+<li><a href="#error-webserver">Error Webserver</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Seperti yang sudah kita bahas pada <a href="/post/tutorial-airflow-part-1">Pengenalan Airflow - Bagian 1</a> bahwa Apache Airflow adalah pilihan yang tepat saat ini, maka pada Bagian 2 ini kita akan mencoba menginstal Apache Airflow di komputer masing-masing dan mencoba menjalankan contoh DAGs yang sudah disediakan oleh Airflow untuk kita memulai belajar</p>
+
+<h1 id="setup">Setup</h1>
+
+<p>Sebelum kita menginstal Apache Airflow ada beberapa hal yang harus dipersiapkan yaitu mengatur <em>PATH Variable</em> <code>AIRFLOW_HOME</code>, sejatinya, ini hanyalah sebuah path directory, path ini digunakan oleh Airflow untuk meletakkan beberapa berkas seperti: konfigurasi, logs, dags, operators, dsb. Secara default Airflow akan meletakkan direktori ini pada <code>/home/&lt;user&gt;/airflow</code> namun kita dapat mengubahnya sesuai kebutuhan, dan ada juga path variable <code>SLUGIFY_USES_TEXT_UNIDECODE</code> yang digunakan pada saat instalasi maupun upgrade Airflow untuk mencegah konflik <em>GPL dependency</em> yaitu penggunaan <code>unidecode</code>. Berikut ini adalah pengaturan yang bisa kamu gunakan</p>
+
+<pre><code class="language-sh">export AIRFLOW_HOME=$HOME/airflow;
+export SLUGIFY_USES_TEXT_UNIDECODE=yes;
+</code></pre>
+
+<h1 id="instalasi-apache-airflow">Instalasi Apache Airflow</h1>
+
+<pre><code class="language-sh">pip install apache-airflow
+</code></pre>
+
+<p><strong>Tahukah kamu?</strong> Bahwa jika kamu adalah seorang web developer atau pernah menjadi seorang web developer berlatar belakang Python dan menggunakan Flask sebagai <em>micro-framework</em> (seperti saya 😄) tentunya kamu tidak asing dengan logs saat instalasi Airflow ini. Ya! Airflow menggunakan Flask untuk membangung web nya yang memudahkan kita untuk memantau workflow (DAGs) yang kita buat, Airflow juga menggunakan pustaka-pustaka yang sering digunakan oleh web developer Flask seperti, <code>Flask-WTF</code> untuk urusan form, <code>Flask-SQLAlchemy</code> untuk urusan komunikasi database, <code>Flask-Admin</code>, <code>Flask-Migrate</code>, <code>Flask-Babel</code>, dst. Tentunya ini menguntungkan bagi kita yang familiar</p>
+
+<p>Setelah kita berhasil menginstal Apache Airflow kita perlu menginisiasi database backend karena Airflow membutuhkan database untuk menyimpan <em>metadata</em> nya, Database inilah yang digunakan Airflow untuk menyimpan data-data seperti: Variable, Connection, Pool, DAG State, Logs Task Instance, dll</p>
+
+<pre><code class="language-sh">airflow initdb
+</code></pre>
+
+<p>setelah diinisiasi Airflow membuatkan satu direktori <code>$AIRFLOW_HOME</code>, isi dari direktori tersebut kurang lebih akan seperti berikut</p>
+
+<pre><code>➜ tree ~/.airflow -L 2
+/home/idiot/airflow
+├── airflow.cfg
+├── airflow.db
+├── logs
+│   └── scheduler
+└── unittests.cfg
+
+2 directories, 3 files
+</code></pre>
+
+<p>Seperti yang dapat kita lihat diatas bahwa Airflow membuatkan satu berkas yaitu <code>airflow.db</code> karena Airflow menggunakan SQLite sebagai database backend defaultnya, namun kita bisa saja mengubah database backend Airflow menggunakan database lain seperti PostgreSQL atau MySQL, namun untuk saat ini kita menggunakan database default saja dulu untuk percobaan, kita akan mencoba mengubah database backend Airflow di bagian selanjutnya</p>
+
+<p>Yang tidak kalah penting adalah berkas <code>airflow.cfg</code>, berkas tersebut dapat kita digunakan untuk mengatur konfigurasi Airflow, dan lagi, kita bisa mengubahnya sesuai kebutuhan namun untuk saat ini kita biarkan saja seperti itu</p>
+
+<blockquote>
+<p>Buat kamu yang keburu penasaran, bisa menjalankan <code>airflow version</code> untuk melihat versi Airflow yang terinstal</p>
+</blockquote>
+
+<p>Setelah semua nya berhasil di-<em>setup</em> mari kita jalankan webserver nya untuk melihat tampilan utama web Airflow</p>
+
+<pre><code class="language-sh">airflow webserver
+</code></pre>
+
+<blockquote>
+<p>Jika ingin menggunakan port lain <code>airflow webserver -p 8888</code></p>
+</blockquote>
+
+<p>Nah, berikut ini adalah tampilan awal web Airflow</p>
+
+<p><img src="/images/tutorial-airflow/part-2-1.png" alt="Airflow Webserver" /></p>
+
+<p>Seperti yang dapat kita lihat bahwa Airflow menyediakan contoh-contoh DAGs yang dapat kita gunakan untuk mulai belajar, kita akan lebih mengeksplor fitur-fitur Airflow di bagian selanjutnya</p>
+
+<p>Sekarang mari kita jalankan Airflow <em>scheduler</em>, masih ingat apa itu Airflow scheduler? kalo kamu belum baca atau udah lupa kamu bisa membacanya di <a href="/post/tutorial-airflow-part-1">Pengenalan Airflow - Bagian 1</a></p>
+
+<pre><code class="language-sh">airflow scheduler
+</code></pre>
+
+<p>Setelah Airflow Scheduler kita jalankan, cobalah untuk menjalankan (un-pause) salah satu contoh DAGs yang disediakan kemudian memicunya (trigger) contohnya seperti yang ditunjukkan pada gambar berikut ini</p>
+
+<p><img src="/images/tutorial-airflow/part-2-2.png" alt="Airflow Webserver" /></p>
+
+<p>Kemudian kamu bisa coba klik di kolom DAG Runs dan di bagian bulat berwarna hijau, maka akan muncul tampilan sebuah daftar kapan saja DAG tersebut dijalankan</p>
+
+<p><img src="/images/tutorial-airflow/part-2-3.png" alt="Airflow Webserver" /></p>
+
+<p>Sekarang, cobalah untuk kembali ke halaman utama dan klik pada nama DAG yang sedang berjalan, maka kamu akan diberikan tampilan Tree View seperti berikut</p>
+
+<p><img src="/images/tutorial-airflow/part-2-4.png" alt="Airflow Webserver" /></p>
+
+<p>Dan kamu juga bisa mencoba meng-klik di menu Graph View yang menampilkan grafik DAGs beserta Tasks nya, seperti berikut</p>
+
+<p><img src="/images/tutorial-airflow/part-2-5.png" alt="Airflow Webserver" /></p>
+
+<p>Penasaran apa saja fungsi dari tampilan-tampilan yang disediakan oleh Airflow? Nah, pada bagian selanjutnya kita akan mencoba mengeksplornya lebih jauh lagi.</p>
+
+<h1 id="penanganan-kendala">Penanganan Kendala</h1>
+
+<p>Terkadang kita menemui beberapa kendala bahkan bisa jadi sering, entah karena kelalaian atau kesalahan lainnya, berikut ini adalah daftar kendala dan cara menanganinya</p>
+
+<p><strong>Pada sub bagian ini, mungkin akan diperbarui secara berkala buat kamu yang sering mengalami kendala, atau saya membuatkan artikel khusus membahas kendala-kendala dan penanganannya dilain kesempatan</strong></p>
+
+<h2 id="error-webserver">Error Webserver</h2>
+
+<p>Mungkin kita akan menemukan pesan error seperti &ldquo;Port already exists&rdquo;, itu artinya port untuk webserver yang akan kita jalankan sudah digunakan, maka kita dapat melihat daftar penggunaan port dengan cara</p>
+
+<pre><code class="language-sh">lsof -t -i:8080
+</code></pre>
+
+<blockquote>
+<p><code>8080</code> adalah port target</p>
+</blockquote>
+
+<p>maka kurang lebih akan muncul seperti berikut ini</p>
+
+<p><img src="/images/tutorial-airflow/part-2-6.png" alt="Airflow Webserver" /></p>
+
+<p>kita dapat menghentikan webservernya terlebih dahulu dengan cara <code>kill $(lsof -t -i:8080)</code>, kemudian kita dapat menggunakannya kembali</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Imam Digmi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">Saturday, Nov 17, 2018</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/data-pipeline/">data-pipeline</a>
+          
+          <a href="/tags/apache-airflow/">apache-airflow</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/tutorial-airflow-part-1/">
+            <span class="next-text nav-default">Tutorial Airflow - Pengenalan (Bagian 1)</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'imamdigmi';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:imamdigmi@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://t.me/imamdigmi" class="iconfont icon-telegram" title="telegram"></a>
+      <a href="https://www.linkedin.com/in/imamdigmi" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/imamdigmi/" class="iconfont icon-github" title="github"></a>
+      <a href="https://stackoverflow.com/story/imamdigmi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/imamdigmi/" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://facebook.com/imamdigmi/" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.instagram.com/imamdigmi/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://imamdigmi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">imamdigmi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.2"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74531115-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
