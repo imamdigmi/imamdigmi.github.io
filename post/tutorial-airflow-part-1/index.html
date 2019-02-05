@@ -58,7 +58,7 @@
 
 <meta itemprop="datePublished" content="2018-11-01T19:42:26&#43;07:00" />
 <meta itemprop="dateModified" content="2019-01-28T19:42:26&#43;07:00" />
-<meta itemprop="wordCount" content="2450">
+<meta itemprop="wordCount" content="2639">
 
 
 
@@ -143,8 +143,8 @@
               <a href="/categories/python/"> Python </a>
             
           </div>
-        <span class="more-meta"> 2450 word </span>
-        <span class="more-meta"> 12 min read </span>
+        <span class="more-meta"> 2639 word </span>
+        <span class="more-meta"> 13 min read </span>
         
       </div>
     </header>
@@ -167,6 +167,8 @@
 <li><a href="#tasks">Tasks</a></li>
 <li><a href="#operator">Operator</a></li>
 <li><a href="#scheduler">Scheduler</a></li>
+<li><a href="#executor">Executor</a></li>
+<li><a href="#worker">Worker</a></li>
 </ul></li>
 <li><a href="#istilah-lain">Istilah Lain</a>
 <ul>
@@ -177,7 +179,7 @@
 <li><a href="#task-instances">Task Instances</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#recap">Recap</a></li>
+<li><a href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 </nav>
   </div>
@@ -185,11 +187,11 @@
 
     
     <div class="post-content">
-      <p>Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (<em>insights</em>) yang mendalam dari data tentang kebutuhan (<em>needs</em>), perilaku (<em>behaviors</em>), dan motif pelanggan mereka.</p>
+      <p><strong><h4>TL;DR</h4></strong></p>
 
-<p><strong><h4>TL;DR</h4></strong></p>
+<p>Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (<em>insights</em>) yang mendalam dari data tentang kebutuhan (<em>needs</em>), perilaku (<em>behaviors</em>), dan motif pelanggan mereka.</p>
 
-<p>Seiring semakin banyaknya bisnis yang didorong oleh data (<em>data-driven</em>), ada kebutuhan yang semakin besar untuk melaksanakan &ldquo;pipa&rdquo; pemrosesan data (data pipeline) yang kompleks dan yang secara teratur mengekstraksi data dari berbagai sumber, mengubah data menjadi format yang memfasilitasi logika bisnis, dan menyimpan artefak yang dihasilkan dengan cara yang memfasilitasi peningkatan produk dan pengambilan keputusan pemangku kepentingan (<em>stakeholder</em>).</p>
+<p>Seiring semakin banyaknya bisnis yang didorong oleh data (<em>data-driven</em>), ada kebutuhan yang semakin besar untuk melaksanakan &ldquo;pipa&rdquo; pemrosesan data (data pipeline) yang kompleks dan yang secara teratur mengekstraksi data dari berbagai sumber, mengubah data menjadi format yang memfasilitasi logika bisnis, dan menyimpan artefak yang dihasilkan dengan cara memfasilitasi peningkatan produk dan pengambilan keputusan pemangku kepentingan (<em>stakeholder</em>).</p>
 
 <p>Hubungan perusahaan-perusahaan (kebanyakan adalah startup) seperti: <a href="https://tokopedia.com">Tokopedia</a>, <a href="https://bukalapak.com">BukaLapak</a>, <a href="https://www.go-jek.com">GO-JEK</a> dengan data tentu tidak dapat terhindarkan. Dengan produk dan penggunanya yang bertumbuh sangat pesat, ribuan, jutaan, bahkan milyaran, dan mencatat ratusan juta peristiwa (<em>events</em>) setiap harinya tentunya perusahaan tersebut membutuhkan kerangka kerja (<em>framework</em>) untuk mengatur jalur pemrosesan data (<em>data pipeline</em>) yang pastinya sangat kompleks, atau alur kerja data seperti yang sering mereka sebut sebagai <strong>workflow</strong>.</p>
 
@@ -209,7 +211,7 @@
 
 <h1 id="apache-airflow">Apache Airflow</h1>
 
-<p><a href="https://airflow.apache.org/">Apache Airflow</a> adalah tool untuk orkestrasi pada komputasi manajemen workflow namun ada juga yang menyebut bahwa Airflow adalah ETL Framework, <strong>kamu jangan bingung</strong> ini adalah definisi yang sama saja, karena ETL singkatnya adalah serangkaian tugas-tugas atau proses dalam dunia data.</p>
+<p><a href="https://airflow.apache.org/">Apache Airflow</a> adalah tool untuk orkestrasi pada komputasi manajemen workflow namun ada juga yang menyebutkan bahwa Airflow adalah ETL Framework, <strong>kamu jangan bingung</strong> ini adalah definisi yang sama saja, karena ETL singkatnya adalah serangkaian tugas-tugas atau proses dalam dunia data.</p>
 
 <p>Jika kamu ditanya, &ldquo;apa itu Apache Airflow?&rdquo; kemudian kamu menjawab: Apache Airflow adalah Framework ETL! (ini benar), atau, Apache Airflow adalah tool Workflow Management System untuk data! (ini juga benar), asalkan jangan menjawab &ldquo;Apache Airflow adalah Dashboard berbasis web untuk ETL&rdquo; (ini salah).</p>
 
@@ -225,13 +227,13 @@
 
 <h1 id="kenapa-apache-airflow">Kenapa Apache Airflow?</h1>
 
-<p>Jika kamu seorang web developer, pasti kalian pernah menggunakan framework bukan? jika kalian menggunakan Python maka framework yang dapat digunakan adalah: Django, Flask, Falcon, dll, jika kamu menggunakan PHP? kalian bisa menggunakan: Laravel, Symfony, Yii, dst. Tapi bagaimana jika Workflow Management System? ada banyak pilihannya, kalian bisa menggunakan: Apache Airflow (AirBnB), Luigi (Spotify), Azkaban (LinkedIn), Pinball (Pinterest), dll.</p>
+<p>Jika kamu pernah menjadi seorang web developer, pasti kalian pernah menggunakan framework bukan? jika kalian menggunakan Python maka framework yang dapat digunakan adalah: Django, Flask, Falcon, dll, jika kamu menggunakan PHP? kalian bisa menggunakan: Laravel, Symfony, Yii, dst. Tapi bagaimana jika Workflow Management System? ada banyak pilihannya, kalian bisa menggunakan: Apache Airflow (AirBnB), Luigi (Spotify), Azkaban (LinkedIn), Pinball (Pinterest), dll.</p>
 
 <p>Berikut ini adalah komparasi beberapa framework untuk WFMS (lihat lebih lengkapnya <a href="http://bytepawn.com/luigi-airflow-pinball.html">disini</a>)
 <img src="/images/tutorial-airflow/part-1-1.png" alt="Luigi vs Airflow vs Pinball" />
 <p><center style="font-size: 10pt; font-style: italic;"><a href="http://bytepawn.com/luigi-airflow-pinball.html">Sumber</a>: Marton Trencseni&rsquo;s - Luigi vs Airflow vs Pinball</center></p></p>
 
-<p>Seperti yang dapat kita lihat bahwa Apache Airflow memiliki banyak fitur, dan didukung dengan integrasi tool eksternal yang banyak seperti: Hive, Pig, Google BigQuery, Amazon Redshift, Amazon S3, dst dan juga Apache Airflow memiliki keunggulanuntuk urusan <em>scaling</em>. Wajar saja kita Apache Airflow menjadi pilihan yang tepat untuk membangun data pipeline saat ini.</p>
+<p>Seperti yang dapat kita lihat bahwa Apache Airflow memiliki banyak fitur, dan didukung dengan integrasi tool eksternal yang banyak seperti: Hive, Pig, Google BigQuery, Amazon Redshift, Amazon S3, dst dan juga Apache Airflow memiliki keunggulan untuk urusan <em>scaling</em>. Wajar saja kita Apache Airflow menjadi pilihan yang tepat untuk membangun data pipeline saat ini.</p>
 
 <h2 id="konsep-utama">Konsep Utama</h2>
 
@@ -240,27 +242,32 @@
 <p>Atau bahkan, kamu bisa saja kebingungan bagaimana cara membuat workflow, sedangkan kamu familiar dengan bahasa Python, karena itu, ini bukan hanya programming yang menjadi tumpuan melainkan sebuah metodologi dan konsep bagaimana membangun workflow, karena Apache Airflow sudah mengadopsi <em>best-practice</em> ETL atau workflow, itulah salah satu keuntungan yang kita dapatkan ketika menggunakan Airflow.</p>
 
 <p><center style="font-size: 13pt; font-style: italic;">
-    Karena sejatinya, teknologi adalah sebuah produk dimana kita sebuah menciptakan solusi.
+    Karena sejatinya, teknologi adalah sebuah produk dimana kita menciptakan sebuah solusi.
 </center></p>
+
+<p>Berikut ini adalah arsitekur Apache Airflow secara umum, yang menunjukkan bahwa Apache Airflow memiliki beberapa komponen diantaranya: Worker, Scheduler, Web UI (Dashboard), Web Server, Database, dst dalam menjalankan tugasnya dan untuk menggerakkan workflow yang kita buat.</p>
+
+<p><center><img src="/images/tutorial-airflow/part-1-2.png" alt="Airflow Architecture"></center>
+<p><center style="font-size: 10pt; font-style: italic;">Arsitektur Apache Airflow</center></p></p>
 
 <p>Berikut ini adalah komponen utama dalam membangun workflow atau data-pipeline menggunakan Apache Airflow, komponen utamanya adalah DAG, karena setiap kali kita membuat sebuah workflow pastinya kita akan menuliskan bariskan kode berupa DAG.</p>
 
-<p><img src="/images/tutorial-airflow/part-1-2.png" alt="DAG" />
+<p><img src="/images/tutorial-airflow/part-1-3.png" alt="DAG" />
 <p><center style="font-size: 10pt; font-style: italic;"><em>Directed Acyclic Graphs</em></center></p></p>
 
 <h3 id="dag">DAG</h3>
 
 <p>DAG adalah kepanjangan dari <em>Directed Acyclic Graphs</em> yang kita gunakan untuk membuat suatu workflow atau kita juga dapat memahami DAG sebagai sekumpulan dari Tasks. DAG inilah yang mencerminkan tentang alur dari workflow beserta relasi antar proses dan ketergantungan antar prosesnya.</p>
 
-<p><center><img src="/images/tutorial-airflow/part-1-3.png" alt="Contoh DAG"></center>
+<p><center><img src="/images/tutorial-airflow/part-1-4.png" alt="Contoh DAG"></center>
 <p><center style="font-size: 10pt; font-style: italic;">Contoh DAG Sederhana 1</center></p></p>
 
 <p>Seperti contoh diatas, secara sederhana kita membuat DAG yang memiliki 3 tugas di dalamnya yaitu: <code>tugas_1</code>, <code>tugas_2</code>, <code>tugas_3</code>, tugas-tugas tersebut ada urutannya 1-2-3, bisa dikatakan bahwa <code>tugas_1</code> harus berhasil dijalankan sebelum <code>tugas_2</code> dijalankan dan begitu pun juga dengan <code>tugas_3</code> bahwa akan dijalankan hanya jika <code>tugas_2</code> berhasil dijalankan.</p>
 
-<p><center><img src="/images/tutorial-airflow/part-1-4.png" alt="Contoh DAG"></center>
+<p><center><img src="/images/tutorial-airflow/part-1-5.png" alt="Contoh DAG"></center>
 <p><center style="font-size: 10pt; font-style: italic;">Contoh DAG Sederhana 2</center></p></p>
 
-<p>Contoh lainnya adalah seperti DAG pada gambar diatas yang menunjukkan bahwa, kita memiliki 4 tugas yaitu: <code>tugas_1</code>, <code>tugas_1_2</code>, <code>tugas_2</code>, dan <code>tugas_3</code>. Yang berbeda dari DAG sebelumnya yakni pada Task <code>tugas_2</code> tidak memiliki ketergantungan pada Task sebelumnya, namun Task <code>tugas_3</code> akan dijalankan hanya jika <code>tugas_1_2</code> dan <code>tugas_2</code> berhasil dijalankan.</p>
+<p>Contoh lainnya adalah seperti DAG pada gambar diatas yang menunjukkan bahwa, kita memiliki 4 tugas yaitu: <code>tugas_1</code>, <code>tugas_1_2</code>, <code>tugas_2</code>, dan <code>tugas_3</code>. Yang berbeda dari contoh DAG sebelumnya yakni pada Task <code>tugas_2</code> tidak memiliki ketergantungan pada Task sebelumnya, namun Task <code>tugas_3</code> akan dijalankan hanya jika <code>tugas_1_2</code> dan <code>tugas_2</code> berhasil dijalankan.</p>
 
 <p>Tapi bagaimana jika ada suatu Task yang gagal dijalankan (terjadi error)? ya tentunya Task yang gagal tersebut akan dijalankan ulang (<em>retry</em>) sampai berhasil dijalankan dan Task selanjutnya akan menunggu dengan rentang waktu yang kita tentukan barulah kemudian Task selanjutnya dijalankan.</p>
 
@@ -270,7 +277,7 @@
 
 <ol>
 <li>DAG bersifat <u>&ldquo;acyclic&rdquo;</u> yang artinya tiap Task tidak akan berputar atau tidak kembali ke Task sebelumnya. Jika dianalogikan, ini seperti seorang ayah dari seorang anak, tentunya sang ayah kandung tidak akan menjadi seorang anak dari anak kandungnya sendiri</li>
-<li>DAG tidak peduli apa yang sedang kita lakukan, karena DAG hanya bertugas dalam memastikan tugas-tugas didalamnya, dieksekusi pada waktu yang tepat, dengan urutan yang tepat, dan dengan penanganan yang benar atas masalah yang tidak terduga.</li>
+<li>DAG tidak peduli apa yang sedang kita lakukan, karena DAG hanya bertugas dalam memastikan tugas-tugas didalamnya, dieksekusi pada waktu yang tepat, dengan urutan yang tepat, dan dengan penanganan yang benar atas masalah yang tidak terduga</li>
 <li>Dan juga, di dalam membuat DAG terdapat <code>dag_id</code> yang digunakan Airflow untuk mengidentifikasi <strong>satu</strong> DAG saja, ini bersifat unik yang artinya kita tidak boleh menggunakan nama <code>dag_id</code> lebih dari satu kali</li>
 </ol>
 
@@ -283,7 +290,7 @@
 <p>Tasks adalah &ldquo;aktivitas&rdquo; yang kamu buat kemudian dijalankan oleh Operator. Task bisa berupa Python function atau eksternal yang bisa dipanggil. Tasks ini diharapkan bersifat <em>idempotent</em> (penjelasan tentang idempotent dapat dilihat <a href="https://en.wikipedia.org/wiki/Idempotence">disini</a>, <a href="https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation">disini</a>, dan <a href="https://stackoverflow.com/questions/40296211/what-is-the-difference-between-an-idempotent-and-a-deterministic-function">disini</a>), yang intinya, jika nilai yang dimasukkan sama maka hasilnya akan tetap sama — tidak peduli berapa kali Tasks ini dijalankan.</p>
 
 <p><strong>Yang perlu diingat bahwa</strong>:
-Dalam membuat Tasks, terdapat <code>task_id</code> sama halnya dengan <code>dag_id</code> ini bersifat unik tidak boleh digunakan berulang kali dalam satu DAG itu sendiri tapi <code>task_id</code> boleh sama dengan DAG lainnya, misal: <code>dag_1</code> memiliki <code>task_a</code> dan <code>task_b</code> maka kita boleh menggunakan <code>task_id</code> yang sama pada <code>dag_2</code>.</p>
+Dalam membuat Tasks, terdapat <code>task_id</code> sama halnya dengan <code>dag_id</code> ini bersifat unik tidak boleh digunakan berulang kali dalam satu konteks DAG itu sendiri tapi <code>task_id</code> boleh sama dengan DAG lainnya, misal: <code>dag_1</code> memiliki <code>task_a</code> dan <code>task_b</code> maka kita boleh menggunakan <code>task_id</code> yang sama pada <code>dag_2</code>.</p>
 
 <h3 id="operator">Operator</h3>
 
@@ -293,22 +300,28 @@ Dalam membuat Tasks, terdapat <code>task_id</code> sama halnya dengan <code>dag_
 
 <h3 id="scheduler">Scheduler</h3>
 
-<p>Scheduler (penjadwalan) adalah otak di balik pengaturan workflow di Airflow atau jika dianalogikan, Scheduler adalah &ldquo;petugas&rdquo; yang bertanggung jawab dalam memantau <strong>semua DAG beserta Tasks</strong> yang ada, dan memicu (men-<em>trigger</em>) <strong>semua</strong> <em>Task Instances</em> yang dependensinya telah terpenuhi, scheduler ini juga yang memastikan DAGs yang ada di dalam <em>DAG-Bag</em> tetap tersinkronisasi dengan Airflow, makanya setiap kali kita menambahkan satu berkas Python berisi DAG kedalam DAg-Bags Airflow akan segera mengetahuinya dan menampilkannya di Web Dashboard (selama scheduler dijalankan).</p>
+<p>Scheduler (penjadwalan) adalah otak di balik pengaturan workflow di Airflow atau jika dianalogikan, Scheduler adalah &ldquo;petugas&rdquo; yang bertanggung jawab dalam memantau <strong>semua DAG beserta Tasks</strong> yang ada, dan memicu (men-<em>trigger</em>) <strong>semua</strong> <em>Task Instances</em> yang dependensinya telah terpenuhi, scheduler ini juga yang memastikan DAGs yang ada di dalam <em>DagBag</em> tetap tersinkronisasi dengan Airflow, makanya setiap kali kita menambahkan satu berkas Python berisi DAG kedalam DagBag Airflow akan segera mengetahuinya dan menampilkannya di Web Dashboard (selama scheduler dijalankan).</p>
 
-<!-- ### Backfill -->
+<h3 id="executor">Executor</h3>
 
-<!-- ### Executor -->
+<p>Executor adalah <em>message queuing</em> yang terikat erat dengan Scheduler dan menentukan proses worker yang benar-benar mengeksekusi setiap Task yang dijadwalkan. Ada berbagai macam jenis Executor, yang masing-masing menggunakan class Executor khusus. Sebagai contoh, <code>LocalExecutor</code> mengeksekusi Task secara paralel yang berjalan pada mesin yang sama dengan Scheduler. Executor lainnya seperti <code>CeleryExecutor</code> mengeksekusi Task menggunakan worker yang ada pada &ldquo;sekelompok mesin&rdquo; worker yang terpisah ini biasa disebut sebagai <em>distributed worker</em> atau dengan kata lain worker yang terdistribusi.</p>
+
+<h3 id="worker">Worker</h3>
+
+<p>Ini adalah komponen yang benar-benar menjalankan logika Task, dan worker ini ditentukan oleh Executor yang digunakan, dengan kata lain, Worker lah yang melakukan tugas yang diberikan oleh Operator (Task). Jika dianalogikan sama seperti kita memesan makanan menggunakan layanan GO-FOOD milik GO-JEK, misal kita ingin makan bakso (Task) karena malas keluar rumah kita menggunakan GO-FOOD (Executor) nah si driver yang bertugas untuk membeli bakso adalah Worker, karena layanan GO-FOOD lah yang menentukan siapa driver yang mendapatkan giliran menerima order.</p>
 
 <!-- ### Sensor -->
 
 <!-- ### XCom -->
+
+<!-- ### Backfill -->
 
 <h2 id="istilah-lain">Istilah Lain</h2>
 
 <p>Selain konsep-konsep diatas ada juga istilah-istilah yang menjadi kunci utama dalam membangun workflow dan mesti kamu pahami, karena jika kamu salah memahami ini atau bahkan tidak paham maka workflow atau data-pipeline yang kamu buat tidak akan sesuai dengan yang kamu harapkan, istilah ini dapat kamu jumpai dalam menuliskan DAG, Task, maupun di web dashboard Airflow.</p>
 
 <blockquote>
-<p>Isitlah ini juga sering saya temukan dan dipertanyakan di StackOverflow maupun di forum lainnya yang membuat kebanyakan orang bingung</p>
+<p>Istilah ini juga sering saya temukan dan dipertanyakan di StackOverflow maupun di forum lainnya yang membuat kebanyakan orang bingung</p>
 </blockquote>
 
 <h3 id="start-date">Start Date</h3>
@@ -501,9 +514,9 @@ Dalam membuat Tasks, terdapat <code>task_id</code> sama halnya dengan <code>dag_
 
 <p>DAGRun dan TaskInstance juga konsep utama dalam Airflow, setiap DAGRun dan TaskInstance saling terhubung dengan entri dalam database metadata Airflow yang mencatat kondisi (status) mereka seperti: &ldquo;queued&rdquo;, &ldquo;running&rdquo;, &ldquo;failed&rdquo;, &ldquo;skipped&rdquo;, dan &ldquo;up for retry&rdquo;. Membaca (<em>read</em>) dan memperbarui (<em>update</em>) status ini adalah kunci untuk penjadwalan dan proses eksekusi yang dilakukan oleh Airflow.</p>
 
-<h1 id="recap">Recap</h1>
+<h1 id="kesimpulan">Kesimpulan</h1>
 
-<p>Secara sederhana, berikut ini adalah alur bagaimana Scheduler Airflow bekerja (kan Scheduler &ldquo;petugasnya&rdquo; Airflow dalam memantu DAG 😄)</p>
+<p>Secara sederhana, berikut ini adalah alur bagaimana Airflow bekerja</p>
 
 <ol>
 <li>Memuat DAG yang tersedia di DagBag</li>
@@ -511,15 +524,15 @@ Dalam membuat Tasks, terdapat <code>task_id</code> sama halnya dengan <code>dag_
 <li>Scheduler :
 
 <ul>
-<li>memeriksa kondisi (status) dari TaskInstances yang terhubung dengan DagRun yang sedang aktif</li>
-<li>menyelesaikan semua ketergantungan tiap TaskInstance</li>
-<li>mengidentifikasi TaskInstance yang harus dieksekusi</li>
-<li>menambahkannya kedalam worker queue</li>
-<li>memperbarui status dari TaskInstance dari &ldquo;newly-queued&rdquo; ke &ldquo;queued&rdquo; pada database</li>
+<li>memeriksa kondisi (status) dari <code>TaskInstances</code> yang terhubung dengan <code>DagRun</code> yang sedang aktif</li>
+<li>menyelesaikan semua ketergantungan tiap <code>TaskInstance</code></li>
+<li>mengidentifikasi <code>TaskInstance</code> yang harus dieksekusi</li>
+<li>menambahkannya kedalam Worker queue</li>
+<li>memperbarui status dari <code>TaskInstance</code> dari &ldquo;newly-queued&rdquo; ke &ldquo;queued&rdquo; pada database</li>
 </ul></li>
-<li>Tiap worker yang tersedia, mengambil TaskInstance dari queue dan menjalankannya kemudian memperbarui status TaskInstance dari &ldquo;queued&rdquo; ke &ldquo;running&rdquo;</li>
-<li>Ketika TaskInstance berhasil dijalankan, maka worker yang terkait mengubah statusnya pada database menjadi: &ldquo;finished&rdquo;, &ldquo;failed&rdquo;, dst (tergantung dari kondisi TaskInstance saat dijalankan)</li>
-<li>Scheduler mengubah status semua DagRun yang aktif ke: &ldquo;running&rdquo;, &ldquo;failed&rdquo;, &ldquo;finished&rdquo;. Tergantung pada semua kondisi TaskInstance</li>
+<li>Tiap worker yang tersedia, mengambil <code>TaskInstance</code> dari queue dan menjalankannya kemudian memperbarui status <code>TaskInstance</code> dari &ldquo;queued&rdquo; ke &ldquo;running&rdquo;</li>
+<li>Ketika <code>TaskInstance</code> berhasil dijalankan, maka Worker yang terkait mengubah statusnya pada database menjadi: &ldquo;finished&rdquo;, &ldquo;failed&rdquo;, dst (tergantung dari kondisi <code>TaskInstance</code> saat dijalankan)</li>
+<li>Scheduler mengubah status semua <code>DagRun</code> yang aktif ke: &ldquo;running&rdquo;, &ldquo;failed&rdquo;, &ldquo;finished&rdquo;. Tergantung pada semua kondisi <code>TaskInstance</code></li>
 <li>Ulangi langkah 2 s/d 6</li>
 </ol>
 

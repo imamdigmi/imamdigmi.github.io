@@ -27,7 +27,9 @@
       <pubDate>Thu, 01 Nov 2018 19:42:26 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/tutorial-airflow-part-1/</guid>
-      <description>&lt;p&gt;Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (&lt;em&gt;insights&lt;/em&gt;) yang mendalam dari data tentang kebutuhan (&lt;em&gt;needs&lt;/em&gt;), perilaku (&lt;em&gt;behaviors&lt;/em&gt;), dan motif pelanggan mereka.&lt;/p&gt;</description>
+      <description>TL;DR
+Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (insights) yang mendalam dari data tentang kebutuhan (needs), perilaku (behaviors), dan motif pelanggan mereka.
+Seiring semakin banyaknya bisnis yang didorong oleh data (data-driven), ada kebutuhan yang semakin besar untuk melaksanakan &amp;ldquo;pipa&amp;rdquo; pemrosesan data (data pipeline) yang kompleks dan yang secara teratur mengekstraksi data dari berbagai sumber, mengubah data menjadi format yang memfasilitasi logika bisnis, dan menyimpan artefak yang dihasilkan dengan cara memfasilitasi peningkatan produk dan pengambilan keputusan pemangku kepentingan (stakeholder).</description>
     </item>
     
   </channel>
