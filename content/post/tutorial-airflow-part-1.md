@@ -172,9 +172,6 @@ dan berikut ini adalah daftar preset yang diambil dari [Official Documentation A
 | `@monthly` | Tiap awal bulan pada tengah malam             | `0 0 1 * *` |
 | `@yearly`  | Tiap awal tahun pada tengah malam (1 Januari) | `0 0 1 1 *` |
 
-<center><img src="/images/tutorial-airflow/part-1-4.png" alt="Contoh DAG"></center>
-<p><center style="font-size: 10pt; font-style: italic;">Contoh DAG Sederhana 2</center></p>
-
 **Penting**:
 
 1. Jika ingin tidak terjadwal maka nilainya harus `None` tidak boleh `'None'` (string)
