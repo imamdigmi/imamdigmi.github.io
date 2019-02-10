@@ -1,8 +1,8 @@
 # Imam Digmi
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/imamdigmi/imamdigmi.github.io/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/imamdigmi/imamdigmi.github.io/graphs/commit-activity)
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
-[![Build Status](https://travis-ci.org/imamdigmi/imamdigmi.github.io.svg?branch=source)](https://travis-ci.org/imamdigmi/imamdigmi.githu.io)
-[![GitHub stars](https://img.shields.io/github/stars/imamdigmi/imamdigmi.github.io.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/imamdigmi/imamdigmi.github.io/stargazers/)
+[![Build Status](https://travis-ci.org/imamdigmi/imamdigmi.github.io.svg?branch=source)](https://travis-ci.org/imamdigmi/imamdigmi.github.io)
+[![GitHub stars](https://img.shields.io/github/stars/imamdigmi/imamdigmi.github.io.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imamdigmi/imamdigmi.github.io/stargazers/)
 [![GitHub followers](https://img.shields.io/github/followers/imamdigmi.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/imamdigmi?tab=followers)
 
 Data Engineer, Independent Researcher, based in Indramayu, live in Yogyakarta.
