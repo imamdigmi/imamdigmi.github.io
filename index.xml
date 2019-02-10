@@ -27,9 +27,18 @@
       <pubDate>Thu, 01 Nov 2018 19:42:26 +0700</pubDate>
       
       <guid>https://imamdigmi.github.io/post/tutorial-airflow-part-1/</guid>
-      <description>TL;DR
-Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (insights) yang mendalam dari data tentang kebutuhan (needs), perilaku (behaviors), dan motif pelanggan mereka.
-Seiring semakin banyaknya bisnis yang didorong oleh data (data-driven), ada kebutuhan yang semakin besar untuk melaksanakan &amp;ldquo;pipa&amp;rdquo; pemrosesan data (data pipeline) yang kompleks dan yang secara teratur mengekstraksi data dari berbagai sumber, mengubah data menjadi format yang memfasilitasi logika bisnis, dan menyimpan artefak yang dihasilkan dengan cara memfasilitasi peningkatan produk dan pengambilan keputusan pemangku kepentingan (stakeholder).</description>
+      <description>&lt;p&gt;Halo! Pada artikel kali ini saya akan membagikan pengalaman saya tentang membangun &lt;em&gt;data-pipeline&lt;/em&gt; menggunakan Apache Airflow, untuk itu kita akan membahasnya mulai dari konsep sampai pada tahap production, agar tutorial ini terorganisir dengan baik maka saya akan membaginya seperti berikut:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Konsep Dasar&lt;/li&gt;
+&lt;li&gt;Instalasi&lt;/li&gt;
+&lt;li&gt;Membuat DAG&lt;/li&gt;
+&lt;li&gt;Studi Kasus: Twitter Sentiment Analysis&lt;/li&gt;
+&lt;li&gt;Studi Kasus: Experimentation A/B Testing&lt;/li&gt;
+&lt;li&gt;Deployment Ke Production&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Tutorial ini ditujukan buat kamu yang baru mempelajari Apache Airflow atau yang ingin terjun ke bidang Data Engineering, yang semoga saja tutorial ini dapat menjadi panduan kamu belajar.&lt;/p&gt;</description>
     </item>
     
     <item>
