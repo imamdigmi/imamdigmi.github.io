@@ -11,7 +11,7 @@ before_script:
 
 script:
   - hugo
-  - mv MASTER-README.md > public/README.md
+  - mv MASTER-README.md public/README.md
   - echo "$CNAME_URL" > public/CNAME
 
 deploy:
