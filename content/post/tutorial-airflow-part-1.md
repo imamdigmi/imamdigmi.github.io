@@ -12,8 +12,18 @@ keywords: [airflow, apache airflow, data, pipeline, data engineer]
 tags: [data-pipeline, apache-airflow]
 categories: [Data Pipeline, Python]
 ---
+Halo! Pada artikel kali ini saya akan membagikan pengalaman saya tentang membangun _data-pipeline_ menggunakan Apache Airflow, untuk itu kita akan membahasnya mulai dari konsep sampai pada tahap production, agar tutorial ini terorganisir dengan baik maka saya akan membaginya seperti berikut:
 
+1. Konsep Dasar
+2. Instalasi
+3. Membuat DAG
+4. Studi Kasus: Twitter Sentiment Analysis
+5. Studi Kasus: Experimentation A/B Testing
+6. Deployment Ke Production
+
+Tutorial ini ditujukan buat kamu yang baru mempelajari Apache Airflow atau yang ingin terjun ke bidang Data Engineering, yang semoga saja tutorial ini dapat menjadi panduan kamu belajar.
 <!--more-->
+
 **<h4>TL;DR</h4>**
 
 Data adalah mata uang bisnis modern. Dunia yang semakin online, terhubung oleh API yang tampaknya tidak terbatas telah menciptakan lautan data. Bisnis sekarang ini memiliki kesempatan untuk mendapatkan wawasan (_insights_) yang mendalam dari data tentang kebutuhan (_needs_), perilaku (_behaviors_), dan motif pelanggan mereka.
