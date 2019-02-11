@@ -14,7 +14,7 @@ install:
 script:
   - hugo
   - mv MASTER-README.md public/README.md
-  - echo "$CNAME_URL" > public/CNAME
+  #- echo "$CNAME_URL" > public/CNAME
 
 deploy:
   provider: pages
