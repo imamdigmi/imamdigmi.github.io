@@ -1,9 +1,9 @@
 ---
-date: 2018-12-23T08:09:40+07:00
-lastmod: 2018-12-23T08:09:40+07:00
+date: 2019-03-15T18:42:18+07:00
+lastmod: 2019-03-15T18:42:18+07:00
 
-title: "Tutorial Airflow - Kasus: Sentiment Analysis (Bagian 4)"
-description: "Tutorial Airflow - Kasus: Sentiment Analysis (Bagian 4)"
+title: "Tutorial Airflow - Unit Testing (Bagian 7)"
+description: "Tutorial Airflow - Unit Testing (Bagian 7)"
 author: "Imam Digmi"
 
 weight: 50
