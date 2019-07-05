@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Apache Airflow</title>
+      <title>apache-airflow</title>
       <link>https://imamdigmi.github.io/tags/apache-airflow/</link>
       <pubDate>Sat, 17 Nov 2018 13:41:36 +0700</pubDate>
       
@@ -22,16 +22,7 @@
     </item>
     
     <item>
-      <title>Archlinux</title>
-      <link>https://imamdigmi.github.io/tags/archlinux/</link>
-      <pubDate>Sat, 03 Feb 2018 06:30:26 +0000</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/archlinux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Pipeline</title>
+      <title>data-pipeline</title>
       <link>https://imamdigmi.github.io/tags/data-pipeline/</link>
       <pubDate>Sat, 17 Nov 2018 13:41:36 +0700</pubDate>
       
@@ -40,16 +31,7 @@
     </item>
     
     <item>
-      <title>Database</title>
-      <link>https://imamdigmi.github.io/tags/database/</link>
-      <pubDate>Fri, 03 Jun 2016 14:06:22 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
+      <title>deep learning</title>
       <link>https://imamdigmi.github.io/tags/deep-learning/</link>
       <pubDate>Wed, 21 Feb 2018 05:39:09 +0000</pubDate>
       
@@ -58,43 +40,16 @@
     </item>
     
     <item>
-      <title>Diary</title>
-      <link>https://imamdigmi.github.io/tags/diary/</link>
-      <pubDate>Wed, 20 Apr 2016 17:44:20 +0700</pubDate>
+      <title>archlinux</title>
+      <link>https://imamdigmi.github.io/tags/archlinux/</link>
+      <pubDate>Sat, 03 Feb 2018 06:30:26 +0000</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/diary/</guid>
+      <guid>https://imamdigmi.github.io/tags/archlinux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>https://imamdigmi.github.io/tags/docker/</link>
-      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://imamdigmi.github.io/tags/golang/</link>
-      <pubDate>Sat, 21 Jan 2017 18:25:27 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel</title>
-      <link>https://imamdigmi.github.io/tags/laravel/</link>
-      <pubDate>Thu, 26 May 2016 22:44:46 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/laravel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
+      <title>machine learning</title>
       <link>https://imamdigmi.github.io/tags/machine-learning/</link>
       <pubDate>Thu, 25 Jan 2018 22:53:14 +0700</pubDate>
       
@@ -103,16 +58,7 @@
     </item>
     
     <item>
-      <title>Php</title>
-      <link>https://imamdigmi.github.io/tags/php/</link>
-      <pubDate>Thu, 26 May 2016 22:44:46 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
+      <title>python</title>
       <link>https://imamdigmi.github.io/tags/python/</link>
       <pubDate>Thu, 25 Jan 2018 22:51:05 +0700</pubDate>
       
@@ -121,25 +67,7 @@
     </item>
     
     <item>
-      <title>Rust</title>
-      <link>https://imamdigmi.github.io/tags/rust/</link>
-      <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Setup</title>
-      <link>https://imamdigmi.github.io/tags/setup/</link>
-      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
-      
-      <guid>https://imamdigmi.github.io/tags/setup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tensorflow</title>
+      <title>tensorflow</title>
       <link>https://imamdigmi.github.io/tags/tensorflow/</link>
       <pubDate>Thu, 25 Jan 2018 22:51:05 +0700</pubDate>
       
@@ -148,7 +76,7 @@
     </item>
     
     <item>
-      <title>Tips</title>
+      <title>tips</title>
       <link>https://imamdigmi.github.io/tags/tips/</link>
       <pubDate>Sat, 29 Apr 2017 18:56:51 +0700</pubDate>
       
@@ -157,7 +85,52 @@
     </item>
     
     <item>
-      <title>Ubuntu</title>
+      <title>rust</title>
+      <link>https://imamdigmi.github.io/tags/rust/</link>
+      <pubDate>Fri, 17 Mar 2017 22:41:07 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://imamdigmi.github.io/tags/golang/</link>
+      <pubDate>Sat, 21 Jan 2017 18:25:27 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://imamdigmi.github.io/tags/vim/</link>
+      <pubDate>Sat, 14 Jan 2017 18:31:18 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://imamdigmi.github.io/tags/docker/</link>
+      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>https://imamdigmi.github.io/tags/setup/</link>
+      <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
       <link>https://imamdigmi.github.io/tags/ubuntu/</link>
       <pubDate>Sat, 14 Jan 2017 18:02:13 +0700</pubDate>
       
@@ -166,11 +139,38 @@
     </item>
     
     <item>
-      <title>Vim</title>
-      <link>https://imamdigmi.github.io/tags/vim/</link>
-      <pubDate>Sat, 14 Jan 2017 18:31:18 +0700</pubDate>
+      <title>database</title>
+      <link>https://imamdigmi.github.io/tags/database/</link>
+      <pubDate>Fri, 03 Jun 2016 14:06:22 +0700</pubDate>
       
-      <guid>https://imamdigmi.github.io/tags/vim/</guid>
+      <guid>https://imamdigmi.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>laravel</title>
+      <link>https://imamdigmi.github.io/tags/laravel/</link>
+      <pubDate>Thu, 26 May 2016 22:44:46 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://imamdigmi.github.io/tags/php/</link>
+      <pubDate>Thu, 26 May 2016 22:44:46 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diary</title>
+      <link>https://imamdigmi.github.io/tags/diary/</link>
+      <pubDate>Wed, 20 Apr 2016 17:44:20 +0700</pubDate>
+      
+      <guid>https://imamdigmi.github.io/tags/diary/</guid>
       <description></description>
     </item>
     

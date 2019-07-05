@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rust on JournalToday</title>
+    <title>rust on JournalToday</title>
     <link>https://imamdigmi.github.io/tags/rust/</link>
-    <description>Recent content in Rust on JournalToday</description>
+    <description>Recent content in rust on JournalToday</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>imamdigmi</copyright>
