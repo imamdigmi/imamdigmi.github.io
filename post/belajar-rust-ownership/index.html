@@ -226,7 +226,7 @@ println!(&quot;The captain {}&quot;, crew[0]);
 let mut crew2 = crew;
 </code></pre>
 
-<p>Pada baris pertama, Rust mengalokasikan memori untuk obyek vektor <code>crew</code> kedalam stack, tapi selain itu Rust juga mengalokasikan beberapa memori di heap untuk data aktual <code>([&quot;Monkey D. Luffy&quot;, &quot;Roronoa Zoro&quot;, &quot;Vinsmoke Sanji&quot;])</code> lalu Rust menyalin alamat memori di heap tadi kedalam pointer internal yang merupakan bagian dari obyek vektor tadi yang ditempatkan di stack (ini disebut data pointer). Kedua bagian dari vektor (satu di stack dan satu lagi di heap) panjang (length), capacity (kapassitas) dan lain-lain adalah sama nilainya.</p>
+<p>Pada baris pertama, Rust mengalokasikan memori untuk obyek vektor <code>crew</code> kedalam stack, tapi selain itu Rust juga mengalokasikan beberapa memori di heap untuk data aktual <code>([&quot;Monkey D. Luffy&quot;, &quot;Roronoa Zoro&quot;, &quot;Vinsmoke Sanji&quot;])</code> lalu Rust menyalin alamat memori di heap tadi kedalam pointer internal yang merupakan bagian dari obyek vektor tadi yang ditempatkan di stack (ini disebut data pointer). Kedua bagian dari vektor (satu di stack dan satu lagi di heap) panjang (length), capacity (kapasitas) dan lain-lain adalah sama nilainya.</p>
 
 <p>Ketika kita memindahakan <code>crew</code> ke <code>crew2</code>, Sebenarnya Rust menyalin bitwise dari obyek vektor <code>crew</code> ke dalam alokasi stack untuk <code>crew2</code> tapi salinan ini tidak membuat kopian dari alokasi di heap yang berisi data aktual. Artinya bahwa akan ada dua pointer untuk kedua obyek vector yang mengarah ke heap yang sama.</p>
 
@@ -235,7 +235,7 @@ let mut crew2 = crew;
 <pre><code class="language-rust">crew2.truncate(2);
 </code></pre>
 
-<p>sedangkan obyek <code>crew</code> masih diakses maka kita akan mendapatkan obyek vektor yang tidak lagi valid karena obyek <code>crew</code> tidak akan tahu bahwa salah satu elemen telah dihapuskan. Sekarang obyek <code>crew</code> pada stack tidak lagi sama dengan di heap, ini adalah kesalah yang riskan, karena menyebabkan kesalahan segmentasi atau lebih buruknya lagi memunginkan pengguna yang tidak sah untuk membaca alamat memori yang sudah tidak lagi memiliki akses. <strong><strong>Inilah sebabnya mengapa Rust melarang untuk menggunakan obyek yang sebelumnya sudah dipindahkan/dipergunakan</strong></strong>.</p>
+<p>sedangkan obyek <code>crew</code> masih diakses maka kita akan mendapatkan obyek vektor yang tidak lagi valid karena obyek <code>crew</code> tidak akan tahu bahwa salah satu elemen telah dihapuskan. Sekarang obyek <code>crew</code> pada stack tidak lagi sama dengan di heap, ini adalah kesalahan yang riskan, karena menyebabkan kesalahan segmentasi atau lebih buruknya lagi memunginkan pengguna yang tidak sah untuk membaca alamat memori yang sudah tidak lagi memiliki akses. <strong><strong>Inilah sebabnya mengapa Rust melarang untuk menggunakan obyek yang sebelumnya sudah dipindahkan/dipergunakan</strong></strong>.</p>
 
 <h2 id="copy-types">Copy types</h2>
 
